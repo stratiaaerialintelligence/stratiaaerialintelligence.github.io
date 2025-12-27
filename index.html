@@ -142,6 +142,7 @@
       text-align: center;
       padding: 20px;
     }
+    
 
 /* =========================
    COVER / HERO STRATIA
@@ -189,6 +190,51 @@
   .cover h1 { font-size: 34px; }
   .cover-logo { max-width: 170px; }
 }
+
+/* Galleria */
+.gallery {
+  background: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+
 
     
   </style>
@@ -317,6 +363,33 @@
   </p>
 </section>
 
+<section id="galleria" class="gallery">
+  <div class="container">
+    <p class="kicker">Galleria</p>
+    <h2 class="section-title">Osservare dall’alto</h2>
+
+    <div class="gallery-grid">
+      <img src="assets/gallery/CRESCENT_1.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/CRESCENT_2.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/CRESCENT_3.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/PORTO_1.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/PORTO_2.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/BARAGIANO_1.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/BARAGIANO_2.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/CETARA_1.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/MINORI_1.jpg" onclick="openLightbox(this.src)">
+      <img src="assets/gallery/MINORI_2.jpg" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+
+  
 <section id="contatti">
   <h2>Contatti</h2>
   <p>
@@ -328,6 +401,19 @@
 <footer>
   <p>© STRATIA — Ingegneria per comprendere il territorio</p>
 </footer>
+
+  <script>
+  function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lb.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
 
 </body>
 </html>
