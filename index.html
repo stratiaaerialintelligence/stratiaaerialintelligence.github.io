@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Stratia</title>
-  <meta name="description" content="Stratia - Aerial & Territorial Intelligence">
+  <title>SRATIA</title>
+   <link rel="icon" type="image/x-icon" href="/images/logo/favicon_stratia.ico">
+  <meta name="description" content="STRATIA - Aerial & Territorial Intelligence">
 
   <style>
     :root{
@@ -24,1425 +25,2004 @@
       --radius-xs:10px;
       --container:1200px;
       --container-team:1100px;
+      --heroText:#F5F7FA;
+      --heroMuted:#C7D2E0;
     }
 
-
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{ 
+    	box-sizing:border-box;
+    }
+     
+    html{
+    	scroll-behavior:smooth; 
+    }
+    	
     body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.6;
+    	margin:0;
+      	font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      	color:var(--text);
+      	background:var(--bg);
+      	line-height:1.6;
     }
-    img{ max-width:100%; display:block; }
-    a{ color:inherit; }
+    
+    img{ 
+    	max-width:100%; 
+    	display:block;
+    }
+    	
+    a{
+    	color:inherit;
+    }
 
     .container{
-      max-width:var(--container);
-      margin:0 auto;
-      padding:0 20px;
+    	max-width:var(--container);
+    	margin:0 auto; 
+    	padding:0 20px;
     }
 
-
-    /* -------------------------
-      HEADER
-    ------------------------- */
+    
+    /* HEADER */
     .site-header{
-      position:sticky;
-      top:0;
-      z-index:100;
-      background:rgba(7,16,33,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom:1px solid rgba(255,255,255,0.14);
+    	position:sticky; 
+    	top:0; 
+    	z-index:100;
+     	background:rgba(7,16,33,0.92);
+      	backdrop-filter: blur(8px);
+      	border-bottom:1px solid rgba(255,255,255,0.14);
     }
+    
     .header-inner{
-      display:flex;
-      align-items:center;
-      gap:16px;
-      padding:14px 0;
+    	display:flex;
+    	align-items:center;
+    	gap:16px;
+     	padding:14px 0;
     }
-
+    
     .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      text-decoration:none;
-      color:#eaf3ff;
-      min-width:180px;
+    	display:flex;
+    	align-items:center; 
+    	gap:10px;
+      	text-decoration:none; 
+      	color:#eaf3ff;
+      	min-width:180px;
     }
+    
     .brand-badge{
-      width:34px;height:34px;border-radius:8px;
-      background:linear-gradient(135deg,#0e7490,#0a4e64);
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 8px 22px rgba(0,0,0,.25);
-      font-weight:800;color:#fff;font-size:11px;letter-spacing:.5px;
-      flex:0 0 auto;
+    	width:34px;
+    	height:34px;
+    	border-radius:10px;
+      	background:linear-gradient(135deg,#0e7490,#0a4e64);
+      	display:flex;
+      	align-items:center;
+      	justify-content:center;
+      	box-shadow:0 8px 22px rgba(0,0,0,.25);
+      	font-weight:900;
+      	color:#fff;
+      	font-size:11px;
+      	letter-spacing:.5px;
+      	flex:0 0 auto;
     }
-    .brand-name{
-      font-weight:700;
-      font-size:18px;
-      opacity:.95;
+    
+	.site-header{
+	  background: linear-gradient(
+	    180deg,
+	    rgba(7,16,33,0.94),
+	    rgba(7,16,33,0.70)
+	  );
+	  backdrop-filter: blur(10px);
+	  border-bottom: 1px solid rgba(234,243,255,0.10);
+	}
+	
+	.header-inner{
+	  padding: 12px 0;
+	}
+	
+	.brand-badge{
+	  width: 42px;
+	  height: 42px;
+	  border-radius: 14px;
+	  background: rgba(255,255,255,0.06);     
+	  border: 1px solid rgba(234,243,255,0.12);
+	  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+	}
+	
+	.brand-logo{
+	  width: 44px;
+	  height: 44px;
+	  display: block;
+	  filter:
+	    drop-shadow(0 2px 6px rgba(0,0,0,0.55))
+	    drop-shadow(0 0 8px rgba(14,116,144,0.35));
+	}
+	
+	.nav-links a{
+	  opacity: .82;
+	  transition: opacity .18s ease, color .18s ease;
+	}
+	.nav-links a:hover{
+	  opacity: 1;
+	  color: #fff;
+	}
+	
+	.nav-links a.is-active::after{
+	  background: rgba(14,116,144,0.95);
+	}
+	
+	.header-cta{
+	  border-radius: 999px; 
+	  transition: transform .18s ease, filter .18s ease;
+	}
+	
+	.header-cta:hover{
+	  transform: translateY(-1px);
+	  filter: brightness(1.05);
+	}
+    
+    
+    .brand-name{ 
+    	font-weight:800; 
+    	font-size:18px; 
+    	opacity:.95;
     }
 
-    .nav{
-      flex:1;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+    .nav{ 
+    	flex:1; 
+    	display:flex; 
+    	justify-content:center; 
     }
+    
     .nav-links{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      align-items:center;
-      gap:18px;
-      color:#cfe2ff;
-      font-size:14px;
-      opacity:.9;
+    	display:flex; 
+      	flex-wrap:wrap;
+      	justify-content:center;
+      	align-items:center;
+      	gap:18px; 
+      	color:#cfe2ff;
+      	font-size:14px; 
+      	opacity:.9;
     }
+    
     .nav-links a{
-      color:#cfe2ff;
-      text-decoration:none;
-      opacity:.85;
-      padding:6px 2px;
+    	color:#cfe2ff; 
+    	text-decoration:none; 
+    	opacity:.85;
+        padding:6px 2px; 
+        position:relative;
     }
-    .nav-links a:hover{ opacity:1; }
+    
+    .nav-links a:hover{ 
+    	opacity:1;
+    }
 
-    .header-right{
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .nav-links a.is-active{ 
+    	opacity:1; 
+    	color:#fff; 
     }
+    
+    .nav-links a.is-active::after{
+    	content:""; 
+    	position:absolute; 
+    	left:0; 
+    	right:0; 
+    	bottom:-6px;
+      	height:2px; 
+      	background:rgba(255,255,255,.75); 
+      	border-radius:999px;
+    }
+
+    .header-right{ 
+    	display:flex; 
+    	align-items:center; 
+    	gap:10px; 
+    }
+    
     .header-cta{
-      text-decoration:none;
-      background:var(--primary);
-      color:#fff;
-      padding:10px 18px;
-      border-radius:14px;
-      font-weight:700;
-      font-size:14px;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 10px 26px rgba(0,0,0,.25);
-      white-space:nowrap;
+    	text-decoration:none;
+      	background:var(--primary); 
+      	color:#fff;
+      	padding:10px 18px; 
+      	border-radius:14px;
+      	font-weight:900; 
+      	font-size:14px;
+      	border:1px solid rgba(255,255,255,.12);
+      	box-shadow:0 10px 26px rgba(0,0,0,.25);
+      	white-space:nowrap;
     }
 
     .menu-btn{
-      display:none;
-      width:44px;height:44px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
-      color:#eaf3ff;
-      cursor:pointer;
-      align-items:center;
-      justify-content:center;
-      box-shadow:0 10px 26px rgba(0,0,0,.18);
+    	display:none;
+      	width:44px;
+      	height:44px;
+      	border-radius:14px;
+      	border:1px solid rgba(255,255,255,.16);
+      	background:rgba(255,255,255,.06);
+      	color:#eaf3ff;
+      	cursor:pointer;
+      	align-items:center;
+      	justify-content:center;
+      	box-shadow:0 10px 26px rgba(0,0,0,.18);
     }
-    .menu-btn:active{ transform:translateY(1px); }
-
-    /* Active link (desktop) */
-    .nav-links a.is-active{
-      opacity:1;
-      color:#ffffff;
-      position:relative;
-    }
-    .nav-links a.is-active::after{
-      content:"";
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-6px;
-      height:2px;
-      background:rgba(255,255,255,.75);
-      border-radius:999px;
+    
+    .menu-btn:active{ 
+    	transform:translateY(1px); 
     }
 
-
-    /* -------------------------
-      MOBILE DRAWER
-    ------------------------- */
-    .drawer{
-      position:fixed;
-      inset:0;
-      display:none;
-      z-index:9998;
+    
+    /* MOBILE DRAWER */
+    .drawer{ 
+    	position:fixed;
+    	inset:0; 
+    	display:none; 
+    	z-index:9998; 
     }
-    .drawer.is-open{ display:block; }
-
+    
+    .drawer.is-open{ 
+    	display:block; 
+    }
+    
     .drawer-backdrop{
-      position:absolute;
-      inset:0;
-      background:rgba(2,8,23,.58);
-      opacity:0;
-      animation:fadeIn .18s ease-out forwards;
+    	position:absolute; 
+    	inset:0;
+      	background:rgba(2,8,23,.58);
+      	opacity:0; 
+      	animation:fadeIn .18s ease-out forwards;
     }
-    @keyframes fadeIn{
-      to{ opacity:1; }
+    
+    @keyframes fadeIn{ 
+    	to{
+    		opacity:1; 
+    	}
     }
-
+    
     .drawer-panel{
-      position:absolute;
-      top:0; right:0;
-      width:min(360px, 92vw);
-      height:100%;
-      background:rgba(7,16,33,0.96);
-      border-left:1px solid rgba(255,255,255,0.12);
-      box-shadow:0 30px 120px rgba(0,0,0,.55);
-
-      display:flex;
-      flex-direction:column;
-
-      transform:translateX(110%);
-      animation:slideIn .22s ease-out forwards;
+    	position:absolute; 
+    	top:0; 
+    	right:0;
+      	width:min(360px, 92vw); 
+      	height:100%;
+      	background:rgba(7,16,33,0.96);
+      	border-left:1px solid rgba(255,255,255,0.12);
+      	box-shadow:0 30px 120px rgba(0,0,0,.55);
+      	display:flex; 
+      	flex-direction:column;
+      	transform:translateX(110%);
+      	animation:slideIn .22s ease-out forwards;
     }
+    
     @keyframes slideIn{
-      to{ transform:translateX(0); }
+    	to{
+    		transform:translateX(0);
+    	} 
     }
-
+    
     .drawer-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:16px;
-      border-bottom:1px solid rgba(255,255,255,0.12);
+     	display:flex; 
+     	align-items:center; 
+     	justify-content:space-between;
+      	gap:12px; 
+      	padding:16px;
+      	border-bottom:1px solid rgba(255,255,255,0.12);
     }
-    .drawer-brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      color:#eaf3ff;
-      text-decoration:none;
+    
+    .drawer-brand{ 
+    	display:flex; 
+    	align-items:center; 
+    	gap:10px; 
+    	color:#eaf3ff; 
+    	text-decoration:none; 
     }
+    
     .drawer-close{
-      width:44px;height:44px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
-      color:#eaf3ff;
-      cursor:pointer;
-      font-size:18px;
-      font-weight:900;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+    	width:44px;
+    	height:44px;
+      	border-radius:14px;
+      	border:1px solid rgba(255,255,255,.16);
+      	background:rgba(255,255,255,.06);
+      	color:#eaf3ff;
+      	cursor:pointer;
+      	font-size:18px; 
+      	font-weight:900;
+      	display:flex; 
+      	align-items:center; 
+      	justify-content:center;
     }
-    .drawer-body{
-      padding:14px 16px 16px;
-      overflow:auto;
+    
+    .drawer-body{ 
+    	padding:14px 16px 16px; 
+    	overflow:auto; 
     }
-    .drawer-links{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
+    
+    .drawer-links{ 
+    	display:flex; 
+    	flex-direction:column; 
+    	gap:10px; 
+    	}
+    
     .drawer-link{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.12);
-      background:rgba(255,255,255,0.06);
-      color:#eaf3ff;
-      text-decoration:none;
-      font-weight:700;
-      font-size:14px;
+      	display:flex; 
+      	align-items:center; 
+      	justify-content:space-between;
+      	gap:10px; 
+      	padding:12px 12px;
+      	border-radius:14px;
+      	border:1px solid rgba(255,255,255,0.12);
+      	background:rgba(255,255,255,0.06);
+      	color:#eaf3ff;
+      	text-decoration:none;
+      	font-weight:900; 
+      	font-size:14px;
     }
-    .drawer-link:hover{ background:rgba(255,255,255,0.09); }
-    .drawer-link .chev{ opacity:.7; font-weight:900; }
+    
+    .drawer-link:hover{ 
+    	background:rgba(255,255,255,0.09); 
+    }
+    
+    .drawer-link .chev{ 
+    	opacity:.7; 
+    	font-weight:900; 
+    }
+    
     .drawer-link.is-active{
-      border-color:rgba(14,116,144,.8);
-      background:rgba(14,116,144,.15);
+      	border-color:rgba(14,116,144,.8);
+      	background:rgba(14,116,144,.15);
     }
-
+    
     .drawer-cta{
-      margin-top:14px;
-      display:block;
-      text-align:center;
-      padding:14px 14px;
-      border-radius:16px;
-      background:var(--primary);
-      color:#fff;
-      text-decoration:none;
-      font-weight:800;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 10px 26px rgba(0,0,0,.25);
+      	margin-top:14px; 
+      	display:block; 
+      	text-align:center;
+      	padding:14px 14px; 
+      	border-radius:16px;
+      	background:var(--primary); 
+      	color:#fff;
+      	text-decoration:none; 
+      	font-weight:900;
+      	border:1px solid rgba(255,255,255,.12);
+      	box-shadow:0 10px 26px rgba(0,0,0,.25);
     }
+    
     .drawer-note{
-      margin-top:12px;
-      font-size:12px;
-      color:rgba(234,243,255,.72);
-      line-height:1.6;
+      	margin-top:12px;
+      	font-size:12px;
+      	color:rgba(234,243,255,.72);
+      	line-height:1.6;
     }
 
-
-    /* -------------------------
-      HERO
-    ------------------------- */
+    
+    
+    /* HERO */
     .hero{
-      min-height:72vh;
-      background:
-        radial-gradient(1200px 600px at 50% 15%, rgba(14,116,144,.22), rgba(0,0,0,0)),
-        linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
-      border-bottom:1px solid rgba(0,0,0,.06);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:60px 20px;
-      text-align:center;
-      color:#fff;
+      	position:relative;
+      	min-height:min(92vh, 860px);
+      	display:flex;
+      	align-items:center;
+      	justify-content:center;
+      	padding:78px 20px 64px;
+      	overflow:hidden;
+      	color:var(--heroText);
+      	text-align:center;
+		background:radial-gradient(1200px 600px at 50% 18%, rgba(14,116,144,.22), transparent 55%),
+        		   radial-gradient(900px 500px at 22% 82%, rgba(255,255,255,.06), transparent 60%),
+        		   linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
+
+    .hero-bg{
+      	position:absolute; 
+      	inset:0;
+      	background-image:url("images/hero/hero.jpg"); /* cambia immagine */
+      	background-size:cover;
+      	background-position:center;
+      	opacity:.18;
+      	transform:scale(1.04);
+     	filter:saturate(1.05) contrast(1.05);
+    }
+
+    .hero-overlay{
+      	position:absolute; 
+      	inset:0;
+      	background:linear-gradient(180deg, rgba(6,22,42,.70), rgba(6,22,42,.88) 55%, rgba(6,22,42,.94));
+    }
+
+    .hero-grid{
+      	position:absolute; 
+      	inset:-2px;
+      	background-image: linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+        				  linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+      	background-size:64px 64px;
+      	opacity:.08;
+      	mask-image: radial-gradient(circle at 50% 42%, #000 0 52%, transparent 82%);
+    }
+
     .hero-inner{
-      max-width:980px;
-      margin:0 auto;
-    }
-    .hero-title{
-      margin:0 0 10px;
-      font-size:56px;
-      letter-spacing:.2px;
-      font-weight:800;
-    }
-    .hero-sub{
-      margin-top:10px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      align-items:center;
-      color:#eaf3ff;
-      opacity:.92;
-      font-size:18px;
+      	position:relative;
+      	max-width:980px;
+      	margin:0 auto;
+      	display:flex;
+      	flex-direction:column;
+      	align-items:center;
+      	gap:14px;
     }
 
+    .hero-logo{
+      	width:min(720px);
+      	height:auto;
+      	filter: drop-shadow(0 12px 26px rgba(0,0,0,.40));
+      	animation: heroPop .9s ease-out both;
+    }
 
-    /* -------------------------
-      SECTIONS
-    ------------------------- */
-    .section{ padding:70px 0; }
+    .hero-tagline{
+      	font-size:18px;
+      	color:#EAF3FF;
+      	opacity:.95;
+      	animation: heroFadeUp .9s ease-out .16s both;
+    }
+
+    .hero-actions{
+      	display:flex;
+      	gap:12px;
+      	flex-wrap:wrap;
+      	justify-content:center;
+      	margin-top:10px;
+      	animation: heroFadeUp .9s ease-out .22s both;
+    }
+
+    .hero-btn{
+      	display:inline-flex;
+      	align-items:center;
+      	justify-content:center;
+      	padding:12px 16px;
+      	border-radius:14px;
+      	border:1px solid rgba(255,255,255,.16);
+      	text-decoration:none;
+      	font-weight:900;
+      	font-size:14px;
+      	letter-spacing:.01em;
+      	transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      	will-change:transform;
+    }
+    
+    .hero-btn.primary{
+    	background:linear-gradient(180deg, rgba(14,116,144,.95), rgba(10,78,100,.95));
+      	border-color:rgba(14,116,144,.55);
+      	color:#04131f;
+      	box-shadow:0 14px 28px rgba(0,0,0,.30);
+    }
+    
+    .hero-btn.ghost{
+      	background:rgba(255,255,255,.06);
+      	color:var(--heroText);
+      	backdrop-filter: blur(10px);
+    }
+    
+    .hero-btn:hover{
+      	transform: translateY(-2px);
+      	box-shadow:0 16px 34px rgba(0,0,0,.35);
+      	border-color:rgba(255,255,255,.24);
+    }
+    
+    .hero-btn:active{ 
+    	transform: translateY(0) scale(.99); 
+    }
+    
+    .hero-pills{
+      	display:flex;
+      	gap:10px;
+      	flex-wrap:wrap;
+      	justify-content:center;
+      	margin-top:10px;
+      	animation: heroFadeUp .9s ease-out .28s both;
+    }
+    
+    .hero-pill{
+     	display:inline-flex;
+      	align-items:center;
+      	padding:8px 10px;
+      	border-radius:999px;
+      	border:1px solid rgba(255,255,255,.16);
+      	background:rgba(255,255,255,.06);
+      	color:rgba(245,247,250,.92);
+      	font-size:13px;
+      	letter-spacing:.02em;
+      	backdrop-filter: blur(10px);
+      	transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+    
+    .hero-pill:hover{
+     	transform: translateY(-1px);
+      	background:rgba(255,255,255,.09);
+      	border-color:rgba(255,255,255,.22);
+    }
+
+    .hero-scroll{
+      	margin-top:18px;
+      	display:inline-flex;
+      	align-items:center;
+      	gap:10px;
+      	color:rgba(245,247,250,.80);
+      	text-decoration:none;
+      	font-size:12px;
+      	letter-spacing:.14em;
+      	text-transform:uppercase;
+      	animation: heroFadeUp .9s ease-out .34s both;
+    }
+    
+    .mouse{
+      	width:22px;
+      	height:34px;
+      	border:1.6px solid rgba(255,255,255,.42);
+      	border-radius:999px;
+      	position:relative;
+      	display:inline-block;
+    }
+    
+    .mouse::after{
+      	content:"";
+      	position:absolute;
+      	left:50%;
+      	top:7px;
+      	width:4px;
+      	height:4px;
+      	border-radius:999px;
+      	background:rgba(255,255,255,.7);
+      	transform:translateX(-50%);
+      	animation: scrollDot 1.2s ease-in-out infinite;
+    }
+    
+    @keyframes scrollDot{
+      	0%{
+      	 	transform:translate(-50%, 0);
+      	 	opacity:.9; 
+      	 }
+      	70%{
+      		transform:translate(-50%, 12px); 
+      		opacity:.25; 
+      	}
+      	100%{ 
+      		transform:translate(-50%, 0); 
+      		opacity:.9; 
+      	}
+    }
+
+    @keyframes heroFadeUp{
+      	from{ 
+      		opacity:0; 
+      		transform: translateY(10px);
+      	}
+      	to{ 
+      		opacity:1; 
+      		transform: translateY(0); 
+      	}
+    }
+    
+    @keyframes heroPop{
+    	from{
+    		opacity:0; 
+    		transform: translateY(8px) scale(.985); 
+    	}
+      	to{
+      		opacity:1; 
+      		transform: translateY(0) scale(1); 
+      	}
+    }
+
+    
+    /* Sections */
+    .section{ 
+    	padding:70px 0;
+    }
+    
     .kicker{
-      font-size:12px;
-      letter-spacing:1.4px;
-      color:#6b7280;
-      margin-bottom:10px;
-      text-transform:uppercase;
+     	font-size:14px; 
+     	letter-spacing:1.4px;
+      	color:#6b7280; 
+      	margin-bottom:10px;
+      	text-transform:uppercase;
     }
+    
     .h2{
-      margin:0 0 22px;
-      font-size:28px;
-      font-weight:800;
-      color:#0b0f19;
+      	margin:0 0 22px;
+      	font-size:28px;
+      	font-weight:900;
+      	color:#0b0f19;
     }
 
-
-    /* -------------------------
-      ABOUT
-    ------------------------- */
+    
+    /* ABOUT */
     .about{
-      background:linear-gradient(to bottom,#f3f4f6 0%, #ffffff 120px);
-      padding:80px 0;
+     	background:linear-gradient(to bottom,#f3f4f6 0%, #ffffff 120px);
+      	padding:80px 0;
     }
+    
     .about-grid{
-      display:flex;
-      gap:40px;
-      align-items:flex-start;
-      flex-wrap:wrap;
+      	display:flex; gap:40px;
+      	align-items:flex-start;
+      	flex-wrap:wrap;
     }
-    .about-left{
-      flex:1 1 520px;
-      max-width:680px;
+    
+    .about-left{ 
+    	flex:1 1 520px; 
+    	max-width:680px; 
     }
-    .about-title{
-      font-size:34px;
-      font-weight:800;
-      margin:0 0 14px;
-      color:#0b0f19;
+    
+    .about-title{ 
+    	font-size:34px; 
+    	font-weight:900; 
+    	margin:0 0 14px; 
+    	color:#0b0f19; 
     }
+    
     .about-divider{
-      width:56px;height:3px;
-      background:#1f2937;border-radius:2px;
-      margin:18px 0 22px;
+      	width:56px;
+      	height:3px;
+      	background:#1f2937;
+      	border-radius:2px;
+      	margin:18px 0 22px;
     }
+    
     .about-p{
-      margin:0 0 14px;
-      font-size:15.5px;
-      line-height:1.75;
-      color:#111827;
+     	margin:0 0 14px;
+      	font-size:15.5px; 
+      	line-height:1.75; 
+      	color:#111827;
     }
-    .about-p:last-child{ margin-bottom:0; }
-    .about-p.small{
-      font-size:14.5px;
-      line-height:1.7;
-      color:#374151;
+    
+    .about-p.small{ 
+    	font-size:14.5px; 
+    	line-height:1.7; 
+    	color:#374151; 
     }
+    
     .about-right{
-      flex:1 1 360px;
-      display:flex;
-      flex-direction:column;
-      gap:22px;
+      	flex:1 1 360px;
+      	display:flex; 
+      	flex-direction:column; 
+      	gap:22px;
     }
-
+    
     .info-card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:var(--radius-md);
-      padding:22px;
-      box-shadow:0 10px 28px rgba(0,0,0,.08);
+     	background:#fff;
+      	border:1px solid var(--border);
+      	border-radius:var(--radius-md);
+      	padding:22px;
+      	box-shadow:0 10px 28px rgba(0,0,0,.08);
     }
+    
     .pill{
-      display:inline-block;
-      font-size:12px;
-      padding:6px 12px;
-      border-radius:999px;
-      background:#f3f4f6;
-      color:#111827;
-      font-weight:700;
-      margin-bottom:14px;
-    }
+    	display:inline-block;
+      	font-size:12px;
+      	padding:6px 12px;
+      	border-radius:999px;
+      	background:var(--primary);
+      	color:#111827;
+      	font-weight:900;
+      	margin-bottom:14px;
+    }	
+    
     .info-card ul{
-      margin:0;
-      padding-left:18px;
-      color:#111827;
-      font-size:14.5px;
-      line-height:1.7;
+    	margin:0; 
+    	padding-left:18px; 
+    	color:#111827; 
+    	font-size:14.5px; 
+    	line-height:1.7; 
     }
+    
 
-
-    /* -------------------------
-      SERVICES
-    ------------------------- */
+    /* SERVICES  */
     .services-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:22px;
-      align-items:stretch;
+    	display:flex; 
+    	flex-wrap:wrap; 
+    	gap:22px; 
+    	align-items:stretch; 
     }
+
     .service-card{
-      flex:1 1 260px;
-      min-width:240px;
-      background:#ffffff;
-      border:1px solid var(--border2);
-      border-radius:var(--radius-sm);
-      padding:22px;
+     	position:relative;
+      	flex:1 1 260px;
+      	min-width:240px;
+      	display:flex;
+      	flex-direction:column;
+      	justify-content:space-between;
+      	gap:12px;
+      	padding:22px;
+      	border-radius:16px;
+      	background-size:cover;
+      	background-position:center;
+      	overflow:hidden;
+      	cursor:pointer;
+      	border:1px solid rgba(15,23,42,.10);
+      	transition:transform .25s ease, box-shadow .25s ease;
+      	text-decoration:none;
+      	color:inherit;
+    }	
+    
+    .service-card::before{
+      content:"";
+      position:absolute; inset:0;
+      background:rgba(255,255,255,0.88);
+      backdrop-filter:saturate(1.1);
+      transition:background .25s ease;
     }
+    
+    .service-card > *{
+    	position:relative; 
+    	z-index:1; 
+    }
+
     .service-card h3{
-      margin:0 0 10px;
-      font-size:18px;
-      font-weight:800;
-      color:#0b0f19;
-      line-height:1.35;
+    	margin:0 0 10px;
+     	font-size:18px;
+     	font-weight:900;
+     	color:#0b0f19;
+     	line-height:1.35;
     }
-    .service-card p{
-      margin:0;
-      color:#111827;
-      font-size:14.5px;
-      line-height:1.7;
+    
+    .service-card p{ 
+    	margin:0; 
+    	color:#111827; 
+    	font-size:14.5px; 
+    	line-height:1.7; 
     }
 
+    .service-card:hover{
+    	transform:translateY(-4px);
+    	box-shadow:0 12px 28px rgba(15,23,42,.15);
+    }
+    
+    .service-card:hover::before{ 
+    	background:rgba(255,255,255,0.82); 
+    }
 
-    /* -------------------------
-      TEAM
-    ------------------------- */
-    .team{
-      background:#f7fafc;
+    .service-pill{
+    	font-size:12px;
+     	font-weight:700;
+     	padding:6px 10px;
+     	border-radius:999px;
+     	border:1px solid #e2e8f0;
+     	background:#f8fafc;
+     	white-space:nowrap;
     }
-    .team-wrap{
-      max-width:var(--container-team);
-      margin:0 auto;
-      padding:0 20px;
+
+    .service-card .service-pill{
+    	transform:translateY(2px) scale(.98);
+     	opacity:.92;
+     	transition:transform .25s ease, opacity .25s ease, box-shadow .25s ease;
     }
+    
+    .service-card:hover .service-pill{
+    	transform:translateY(0) scale(1);
+    	opacity:1;
+     	box-shadow:0 6px 14px rgba(15,23,42,.10);
+    }
+
+    .service-card::after{
+      	content:"";
+      	position:absolute;
+      	top:-40%;
+      	left:-60%;
+      	width:60%;
+      	height:180%;
+      	transform:rotate(18deg);
+      	background:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 45%, rgba(255,255,255,0) 100%);
+      	opacity:0;
+      	transition:opacity .25s ease;
+      	pointer-events:none;
+    }
+    
+    .service-card:hover::after{
+    	opacity:1;
+      	animation:serviceSheen .7s ease forwards;
+    }
+    
+    @keyframes serviceSheen{
+    	from{ 
+    		left:-70%; 
+    	}
+      	to{
+      		left:120%; 
+      	}
+    }
+
+    
+    
+    /* SFONDI SERVIZI */
+    .bg-edili{
+    	background-image:url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=60");
+    }
+    
+    .bg-navali{
+      	background-image:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60");
+    }
+    
+    .bg-fotogrammetria{
+      	background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60");
+    }
+    
+    .bg-rilievi{
+    	background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60");
+    }
+    
+    .bg-valorizzazione{
+      	background-image:url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60");
+    }
+    
+    .bg-eventi{
+    	background-image:url("https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1200&q=60");
+    }
+
+    
+    
+    /* TEAM */
+    .team{ 
+    	background:#f7fafc; 
+    }
+    
+    .team-wrap{ 
+    	max-width:var(--container-team); 
+    	margin:0 auto; 
+    	padding:0 20px; 
+    }
+    
     .team-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
+    	display:flex; 
+    	align-items:flex-end; 
+    	justify-content:space-between;
+      	gap:18px; 
+      	flex-wrap:wrap;
     }
+    
     .team-head h2{
-      margin:0 0 10px;
-      font-size:34px;
-      letter-spacing:-0.02em;
-      color:#0f172a;
+      	margin:0 0 10px;
+      	font-size:34px;
+      	letter-spacing:-0.02em;
+      	color:#0f172a;
+      	font-weight:900;
     }
-    .team-head p{
-      margin:0;
-      color:#475569;
-      line-height:1.7;
-      font-size:15px;
+    
+    .team-head p{ 
+    	margin:0; 
+    	color:#475569; 
+    	line-height:1.7; 
+    	font-size:15px; 
     }
-    .team-hint{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      font-size:12px;
+    
+    .team-hint{ 
+    	display:flex; 
+    	gap:10px; 
+    	align-items:center; 
+    	font-size:12px; 
+   	}
+    
+    .team-hint span:first-child{ 
+    	color:#64748b; 
     }
-    .team-hint span:first-child{ color:#64748b; }
-    .team-hint span:last-child{ color:var(--primary); font-weight:700; }
+    
+    .team-hint span:last-child{ 
+    	color:var(--primary); 
+    	font-weight:900; 
+    }
 
     .team-grid{
-      margin-top:28px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-      gap:18px;
-      align-items:stretch;
+      	margin-top:28px;
+      	display:grid;
+      	grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+      	gap:18px;
+      	align-items:stretch;
     }
+    
     .team-card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      min-height:560px;
+      	background:#fff;
+      	border:1px solid var(--border);
+      	border-radius:var(--radius);
+      	overflow:hidden;
+      	box-shadow:var(--shadow);
+      	display:flex;
+      	flex-direction:column;
+      	min-height:560px;
+    }	
+    
+    .team-media{ 
+    	width:100%; 
+    	aspect-ratio:4/5; 
+    	background:#e5e7eb; 
     }
-    .team-media{
-      width:100%;
-      aspect-ratio:4/5;
-      background:#e5e7eb;
+    
+    .team-media img{ 
+    	width:100%; 
+    	height:100%; 
+    	object-fit:cover; 
     }
-    .team-media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    
+    .team-card-top{ 
+    	padding:16px 16px 10px; 
     }
-    .team-card-top{
-      padding:16px 16px 10px;
+    
+    .team-card-topline{ 
+    	display:flex; 
+    	align-items:flex-start; 
+    	justify-content:space-between; 
+    	gap:10px; 
     }
-    .team-card-topline{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:10px;
+    
+    .team-name{ 
+    	font-size:18px; 
+    	font-weight:900; 
+    	color:#0f172a; 
     }
-    .team-name{
-      font-size:18px;
-      font-weight:800;
-      color:#0f172a;
+    
+    .team-role{ 
+    	margin-top:4px; 
+    	font-size:13px; 
+    	color:var(--primary); 
+    	font-weight:900; 
     }
-    .team-role{
-      margin-top:4px;
-      font-size:13px;
-      color:var(--primary);
-      font-weight:700;
-    }
+    
     .tag{
-      font-size:11px;
-      color:#0f172a;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid #e2e8f0;
-      background:#f1f5f9;
-      white-space:nowrap;
+      	font-size:11px; 
+      	color:#0f172a;
+      	padding:6px 10px; 
+      	border-radius:999px;
+      	border:1px solid #e2e8f0;
+      	background:#f1f5f9;
+      	white-space:nowrap;
+      	font-weight:900;
     }
-    .tag.founder{ background:#ecfeff; border-color:#cffafe; }
-    .tag.support{ background:#fff7ed; border-color:#fed7aa; }
-    .tag.visual{ background:#ecfccb; border-color:#d9f99d; }
+    
+    .tag.founder{ 
+    	background:#ecfeff; 
+    	border-color:#cffafe; 
+    }
+    
+    .tag.support{ 
+    	background:#fff7ed; 
+    	border-color:#fed7aa; 
+    }
+    
+    .tag.visual{ 
+    	background:#ecfccb; 
+    	border-color:#d9f99d; 
+    }
 
     .team-card-body{
-      padding:0 16px 16px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      flex:1;
+    	padding:0 16px 16px;
+      	display:flex; 
+      	flex-direction:column; 
+      	gap:12px;
+      	flex:1;
     }
-    .team-card-body p{
-      margin:0;
-      color:#334155;
-      line-height:1.7;
-      font-size:14px;
+    
+    .team-card-body p{ 
+    	margin:0; 
+    	color:#334155; 
+    	line-height:1.7; 
+    	font-size:14px; 
     }
+    
     .team-actions{
-      margin-top:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
+      	margin-top:auto;
+      	display:flex;
+      	justify-content:space-between;
+      	align-items:center;
+      	gap:12px;
     }
+    
     .team-readmore{
-      color:var(--primary);
-      font-weight:800;
-      text-decoration:underline;
-      font-size:13px;
+      	color:var(--primary);
+      	font-weight:900;
+      	text-decoration:underline;
+      	font-size:13px;
     }
+    
     .linkedin-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:34px;height:34px;
-      border-radius:var(--radius-xs);
-      border:1px solid #e2e8f0;
-      background:#fff;
-      box-shadow:0 4px 14px rgba(2, 8, 23, 0.05);
+      	display:inline-flex; align-items:center; justify-content:center;
+      	width:34px;
+      	height:34px;
+      	border-radius:var(--radius-xs);
+      	border:1px solid #e2e8f0;
+      	background:#fff;
+      	box-shadow:0 4px 14px rgba(2, 8, 23, 0.05);
     }
 
     .team-vision{
-      background:linear-gradient(135deg, #ecfeff 0%, #f1f5f9 60%, #ffffff 100%);
-      border:1px solid #dbeafe;
+      	background:linear-gradient(135deg, #ecfeff 0%, #f1f5f9 60%, #ffffff 100%);
+      	border:1px solid #dbeafe;
     }
-    .vision-inner{
-      padding:18px;
-      display:flex;
-      flex-direction:column;
-      height:100%;
+    
+    .vision-inner{ 
+    	padding:18px; 
+    	display:flex; 
+    	flex-direction:column; 
+    	height:100%; 
     }
-    .vision-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
+    
+    .vision-top{ 
+    	display:flex; 
+    	align-items:center; 
+    	justify-content:space-between; 
+    	gap:10px; 
     }
+    
     .vision-kicker{
-      font-size:12px;
-      font-weight:900;
-      color:var(--primary);
-      letter-spacing:.08em;
-      text-transform:uppercase;
+      	font-size:12px; 
+      	font-weight:900; 
+      	color:var(--primary);
+      	letter-spacing:.08em; text-transform:uppercase;
     }
     .vision-chip{
-      font-size:11px;
-      color:#0f172a;
-      background:#fff;
-      border:1px solid #e2e8f0;
-      padding:6px 10px;
+      font-size:11px; color:#0f172a;
+      background:#fff; border:1px solid #e2e8f0;
+      padding:6px 10px; 
       border-radius:999px;
-    }
-    .vision-title{
-      margin:10px 0 8px;
-      font-size:20px;
-      letter-spacing:-0.02em;
-      color:#0f172a;
-    }
-    .vision-p{
-      margin:0;
-      color:#334155;
-      line-height:1.75;
-      font-size:14px;
-    }
-    .vision-list{
-      margin-top:14px;
-      border-top:1px solid rgba(226,232,240,0.9);
-      padding-top:14px;
-    }
-    .vision-list ul{
-      margin:0;
-      padding-left:18px;
-      color:#334155;
-      line-height:1.75;
-      font-size:14px;
-    }
-
-
-    /* -------------------------
-      TEAM MODAL
-    ------------------------- */
-    .modal{
-      position:fixed;
-      inset:0;
-      background:rgba(2,8,23,.62);
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:9999;
-    }
-    .modal.is-open{ display:flex; }
-    .modal-panel{
-      width:min(900px, 100%);
-      background:#fff;
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:0 24px 80px rgba(2, 8, 23, 0.35);
-      border:1px solid rgba(226, 232, 240, 0.9);
-    }
-    .modal-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:14px 16px;
-      border-bottom:1px solid #eef2f7;
-    }
-    .modal-name{
-      font-size:18px;
       font-weight:900;
-      color:#0f172a;
-      line-height:1.2;
     }
-    .modal-role{
-      margin-top:4px;
-      font-size:13px;
-      color:var(--primary);
-      font-weight:800;
+    
+    .vision-title{ 
+    	margin:10px 0 8px; 
+    	font-size:20px; 
+    	letter-spacing:-0.02em; 
+    	color:#0f172a; 
+    	font-weight:900; 
     }
-    .modal-close{
-      cursor:pointer;
-      width:40px;height:40px;
-      border-radius:12px;
-      border:1px solid #e2e8f0;
-      background:#fff;
-      font-size:18px;
-      font-weight:900;
-      color:#0f172a;
+    
+    .vision-p{ 
+    	margin:0; 
+    	color:#334155; 
+    	line-height:1.75; 
+    	font-size:14px; 
     }
-    .modal-body{
-      display:grid;
-      grid-template-columns:1fr 1.35fr;
-      gap:0;
-      align-items:stretch;
+    
+    .vision-list{ 
+    	margin-top:14px; 
+    	border-top:1px solid rgba(226,232,240,0.9); 
+    	padding-top:14px; 
     }
-    .modal-media{ background:#f1f5f9; }
-    .modal-media img{
-      width:100%;
-      height:100%;
-      min-height:320px;
-      object-fit:cover;
-    }
-    .modal-content{ padding:16px; }
-    .modal-bio{
-      color:#334155;
-      line-height:1.75;
-      font-size:14px;
-      max-height:420px;
-      overflow:auto;
-      padding-right:6px;
-      white-space:pre-line;
-    }
-    .modal-hint{
-      margin-top:12px;
-      font-size:12px;
-      color:#64748b;
+    
+    .vision-list ul{ 
+    	margin:0; 
+    	padding-left:18px; 
+    	color:#334155; 
+    	line-height:1.75; 
+    	font-size:14px; 
     }
 
-
-    /* -------------------------
-      PRICES
-    ------------------------- */
-    .prices p{
-      margin:0;
-      max-width:980px;
-      color:#111827;
-      font-size:14.5px;
-      line-height:1.8;
+    
+    /* GALLERY */
+    .gallery{ 
+    	padding:80px 0; 
     }
-
-    /* -------------------------
-      GALLERY
-    ------------------------- */
-    .gallery{ padding:80px 0; }
-    .gallery-title{
-      margin:0 0 26px;
-      font-size:34px;
-      font-weight:800;
-      color:#0b0f19;
+    
+    .gallery-title{ 
+    	margin:0 0 26px; 
+    	font-size:34px; 
+    	font-weight:900; 
+    	color:#0b0f19; 
     }
+    
     .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0, 1fr));
-      gap:18px;
-      align-items:stretch;
+      	display:grid;
+      	grid-template-columns:repeat(4, minmax(0, 1fr));
+      	gap:18px;
+      	align-items:stretch;
     }
+    
     .gallery-item{
-      margin:0;
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:#f3f4f6;
-      box-shadow:var(--shadow2);
-      cursor:pointer;
+      	margin:0; 
+      	border-radius:var(--radius);
+      	overflow:hidden;
+      	background:#f3f4f6;
+      	box-shadow:var(--shadow2);
+      	cursor:pointer;
     }
-    .gallery-item img{
-      width:100%;
-      height:210px;
-      object-fit:cover;
+    
+    .gallery-item img{ 
+    	width:100%; 
+    	height:210px; 
+    	object-fit:cover; 
     }
+    
     .gallery-caption{
-      padding:10px 12px;
-      background:#fff;
-      border-top:1px solid rgba(15,23,42,0.08);
-      font-size:12.5px;
-      line-height:1.5;
-      color:#475569;
+     	padding:10px 12px; 
+     	background:#fff;
+      	border-top:1px solid rgba(15,23,42,0.08);
+      	font-size:12.5px; 
+      	line-height:1.5; 
+      	color:#475569;
     }
 
-
-    /* -------------------------
-      GALLERY LIGHTBOX
-    ------------------------- */
+    
+    /* LIGHTBOX */
     .lightbox{
-      position:fixed;
-      inset:0;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      z-index:9997;
-      background:rgba(2,8,23,.78);
+      	position:fixed; inset:0;
+      	display:none;
+      	align-items:center; justify-content:center;
+      	padding:18px;
+      	z-index:9997;
+      	background:rgba(2,8,23,.78);
     }
-    .lightbox.is-open{ display:flex; }
+    
+    .lightbox.is-open{ 
+    	display:flex; 
+    }
+    
     .lightbox-panel{
-      width:min(980px, 100%);
-      background:#0b1220;
-      border-radius:var(--radius);
-      overflow:hidden;
-      box-shadow:0 24px 90px rgba(0,0,0,.55);
-      border:1px solid rgba(255,255,255,.10);
+      	width:min(980px, 100%);
+      	background:#0b1220;
+      	border-radius:var(--radius);
+      	overflow:hidden;
+      	box-shadow:0 24px 90px rgba(0,0,0,.55);
+      	border:1px solid rgba(255,255,255,.10);
     }
+    
     .lightbox-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding:12px 14px;
-      border-bottom:1px solid rgba(255,255,255,.10);
-      color:#eaf3ff;
+      	display:flex; 
+      	align-items:center; 
+      	justify-content:space-between;
+      	gap:12px;
+      	padding:12px 14px;
+      	border-bottom:1px solid rgba(255,255,255,.10);
+      	color:#eaf3ff;
     }
-    .lightbox-title{
-      font-weight:800;
-      font-size:13px;
-      opacity:.95;
+    
+    .lightbox-title{ 
+    	font-weight:900; 
+    	font-size:13px; 
+    	opacity:.95; 
     }
+    
     .lightbox-close{
-      width:42px;height:42px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
-      color:#eaf3ff;
-      cursor:pointer;
-      font-size:18px;
-      font-weight:900;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      	width:42px;
+      	height:42px; 
+      	border-radius:14px;
+      	border:1px solid rgba(255,255,255,.16);
+      	background:rgba(255,255,255,.06);
+      	color:#eaf3ff; 
+      	cursor:pointer;
+      	font-size:18px; 
+      	font-weight:900;
+      	display:flex; 
+      	align-items:center; 
+      	justify-content:center;
     }
-    .lightbox-body{
-      position:relative;
-      background:#0b1220;
+    
+    .lightbox-body{ 
+    	position:relative; 
+    	background:#0b1220; 
     }
+    
     .lightbox-img{
-      width:100%;
-      height:min(70vh, 620px);
-      object-fit:contain;
-      background:#0b1220;
-    }
+      	width:100%;
+      	height:min(70vh, 620px);
+      	object-fit:contain;
+      	background:#0b1220;
+    }	
+    
     .lightbox-caption{
-      padding:12px 14px;
-      color:rgba(234,243,255,.86);
-      font-size:13px;
-      line-height:1.6;
-      border-top:1px solid rgba(255,255,255,.10);
+      	padding:12px 14px;
+      	color:rgba(234,243,255,.86);
+      	font-size:13px; line-height:1.6;
+      	border-top:1px solid rgba(255,255,255,.10);
     }
+    
     .lb-nav{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:46px;height:46px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(255,255,255,.06);
-      color:#eaf3ff;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:20px;
-      font-weight:900;
-      user-select:none;
+      	position:absolute;
+      	top:50%; 
+      	transform:translateY(-50%);
+      	width:46px;
+      	height:46px;
+      	border-radius:16px;
+      	border:1px solid rgba(255,255,255,.16);
+      	background:rgba(255,255,255,.06);
+      	color:#eaf3ff;
+      	cursor:pointer;
+      	display:flex; 
+      	align-items:center; 
+      	justify-content:center;
+      	font-size:20px; 
+      	font-weight:900;
+      	user-select:none;
     }
-    .lb-prev{ left:12px; }
-    .lb-next{ right:12px; }
-    .lb-nav:hover{ background:rgba(255,255,255,.10); }
+    
+    .lb-prev{ 
+    	left:12px; 
+    }
+    
+    .lb-next{ 
+    	right:12px; 
+    }
+    
+    .lb-nav:hover{ 
+    	background:rgba(255,255,255,.10); 
+    }
 
 
-    /* -------------------------
-      CONTACT
-    ------------------------- */
+
+    /* CONTACT */
     .contact{
-      min-height:100vh;
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px 0;
+      	min-height:100vh;
+      	width:100%;
+      	display:flex; 
+      	align-items:center; 
+      	justify-content:center;
+      	padding:40px 0;
     }
+    
     .contact-wrap{
-      width:100%;
-      max-width:900px;
-      margin:0 auto;
-      padding:0 20px;
-      display:flex;
-      flex-direction:column;
+      	width:100%;
+      	max-width:900px;
+      	margin:0 auto;
+      	padding:0 20px;
+      	display:flex; 
+      	flex-direction:column;
     }
+    
     .contact-title{
-      font-size:36px;
-      font-weight:600;
-      margin:0 0 30px 0;
-      color:#0f172a;
+     	font-size:36px;
+      	font-weight:700;
+      	margin:0 0 30px 0;
+      	color:#0f172a;
     }
-    .contact-form{
-      width:100%;
-      display:flex;
-      flex-direction:column;
-      gap:20px;
+    
+    .contact-form{ 
+    	width:100%; 
+    	display:flex; 
+    	flex-direction:column; 
+    	gap:20px; 
     }
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
+    
+    .field{ 
+    	display:flex; 
+    	flex-direction:column; 
+    	gap:6px; 
     }
-    .field label{
-      font-size:14px;
-      font-weight:500;
-      color:#0f172a;
+    
+    .field label{ 
+    	font-size:14px; 
+    	font-weight:700; 
+    	color:#0f172a; 
     }
-    .field input,
-    .field textarea{
-      width:100%;
-      padding:14px 16px;
-      border-radius:12px;
-      border:1px solid #cbd5e1;
-      font-size:14px;
-      outline:none;
+    
+    .field input, .field textarea{
+    	width:100%;
+      	padding:14px 16px;
+      	border-radius:12px;
+      	border:1px solid #cbd5e1;
+      	font-size:14px;
+      	outline:none;
     }
-    .field textarea{ resize:none; }
+    
+    .field textarea{ 
+    	resize:none; 
+    }
+    
     .btn{
-      margin-top:10px;
-      padding:16px;
-      border-radius:14px;
-      border:none;
-      background:var(--primary);
-      color:#fff;
-      font-size:15px;
-      font-weight:600;
-      cursor:pointer;
-    }
-    .privacy{
-      font-size:12px;
-      color:#64748b;
-      margin-top:10px;
+      	margin-top:10px;
+      	padding:16px;
+      	border-radius:14px;
+      	border:none;
+      	background:var(--primary);
+      	color:#fff;
+      	font-size:15px;
+      	font-weight:800;
+      	cursor:pointer;
+    }	
+    
+    .privacy{ 
+    	font-size:12px; 
+    	color:#64748b; 
+    	margin-top:10px; 
     }
 
-
-    /* -------------------------
-      RESPONSIVE
-    ------------------------- */
+    
+    /* Responsive */
     @media (max-width: 980px){
-      .hero-title{ font-size:44px; }
-      .gallery-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
-      .modal-body{ grid-template-columns:1fr; }
-      .modal-media img{ min-height:240px; }
+    	.gallery-grid{ 
+    		grid-template-columns:repeat(2, minmax(0, 1fr)); 
+    	}
     }
+    
     @media (max-width: 720px){
-      .nav{ display:none; }
-      .menu-btn{ display:inline-flex; }
-      .brand{ min-width:auto; }
-      .header-cta{ display:none; }
+     	.nav{ 
+     		display:none; 
+     	}
+      	.menu-btn{ 
+      		display:inline-flex; 
+      	}
+      	.brand{ 
+      		min-width:auto; 
+      	}
+      	.header-cta{ 
+      		display:none; 
+      	}
+      	.hero-btn{ 
+      		width:100%; 
+      	}
     }
+    
     @media (max-width: 520px){
-      .hero-title{ font-size:38px; }
-      .gallery-grid{ grid-template-columns:1fr; }
+      	.gallery-grid{ 
+      		grid-template-columns:1fr; 
+      	}
+      	.hero-tagline{ 
+      		font-size:16px; 
+      	}
+    }
+
+    
+    /* Accessibilità */
+    @media (prefers-reduced-motion: reduce){
+      	.hero-logo, .hero-tagline, .hero-actions, .hero-pills, .hero-scroll{
+         	animation:none !important;
+      	}
+        .mouse::after{ 
+        	animation:none !important; 
+        }
+        .hero-btn, .hero-pill{ 
+        	transition:none !important; 
+        }
     }
   </style>
 </head>
 
-
-
 <body>
 
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
+ <!-- HEADER -->
+	<header class="site-header" id="top">
+	  <div class="container">
+	    <div class="header-inner">
+	
+	      <a class="brand" href="#home" aria-label="Vai a Home">
+  				<img class="brand-logo" src="images/logo/logo_droni_trasparente_sx.png" alt="">
+	        <span class="brand-name">STRATIA</span>
+	      </a>
+	
+	      <nav class="nav" aria-label="Menu principale">
+	        <div class="nav-links" id="navLinks">
+	          <a href="#home" data-section="home">Home</a>
+	          <a href="#chi-siamo" data-section="chi-siamo">Chi siamo</a>
+	          <a href="#servizi" data-section="servizi">Servizi</a>
+	          <a href="#team" data-section="team">Team</a>
+	          <a href="#galleria" data-section="galleria">Galleria</a>
+	          <a href="#contatti" data-section="contatti">Contatti</a>
+	        </div>
+	      </nav>
+	
+	      <div class="header-right">
+	        <a class="header-cta" href="#contatti">Contatti</a>
+	
+	        <button id="menuBtn" class="menu-btn" type="button"
+	          aria-label="Apri menu" aria-controls="mobileDrawer" aria-expanded="false">
+	          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+	            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+	            <line x1="3" y1="6" x2="21" y2="6"></line>
+	            <line x1="3" y1="12" x2="21" y2="12"></line>
+	            <line x1="3" y1="18" x2="21" y2="18"></line>
+	          </svg>
+	        </button>
+	      </div>
+	
+	    </div>
+	  </div>
+	</header>
 
-        <a class="brand" href="#home" aria-label="Vai a Home">
-          <div class="brand-badge">S</div>
-          <span class="brand-name">Stratia</span>
-        </a>
 
-        <nav class="nav" aria-label="Menu principale">
-          <div class="nav-links" id="navLinks">
-            <a href="#home" data-section="home">Home</a>
-            <a href="#chi-siamo" data-section="chi-siamo">Chi siamo</a>
-            <a href="#servizi" data-section="servizi">Servizi</a>
-            <a href="#team" data-section="team">Team</a>
-            <a href="#prezzi" data-section="prezzi">Prezzi</a>
-            <a href="#galleria" data-section="galleria">Galleria</a>
-            <a href="#contatti" data-section="contatti">Contatti</a>
-          </div>
-        </nav>
-
-        <div class="header-right">
-          <a class="header-cta" href="#contatti">Contatti</a>
-
-          <button id="menuBtn" class="menu-btn" type="button" aria-label="Apri menu" aria-controls="mobileDrawer" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EAF3FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </header>
-
+  
   <!-- MOBILE DRAWER -->
-  <div id="mobileDrawer" class="drawer" aria-hidden="true">
-    <div class="drawer-backdrop" data-close="true"></div>
-
-    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu mobile">
-      <div class="drawer-head">
-        <a class="drawer-brand" href="#home" data-link="true" aria-label="Vai a Home">
-          <span class="brand-badge">S</span>
-          <span class="brand-name">Stratia</span>
-        </a>
-        <button id="drawerClose" class="drawer-close" type="button" aria-label="Chiudi menu">×</button>
-      </div>
-
-      <div class="drawer-body">
-        <nav class="drawer-links" id="drawerLinks" aria-label="Menu mobile link">
-          <a class="drawer-link" href="#home" data-section="home" data-link="true"><span>Home</span><span class="chev">›</span></a>
-          <a class="drawer-link" href="#chi-siamo" data-section="chi-siamo" data-link="true"><span>Chi siamo</span><span class="chev">›</span></a>
-          <a class="drawer-link" href="#servizi" data-section="servizi" data-link="true"><span>Servizi</span><span class="chev">›</span></a>
-          <a class="drawer-link" href="#team" data-section="team" data-link="true"><span>Team</span><span class="chev">›</span></a>
-          <a class="drawer-link" href="#prezzi" data-section="prezzi" data-link="true"><span>Prezzi</span><span class="chev">›</span></a>
-          <a class="drawer-link" href="#galleria" data-section="galleria" data-link="true"><span>Galleria</span><span class="chev">›</span></a>
-          <a class="drawer-link" href="#contatti" data-section="contatti" data-link="true"><span>Contatti</span><span class="chev">›</span></a>
-        </nav>
-
-        <a class="drawer-cta" href="#contatti" data-link="true">Contattaci</a>
-
-        <div class="drawer-note">
-          Premi <b>ESC</b> o clicca fuori per chiudere.
-        </div>
-      </div>
-    </aside>
-  </div>
-
+  	<div id="mobileDrawer" class="drawer" aria-hidden="true">
+    	<div class="drawer-backdrop" data-close="true"></div>
+    	<aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      		<div class="drawer-head">
+        		<a class="drawer-brand" href="#home" data-link="true" aria-label="Vai a Home">
+          			<span class="brand-badge">S</span>
+          			<span class="brand-name">STRATIA</span>
+       	 		</a>
+        		<button id="drawerClose" class="drawer-close" type="button" aria-label="Chiudi menu">×</button>
+      		</div>
+      		<div class="drawer-body">
+	        	<nav class="drawer-links" id="drawerLinks" aria-label="Menu mobile link">
+	          		<a class="drawer-link" href="#home" data-section="home" data-link="true">
+	          			<span>
+	          				Home
+	          			</span>
+	          			<span class="chev">
+	          				›
+	          			</span>
+	          		</a>
+	          		<a class="drawer-link" href="#chi-siamo" data-section="chi-siamo" data-link="true">
+	          			<span>
+	          				Chi siamo
+	          			</span>
+	          			<span class="chev">
+	          				›
+	          			</span>
+	          		</a>
+	          		<a class="drawer-link" href="#servizi" data-section="servizi" data-link="true">
+	          			<span>
+	          				Servizi
+	          			</span>
+	          			<span class="chev">
+	          				›
+	          			</span>
+	          		</a>
+	          		<a class="drawer-link" href="#team" data-section="team" data-link="true">
+	          			<span>
+	          				Team
+	          			</span>
+	          			<span class="chev">
+	          				›
+	          			</span>
+	          		</a>
+	          		<a class="drawer-link" href="#galleria" data-section="galleria" data-link="true">
+	          			<span>
+	          				Galleria
+	          			</span>
+	          			<span class="chev">
+	          				›
+	          			</span>
+	          		</a>
+	          		<a class="drawer-link" href="#contatti" data-section="contatti" data-link="true">
+	          			<span>
+	          				Contatti
+	          			</span>
+	          			<span class="chev">
+	          				›
+	          			</span>
+	          		</a>
+	        	</nav>
+        		<a class="drawer-cta" href="#contatti" data-link="true">
+        			Contattaci
+        		</a>
+        		<div class="drawer-note">
+          			Premi <b>ESC</b> o clicca fuori per chiudere.
+        		</div>
+      		</div>
+    	</aside>
+  	</div>
+  
   <main id="home">
 
-
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <h1 class="hero-title">Stratia</h1>
-        <div class="hero-sub">
-          <div>Aerial &amp; Territorial Intelligence</div>
-          <div>Ingegneria per comprendere il territorio</div>
-        </div>
-      </div>
+  	<section class="hero" aria-label="Hero Stratia">
+    	<div class="hero-bg" aria-hidden="true"></div>
+      	<div class="hero-overlay" aria-hidden="true"></div>
+      	<div class="hero-grid" aria-hidden="true"></div>
+      	<div class="hero-inner">
+        	<img class="hero-logo" src="images/logo/logo-transparent.png" alt="Logo STRATIA">    	
+        	<div class="hero-tagline">Ingegneria per comprendere il territorio</div>
+        	<div class="hero-actions">
+          		<a class="hero-btn primary" href="#contatti">
+          			Contattaci
+          		</a>
+          		<a class="hero-btn ghost" href="#servizi">
+          			Scopri i servizi
+          		</a>
+       		 </div>
+        	 <div class="hero-pills" role="list" aria-label="Punti di forza">
+          	 	<span class="hero-pill" role="listitem">
+          	 		Ispezioni
+          	 	</span>
+          		<span class="hero-pill" role="listitem">
+          			Fotogrammetria
+          		</span>
+          		<span class="hero-pill" role="listitem">
+          			Rilievi
+          		</span>
+          		<span class="hero-pill" role="listitem">
+          			Report tecnici
+          		</span>
+        	 </div>
+        	<a class="hero-scroll" href="#servizi" aria-label="Scorri ai servizi">
+          		<span class="mouse" aria-hidden="true"></span>
+          		<span>Scorri</span>
+        	</a>
+      	</div>
     </section>
 
-
-
+    
     <!-- CHI SIAMO -->
     <section id="chi-siamo" class="about">
-      <div class="container">
-        <div class="about-grid">
-
-          <div class="about-left">
-            <div class="kicker">CHI SIAMO</div>
-            <h2 class="about-title">Ingegneria per comprendere il territorio</h2>
-            <div class="about-divider"></div>
-
-            <p class="about-p">
-              <strong>STRATIA</strong> è un laboratorio di <strong>analisi aerea e territoriale</strong>.
-              Leggiamo lo spazio come <strong>sistema dinamico</strong>: relazioni, traiettorie e trasformazioni nel tempo.
-            </p>
-
-            <p class="about-p">
-              Applichiamo un approccio ingegneristico alla raccolta e alla lettura del dato,
-              trasformando l’osservazione dall’alto in <strong>comprensione operativa</strong>.
-              Per noi il valore non è nell’immagine in sé, ma nella capacità di interpretare ciò che accade dall’alto
-              per supportare decisioni informate.
-            </p>
-
-            <p class="about-p small">
-              Metodo, rigore e qualità del dato guidano ogni attività:
-              dall’ispezione tecnica alla fotogrammetria, fino alla restituzione e valorizzazione del contesto.
-            </p>
-          </div>
-
-          <div class="about-right">
-            <div class="info-card">
-              <span class="pill">APPROCCIO</span>
-              <ul>
-                <li><strong>Lettura sistemica</strong> delle dinamiche territoriali</li>
-                <li><strong>Acquisizione mirata</strong> e interpretazione del dato</li>
-                <li><strong>Sicurezza operativa</strong> e procedure</li>
-              </ul>
-            </div>
-
-            <div class="info-card">
-              <span class="pill">TEAM</span>
-              <ul>
-                <li>Ingegneri</li>
-                <li>Piloti certificati</li>
-                <li>Fotografi professionisti</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
+    	<div class="container">
+        	<div class="about-grid">
+          		<div class="about-left">
+            		<div class="kicker">
+            			CHI SIAMO
+            		</div>
+            		<h2 class="about-title">
+            			Ingegneria per comprendere il territorio
+            		</h2>
+            		<div class="about-divider"></div>
+            		<p class="about-p">
+              			<strong>STRATIA</strong> è un laboratorio di <strong>analisi aerea e territoriale</strong>.
+              			Leggiamo lo spazio come <strong>sistema dinamico</strong>: relazioni, traiettorie e trasformazioni nel tempo.
+            		</p>
+            		<p class="about-p">
+              			Applichiamo un approccio ingegneristico alla raccolta e alla lettura del dato,
+              			trasformando l’osservazione dall’alto in <strong>comprensione operativa</strong>.
+              			Per noi il valore non è nell’immagine in sé, ma nella capacità di interpretare ciò che accade dall’alto
+              			per supportare decisioni informate.
+            		</p>
+            		<p class="about-p small">
+              			Metodo, rigore e qualità del dato guidano ogni attività:
+              			dall’ispezione tecnica alla fotogrammetria, fino alla restituzione e valorizzazione del contesto.
+            		</p>
+          		</div>
+          		<div class="about-right">
+            		<div class="info-card">
+              			<span class="pill">
+              				APPROCCIO
+              			</span>
+              			<ul>
+	                		<li>
+	                			<strong>Lettura sistemica</strong> delle dinamiche territoriali
+	                		</li>
+	                		<li>
+	                			<strong>Acquisizione mirata</strong> e interpretazione del dato
+	                		</li>
+	                		<li>
+	                			<strong>Sicurezza operativa</strong> e procedure
+	                		</li>
+              			</ul>
+            		</div>
+            		<div class="info-card">
+              			<span class="pill">
+              				TEAM
+              			</span>
+              			<ul>
+                			<li>
+                				Ingegneri
+                			</li>
+                			<li>
+                				Piloti certificati
+                			</li>
+                			<li>
+                				Fotografi professionisti
+                			</li>
+              			</ul>
+            		</div>
+          		</div>
+        	</div>
+      	</div>
     </section>
 
-
+    
     <!-- SERVIZI -->
     <section id="servizi" class="section">
-      <div class="container">
-        <h2 class="h2">Servizi</h2>
-
-        <div class="services-grid">
-          <div class="service-card">
-            <h3>Ispezioni edili e infrastrutturali</h3>
-            <p>Ispezioni aeree non invasive per la valutazione tecnica di edifici e infrastrutture.</p>
-          </div>
-
-          <div class="service-card">
-            <h3>Ispezioni navali e su draghe</h3>
-            <p>Documentazione tecnica e monitoraggio operativo in ambito portuale e costiero.</p>
-          </div>
-
-          <div class="service-card">
-            <h3>Fotogrammetria</h3>
-            <p>Ortofoto e modelli 3D a supporto di analisi tecniche e progettuali.</p>
-          </div>
-
-          <div class="service-card">
-            <h3>Rilievi del territorio</h3>
-            <p>Acquisizione dati e lettura preliminare del contesto territoriale.</p>
-          </div>
-
-          <div class="service-card">
-            <h3>Valorizzazione del territorio</h3>
-            <p>Restituzione visiva consapevole del contesto e delle sue relazioni.</p>
-          </div>
-
-          <div class="service-card">
-            <h3>Eventi e storytelling tecnico</h3>
-            <p>Documentazione professionale con linguaggio sobrio e coerente.</p>
-          </div>
-        </div>
-      </div>
+    	<div class="container">
+        	<h2 class="h2">
+        		Servizi
+        	</h2>
+        	<div class="services-grid">
+        		<a class="service-card bg-edili" href="servizi/ispezioni_edili.html">
+        			<div>
+        				<h3>
+        					Ispezioni edili e infrastrutturali
+        				</h3>
+        				<p>
+        					Ispezioni aeree non invasive per la valutazione tecnica di edifici e infrastrutture.
+        				</p>
+        			</div>
+        			<div style="display:flex; gap:8px; flex-wrap:wrap;">
+        				<span class="service-pill">
+        					Non invasivo
+        				</span>
+            			<span class="service-pill">
+            				Report &amp; video
+            			</span>
+        			</div>
+        		</a>
+          		<a class="service-card bg-navali" href="servizi/ispezioni_navali.html">
+            		<div>
+              			<h3>
+              				Ispezioni navali e su draghe
+              			</h3>
+              			<p>
+              				Documentazione tecnica e monitoraggio operativo in ambito portuale e costiero.
+              			</p>
+            		</div>
+            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
+              			<span class="service-pill">
+              				Portuale
+              			</span>
+              			<span class="service-pill">
+              				Aree critiche
+              			</span>
+            		</div>
+          		</a>
+          		<a class="service-card bg-fotogrammetria" href="servizi/fotogrammetria.html">
+            		<div>
+              			<h3>
+              				Fotogrammetria
+              			</h3>
+              			<p>
+              				Ortofoto e modelli 3D a supporto di analisi tecniche e progettuali.
+              			</p>
+            		</div>
+            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
+              			<span class="service-pill">
+              				Ortofoto
+              			</span>
+              			<span class="service-pill">
+              				Modelli 3D
+              			</span>
+            		</div>
+          		</a>
+          		<a class="service-card bg-rilievi" href="servizi/rilievi_territorio.html">
+            		<div>
+              			<h3>
+              				Rilievi del territorio
+              			</h3>
+              			<p>
+              				Acquisizione dati e lettura preliminare del contesto territoriale.
+              			</p>
+            		</div>
+            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
+              			<span class="service-pill">
+              				Contesto
+              			</span>
+              			<span class="service-pill">
+              				Decisionale
+              			</span>
+            		</div>
+          		</a>
+          		<a class="service-card bg-valorizzazione" href="servizi/valorizzazione_territorio.html">
+            		<div>
+              			<h3>
+              				Valorizzazione del territorio
+              			</h3>
+              			<p>
+              				Restituzione visiva consapevole del contesto e delle sue relazioni.
+              			</p>
+            		</div>
+            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
+              			<span class="service-pill">
+              				Istituzionale
+              			</span>
+              			<span class="service-pill">
+              				Comunicazione
+              			</span>
+            		</div>
+          		</a>
+          		<a class="service-card bg-eventi" href="servizi/eventi.html">
+            		<div>
+              			<h3>
+              				Eventi e storytelling tecnico
+              			</h3>
+              			<p>
+              				Documentazione professionale con linguaggio sobrio e coerente.
+              			</p>
+            		</div>
+            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
+              			<span class="service-pill">
+              				Eventi
+              			</span>
+              			<span class="service-pill">
+              				Aziendale
+              			</span>
+            		</div>
+          		</a>
+        	</div>
+      	</div>
     </section>
-
 
 
     <!-- TEAM -->
     <section id="team" class="section team">
-      <div class="team-wrap">
-
-        <div class="team-head">
-          <div style="max-width:760px;">
-            <h2>Team</h2>
-            <p>
-              STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio di lettura del reale dall’alto, con metodo, responsabilità e profondità.
-            </p>
-          </div>
-
-          <div class="team-hint">
-            <span>Suggerimento:</span>
-            <span>clicca “Leggi tutto”</span>
-          </div>
-        </div>
-
-        <div class="team-grid">
-
-          <!-- Fernando -->
-          <article class="team-card">
-            <div class="team-media">
-              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80" alt="Fernando Junior Cocina">
-            </div>
-
-            <div class="team-card-top">
-              <div class="team-card-topline">
-                <div>
-                  <div class="team-name">Fernando Junior Cocina</div>
-                  <div class="team-role">Ingegnere Aerospaziale | Flight Control Systems</div>
-                </div>
-                <span class="tag founder">Founder</span>
-              </div>
-            </div>
-
-            <div class="team-card-body">
-              <p>
-                Ingegnere aerospaziale con esperienza internazionale su sistemi di controllo del volo e programmi di nuova generazione:
-                dai droni agli eVTOL, fino a piattaforme aeronautiche critiche.
-              </p>
-
-              <div class="team-actions">
-                <a class="team-readmore" href="#"
-                   data-name="Fernando Junior Cocina"
-                   data-role="Ingegnere Aerospaziale | Flight Control Systems | Aerial & Territorial Intelligence"
-                   data-img="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80"
-                   data-bio="Ingegnere aerospaziale con una traiettoria professionale costruita sull’innovazione e sulla complessità dei sistemi di volo. Laureato presso l’Università degli Studi di Napoli Federico II, ha sviluppato un percorso internazionale operando su programmi aeronautici e aerospaziali di nuova generazione.\n\nLa sua esperienza nasce nel settore dei droni e dei sistemi autonomi.\n\nAttualmente opera come Flight Control System Engineer sul programma Eurofighter Typhoon.\n\nFondatore di STRATIA, porta nel progetto un approccio che va oltre la semplice acquisizione visiva: ogni attività è concepita come lettura del territorio e delle strutture attraverso il dato."
-                   onclick="openTeamModal(this); return false;">Leggi tutto</a>
-
-                <a class="linkedin-btn" href="https://www.linkedin.com/in/fernandojuniorcocina/" target="_blank" rel="noopener" aria-label="LinkedIn di Fernando Junior Cocina">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Giulio -->
-          <article class="team-card">
-            <div class="team-media">
-              <img src="https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?auto=format&fit=crop&w=1200&q=80" alt="Giulio Cocina">
-            </div>
-
-            <div class="team-card-top">
-              <div class="team-card-topline">
-                <div>
-                  <div class="team-name">Giulio Cocina</div>
-                  <div class="team-role">Informatico | Sviluppo Software</div>
-                </div>
-                <span class="tag">Tech</span>
-              </div>
-            </div>
-
-            <div class="team-card-body">
-              <p>Sviluppo e programmazione orientati ad affidabilità e continuità operativa. In STRATIA connette dato, sistema e infrastruttura digitale.</p>
-
-              <div class="team-actions">
-                <a class="team-readmore" href="#"
-                   data-name="Giulio Cocina"
-                   data-role="Informatico | Sviluppo Software e Sistemi Digitali"
-                   data-img="https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?auto=format&fit=crop&w=1600&q=80"
-                   data-bio="Informatico laureato con una solida base nello sviluppo software e nelle tecnologie digitali applicate a contesti reali. All’interno di STRATIA rappresenta il collegamento tra dato, sistema e infrastruttura digitale."
-                   onclick="openTeamModal(this); return false;">Leggi tutto</a>
-
-                <a class="linkedin-btn" href="https://www.linkedin.com/in/giulio-cocina-80729b2b5/" target="_blank" rel="noopener" aria-label="LinkedIn di Giulio Cocina">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Carlo -->
-          <article class="team-card">
-            <div class="team-media">
-              <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=1200&q=80" alt="Carlo Alberti">
-            </div>
-
-            <div class="team-card-top">
-              <div class="team-card-topline">
-                <div>
-                  <div class="team-name">Carlo Alberti</div>
-                  <div class="team-role">Informatico | Supporto tecnico</div>
-                </div>
-                <span class="tag support">Support</span>
-              </div>
-            </div>
-
-            <div class="team-card-body">
-              <p>Supporto e soluzioni digitali per i servizi operativi: organizzazione dati, efficienza dei processi e strumenti pratici.</p>
-
-              <div class="team-actions">
-                <a class="team-readmore" href="#"
-                   data-name="Carlo Alberti"
-                   data-role="Informatico | Supporto tecnico e soluzioni digitali"
-                   data-img="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=1600&q=80"
-                   data-bio="Informatico con interesse per le tecnologie software e per l’applicazione pratica degli strumenti digitali in contesti tecnici. In STRATIA contribuisce allo sviluppo e al supporto delle soluzioni informatiche che accompagnano i servizi operativi."
-                   onclick="openTeamModal(this); return false;">Leggi tutto</a>
-
-                <a class="linkedin-btn" href="https://www.linkedin.com/in/carlo-alberti-293b1a15a/" target="_blank" rel="noopener" aria-label="LinkedIn di Carlo Alberti">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Davide -->
-          <article class="team-card">
-            <div class="team-media">
-              <img src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1200&q=80" alt="Davide">
-            </div>
-
-            <div class="team-card-top">
-              <div class="team-card-topline">
-                <div>
-                  <div class="team-name">Davide</div>
-                  <div class="team-role">Fotografo | Contenuti visivi</div>
-                </div>
-                <span class="tag visual">Visual</span>
-              </div>
-            </div>
-
-            <div class="team-card-body">
-              <p>Produzione fotografica e riprese aeree: dall’acquisizione tecnica alla narrazione visiva, con attenzione alla qualità e al contesto.</p>
-
-              <div class="team-actions">
-                <a class="team-readmore" href="#"
-                   data-name="Davide"
-                   data-role="Fotografo | Contenuti visivi e riprese aeree"
-                   data-img="https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1600&q=80"
-                   data-bio="Fotografo con una forte attenzione alla qualità dell’immagine e alla costruzione di contenuti visivi coerenti e significativi. In STRATIA si occupa della produzione fotografica e delle riprese aeree."
-                   onclick="openTeamModal(this); return false;">Leggi tutto</a>
-
-                <a class="linkedin-btn" href="#" aria-label="LinkedIn di Davide">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Visione team -->
-          <article class="team-card team-vision">
-            <div class="vision-inner">
-              <div class="vision-top">
-                <div class="vision-kicker">Visione</div>
-                <span class="vision-chip">STRATIA</span>
-              </div>
-
-              <h3 class="vision-title">Ingegneria, dato e visione</h3>
-
-              <p class="vision-p">
-                Ogni progetto è una lettura del reale dall’alto: non solo immagini, ma informazione strutturata, metodo e responsabilità.
-              </p>
-
-              <div class="vision-list">
-                <ul>
-                  <li><b>Metodo</b>: procedure, tracciabilità, coerenza.</li>
-                  <li><b>Sicurezza</b>: attenzione a vincoli e contesto operativo.</li>
-                  <li><b>Qualità</b>: output chiari, utili e verificabili.</li>
-                </ul>
-              </div>
-
-              <div style="margin-top:auto; padding-top:18px;">
-                <a class="team-readmore" href="#"
-                   data-name="Visione STRATIA"
-                   data-role="Lettura del territorio attraverso il dato"
-                   data-img="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80"
-                   data-bio="STRATIA nasce dall’incontro tra ingegneria, dato e visione.\n\nOgni progetto è un esercizio di lettura del reale dall’alto, con metodo, responsabilità e profondità.\n\nIl team integra competenze tecniche e sensibilità visiva per trasformare l’acquisizione in informazione: chiara, verificabile e utile per decisioni e comunicazione."
-                   onclick="openTeamModal(this); return false;">Leggi tutto</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <!-- team modal -->
-      <div id="teamModal" class="modal" aria-hidden="true" onclick="closeTeamModal(event)">
-        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="teamModalName" aria-describedby="teamModalBio">
-          <div class="modal-header">
-            <div>
-              <div id="teamModalName" class="modal-name">Nome</div>
-              <div id="teamModalRole" class="modal-role">Ruolo</div>
-            </div>
-            <button class="modal-close" type="button" onclick="forceCloseTeamModal()" aria-label="Chiudi">×</button>
-          </div>
-
-          <div class="modal-body">
-            <div class="modal-media">
-              <img id="teamModalImg" src="" alt="">
-            </div>
-
-            <div class="modal-content">
-              <div id="teamModalBio" class="modal-bio"></div>
-              <div class="modal-hint">Premi <b>ESC</b> o clicca fuori per chiudere.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    	<div class="team-wrap">
+        	<div class="team-head">
+          		<div style="max-width:760px;">
+            		<h2>
+            			Team
+            		</h2>
+            		<p>
+              			STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio di lettura del reale dall’alto, con metodo, responsabilità e profondità.
+            		</p>
+          		</div>
+          		<div class="team-hint">
+            		<span>
+            			Suggerimento:
+            		</span>
+            		<span>
+            			clicca “Leggi tutto”
+            		</span>
+          		</div>
+        	</div>
+        	<div class="team-grid">
+          	<!-- Fernando -->
+          		<article class="team-card">
+            		<div class="team-media">
+              			<img alt="Fernando Junior Cocina">
+            		</div>
+            		<div class="team-card-top">
+              			<div class="team-card-topline">
+                			<div>
+                  				<div class="team-name">
+                  					Fernando Junior Cocina
+                  				</div>
+                  				<div class="team-role">
+                  					Ingegnere Aerospaziale | Flight Control Systems
+                  				</div>
+                			</div>
+                			<span class="tag founder">
+                				Founder
+                			</span>
+              			</div>
+            		</div>
+            		<div class="team-card-body">
+              			<p>
+                			Ingegnere aerospaziale con esperienza internazionale su sistemi di controllo del volo e programmi di nuova generazione:
+                			dai droni agli eVTOL, fino a piattaforme aeronautiche critiche.
+              			</p>
+              			<div class="team-actions">
+                			<a class="team-readmore" href="team/fernando.html">
+                				Leggi tutto
+                			</a>
+                			<a class="linkedin-btn" href="https://www.linkedin.com/in/fernandojuniorcocina/" target="_blank" rel="noopener" aria-label="LinkedIn di Fernando Junior Cocina">
+                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
+                  				</svg>
+                			</a>
+              			</div>
+            		</div>
+          		</article>
+          		<!-- Giulio -->
+          		<article class="team-card">
+            		<div class="team-media">
+              			<img alt="Giulio Cocina">
+            		</div>
+            		<div class="team-card-top">
+              			<div class="team-card-topline">
+                			<div>
+                 	 			<div class="team-name">
+                 	 				Giulio Cocina
+                 	 			</div>
+                  				<div class="team-role">
+                  					Informatico | Sviluppo Software
+                  				</div>
+                			</div>
+                			<span class="tag">
+                				Tech
+                			</span>
+              			</div>
+            		</div>
+            		<div class="team-card-body">
+              			<p>
+                			Sviluppo e programmazione orientati ad affidabilità e continuità operativa. In STRATIA connette dato, sistema e infrastruttura digitale.
+              			</p>
+              			<div class="team-actions">
+                			<a class="team-readmore" href="team/giulio.html">
+                				Leggi tutto
+                			</a>
+                			<a class="linkedin-btn" href="https://www.linkedin.com/in/giulio-cocina-80729b2b5/" target="_blank" rel="noopener" aria-label="LinkedIn di Giulio Cocina">
+                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
+                  				</svg>
+                			</a>
+              			</div>
+            		</div>
+          		</article>
+          		<!-- Carlo -->
+          		<article class="team-card">
+            		<div class="team-media">
+              			<img alt="Carlo Alberti">
+            		</div>
+            		<div class="team-card-top">
+              			<div class="team-card-topline">
+                			<div>
+                  				<div class="team-name">
+                  					Carlo Alberti
+                  				</div>
+                  				<div class="team-role">
+                  					Informatico | Supporto tecnico
+                  				</div>
+                			</div>
+                			<span class="tag support">
+                				Support
+                			</span>
+              			</div>
+            		</div>
+            		<div class="team-card-body">
+              			<p>
+                			Supporto e soluzioni digitali per i servizi operativi: organizzazione dati, efficienza dei processi e strumenti pratici.
+              			</p>
+              			<div class="team-actions">
+                			<a class="team-readmore" href="team/carlo.html">
+                				Leggi tutto
+                			</a>
+                			<a class="linkedin-btn" href="https://www.linkedin.com/in/carlo-alberti-293b1a15a/" target="_blank" rel="noopener" aria-label="LinkedIn di Carlo Alberti">
+                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
+                  				</svg>
+                			</a>
+              			</div>
+            		</div>
+          		</article>
+          		<!-- Davide -->
+          		<article class="team-card">
+            		<div class="team-media">
+              			<img alt="Davide">
+            		</div>
+            		<div class="team-card-top">
+              			<div class="team-card-topline">
+                			<div>
+                  				<div class="team-name">
+                  					Davibnde
+                  				</div>
+                  				<div class="team-role">
+                  					Fotografo | Contenuti visivi
+                  				</div>
+                			</div>
+                			<span class="tag visual">
+                				Visual
+                			</span>
+              			</div>
+            		</div>
+            		<div class="team-card-body">
+              			<p>
+                			Produzione fotografica e riprese aeree: dall’acquisizione tecnica alla narrazione visiva, con attenzione alla qualità e al contesto.
+             	 		</p>
+              			<div class="team-actions">
+                			<a class="team-readmore" href="team/davide.html">
+                				Leggi tutto
+                			</a>
+                			<a class="linkedin-btn" href="#" aria-label="LinkedIn di Davide">
+                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
+                  				</svg>
+                			</a>
+              			</div>
+            		</div>
+          		</article>
+          		<!-- Renato -->
+          		<article class="team-card">
+            		<div class="team-media">
+              			<img alt="Renato Ceccarelli">
+            		</div>
+            		<div class="team-card-top">
+              			<div class="team-card-topline">
+                			<div>
+                  				<div class="team-name">
+                  					Renato Ceccarelli
+                  				</div>
+                  				<div class="team-role">
+                  					Ingegnere navale | Ispezioni subacquee
+                  				</div>
+                			</div>
+                			<span class="tag support">
+                				Support
+                			</span>
+              			</div>
+            		</div>
+            		<div class="team-card-body">
+              			<p>
+                			Supporto alle attività operative con competenze di ingegneria navale: ispezioni con droni subacquei, documentazione tecnica e monitoraggio in contesti portuali e marittimi.
+              			</p>
+              			<div class="team-actions">
+                			<a class="team-readmore" href="team/renato.html">
+                				Leggi tutto
+                			</a>
+                			<a class="linkedin-btn" href="https://www.linkedin.com/in/carlo-alberti-293b1a15a/" target="_blank" rel="noopener" aria-label="LinkedIn di Carlo Alberti">
+                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
+                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
+                  				</svg>
+                			</a>
+              			</div>
+            		</div>
+          		</article>
+          		<!-- Visione -->
+          		<article class="team-card team-vision">
+            		<div class="vision-inner">
+              			<div class="vision-top">
+                			<div class="vision-kicker">
+                				Visione
+                			</div>
+                			<span class="vision-chip">
+                				STRATIA
+                			</span>
+              			</div>
+              			<h3 class="vision-title">
+              				Ingegneria, dato e visione
+              			</h3>
+              			<p class="vision-p">
+                			Ogni progetto è una lettura del reale dall’alto: non solo immagini, ma informazione strutturata, metodo e responsabilità.
+              			</p>
+              			<div class="vision-list">
+                			<ul>
+                  				<li><b>Metodo</b>: procedure, tracciabilità, coerenza.</li>
+                  				<li><b>Sicurezza</b>: attenzione a vincoli e contesto operativo.</li>
+                  				<li><b>Qualità</b>: output chiari, utili e verificabili.</li>
+                			</ul>
+              			</div>
+              			<div style="margin-top:auto; padding-top:18px;">
+                			<a class="team-readmore" href="team/visione_team.html">
+                				Leggi tutto
+                			</a>
+              			</div>
+            		</div>
+          		</article>
+        	</div>
+      	</div>
     </section>
 
-
-
-    <!-- PREZZI -->
-    <section id="prezzi" class="section prices">
-      <div class="container">
-        <h2 class="h2">Prezzi</h2>
-        <p>
-          I prezzi variano in base al tipo di servizio, alla complessità dell’operazione e al contesto operativo.
-          Contattaci per una valutazione dedicata.
-        </p>
-      </div>
-    </section>
-
-
-
+    
     <!-- GALLERIA -->
     <section id="galleria" class="section gallery">
-      <div class="container">
-        <div class="kicker">GALLERIA</div>
-        <h2 class="gallery-title">Osservare dall’alto</h2>
-        <div id="galleryGrid" class="gallery-grid"></div>
-      </div>
+    	<div class="container">
+        	<div class="kicker">
+        		GALLERIA
+        	</div>
+        	<h2 class="gallery-title">
+        		Osservare dall’alto
+        	</h2>
+        	<div id="galleryGrid" class="gallery-grid"></div>
+      	</div>
     </section>
 
-    <!-- LIGHTBOX GALLERIA -->
-    <div id="galleryLightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox(event)">
-      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Anteprima immagine">
-        <div class="lightbox-top">
-          <div id="lbTitle" class="lightbox-title">Anteprima</div>
-          <button class="lightbox-close" type="button" onclick="forceCloseLightbox()" aria-label="Chiudi">×</button>
-        </div>
+    
+    <!-- LIGHTBOX -->
+    	<div id="galleryLightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox(event)">
+      		<div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Anteprima immagine">
+        		<div class="lightbox-top">
+          			<div id="lbTitle" class="lightbox-title">
+          				Anteprima
+          			</div>
+          			<button class="lightbox-close" type="button" onclick="forceCloseLightbox()" aria-label="Chiudi">×</button>
+        		</div>
+        		<div class="lightbox-body">
+          			<button class="lb-nav lb-prev" type="button" onclick="lbPrev()" aria-label="Precedente">‹</button>
+          			<button class="lb-nav lb-next" type="button" onclick="lbNext()" aria-label="Successiva">›</button>
+          			<img id="lbImg" class="lightbox-img" src="" alt="">
+        		</div>
+        		<div id="lbCaption" class="lightbox-caption"></div>
+      		</div>
+    	</div>
 
-        <div class="lightbox-body">
-          <button class="lb-nav lb-prev" type="button" onclick="lbPrev()" aria-label="Precedente">‹</button>
-          <button class="lb-nav lb-next" type="button" onclick="lbNext()" aria-label="Successiva">›</button>
-
-          <img id="lbImg" class="lightbox-img" src="" alt="">
-        </div>
-
-        <div id="lbCaption" class="lightbox-caption"></div>
-      </div>
-    </div>
-
-
-
+    
+    
     <!-- CONTATTI -->
     <section id="contatti" class="contact">
-      <div class="contact-wrap">
-        <div class="kicker">Contatti</div>
-        <h2 class="contact-title">Per contattarci</h2>
-
-        <form class="contact-form">
-          <div class="field">
-            <label for="name">Nome</label>
-            <input id="name" type="text" placeholder="Il tuo nome">
-          </div>
-
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="La tua email">
-          </div>
-
-          <div class="field">
-            <label for="message">Messaggio</label>
-            <textarea id="message" rows="6" placeholder="Scrivi il tuo messaggio..."></textarea>
-          </div>
-
-          <button class="btn" type="submit">Invia richiesta</button>
-
-          <p class="privacy">Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato.</p>
-        </form>
-      </div>
+    	<div class="contact-wrap">
+        	<div class="kicker">
+        		Contatti
+        	</div>
+        	<h2 class="contact-title">
+        		Per contattarci
+        	</h2>
+        	<form class="contact-form">
+          		<div class="field">
+            		<label for="name">
+            			Nome
+            		</label>
+            		<input id="name" type="text" placeholder="Il tuo nome">
+          		</div>
+          		<div class="field">
+            		<label for="email">
+            			Email
+            		</label>
+            		<input id="email" type="email" placeholder="La tua email">
+          		</div>
+          		<div class="field">
+            		<label for="message">
+            			Messaggio
+            		</label>
+            		<textarea id="message" rows="6" placeholder="Scrivi il tuo messaggio..."></textarea>
+          		</div>
+          		<button class="btn" type="submit">
+          			Invia richiesta
+          		</button>
+          		<p class="privacy">
+          			Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato.
+          		</p>
+        	</form>
+      	</div>
     </section>
-
   </main>
 
 
 
+
+
+
   <script>
-  
-    // -------------------------
-    // HELPERS
-    // -------------------------
     function escapeHtml(str) {
       return String(str || '')
         .replaceAll('&', '&amp;')
@@ -1451,51 +2031,12 @@
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#39;');
     }
-
+    
     function lockScroll() { document.body.style.overflow = 'hidden'; }
     function unlockScroll() { document.body.style.overflow = ''; }
 
     
-    // -------------------------
-    // TEAM MODAL
-    // -------------------------
-    function openTeamModal(el) {
-      var modal = document.getElementById('teamModal');
-
-      var name = el.getAttribute('data-name') || '';
-      var role = el.getAttribute('data-role') || '';
-      var img  = el.getAttribute('data-img')  || '';
-      var bio  = el.getAttribute('data-bio')  || '';
-
-      document.getElementById('teamModalName').textContent = name;
-      document.getElementById('teamModalRole').textContent = role;
-
-      var modalImg = document.getElementById('teamModalImg');
-      modalImg.src = img;
-      modalImg.alt = name;
-
-      document.getElementById('teamModalBio').textContent = bio;
-
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      lockScroll();
-    }
-
-    function closeTeamModal(e) {
-      if (e && e.target && e.target.id === 'teamModal') forceCloseTeamModal();
-    }
-
-    function forceCloseTeamModal() {
-      var modal = document.getElementById('teamModal');
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      unlockScroll();
-    }
-
-    
-    // -------------------------
-    // MOBILE DRAWER
-    // -------------------------
+    // Drawer
     var drawer = document.getElementById('mobileDrawer');
     var menuBtn = document.getElementById('menuBtn');
     var drawerClose = document.getElementById('drawerClose');
@@ -1506,21 +2047,21 @@
       menuBtn.setAttribute('aria-expanded', 'true');
       lockScroll();
     }
-
+    
     function closeDrawer() {
       drawer.classList.remove('is-open');
       drawer.setAttribute('aria-hidden', 'true');
       menuBtn.setAttribute('aria-expanded', 'false');
       unlockScroll();
     }
-
+    
     if (menuBtn) {
       menuBtn.addEventListener('click', function() {
         drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
       });
     }
+    
     if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-
     drawer.addEventListener('click', function(e) {
       if (e.target && e.target.getAttribute('data-close') === 'true') closeDrawer();
       var a = e.target && e.target.closest ? e.target.closest('[data-link="true"]') : null;
@@ -1528,9 +2069,7 @@
     });
 
     
-    // -------------------------
-    // GALLERIA 
-    // -------------------------
+    // Galleria
     var GALLERY_ITEMS = [
       { src: "images/gallery/baragiano_1.JPG", alt: "Baragiano(PZ) — ripresa aerea", caption: "Baragiano(PZ) — ripresa aerea" },
       { src: "images/gallery/baragiano_2.JPG", alt: "Baragiano(PZ) — ripresa aerea", caption: "Baragiano(PZ) — ripresa aerea" },
@@ -1559,7 +2098,6 @@
       }
       grid.innerHTML = html;
 
-     
       grid.addEventListener('click', function(e){
         var fig = e.target && e.target.closest ? e.target.closest('.gallery-item') : null;
         if (!fig) return;
@@ -1567,7 +2105,6 @@
         openLightbox(idx);
       });
 
-      
       grid.addEventListener('keydown', function(e){
         if (e.key !== 'Enter') return;
         var fig = e.target && e.target.classList && e.target.classList.contains('gallery-item') ? e.target : null;
@@ -1577,9 +2114,8 @@
       });
     }
 
-    // -------------------------
-    // GALLERIA LIGHTBOX
-    // -------------------------
+    
+    // Lightbox
     var lb = document.getElementById('galleryLightbox');
     var lbImg = document.getElementById('lbImg');
     var lbTitle = document.getElementById('lbTitle');
@@ -1589,58 +2125,52 @@
     function openLightbox(index){
       lbIndex = (typeof index === 'number' ? index : 0);
       updateLightbox();
-
       lb.classList.add('is-open');
       lb.setAttribute('aria-hidden','false');
       lockScroll();
     }
-
+    
     function updateLightbox(){
       var item = GALLERY_ITEMS[lbIndex];
       if (!item) return;
-
       lbImg.src = item.src;
       lbImg.alt = item.alt || item.caption || 'Immagine galleria';
-
       lbTitle.textContent = (lbIndex + 1) + ' / ' + GALLERY_ITEMS.length;
       lbCaption.textContent = item.caption || '';
     }
-
+    
     function closeLightbox(e){
       if (e && e.target && e.target.id === 'galleryLightbox') forceCloseLightbox();
     }
-
+    
     function forceCloseLightbox(){
       lb.classList.remove('is-open');
       lb.setAttribute('aria-hidden','true');
       unlockScroll();
     }
-
+    
     function lbPrev(){
       lbIndex = (lbIndex - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length;
       updateLightbox();
     }
+    
     function lbNext(){
       lbIndex = (lbIndex + 1) % GALLERY_ITEMS.length;
       updateLightbox();
     }
 
     
-    // -------------------------
-    // ACTIVE LINK ON SCROLL
-    // -------------------------
+    // Active links
     var sections = [
-      { id: 'home',     el: document.getElementById('home') },
-      { id: 'chi-siamo',el: document.getElementById('chi-siamo') },
-      { id: 'servizi',  el: document.getElementById('servizi') },
-      { id: 'team',     el: document.getElementById('team') },
-      { id: 'prezzi',   el: document.getElementById('prezzi') },
-      { id: 'galleria', el: document.getElementById('galleria') },
-      { id: 'contatti', el: document.getElementById('contatti') }
+      { id: 'home',      el: document.getElementById('home') },
+      { id: 'chi-siamo', el: document.getElementById('chi-siamo') },
+      { id: 'servizi',   el: document.getElementById('servizi') },
+      { id: 'team',      el: document.getElementById('team') },
+      { id: 'galleria',  el: document.getElementById('galleria') },
+      { id: 'contatti',  el: document.getElementById('contatti') }
     ];
 
     function setActiveSection(id){
-      // desktop
       var nav = document.getElementById('navLinks');
       if (nav) {
         var links = nav.querySelectorAll('a[data-section]');
@@ -1648,7 +2178,6 @@
           a.classList.toggle('is-active', a.getAttribute('data-section') === id);
         });
       }
-      // mobile
       var d = document.getElementById('drawerLinks');
       if (d) {
         var dlinks = d.querySelectorAll('a[data-section]');
@@ -1658,12 +2187,9 @@
       }
     }
 
-    // IntersectionObserver: serve a capire automaticamente quale sezione della pagina è “attiva” mentre scorri, usando IntersectionObserver (che è più efficiente dello scroll listener).
     function setupActiveObserver(){
       if (!('IntersectionObserver' in window)) return;
-
       var obs = new IntersectionObserver(function(entries){
-        // prendi quello più visibile
         var best = null;
         for (var i=0;i<entries.length;i++){
           var en = entries[i];
@@ -1686,30 +2212,14 @@
       }
     }
 
-    // -------------------------
-    // ESC: chiude modali / drawer
-    // -------------------------
+    
+    // ESC
     document.addEventListener('keydown', function(e) {
       if (e.key !== 'Escape') return;
-
-      var teamModal = document.getElementById('teamModal');
-      if (teamModal && teamModal.classList.contains('is-open')) {
-        forceCloseTeamModal();
-        return;
-      }
-
-      if (lb && lb.classList.contains('is-open')) {
-        forceCloseLightbox();
-        return;
-      }
-
-      if (drawer && drawer.classList.contains('is-open')) {
-        closeDrawer();
-        return;
-      }
+      if (lb && lb.classList.contains('is-open')) { forceCloseLightbox(); return; }
+      if (drawer && drawer.classList.contains('is-open')) { closeDrawer(); return; }
     });
 
-    // frecce in lightbox
     document.addEventListener('keydown', function(e){
       if (!lb || !lb.classList.contains('is-open')) return;
       if (e.key === 'ArrowLeft') lbPrev();
@@ -1717,14 +2227,11 @@
     });
 
     
-    
-    // -------------------------
     // INIT
-    // -------------------------
     renderGallery();
     setupActiveObserver();
     setActiveSection('home');
   </script>
 
 </body>
-</html>
+</html>x
