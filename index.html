@@ -819,9 +819,10 @@
     
     
     /* SFONDI SERVIZI */
+    
     .bg-edili{
-    	background-image:url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=60");
-    }
+    	background-image:url("images/ispezioni_edili.jpg");
+    	  }
     
     .bg-navali{
       	background-image:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60");
@@ -1578,7 +1579,6 @@
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   }
 
-  /* numeri telefono in colonna */
   .direct-phones{ margin-top:6px; }
   .direct-phones div{ margin-top:4px; }
   .direct-phones div:first-child{ margin-top:0; }
@@ -1691,7 +1691,7 @@
     color:#0b2330;
     font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   }
-</style>
+
 
     
     /* Accessibilità */
@@ -2380,7 +2380,6 @@
 		            <div class="direct-h">Telefono</div>
 		            <div class="direct-row direct-phones">
 		              <div>+39 331 825 3883</div>
-		              <div>+39 391 377 8237</div>
 		            </div>
 		          </div>
 		
@@ -2405,14 +2404,15 @@
 		        </div>
 		
 		        <div class="direct-body">
-		          <div class="direct-top">
-		            <div class="direct-headline">
-		              <div class="direct-h">WhatsApp</div>
-		              <span class="direct-badge">Risposta rapida</span>
-		            </div>
-		            <div class="direct-row">+39 331 825 3883</div>
-		            <div class="direct-sub">Numero principale</div>
+		        	<div class="direct-top">
+		            	<div class="direct-headline">
+		              		<div class="direct-h">WhatsApp</div>
+		              		<span class="direct-badge">Risposta rapida</span>
+		            	</div>
+		            	<div class="direct-row">+39 331 825 3883</div>
+		            	<div class="direct-sub">Numero principale</div>
 		          </div>
+		          
 		
 		          <div class="direct-cta-wrap">
 		            <div class="direct-cta">Scrivici su WhatsApp</div>
@@ -2473,43 +2473,10 @@
 		    </div>
 		
 		    <p class="direct-note">
-		      WhatsApp è attivo sul numero principale. Per urgenze, utilizza la chiamata diretta.
+		      WhatsApp è attivo su questo. Per urgenze, utilizza la chiamata diretta.
 		    </p>
 		  </section>
 		</div>
-		
-		<!-- =========================
-		     PHONE SHEET
-		========================= -->
-		<div id="phoneSheet" class="sheet" aria-hidden="true">
-		  <div id="phoneSheetOverlay" class="sheet__overlay"></div>
-		
-		  <div id="phoneSheetPanel" class="sheet__panel" role="dialog" aria-modal="true">
-		    <div class="sheet__box">
-		      <div class="sheet__handle"><span></span></div>
-		
-		      <div class="sheet__head">
-		        <div class="sheet__title">Scegli un numero</div>
-		        <div class="sheet__sub">Tocca per chiamare</div>
-		      </div>
-		
-		      <div class="sheet__opts">
-		        <a class="sheet__opt" href="tel:+393318253883">
-		          <span>+39 331 825 3883</span><span>Chiama</span>
-		        </a>
-		        <a class="sheet__opt" href="tel:+393913778237">
-		          <span>+39 391 377 8237</span><span>Chiama</span>
-		        </a>
-		      </div>
-		
-		      <div class="sheet__actions">
-		        <button type="button" id="closePhoneSheet" class="sheet__cancel">Annulla</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-
-
 
 
   <script>
@@ -2824,223 +2791,76 @@
      
     //ulteriori contatti
  
-     (function(){
-    function show(el){
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-      el.style.filter = 'blur(0)';
-    }
-
-    // fallback
-    if(!('IntersectionObserver' in window)){
-      var all = document.querySelectorAll('.reveal, .reveal-item');
-      for(var i=0;i<all.length;i++) show(all[i]);
-      return;
-    }
-
-    // divisore + sezione contatti diretti
-    var blocks = document.querySelectorAll('.reveal');
-    var obs = new IntersectionObserver(function(entries){
-      for(var i=0;i<entries.length;i++){
-        var e = entries[i];
-        if(!e.isIntersecting) continue;
-        show(e.target);
-        obs.unobserve(e.target);
-      }
-    }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
-
-    for(var b=0;b<blocks.length;b++) obs.observe(blocks[b]);
-
-    // cards contatti
-    var items = document.querySelectorAll('.reveal-item');
-    var obs2 = new IntersectionObserver(function(entries){
-      for(var i=0;i<entries.length;i++){
-        var e = entries[i];
-        if(!e.isIntersecting) continue;
-
-        for(var j=0;j<items.length;j++){
-          (function(el, idx){
-            setTimeout(function(){ show(el); }, 110 * idx);
-          })(items[j], j);
-        }
-
-        obs2.disconnect();
-        break;
-      }
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-
-    if(items.length) obs2.observe(items[0]);
-  })();
+    (function () {
 
 
-(function(){
-
-  function show(el){
-    if(!el) return;
+  function show(el) {
+    if (!el) return;
     el.style.opacity = '1';
     el.style.transform = 'translateY(0)';
     el.style.filter = 'blur(0)';
   }
 
-
-  function initReveal(){
+  function initReveal() {
     var blocks = document.querySelectorAll('.reveal');
     var items  = document.querySelectorAll('.reveal-item');
 
     // fallback
-    if(!('IntersectionObserver' in window)){
-      for(var i=0;i<blocks.length;i++) show(blocks[i]);
-      for(var j=0;j<items.length;j++) show(items[j]);
+    if (!('IntersectionObserver' in window)) {
+      for (var i = 0; i < blocks.length; i++) show(blocks[i]);
+      for (var j = 0; j < items.length; j++) show(items[j]);
       return;
     }
 
     // reveal blocchi
-    var obs = new IntersectionObserver(function(entries){
-      for(var i=0;i<entries.length;i++){
+    var obsBlocks = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
         var e = entries[i];
-        if(!e.isIntersecting) continue;
+        if (!e.isIntersecting) continue;
         show(e.target);
-        obs.unobserve(e.target);
+        obsBlocks.unobserve(e.target);
       }
     }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
 
-    for(var b=0;b<blocks.length;b++) obs.observe(blocks[b]);
+    for (var b = 0; b < blocks.length; b++) obsBlocks.observe(blocks[b]);
 
-    // stagger cards quando entra la prima card
-    var obs2 = new IntersectionObserver(function(entries){
-      for(var i=0;i<entries.length;i++){
+    // stagger items (quando entra il primo)
+    var obsItems = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
         var e = entries[i];
-        if(!e.isIntersecting) continue;
+        if (!e.isIntersecting) continue;
 
-        for(var k=0;k<items.length;k++){
-          (function(el, idx){
-            setTimeout(function(){ show(el); }, 110 * idx);
+        for (var k = 0; k < items.length; k++) {
+          (function (el, idx) {
+            setTimeout(function () { show(el); }, 110 * idx);
           })(items[k], k);
         }
 
-        obs2.disconnect();
+        obsItems.disconnect();
         break;
       }
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
 
-    if(items.length) obs2.observe(items[0]);
+    if (items.length) obsItems.observe(items[0]);
   }
 
 
-  function initPhoneSheet(){
-    var openBtn  = document.getElementById('openPhoneSheet');
-    var sheet    = document.getElementById('phoneSheet');
-    var overlay  = document.getElementById('phoneSheetOverlay');
-    var panel    = document.getElementById('phoneSheetPanel');
-    var closeBtn = document.getElementById('closePhoneSheet');
+  function initPhoneCall() {
+    var btn = document.getElementById('openPhoneSheet');
+    if (!btn) return;
 
-    // Non bloccare la pagina se mancano elementi
-    if(!openBtn || !sheet || !overlay || !panel || !closeBtn) return;
+    var MAIN_PHONE = '+39 331 825 3883';
 
-    // box interno (il foglio bianco)
-    var box = panel.querySelector('div');
-
-    function isDesktop(){
-      return window.matchMedia('(min-width: 900px)').matches;
-    }
-
-    // Applica layout coerente a seconda della viewport
-    function applyLayout(){
-      var desktop = isDesktop();
-
-      // reset base (prima mobile)
-      panel.style.left = '0';
-      panel.style.right = '0';
-      panel.style.bottom = '0';
-      panel.style.top = '';
-      panel.style.display = 'flex';
-      panel.style.justifyContent = 'center';
-      panel.style.padding = '14px 12px calc(16px + env(safe-area-inset-bottom))';
-
-      if(box){
-        box.style.width = 'min(520px, 100%)';
-        box.style.borderRadius = '22px';
-      }
-
-      if(desktop){
-        // modal centrata
-        panel.style.top = '0';
-        panel.style.bottom = '0';
-        panel.style.alignItems = 'center';
-        panel.style.padding = '18px';
-
-        if(box){
-          box.style.width = 'min(520px, 92vw)';
-          box.style.borderRadius = '18px';
-        }
-      } else {
-        // bottom sheet iOS
-        panel.style.alignItems = '';
-        if(box){
-          box.style.borderRadius = '22px';
-        }
-      }
-    }
-
-    function openSheet(){
-      sheet.style.display = 'block';
-      sheet.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
-
-      applyLayout();
-
-      // stato iniziale animazione
-      overlay.style.opacity = '0';
-      panel.style.opacity = '0';
-      panel.style.transform = isDesktop() ? 'scale(.98)' : 'translateY(18px)';
-
-      requestAnimationFrame(function(){
-        overlay.style.opacity = '1';
-        panel.style.opacity = '1';
-        panel.style.transform = isDesktop() ? 'scale(1)' : 'translateY(0)';
-      });
-    }
-
-    function closeSheet(){
-      overlay.style.opacity = '0';
-      panel.style.opacity = '0';
-      panel.style.transform = isDesktop() ? 'scale(.98)' : 'translateY(18px)';
-      sheet.setAttribute('aria-hidden','true');
-
-      setTimeout(function(){
-        sheet.style.display = 'none';
-        document.body.style.overflow = '';
-      }, 260);
-    }
-
-   
-    openBtn.addEventListener('click', openSheet);
-    closeBtn.addEventListener('click', closeSheet);
-    overlay.addEventListener('click', closeSheet);
-
-    document.addEventListener('keydown', function(e){
-      if(sheet.style.display === 'block' && (e.key === 'Escape' || e.key === 'Esc')){
-        closeSheet();
-      }
-    });
-
-    // Se cambia dimensione mentre è aperta
-    window.addEventListener('resize', function(){
-      if(sheet.style.display !== 'block') return;
-
-      // aggiorna layout senza animare
-      var old = panel.style.transition;
-      panel.style.transition = 'none';
-      applyLayout();
-      panel.style.transform = isDesktop() ? 'scale(1)' : 'translateY(0)';
-      panel.offsetHeight;
-      panel.style.transition = old || 'transform .28s cubic-bezier(.22,1,.36,1), opacity .28s ease';
+    btn.addEventListener('click', function () {
+      // chiama direttamente
+      window.location.href = 'tel:' + MAIN_PHONE;
     });
   }
 
   // Init
   initReveal();
-  initPhoneSheet();
+  initPhoneCall();
+
 })();
 
 
