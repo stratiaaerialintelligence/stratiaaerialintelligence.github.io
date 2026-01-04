@@ -24,7 +24,6 @@
       --radius-sm:14px;
       --radius-xs:10px;
       --container:1200px;
-      --container-team:1100px;
       --heroText:#F5F7FA;
       --heroMuted:#C7D2E0;
     }
@@ -845,241 +844,359 @@
     }
 
     
-    
-    /* TEAM */
-    .team{ 
-    	background:#f7fafc; 
-    }
-    
-    .team-wrap{ 
-    	max-width:var(--container-team); 
-    	margin:0 auto; 
-    	padding:0 20px; 
-    }
-    
-    .team-head{
-    	display:flex; 
-    	align-items:flex-end; 
-    	justify-content:space-between;
-      	gap:18px; 
-      	flex-wrap:wrap;
-    }
-    
-    .team-head h2{
-      	margin:0 0 10px;
-      	font-size:34px;
-      	letter-spacing:-0.02em;
-      	color:#0f172a;
-      	font-weight:900;
-    }
-    
-    .team-head p{ 
-    	margin:0; 
-    	color:#475569; 
-    	line-height:1.7; 
-    	font-size:15px; 
-    }
-    
-    .team-hint{ 
-    	display:flex; 
-    	gap:10px; 
-    	align-items:center; 
-    	font-size:12px; 
-   	}
-    
-    .team-hint span:first-child{ 
-    	color:#64748b; 
-    }
-    
-    .team-hint span:last-child{ 
-    	color:var(--primary); 
-    	font-weight:900; 
-    }
+  /* ====== TEAM  ====== */
+	  #team{
+	    padding:64px 18px;
+	    background:#f3f6fb;
+	  }
+	
+	  /* header */
+	  .team-head{
+	    display:flex;
+	    align-items:flex-end;
+	    justify-content:space-between;
+	    gap:18px;
+	    margin-bottom:22px;
+	  }
+	  .team-head__text{
+	    max-width:760px;
+	  }
+	  .team-head__text h2{
+	    margin:0;
+	    font-size:32px;
+	    letter-spacing:-0.3px;
+	    color:#0b2330;
+	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+	    font-weight:900;
+	  }
+	  .team-head__text p{
+	    margin:10px 0 0;
+	    color:#64748b;
+	    font-size:14.5px;
+	    line-height:1.65;
+	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+	  }
+	
+	  /* grid */
+	  .team-grid{
+	    display:grid;
+	    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+	    gap:28px;
+	    align-items:stretch;
+	  }
+	
+	  /* card */
+	  .team-card{
+	    background:#fff;
+	    border-radius:18px;
+	    overflow:hidden;
+	    border:1px solid rgba(226,232,240,.9);
+	    box-shadow:0 12px 30px rgba(2,8,23,.08);
+	    transition:transform .25s ease, box-shadow .25s ease;
+	    will-change:transform;
+	    height:100%;
+	    display:flex;
+	    flex-direction:column;
+	  }
+	  .team-card:hover{
+	    transform:translateY(-4px);
+	    box-shadow:0 18px 45px rgba(2,8,23,.12);
+	  }
+	
+	  /* media */
+	  .team-media{
+	    overflow:hidden;
+	    background:#e8edf5;
+	    height: 300px;
+	  }
+	  .team-media img{
+	    width:100%;
+	    object-fit:cover;
+	    display:block;
+	    transform:translateZ(0);
+	    backface-visibility:hidden;
+	  }
+	
+	  /* body */
+	  .team-body{
+	    padding:20px 22px 22px;
+	    display:flex;
+	    flex-direction:column;
+	    flex:1;
+	  }
+	
+	  .team-top{
+	    display:flex;
+	    align-items:center;
+	    justify-content:space-between;
+	    gap:12px;
+	  }
+	  .team-name{
+	    margin:0;
+	    font-size:18px;
+	    color:#0b2330;
+	    font-weight:800;
+	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+	  }
+	  .team-badge{
+	    font-size:12px;
+	    padding:4px 10px;
+	    border-radius:999px;
+	    font-weight:700;
+	    border:1px solid rgba(2,8,23,.08);
+	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+	    white-space:nowrap;
+	  }
+	  .team-badge--founder{ background:#e0f2fe; color:#0369a1; border-color:rgba(3,105,161,.18); }
+	  .team-badge--tech{ background:#e8f5e9; color:#1b5e20; border-color:rgba(27,94,32,.18); }
+	  .team-badge--support{ background:#fff3e0; color:#b45309; border-color:rgba(180,83,9,.18); }
+	  .team-badge--visual{ background:#eef2ff; color:#4338ca; border-color:rgba(67,56,202,.18); }
+	
+	  .team-role{
+	    margin-top:8px;
+	    font-size:14px;
+	    font-weight:700;
+	    color:#0e7490;
+	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+	  }
+	  .team-desc{
+	    margin:10px 0 0;
+	    font-size:14px;
+	    line-height:1.55;
+	    color:#64748b;
+	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+	  }
+	
+	  /* footer links */
+	  .team-footer{
+	    margin-top:auto;                 /*  CTA sempre in fondo */
+	    padding-top:14px;
+	    display:flex;
+	    align-items:center;
+	    justify-content:space-between;
+	    gap:14px;
+	  }
+	  .team-read{
+	    color:#0e7490;
+	    font-weight:800;
+	    font-size:14px;
+	    text-decoration:none;
+	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+	  }
+	  .team-read:hover{ text-decoration:underline; }
+	
+	  .team-ln{
+	    width:36px;
+	    height:36px;
+	    border-radius:10px;
+	    display:inline-flex;
+	    align-items:center;
+	    justify-content:center;
+	    border:1px solid rgba(226,232,240,1);
+	    background:#fff;
+	    text-decoration:none;
+	    box-shadow:0 8px 18px rgba(2,8,23,.06);
+	    transition:transform .18s ease;
+	  }
+	  .team-ln:hover{ transform:translateY(-1px); }
+	  .team-ln span{
+	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+	    font-weight:900;
+	    color:#0a66c2;
+	    font-size:18px;
+	    line-height:1;
+	  }
+	
+	  /* responsive */
+	  @media (max-width:720px){
+	    .team-head{ flex-direction:column; align-items:flex-start; }
+	    .team-head__text h2{ font-size:28px; }
+	  }
+	    
 
-    .team-grid{
-      	margin-top:28px;
-      	display:grid;
-      	grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-      	gap:18px;
-      	align-items:stretch;
-    }
-    
-    .team-card{
-      	background:#fff;
-      	border:1px solid var(--border);
-      	border-radius:var(--radius);
-      	overflow:hidden;
-      	box-shadow:var(--shadow);
-      	display:flex;
-      	flex-direction:column;
-      	min-height:560px;
-    }	
-    
-    .team-media{ 
-    	width:100%; 
-    	aspect-ratio:4/5; 
-    	background:#e5e7eb; 
-    }
-    
-    .team-media img{ 
-    	width:100%; 
-    	height:100%; 
-    	object-fit:cover; 
-    }
-    
-    .team-card-top{ 
-    	padding:16px 16px 10px; 
-    }
-    
-    .team-card-topline{ 
-    	display:flex; 
-    	align-items:flex-start; 
-    	justify-content:space-between; 
-    	gap:10px; 
-    }
-    
-    .team-name{ 
-    	font-size:18px; 
-    	font-weight:900; 
-    	color:#0f172a; 
-    }
-    
-    .team-role{ 
-    	margin-top:4px; 
-    	font-size:13px; 
-    	color:var(--primary); 
-    	font-weight:900; 
-    }
-    
-    .tag{
-      	font-size:11px; 
-      	color:#0f172a;
-      	padding:6px 10px; 
-      	border-radius:999px;
-      	border:1px solid #e2e8f0;
-      	background:#f1f5f9;
-      	white-space:nowrap;
-      	font-weight:900;
-    }
-    
-    .tag.founder{ 
-    	background:#ecfeff; 
-    	border-color:#cffafe; 
-    }
-    
-    .tag.support{ 
-    	background:#fff7ed; 
-    	border-color:#fed7aa; 
-    }
-    
-    .tag.visual{ 
-    	background:#ecfccb; 
-    	border-color:#d9f99d; 
-    }
+  /* =========================
+   CARD "Visione STRATIA"
 
-    .team-card-body{
-    	padding:0 16px 16px;
-      	display:flex; 
-      	flex-direction:column; 
-      	gap:12px;
-      	flex:1;
-    }
-    
-    .team-card-body p{ 
-    	margin:0; 
-    	color:#334155; 
-    	line-height:1.7; 
-    	font-size:14px; 
-    }
-    
-    .team-actions{
-      	margin-top:auto;
-      	display:flex;
-      	justify-content:space-between;
-      	align-items:center;
-      	gap:12px;
-    }
-    
-    .team-readmore{
-      	color:var(--primary);
-      	font-weight:900;
-      	text-decoration:underline;
-      	font-size:13px;
-    }
-    
-    .linkedin-btn{
-      	display:inline-flex; align-items:center; justify-content:center;
-      	width:34px;
-      	height:34px;
-      	border-radius:var(--radius-xs);
-      	border:1px solid #e2e8f0;
-      	background:#fff;
-      	box-shadow:0 4px 14px rgba(2, 8, 23, 0.05);
-    }
+   ========================= */
 
-    .team-vision{
-      	background:linear-gradient(135deg, #ecfeff 0%, #f1f5f9 60%, #ffffff 100%);
-      	border:1px solid #dbeafe;
-    }
-    
-    .vision-inner{ 
-    	padding:18px; 
-    	display:flex; 
-    	flex-direction:column; 
-    	height:100%; 
-    }
-    
-    .vision-top{ 
-    	display:flex; 
-    	align-items:center; 
-    	justify-content:space-between; 
-    	gap:10px; 
-    }
-    
-    .vision-kicker{
-      	font-size:12px; 
-      	font-weight:900; 
-      	color:var(--primary);
-      	letter-spacing:.08em; text-transform:uppercase;
-    }
-    .vision-chip{
-      font-size:11px; color:#0f172a;
-      background:#fff; border:1px solid #e2e8f0;
-      padding:6px 10px; 
-      border-radius:999px;
-      font-weight:900;
-    }
-    
-    .vision-title{ 
-    	margin:10px 0 8px; 
-    	font-size:20px; 
-    	letter-spacing:-0.02em; 
-    	color:#0f172a; 
-    	font-weight:900; 
-    }
-    
-    .vision-p{ 
-    	margin:0; 
-    	color:#334155; 
-    	line-height:1.75; 
-    	font-size:14px; 
-    }
-    
-    .vision-list{ 
-    	margin-top:14px; 
-    	border-top:1px solid rgba(226,232,240,0.9); 
-    	padding-top:14px; 
-    }
-    
-    .vision-list ul{ 
-    	margin:0; 
-    	padding-left:18px; 
-    	color:#334155; 
-    	line-height:1.75; 
-    	font-size:14px; 
-    }
+	:root{
+	  --bg:#f4f7fb;
+	  --text:#0b2330;
+	  --muted:#64748b;
+	
+	  --primary:#2b7891;
+	  --primary2:#1b6b83;
+	
+	  --shadow:0 22px 55px rgba(2,8,23,.12);
+	  --shadow2:0 10px 22px rgba(2,8,23,.10);
+	
+	  --radius:22px;
+	  --radius2:18px;
+	}
+	
+	*{box-sizing:border-box}
+	body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+	
+	/* wrapper */
+	.vs-wrap{
+	  padding:28px;
+	  justify-content:center;
+	}
+	
+	/* card base */
+	.vs-card{
+	  border-radius:var(--radius);
+	  overflow:hidden;
+	  position:relative;
+	  box-shadow:var(--shadow);
+	  border:1px solid rgba(15, 23, 42, .10);
+	  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
+	}
+	
+	.vs-card.vs-has-drone{
+	  background-image:
+	    /* overlay per leggibilità testo */
+	    radial-gradient(1100px 520px at 18% 0%,
+	      rgba(43,120,145,.22) 0%,
+	      rgba(255,255,255,0) 58%),
+	    linear-gradient(90deg,
+	      rgba(255,255,255,.92) 0%,
+	      rgba(255,255,255,.88) 46%,
+	      rgba(255,255,255,.70) 66%,
+	      rgba(255,255,255,.35) 100%),
+	    url("images/drone.jpg");
+	  background-size: cover;
+	  background-position: right center;
+	  background-repeat:no-repeat;
+	}
+	
+	/* soft inner frame */
+	.vs-card::before{
+	  content:"";
+	  position:absolute;
+	  inset:14px;
+	  border-radius:calc(var(--radius) - 10px);
+	  background:
+	    radial-gradient(900px 340px at 55% 10%,
+	      rgba(56, 148, 175, .10) 0%,
+	      rgba(255,255,255,0) 62%),
+	    linear-gradient(180deg, rgba(255,255,255,.52), rgba(255,255,255,.36));
+	  border:1px solid rgba(255,255,255,.55);
+	  pointer-events:none;
+	  z-index:0;
+	}
+	
+	/* content layer */
+	.vs-head, .vs-body{position:relative; z-index:1;}
+	
+	.vs-head{padding:28px 32px 10px;}
+	
+	.vs-brand{display:flex; align-items:center; gap:14px;}
+	.vs-logo{
+	  width:56px; height:56px; border-radius:14px;
+	  background: linear-gradient(145deg, rgba(35,120,145,.32), rgba(255,255,255,.80));
+	  border:1px solid rgba(15, 23, 42, .12);
+	  box-shadow: 0 12px 24px rgba(2,8,23,.08);
+	  display:grid; place-items:center;
+	  position:relative; overflow:hidden;
+	}
+	.vs-logo::after{
+	  content:"";
+	  position:absolute; inset:-30%;
+	  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.75), rgba(255,255,255,0) 55%);
+	  transform: rotate(14deg);
+	}
+	.vs-mark{
+	  font-weight:900; font-size:26px; letter-spacing:-.04em;
+	  color:#1e5f76; text-shadow:0 1px 0 rgba(255,255,255,.6);
+	}
+	.vs-title{font-weight:800;font-size:30px;letter-spacing:-.02em;line-height:1.05;}
+	.vs-subtitle{margin-top:3px;font-size:14px;color:var(--muted);}
+	
+	/* body */
+	.vs-body{padding:6px 32px 28px;}
+	.vs-copy{max-width: 60ch;}
+	.vs-h2{margin:18px 0 10px;font-size:26px;letter-spacing:-.02em;}
+	.vs-p{margin:0;color:#4b5563;line-height:1.55;}
+	
+	/* pillars */
+	.vs-pillars{padding-top:24px;}
+	.vs-pillars-grid{
+	  display:grid;
+	  grid-template-columns:repeat(3,1fr);
+	  gap:18px;
+	}
+	.vs-pillar{
+	  background: rgba(255,255,255,.90);
+	  border:1px solid rgba(15, 23, 42, .08);
+	  border-radius:var(--radius2);
+	  box-shadow:var(--shadow2);
+	  padding:18px 18px 16px;
+	  backdrop-filter: blur(4px);
+	}
+	.vs-pillar-title{margin:0 0 8px;font-size:22px;letter-spacing:-.01em;}
+	.vs-pillar-text{margin:0;color:#5b6676;line-height:1.35;}
+	
+	/* actions */
+	.vs-actions{
+	  display:flex;
+	  justify-content:center;
+	  gap:14px;
+	  padding-top:22px;
+	}
+	.vs-btn{
+	  display:inline-flex; align-items:center; justify-content:center;
+	  height:44px; padding:0 18px;
+	  border-radius:999px;
+	  text-decoration:none;
+	  font-weight:700; font-size:14px; letter-spacing:.01em;
+	  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
+	  user-select:none;
+	}
+	.vs-btn:active{transform:translateY(1px);}
+	
+	.vs-btn-ghost{
+	  color:var(--text);
+	  background: rgba(255,255,255,.88);
+	  border:1px solid rgba(15, 23, 42, .16);
+	  box-shadow:0 10px 18px rgba(2,8,23,.08);
+	}
+	.vs-btn-ghost:hover{
+	  transform:translateY(-1px);
+	  box-shadow:0 14px 26px rgba(2,8,23,.12);
+	  border-color: rgba(15, 23, 42, .22);
+	}
+	
+	.vs-btn-primary{
+	  color:#fff;
+	  background: linear-gradient(180deg, rgba(43,120,145,1), rgba(27,107,131,1));
+	  border:1px solid rgba(0,0,0,.06);
+	  box-shadow:0 14px 26px rgba(27,107,131,.24);
+	}
+	.vs-btn-primary:hover{
+	  transform:translateY(-1px);
+	  box-shadow:0 18px 34px rgba(27,107,131,.30);
+	}
+	
+	/* responsive */
+	@media (max-width: 860px){
+	  .vs-head, .vs-body{padding-left:18px; padding-right:18px;}
+	  .vs-pillars-grid{grid-template-columns:1fr;}
+	  .vs-actions{flex-wrap:wrap;}
+	  .vs-card.vs-has-drone{
+	    background-position: center;
+	    background-image:
+	      radial-gradient(1100px 520px at 18% 0%,
+	        rgba(43,120,145,.22) 0%,
+	        rgba(255,255,255,0) 58%),
+	      linear-gradient(180deg,
+	        rgba(255,255,255,.92) 0%,
+	        rgba(255,255,255,.78) 55%,
+	        rgba(255,255,255,.46) 100%),
+	      url("images/drone.jpg");
+	  }
+	}
 
-    
     /* GALLERY */
     .gallery{ 
     	padding:80px 0; 
@@ -1340,6 +1457,241 @@
       		font-size:16px; 
       	}
     }
+    
+    /*contatti diretti */
+    
+    /* ====== CONTATTI DIRETTI WRAP ====== */
+  .direct-wrap{ max-width:900px; margin:0 auto; padding:0 18px; }
+  .direct-divider{
+    margin:64px auto 48px;
+    display:flex; align-items:center; gap:18px;
+  }
+  .direct-divider__line{
+    flex:1; height:1px;
+    background:linear-gradient(to right, transparent, #cbd5e1);
+  }
+  .direct-divider__line--right{
+    background:linear-gradient(to left, transparent, #cbd5e1);
+  }
+  .direct-divider__label{
+    font-size:13px;
+    font-weight:800;
+    color:#64748b;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+
+  .direct-title{
+    text-align:center;
+    font-size:22px;
+    font-weight:800;
+    color:#0b2330;
+    margin:0 0 26px;
+    letter-spacing:-0.2px;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+
+  /* ====== GRID ====== */
+  .direct-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:22px;
+    align-items:stretch;
+  }
+
+  /* ====== CARD BASE ====== */
+  .direct-card{
+    background:#fff;
+    border-radius:18px;
+    border:1px solid #e2e8f0;
+    box-shadow:0 12px 30px rgba(2,8,23,.08);
+    padding:22px;
+
+    min-height:150px;
+    height:100%;
+
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+
+    text-decoration:none;
+    color:#0b2330;
+
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .direct-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 45px rgba(2,8,23,.12);
+  }
+
+  /* icona */
+  .direct-ico{
+    width:44px; height:44px;
+    border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    flex:0 0 auto;
+    margin-top:2px;
+    border:1px solid rgba(2,8,23,.08);
+  }
+  .direct-ico--phone{ background:#eaf3ff; border-color:rgba(14,116,144,.18); }
+  .direct-ico--wa{ background:#eafff0; border-color:rgba(27,94,32,.18); }
+  .direct-ico--mail{ background:#eef2ff; border-color:rgba(67,56,202,.18); }
+  .direct-ico--ig{ background:#fff2e6; border-color:rgba(180,83,9,.18); }
+
+  /* contenuto card */
+  .direct-body{
+    min-width:0;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+  }
+  
+  .direct-h{
+    font-weight:800;
+    font-size:16px;
+    line-height:1.2;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+
+	  .direct-row{
+	  margin-top:6px;
+	  font-size:14px;
+	  color:#64748b;
+	  line-height:1.4;
+	}
+	
+	/* fix email lunga */
+	.direct-row--truncate{
+	  white-space:nowrap;
+	  overflow:hidden;
+	  text-overflow:ellipsis;
+	  max-width:100%;
+	}
+
+  .direct-sub{
+    margin-top:4px;
+    font-size:12.5px;
+    color:#94a3b8;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+
+  /* numeri telefono in colonna */
+  .direct-phones{ margin-top:6px; }
+  .direct-phones div{ margin-top:4px; }
+  .direct-phones div:first-child{ margin-top:0; }
+
+  /* titolo + badge */
+  .direct-headline{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  .direct-badge{
+    padding:3px 8px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:800;
+    background:#ecfdf3;
+    color:#15803d;
+    border:1px solid rgba(21,128,61,.18);
+    white-space:nowrap;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+
+  /* CTA sempre in fondo */
+  .direct-cta-wrap{ margin-top:auto; padding-top:12px; }
+  .direct-cta{
+    font-size:13px;
+    color:#0e7490;
+    font-weight:800;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+  .direct-cta-btn{
+    border:none;
+    background:none;
+    padding:0;
+    cursor:pointer;
+  }
+
+  .direct-note{
+    margin:18px auto 0;
+    text-align:center;
+    font-size:12.5px;
+    color:#64748b;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+
+  /* ====== PHONE SHEET ====== */
+  .sheet{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    display:none;
+  }
+  .sheet__overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(2,8,23,.55);
+    backdrop-filter: blur(8px);
+    opacity:0;
+    transition:opacity .25s ease;
+  }
+  .sheet__panel{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    display:flex;
+    justify-content:center;
+    padding:14px 12px calc(16px + env(safe-area-inset-bottom));
+    transform:translateY(18px);
+    opacity:0;
+    transition:transform .28s cubic-bezier(.22,1,.36,1), opacity .28s ease;
+  }
+  .sheet__box{
+    width:min(520px, 100%);
+    background:#fff;
+    border-radius:22px;
+    border:1px solid rgba(226,232,240,1);
+    box-shadow:0 30px 80px rgba(2,8,23,.35);
+    overflow:hidden;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+  .sheet__handle{ display:flex; justify-content:center; padding:10px 0 4px; }
+  .sheet__handle span{ width:54px; height:5px; border-radius:999px; background:#e2e8f0; display:block; }
+  .sheet__head{ padding:10px 18px 12px; }
+  .sheet__title{ font-weight:900; color:#0b2330; font-size:16px; letter-spacing:-0.2px; }
+  .sheet__sub{ margin-top:4px; color:#64748b; font-size:13px; }
+
+  .sheet__opts{ padding:0 12px 14px; }
+  .sheet__opt{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:14px 12px;
+    border-radius:16px;
+    text-decoration:none;
+    color:#0b2330;
+    border:1px solid #e8eef6;
+    background:#f8fafc;
+    font-weight:800;
+  }
+  .sheet__opt + .sheet__opt{ margin-top:10px; }
+  .sheet__opt span:last-child{ font-size:13px; color:#0e7490; font-weight:900; }
+
+  .sheet__actions{ padding:0 12px 14px; }
+  .sheet__cancel{
+    width:100%;
+    padding:14px 12px;
+    border-radius:16px;
+    border:1px solid #e8eef6;
+    background:#fff;
+    cursor:pointer;
+    font-weight:900;
+    color:#0b2330;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  }
+</style>
 
     
     /* Accessibilità */
@@ -1698,245 +2050,230 @@
       	</div>
     </section>
 
+<!-- TEAM -->
 
-    <!-- TEAM -->
-    <section id="team" class="section team">
-    	<div class="team-wrap">
-        	<div class="team-head">
-          		<div style="max-width:760px;">
-            		<h2>
-            			Team
-            		</h2>
-            		<p>
-              			STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio di lettura del reale dall’alto, con metodo, responsabilità e profondità.
-            		</p>
-          		</div>
-          		<div class="team-hint">
-            		<span>
-            			Suggerimento:
-            		</span>
-            		<span>
-            			clicca “Leggi tutto”
-            		</span>
-          		</div>
-        	</div>
-        	<div class="team-grid">
-          	<!-- Fernando -->
-          		<article class="team-card">
-            		<div class="team-media">
-              			<img alt="Fernando Junior Cocina">
-            		</div>
-            		<div class="team-card-top">
-              			<div class="team-card-topline">
-                			<div>
-                  				<div class="team-name">
-                  					Fernando Junior Cocina
-                  				</div>
-                  				<div class="team-role">
-                  					Ingegnere Aerospaziale | Flight Control Systems
-                  				</div>
-                			</div>
-                			<span class="tag founder">
-                				Founder
-                			</span>
-              			</div>
-            		</div>
-            		<div class="team-card-body">
-              			<p>
-                			Ingegnere aerospaziale con esperienza internazionale su sistemi di controllo del volo e programmi di nuova generazione:
-                			dai droni agli eVTOL, fino a piattaforme aeronautiche critiche.
-              			</p>
-              			<div class="team-actions">
-                			<a class="team-readmore" href="team/fernando.html">
-                				Leggi tutto
-                			</a>
-                			<a class="linkedin-btn" href="https://www.linkedin.com/in/fernandojuniorcocina/" target="_blank" rel="noopener" aria-label="LinkedIn di Fernando Junior Cocina">
-                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  				</svg>
-                			</a>
-              			</div>
-            		</div>
-          		</article>
-          		<!-- Giulio -->
-          		<article class="team-card">
-            		<div class="team-media">
-              			<img src="images/gallery/giulio.jpeg" alt="Giulio Cocina">
-            		</div>
-            		<div class="team-card-top">
-              			<div class="team-card-topline">
-                			<div>
-                 	 			<div class="team-name">
-                 	 				Giulio Cocina
-                 	 			</div>
-                  				<div class="team-role">
-                  					Informatico | Sviluppo Software
-                  				</div>
-                			</div>
-                			<span class="tag">
-                				Tech
-                			</span>
-              			</div>
-            		</div>
-            		<div class="team-card-body">
-              			<p>
-                			Sviluppo e programmazione orientati ad affidabilità e continuità operativa. In STRATIA connette dato, sistema e infrastruttura digitale.
-              			</p>
-              			<div class="team-actions">
-                			<a class="team-readmore" href="team/giulio.html">
-                				Leggi tutto
-                			</a>
-                			<a class="linkedin-btn" href="https://www.linkedin.com/in/giulio-cocina-80729b2b5/" target="_blank" rel="noopener" aria-label="LinkedIn di Giulio Cocina">
-                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  				</svg>
-                			</a>
-              			</div>
-            		</div>
-          		</article>
-          		<!-- Carlo -->
-          		<article class="team-card">
-            		<div class="team-media">
-              			<img alt="Carlo Alberti">
-            		</div>
-            		<div class="team-card-top">
-              			<div class="team-card-topline">
-                			<div>
-                  				<div class="team-name">
-                  					Carlo Alberti
-                  				</div>
-                  				<div class="team-role">
-                  					Informatico | Supporto tecnico
-                  				</div>
-                			</div>
-                			<span class="tag support">
-                				Support
-                			</span>
-              			</div>
-            		</div>
-            		<div class="team-card-body">
-              			<p>
-                			Supporto e soluzioni digitali per i servizi operativi: organizzazione dati, efficienza dei processi e strumenti pratici.
-              			</p>
-              			<div class="team-actions">
-                			<a class="team-readmore" href="team/carlo.html">
-                				Leggi tutto
-                			</a>
-                			<a class="linkedin-btn" href="https://www.linkedin.com/in/carlo-alberti-293b1a15a/" target="_blank" rel="noopener" aria-label="LinkedIn di Carlo Alberti">
-                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  				</svg>
-                			</a>
-              			</div>
-            		</div>
-          		</article>
-          		<!-- Davide -->
-          		<article class="team-card">
-            		<div class="team-media">
-              			<img alt="Davide">
-            		</div>
-            		<div class="team-card-top">
-              			<div class="team-card-topline">
-                			<div>
-                  				<div class="team-name">
-                  					Davide
-                  				</div>
-                  				<div class="team-role">
-                  					Fotografo | Contenuti visivi
-                  				</div>
-                			</div>
-                			<span class="tag visual">
-                				Visual
-                			</span>
-              			</div>
-            		</div>
-            		<div class="team-card-body">
-              			<p>
-                			Produzione fotografica e riprese aeree: dall’acquisizione tecnica alla narrazione visiva, con attenzione alla qualità e al contesto.
-             	 		</p>
-              			<div class="team-actions">
-                			<a class="team-readmore" href="team/davide.html">
-                				Leggi tutto
-                			</a>
-                			<a class="linkedin-btn" href="#" aria-label="LinkedIn di Davide">
-                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  				</svg>
-                			</a>
-              			</div>
-            		</div>
-          		</article>
-          		<!-- Renato -->
-          		<article class="team-card">
-            		<div class="team-media">
-              			<img alt="Renato Ceccarelli">
-            		</div>
-            		<div class="team-card-top">
-              			<div class="team-card-topline">
-                			<div>
-                  				<div class="team-name">
-                  					Renato Ceccarelli
-                  				</div>
-                  				<div class="team-role">
-                  					Ingegnere navale | Ispezioni subacquee
-                  				</div>
-                			</div>
-                			<span class="tag support">
-                				Support
-                			</span>
-              			</div>
-            		</div>
-            		<div class="team-card-body">
-              			<p>
-                			Supporto alle attività operative con competenze di ingegneria navale: ispezioni con droni subacquei, documentazione tecnica e monitoraggio in contesti portuali e marittimi.
-              			</p>
-              			<div class="team-actions">
-                			<a class="team-readmore" href="team/renato.html">
-                				Leggi tutto
-                			</a>
-                			<a class="linkedin-btn" href="https://www.linkedin.com/in/carlo-alberti-293b1a15a/" target="_blank" rel="noopener" aria-label="LinkedIn di Carlo Alberti">
-                  				<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true">
-                    				<path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM.5 8.5H4.5V23.5H.5V8.5ZM8.5 8.5H12.3V10.55H12.36C12.89 9.56 14.18 8.5 16.08 8.5 20.08 8.5 20.8 11.13 20.8 14.55V23.5H16.8V15.57C16.8 13.68 16.77 11.25 14.22 11.25 11.64 11.25 11.24 13.27 11.24 15.44V23.5H7.24V8.5H8.5Z"/>
-                  				</svg>
-                			</a>
-              			</div>
-            		</div>
-          		</article>
-          		<!-- Visione -->
-          		<article class="team-card team-vision">
-            		<div class="vision-inner">
-              			<div class="vision-top">
-                			<div class="vision-kicker">
-                				Visione
-                			</div>
-                			<span class="vision-chip">
-                				STRATIA
-                			</span>
-              			</div>
-              			<h3 class="vision-title">
-              				Ingegneria, dato e visione
-              			</h3>
-              			<p class="vision-p">
-                			Ogni progetto è una lettura del reale dall’alto: non solo immagini, ma informazione strutturata, metodo e responsabilità.
-              			</p>
-              			<div class="vision-list">
-                			<ul>
-                  				<li><b>Metodo</b>: procedure, tracciabilità, coerenza.</li>
-                  				<li><b>Sicurezza</b>: attenzione a vincoli e contesto operativo.</li>
-                  				<li><b>Qualità</b>: output chiari, utili e verificabili.</li>
-                			</ul>
-              			</div>
-              			<div style="margin-top:auto; padding-top:18px;">
-                			<a class="team-readmore" href="team/visione_team.html">
-                				Leggi tutto
-                			</a>
-              			</div>
-            		</div>
-          		</article>
-        	</div>
-      	</div>
-    </section>
 
+	
+	<section id="team">
+	<div class="container">
+	
+	    <div class="team-head">
+	      <div class="team-head__text">
+	        <h2>Team</h2>
+	        <p>
+	          STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio di lettura del reale dall’alto, con metodo, responsabilità e profondità.
+	        </p>
+	      </div>
+	    </div>
+	
+	    <div class="team-grid">
+	
+	      <!-- Fernando -->
+	      <article class="team-card">
+	        <div class="team-media">
+	          <img src="images/team/fernando.jpg" alt="Fernando Junior Cocina">
+	        </div>
+	
+	        <div class="team-body">
+	          <div class="team-top">
+	            <h3 class="team-name">Fernando Junior Cocina</h3>
+	            <span class="team-badge team-badge--founder">Founder</span>
+	          </div>
+	
+	          <div class="team-role">Ingegnere Aerospaziale | Flight Control Systems</div>
+	
+	          <p class="team-desc">
+	            Ingegnere aerospaziale con esperienza internazionale su sistemi di controllo del volo e programmi di nuova generazione:
+	            dai droni agli eVTOL, fino a piattaforme aeronautiche critiche.
+	          </p>
+	
+	          <div class="team-footer">
+	            <a class="team-read" href="team/fernando.html">Leggi tutto</a>
+	
+	            <a class="team-ln" href="https://www.linkedin.com/in/fernandojuniorcocina/" target="_blank" rel="noopener" aria-label="LinkedIn Fernando">
+	              <span>in</span>
+	            </a>
+	          </div>
+	        </div>
+	      </article>
+	
+	      <!-- Giulio -->
+	      <article class="team-card">
+	        <div class="team-media">
+	          <img src="images/team/giulio.jpg" alt="Giulio Cocina">
+	        </div>
+	
+	        <div class="team-body">
+	          <div class="team-top">
+	            <h3 class="team-name">Giulio Cocina</h3>
+	            <span class="team-badge team-badge--tech">Tech</span>
+	          </div>
+	
+	          <div class="team-role">Informatico | Sviluppo Software</div>
+	
+	          <p class="team-desc">
+	            Sviluppo e programmazione orientati ad affidabilità e continuità operativa. In STRATIA connette dato, sistema e infrastruttura digitale.
+	          </p>
+	
+	          <div class="team-footer">
+	            <a class="team-read" href="team/giulio.html">Leggi tutto</a>
+	
+	            <a class="team-ln" href="https://www.linkedin.com/in/giulio-cocina-80729b2b5/" target="_blank" rel="noopener" aria-label="LinkedIn Giulio">
+	              <span>in</span>
+	            </a>
+	          </div>
+	        </div>
+	      </article>
+	
+	      <!-- Carlo -->
+	      <article class="team-card">
+	        <div class="team-media">
+	          <img src="images/team/carlo.jpeg" alt="Carlo Alberti">
+	        </div>
+	
+	        <div class="team-body">
+	          <div class="team-top">
+	            <h3 class="team-name">Carlo Alberti</h3>
+	            <span class="team-badge team-badge--support">Support</span>
+	          </div>
+	
+	          <div class="team-role">Informatico | Supporto tecnico</div>
+	
+	          <p class="team-desc">
+	            Supporto e soluzioni digitali per i servizi operativi: organizzazione dati, efficienza dei processi e strumenti pratici.
+	          </p>
+	
+	          <div class="team-footer">
+	            <a class="team-read" href="team/carlo.html">Leggi tutto</a>
+	
+	            <a class="team-ln" href="https://www.linkedin.com/in/carlo-alberti-293b1a15a/" target="_blank" rel="noopener" aria-label="LinkedIn Carlo">
+	              <span>in</span>
+	            </a>
+	          </div>
+	        </div>
+	      </article>
+	
+	      <!-- Davide -->
+	      <article class="team-card">
+	        <div class="team-media">
+	          <img src="images/team/davide.jpg" alt="Davide">
+	        </div>
+	
+	        <div class="team-body">
+	          <div class="team-top">
+	            <h3 class="team-name">Davide</h3>
+	            <span class="team-badge team-badge--visual">Visual</span>
+	          </div>
+	
+	          <div class="team-role">Fotografo | Contenuti visivi</div>
+	
+	          <p class="team-desc">
+	            Produzione fotografica e riprese aeree: dall’acquisizione tecnica alla narrazione visiva, con attenzione alla qualità e al contesto.
+	          </p>
+	
+	          <div class="team-footer">
+	            <a class="team-read" href="team/davide.html">Leggi tutto</a>
+	
+	            <a class="team-ln" href="#" aria-label="LinkedIn Davide">
+	              <span>in</span>
+	            </a>
+	          </div>
+	        </div>
+	      </article>
+	
+	      <!-- Renato -->
+	      <article class="team-card">
+	        <div class="team-media">
+	          <img src="images/team/renato.jpeg" alt="Renato Ceccarelli">
+	        </div>
+	
+	        <div class="team-body">
+	          <div class="team-top">
+	            <h3 class="team-name">Renato Ceccarelli</h3>
+	            <span class="team-badge team-badge--support">Support</span>
+	          </div>
+	
+	          <div class="team-role">Ingegnere navale | Ispezioni subacquee</div>
+	
+	          <p class="team-desc">
+	            Supporto alle attività operative con competenze di ingegneria navale: ispezioni con droni subacquei, documentazione tecnica e monitoraggio in contesti portuali e marittimi.
+	          </p>
+	
+	          <div class="team-footer">
+	            <a class="team-read" href="team/renato.html">Leggi tutto</a>
+	
+	            <a class="team-ln" href="#" aria-label="LinkedIn Renato">
+	              <span>in</span>
+	            </a>
+	          </div>
+	        </div>
+	      </article>
+	
+	    </div>
+	  </div>
+	</section>
+
+
+
+ 
+          		
+
+	<!-- CARD "Visione STRATIA-->
+	<section class="vs-wrap">
+	<div class="container">
+	  <article class="vs-card vs-has-drone" aria-label="Visione STRATIA">
+	    <!-- header -->
+	    <header class="vs-head">
+	      <div class="vs-brand">
+	        <div class="vs-logo" aria-hidden="true">
+	          <span class="vs-mark">S</span>
+	        </div>
+	        <div class="vs-brand-text">
+	          <div class="vs-title">Visione STRATIA</div>
+	          <div class="vs-subtitle">Ingegneria · Dato · Metodo</div>
+	        </div>
+	      </div>
+	    </header>
+	
+	    <!-- content -->
+	    <div class="vs-body">
+	      <div class="vs-copy">
+	        <h2 class="vs-h2">Ingegneria · Dato · Metodo</h2>
+	        <p class="vs-p">
+	          STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio
+	          di lettura del reale dall’alto: non solo immagini, ma informazione strutturata, metodo e responsabilità.
+	        </p>
+	      </div>
+	
+	      <div class="vs-pillars">
+	        <div class="vs-pillars-grid">
+	          <div class="vs-pillar">
+	            <h3 class="vs-pillar-title">Metodo</h3>
+	            <p class="vs-pillar-text">Procedure, tracciabilità, coerenza</p>
+	          </div>
+	
+	          <div class="vs-pillar">
+	            <h3 class="vs-pillar-title">Sicurezza</h3>
+	            <p class="vs-pillar-text">Attenzione a vincoli e contesto operativo</p>
+	          </div>
+	
+	          <div class="vs-pillar">
+	            <h3 class="vs-pillar-title">Qualità</h3>
+	            <p class="vs-pillar-text">Output chiari, utili e verificabili</p>
+	          </div>
+	        </div>
+	      </div>
+	
+	      <div class="vs-actions">
+	        <a class="vs-btn vs-btn-ghost" href="#team">Scopri il Team</a>
+	        <a class="vs-btn vs-btn-primary" href="#contatti">Contattaci</a>
+	      </div>
+	    </div>
+	  </article>
+	  </div>
+	</section>
+
+        	
     
     <!-- GALLERIA -->
     <section id="galleria" class="section gallery">
@@ -1970,64 +2307,213 @@
       		</div>
     	</div>
     	
-    	
-    	    
+    		    
     <!-- CONTATTI -->
-    <section id="contatti" class="contact">
-    	<div class="contact-wrap">
-        	<div class="kicker">
-        		Contatti
-        	</div>
-        	<h2 class="contact-title">
-        		Per contattarci
-        	</h2>
-        	
-        	<form class="contact-form"
-      id="contactForm"
-      action="https://formspree.io/f/xqeaqbwy"
-      method="POST"
-      novalidate>
+   		<section id="contatti" class="contact">
+    		<div class="contact-wrap">
+        		<div class="kicker">
+        			Contatti
+        		</div>
+        		<h2 class="contact-title">
+        			Per contattarci
+        		</h2>
+        		<form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeaqbwy" method="POST" novalidate>
+			  		<div class="field">
+			    		<label for="name">
+			    			Nome
+			    		</label>
+			    		<input id="name" name="name" type="text" placeholder="Il tuo nome" autocomplete="name" required minlength="2">
+			  		</div>
+			  		<div class="field">
+			    		<label for="email">
+			    			Email
+			    		</label>
+			    		<input id="email" name="email" type="email" placeholder="La tua email" autocomplete="email" required>
+			  		</div>
+			  		<div class="field">
+			    		<label for="message">
+			    			Messaggio
+			    		</label>
+			    		<textarea id="message" name="message" rows="6" placeholder="Scrivi il tuo messaggio..." required minlength="10"></textarea>
+			  		</div>
+			
+			  		<!-- Honeypot anti-bot (Formspree lo supporta) -->
+			  		<input type="text" name="_gotcha" style="display:none">
+			
+			  		<input type="hidden" name="_subject" value="📩 Nuova richiesta di contatto – STRATIA">
+			
+			  		<button class="btn" type="submit" id="submitBtn">
+			  			Invia richiesta
+			  		</button>
+			
+			  		<p class="privacy">
+			    		Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato.
+			  		</p>
+			  		<p class="form-status" id="formStatus" aria-live="polite"></p>
+				</form>
+      		</div>
+    	</section>
 
-			  <div class="field">
-			    <label for="name">Nome</label>
-			    <input id=
-			    "name" name="name" type="text" placeholder="Il tuo nome" autocomplete="name" required minlength="2">
-			  </div>
-			
-			  <div class="field">
-			    <label for="email">Email</label>
-			    <input id="email" name="email" type="email" placeholder="La tua email" autocomplete="email" required>
-			  </div>
-			
-			  <div class="field">
-			    <label for="message">Messaggio</label>
-			    <textarea id="message" name="message" rows="6" placeholder="Scrivi il tuo messaggio..." required minlength="10"></textarea>
-			  </div>
-			
-			  <!-- Honeypot anti-bot (Formspree lo supporta) -->
-			  <input type="text" name="_gotcha" style="display:none">
-			
-			  <!-- Opzionale: oggetto email -->
-			  <input type="hidden" name="_subject" value="📩 Nuova richiesta di contatto – STRATIA">
-			
-			  <button class="btn" type="submit" id="submitBtn">Invia richiesta</button>
-			
-			  <p class="privacy">
-			    Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato.
-			  </p>
-			
-			  <p class="form-status" id="formStatus" aria-live="polite"></p>
-			</form>
-      	</div>
-    </section>
-  </main>
-
-
+		<div class="direct-wrap">
+		  <div class="reveal direct-divider">
+		    <span class="direct-divider__line"></span>
+		    <span class="direct-divider__label">contatti diretti</span>
+		    <span class="direct-divider__line direct-divider__line--right"></span>
+		  </div>
+		
+		  <section class="reveal">
+		    <h3 class="direct-title">Oppure contattaci direttamente</h3>
+		
+		    <div class="direct-grid">
+		
+		      <!-- TELEFONO -->
+		      <div class="reveal-item direct-card">
+		        <div class="direct-ico direct-ico--phone" aria-hidden="true">
+		          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+		            <path d="M6.6 10.8c1.5 2.9 3.8 5.2 6.7 6.7l2.2-2.2c.4-.4 1-.5 1.5-.3 1.2.4 2.6.7 4 .7.8 0 1.5.7 1.5 1.5V21c0 .8-.7 1.5-1.5 1.5C10.7 22.5 1.5 13.3 1.5 2.5 1.5 1.7 2.2 1 3 1h3.6c.8 0 1.5.7 1.5 1.5 0 1.4.2 2.7.7 4 .2.5.1 1.1-.3 1.5L6.6 10.8Z"
+		                  stroke="#0e7490" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+		          </svg>
+		        </div>
+		
+		        <div class="direct-body">
+		          <div class="direct-top">
+		            <div class="direct-h">Telefono</div>
+		            <div class="direct-row direct-phones">
+		              <div>+39 331 825 3883</div>
+		              <div>+39 391 377 8237</div>
+		            </div>
+		          </div>
+		
+		          <div class="direct-cta-wrap">
+		            <button type="button" id="openPhoneSheet" aria-haspopup="dialog" aria-controls="phoneSheet"
+		                    class="direct-cta direct-cta-btn">
+		              Chiama ora
+		            </button>
+		          </div>
+		        </div>
+		      </div>
+		
+		      <!-- WHATSAPP -->
+		      <a class="reveal-item direct-card" href="https://wa.me/393331112222" target="_blank" rel="noopener">
+		        <div class="direct-ico direct-ico--wa" aria-hidden="true">
+		          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+		            <path d="M20 11.5c0 4.1-3.6 7.5-8 7.5-1.1 0-2.2-.2-3.2-.6L4 20l1.7-4.1c-.9-1.1-1.5-2.6-1.5-4.4C4.2 7.4 7.7 4 12 4s8 3.4 8 7.5Z"
+		                  stroke="#1b5e20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+		            <path d="M8.2 11.2h.01M12 11.2h.01M15.8 11.2h.01"
+		                  stroke="#1b5e20" stroke-width="2.2" stroke-linecap="round"/>
+		          </svg>
+		        </div>
+		
+		        <div class="direct-body">
+		          <div class="direct-top">
+		            <div class="direct-headline">
+		              <div class="direct-h">WhatsApp</div>
+		              <span class="direct-badge">Risposta rapida</span>
+		            </div>
+		            <div class="direct-row">+39 331 825 3883</div>
+		            <div class="direct-sub">Numero principale</div>
+		          </div>
+		
+		          <div class="direct-cta-wrap">
+		            <div class="direct-cta">Scrivici su WhatsApp</div>
+		          </div>
+		        </div>
+		      </a>
+		
+		      <!-- EMAIL -->
+		      <a class="reveal-item direct-card" href="mailto:info@stratia.it">
+		        <div class="direct-ico direct-ico--mail" aria-hidden="true">
+		          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+		            <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"
+		                  stroke="#4338ca" stroke-width="1.8" stroke-linejoin="round"/>
+		            <path d="M22 8 12 13 2 8"
+		                  stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+		          </svg>
+		        </div>
+		
+		        <div class="direct-body">
+		          <div class="direct-top">
+		            <div class="direct-h">Email</div>
+		          		<div class="direct-row direct-row--truncate" title="stratia.aerialintelligence@gmail.com">
+  							stratia.aerialintelligence@gmail.com
+						</div>
+		          </div>
+		
+		          <div class="direct-cta-wrap">
+		            <div class="direct-cta">Invia una mail</div>
+		          </div>
+		        </div>
+		      </a>
+		
+		      <!-- INSTAGRAM -->
+		      <a class="reveal-item direct-card" href="https://www.instagram.com/stratia.it/" target="_blank" rel="noopener">
+		        <div class="direct-ico direct-ico--ig" aria-hidden="true">
+		          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+		            <path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Z"
+		                  stroke="#b45309" stroke-width="1.8"/>
+		            <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"
+		                  stroke="#b45309" stroke-width="1.8"/>
+		            <path d="M17.4 6.6h.01"
+		                  stroke="#b45309" stroke-width="2.6" stroke-linecap="round"/>
+		          </svg>
+		        </div>
+		
+		        <div class="direct-body">
+		          <div class="direct-top">
+		            <div class="direct-h">Instagram</div>
+		            <div class="direct-row">stratia.lab</div>
+		          </div>
+		
+		          <div class="direct-cta-wrap">
+		            <div class="direct-cta">Direct</div>
+		          </div>
+		        </div>
+		      </a>
+		
+		    </div>
+		
+		    <p class="direct-note">
+		      WhatsApp è attivo sul numero principale. Per urgenze, utilizza la chiamata diretta.
+		    </p>
+		  </section>
+		</div>
+		
+		<!-- =========================
+		     PHONE SHEET
+		========================= -->
+		<div id="phoneSheet" class="sheet" aria-hidden="true">
+		  <div id="phoneSheetOverlay" class="sheet__overlay"></div>
+		
+		  <div id="phoneSheetPanel" class="sheet__panel" role="dialog" aria-modal="true">
+		    <div class="sheet__box">
+		      <div class="sheet__handle"><span></span></div>
+		
+		      <div class="sheet__head">
+		        <div class="sheet__title">Scegli un numero</div>
+		        <div class="sheet__sub">Tocca per chiamare</div>
+		      </div>
+		
+		      <div class="sheet__opts">
+		        <a class="sheet__opt" href="tel:+393318253883">
+		          <span>+39 331 825 3883</span><span>Chiama</span>
+		        </a>
+		        <a class="sheet__opt" href="tel:+393913778237">
+		          <span>+39 391 377 8237</span><span>Chiama</span>
+		        </a>
+		      </div>
+		
+		      <div class="sheet__actions">
+		        <button type="button" id="closePhoneSheet" class="sheet__cancel">Annulla</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
 
 
 
   <script>
+       
     function escapeHtml(str) {
       return String(str || '')
         .replaceAll('&', '&amp;')
@@ -2334,10 +2820,230 @@
   });
 
 })();
-
-
-
     
+     
+    //ulteriori contatti
+ 
+     (function(){
+    function show(el){
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+      el.style.filter = 'blur(0)';
+    }
+
+    // fallback
+    if(!('IntersectionObserver' in window)){
+      var all = document.querySelectorAll('.reveal, .reveal-item');
+      for(var i=0;i<all.length;i++) show(all[i]);
+      return;
+    }
+
+    // divisore + sezione contatti diretti
+    var blocks = document.querySelectorAll('.reveal');
+    var obs = new IntersectionObserver(function(entries){
+      for(var i=0;i<entries.length;i++){
+        var e = entries[i];
+        if(!e.isIntersecting) continue;
+        show(e.target);
+        obs.unobserve(e.target);
+      }
+    }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
+
+    for(var b=0;b<blocks.length;b++) obs.observe(blocks[b]);
+
+    // cards contatti
+    var items = document.querySelectorAll('.reveal-item');
+    var obs2 = new IntersectionObserver(function(entries){
+      for(var i=0;i<entries.length;i++){
+        var e = entries[i];
+        if(!e.isIntersecting) continue;
+
+        for(var j=0;j<items.length;j++){
+          (function(el, idx){
+            setTimeout(function(){ show(el); }, 110 * idx);
+          })(items[j], j);
+        }
+
+        obs2.disconnect();
+        break;
+      }
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+    if(items.length) obs2.observe(items[0]);
+  })();
+
+
+(function(){
+
+  function show(el){
+    if(!el) return;
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
+    el.style.filter = 'blur(0)';
+  }
+
+
+  function initReveal(){
+    var blocks = document.querySelectorAll('.reveal');
+    var items  = document.querySelectorAll('.reveal-item');
+
+    // fallback
+    if(!('IntersectionObserver' in window)){
+      for(var i=0;i<blocks.length;i++) show(blocks[i]);
+      for(var j=0;j<items.length;j++) show(items[j]);
+      return;
+    }
+
+    // reveal blocchi
+    var obs = new IntersectionObserver(function(entries){
+      for(var i=0;i<entries.length;i++){
+        var e = entries[i];
+        if(!e.isIntersecting) continue;
+        show(e.target);
+        obs.unobserve(e.target);
+      }
+    }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
+
+    for(var b=0;b<blocks.length;b++) obs.observe(blocks[b]);
+
+    // stagger cards quando entra la prima card
+    var obs2 = new IntersectionObserver(function(entries){
+      for(var i=0;i<entries.length;i++){
+        var e = entries[i];
+        if(!e.isIntersecting) continue;
+
+        for(var k=0;k<items.length;k++){
+          (function(el, idx){
+            setTimeout(function(){ show(el); }, 110 * idx);
+          })(items[k], k);
+        }
+
+        obs2.disconnect();
+        break;
+      }
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+    if(items.length) obs2.observe(items[0]);
+  }
+
+
+  function initPhoneSheet(){
+    var openBtn  = document.getElementById('openPhoneSheet');
+    var sheet    = document.getElementById('phoneSheet');
+    var overlay  = document.getElementById('phoneSheetOverlay');
+    var panel    = document.getElementById('phoneSheetPanel');
+    var closeBtn = document.getElementById('closePhoneSheet');
+
+    // Non bloccare la pagina se mancano elementi
+    if(!openBtn || !sheet || !overlay || !panel || !closeBtn) return;
+
+    // box interno (il foglio bianco)
+    var box = panel.querySelector('div');
+
+    function isDesktop(){
+      return window.matchMedia('(min-width: 900px)').matches;
+    }
+
+    // Applica layout coerente a seconda della viewport
+    function applyLayout(){
+      var desktop = isDesktop();
+
+      // reset base (prima mobile)
+      panel.style.left = '0';
+      panel.style.right = '0';
+      panel.style.bottom = '0';
+      panel.style.top = '';
+      panel.style.display = 'flex';
+      panel.style.justifyContent = 'center';
+      panel.style.padding = '14px 12px calc(16px + env(safe-area-inset-bottom))';
+
+      if(box){
+        box.style.width = 'min(520px, 100%)';
+        box.style.borderRadius = '22px';
+      }
+
+      if(desktop){
+        // modal centrata
+        panel.style.top = '0';
+        panel.style.bottom = '0';
+        panel.style.alignItems = 'center';
+        panel.style.padding = '18px';
+
+        if(box){
+          box.style.width = 'min(520px, 92vw)';
+          box.style.borderRadius = '18px';
+        }
+      } else {
+        // bottom sheet iOS
+        panel.style.alignItems = '';
+        if(box){
+          box.style.borderRadius = '22px';
+        }
+      }
+    }
+
+    function openSheet(){
+      sheet.style.display = 'block';
+      sheet.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+
+      applyLayout();
+
+      // stato iniziale animazione
+      overlay.style.opacity = '0';
+      panel.style.opacity = '0';
+      panel.style.transform = isDesktop() ? 'scale(.98)' : 'translateY(18px)';
+
+      requestAnimationFrame(function(){
+        overlay.style.opacity = '1';
+        panel.style.opacity = '1';
+        panel.style.transform = isDesktop() ? 'scale(1)' : 'translateY(0)';
+      });
+    }
+
+    function closeSheet(){
+      overlay.style.opacity = '0';
+      panel.style.opacity = '0';
+      panel.style.transform = isDesktop() ? 'scale(.98)' : 'translateY(18px)';
+      sheet.setAttribute('aria-hidden','true');
+
+      setTimeout(function(){
+        sheet.style.display = 'none';
+        document.body.style.overflow = '';
+      }, 260);
+    }
+
+   
+    openBtn.addEventListener('click', openSheet);
+    closeBtn.addEventListener('click', closeSheet);
+    overlay.addEventListener('click', closeSheet);
+
+    document.addEventListener('keydown', function(e){
+      if(sheet.style.display === 'block' && (e.key === 'Escape' || e.key === 'Esc')){
+        closeSheet();
+      }
+    });
+
+    // Se cambia dimensione mentre è aperta
+    window.addEventListener('resize', function(){
+      if(sheet.style.display !== 'block') return;
+
+      // aggiorna layout senza animare
+      var old = panel.style.transition;
+      panel.style.transition = 'none';
+      applyLayout();
+      panel.style.transform = isDesktop() ? 'scale(1)' : 'translateY(0)';
+      panel.offsetHeight;
+      panel.style.transition = old || 'transform .28s cubic-bezier(.22,1,.36,1), opacity .28s ease';
+    });
+  }
+
+  // Init
+  initReveal();
+  initPhoneSheet();
+})();
+
+
     // ESC
     document.addEventListener('keydown', function(e) {
       if (e.key !== 'Escape') return;
@@ -2360,5 +3066,3 @@
 
 </body>
 </html>x
-
-
