@@ -3,756 +3,561 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>SRATIA</title>
-  
- <!-- FAVICON -->
-<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <title>STRATIA</title>
 
-<!-- PWA -->
-<link rel="manifest" href="/images/favicon/site.webmanifest">
-<meta name="theme-color" content="#0e7490">
+  <!-- =========================
+       FAVICON / PWA
+  ========================= -->
+  <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
 
-<!-- iOS / Apple -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="STRATIA Aerial">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="./images/favicon/site.webmanifest">
+  <meta name="theme-color" content="#0e7490">
 
-<!-- Windows tiles -->
-<meta name="msapplication-TileColor" content="#0e7490">
-<meta name="msapplication-TileImage" content="/images/favicon/android-chrome-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="STRATIA Aerial">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-<!-- UX mobile -->
-<meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#0e7490">
+  <meta name="msapplication-TileImage" content="./images/favicon/android-chrome-192x192.png">
 
-  
-  
- <meta name="description" content="STRATIA - Aerial & Territorial Intelligence">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <meta name="description" content="STRATIA - Aerial & Territorial Intelligence">
 
   <style>
+    /* =========================================================
+       BASE
+    ========================================================= */
     :root{
       --bg:#ffffff;
       --text:#0b2330;
       --muted:#64748b;
+
       --dark:#0a1730;
       --dark2:#08122a;
+
       --primary:#0e7490;
       --border:#e5e7eb;
-      --border2:#d1d5db;
+
       --shadow:0 10px 26px rgba(2,8,23,.06);
       --shadow2:0 10px 22px rgba(0,0,0,.10);
+
       --radius:18px;
       --radius-md:16px;
       --radius-sm:14px;
       --radius-xs:10px;
+
       --container:1200px;
+
       --heroText:#F5F7FA;
       --heroMuted:#C7D2E0;
+
+      /* Visione STRATIA card */
+      --vs-bg:#f4f7fb;
+      --vs-primary:#2b7891;
+      --vs-primary2:#1b6b83;
+      --vs-shadow:0 22px 55px rgba(2,8,23,.12);
+      --vs-shadow2:0 10px 22px rgba(2,8,23,.10);
+      --vs-radius:22px;
+      --vs-radius2:18px;
     }
 
-    *{ 
-    	box-sizing:border-box;
-    }
-     
-    html{
-    	scroll-behavior:smooth; 
-    }
-    	
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
-    	margin:0;
-      	font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      	color:var(--text);
-      	background:var(--bg);
-      	line-height:1.6;
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.6;
     }
-    
-    img{ 
-    	max-width:100%; 
-    	display:block;
-    }
-    	
-    a{
-    	color:inherit;
-    }
+    img{ max-width:100%; display:block; }
+    a{ color:inherit; }
+    .container{ max-width:var(--container); margin:0 auto; padding:0 20px; }
 
-    .container{
-    	max-width:var(--container);
-    	margin:0 auto; 
-    	padding:0 20px;
-    }
-
-    
-    /* HEADER */
+    /* =========================================================
+       HEADER
+    ========================================================= */
     .site-header{
-	  background: linear-gradient(
-	    180deg,
-	    rgba(7,16,33,0.94),
-	    rgba(7,16,33,0.70)
-	  );
-	  backdrop-filter: blur(10px);
-	  border-bottom: 1px solid rgba(234,243,255,0.10);
-    	position:sticky; 
-    	top:0; 
-    	z-index:100;
+      background: linear-gradient(180deg, rgba(7,16,33,0.94), rgba(7,16,33,0.70));
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(234,243,255,0.10);
+      position:sticky; top:0; z-index:100;
     }
-    
     .header-inner{
-    	display:flex;
-    	align-items:center;
-    	gap:16px;
-     	padding:14px 0;
+      display:flex;
+      align-items:center;
+      gap:16px;
+      padding:12px 0;
     }
-    
     .brand{
-    	display:flex;
-    	align-items:center; 
-    	gap:10px;
-      	text-decoration:none; 
-      	color:#eaf3ff;
-      	min-width:180px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:#eaf3ff;
+      min-width:180px;
     }
-    
-    .brand-badge{
-    	width:34px;
-    	height:34px;
-    	border-radius:10px;
-      	background:linear-gradient(135deg,#0e7490,#0a4e64);
-      	display:flex;
-      	align-items:center;
-      	justify-content:center;
-      	box-shadow:0 8px 22px rgba(0,0,0,.25);
-      	font-weight:900;
-      	color:#fff;
-      	font-size:11px;
-      	letter-spacing:.5px;
-      	flex:0 0 auto;
+    .brand-logo{
+      width:44px;
+      height:44px;
+      display:block;
+      filter:
+        drop-shadow(0 2px 6px rgba(0,0,0,0.55))
+        drop-shadow(0 0 8px rgba(14,116,144,0.35));
     }
-	
-	.header-inner{
-	  padding: 12px 0;
-	}
-	
-	.brand-badge{
-	  width: 42px;
-	  height: 42px;
-	  border-radius: 14px;
-	  background: rgba(255,255,255,0.06);     
-	  border: 1px solid rgba(234,243,255,0.12);
-	  box-shadow: 0 10px 22px rgba(0,0,0,.18);
-	}
-	
-	.brand-logo{
-	  width: 44px;
-	  height: 44px;
-	  display: block;
-	  filter:
-	    drop-shadow(0 2px 6px rgba(0,0,0,0.55))
-	    drop-shadow(0 0 8px rgba(14,116,144,0.35));
-	}
-	
-	.nav-links a{
-	  opacity: .82;
-	  transition: opacity .18s ease, color .18s ease;
-	}
-	.nav-links a:hover{
-	  opacity: 1;
-	  color: #fff;
-	}
-	
-	.nav-links a.is-active::after{
-	  background: rgba(14,116,144,0.95);
-	}
-	
-	.header-cta{
-	  border-radius: 999px; 
-	  transition: transform .18s ease, filter .18s ease;
-	}
-	
-	.header-cta:hover{
-	  transform: translateY(-1px);
-	  filter: brightness(1.05);
-	}
-    
-    
-    .brand-name{ 
-    	font-weight:800; 
-    	font-size:18px; 
-    	opacity:.95;
+    .brand-name{
+      font-weight:800;
+      font-size:18px;
+      opacity:.95;
     }
 
-    .nav{ 
-    	flex:1; 
-    	display:flex; 
-    	justify-content:center; 
-    }
-    
+    .nav{ flex:1; display:flex; justify-content:center; }
     .nav-links{
-    	display:flex; 
-      	flex-wrap:wrap;
-      	justify-content:center;
-      	align-items:center;
-      	gap:18px; 
-      	color:#cfe2ff;
-      	font-size:14px; 
-      	opacity:.9;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+      gap:18px;
+      color:#cfe2ff;
+      font-size:14px;
+      opacity:.9;
     }
-    
     .nav-links a{
-    	color:#cfe2ff; 
-    	text-decoration:none; 
-    	opacity:.85;
-        padding:6px 2px; 
-        position:relative;
+      color:#cfe2ff;
+      text-decoration:none;
+      opacity:.82;
+      padding:6px 2px;
+      position:relative;
+      transition: opacity .18s ease, color .18s ease;
     }
-    
-    .nav-links a:hover{ 
-    	opacity:1;
-    }
-
-    .nav-links a.is-active{ 
-    	opacity:1; 
-    	color:#fff; 
-    }
-    
+    .nav-links a:hover{ opacity:1; color:#fff; }
+    .nav-links a.is-active{ opacity:1; color:#fff; }
     .nav-links a.is-active::after{
-    	content:""; 
-    	position:absolute; 
-    	left:0; 
-    	right:0; 
-    	bottom:-6px;
-      	height:2px; 
-      	background:rgba(255,255,255,.75); 
-      	border-radius:999px;
+      content:"";
+      position:absolute;
+      left:0; right:0; bottom:-6px;
+      height:2px;
+      background: rgba(14,116,144,0.95);
+      border-radius:999px;
     }
 
-    .header-right{ 
-    	display:flex; 
-    	align-items:center; 
-    	gap:10px; 
-    }
-    
+    .header-right{ display:flex; align-items:center; gap:10px; }
     .header-cta{
-    	text-decoration:none;
-      	background:var(--primary); 
-      	color:#fff;
-      	padding:10px 18px; 
-      	border-radius:14px;
-      	font-weight:900; 
-      	font-size:14px;
-      	border:1px solid rgba(255,255,255,.12);
-      	box-shadow:0 10px 26px rgba(0,0,0,.25);
-      	white-space:nowrap;
+      text-decoration:none;
+      background:var(--primary);
+      color:#fff;
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:14px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 10px 26px rgba(0,0,0,.25);
+      white-space:nowrap;
+      transition: transform .18s ease, filter .18s ease;
     }
+    .header-cta:hover{ transform: translateY(-1px); filter: brightness(1.05); }
 
     .menu-btn{
-    	display:none;
-      	width:44px;
-      	height:44px;
-      	border-radius:14px;
-      	border:1px solid rgba(255,255,255,.16);
-      	background:rgba(255,255,255,.06);
-      	color:#eaf3ff;
-      	cursor:pointer;
-      	align-items:center;
-      	justify-content:center;
-      	box-shadow:0 10px 26px rgba(0,0,0,.18);
+      display:none;
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+      color:#eaf3ff;
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 26px rgba(0,0,0,.18);
     }
-    
-    .menu-btn:active{ 
-    	transform:translateY(1px); 
-    }
+    .menu-btn:active{ transform:translateY(1px); }
 
-    
-    /* MOBILE DRAWER */
-    .drawer{ 
-    	position:fixed;
-    	inset:0; 
-    	display:none; 
-    	z-index:9998; 
-    }
-    
-    .drawer.is-open{ 
-    	display:block; 
-    }
-    
+    /* =========================================================
+       MOBILE DRAWER
+    ========================================================= */
+    .drawer{ position:fixed; inset:0; display:none; z-index:9998; }
+    .drawer.is-open{ display:block; }
+
     .drawer-backdrop{
-    	position:absolute; 
-    	inset:0;
-      	background:rgba(2,8,23,.58);
-      	opacity:0; 
-      	animation:fadeIn .18s ease-out forwards;
+      position:absolute; inset:0;
+      background:rgba(2,8,23,.58);
+      opacity:0;
+      animation:fadeIn .18s ease-out forwards;
     }
-    
-    @keyframes fadeIn{ 
-    	to{
-    		opacity:1; 
-    	}
-    }
-    
+    @keyframes fadeIn{ to{ opacity:1; } }
+
     .drawer-panel{
-    	position:absolute; 
-    	top:0; 
-    	right:0;
-      	width:min(360px, 92vw); 
-      	height:100%;
-      	background:rgba(7,16,33,0.96);
-      	border-left:1px solid rgba(255,255,255,0.12);
-      	box-shadow:0 30px 120px rgba(0,0,0,.55);
-      	display:flex; 
-      	flex-direction:column;
-      	transform:translateX(110%);
-      	animation:slideIn .22s ease-out forwards;
+      position:absolute; top:0; right:0;
+      width:min(360px, 92vw);
+      height:100%;
+      background:rgba(7,16,33,0.96);
+      border-left:1px solid rgba(255,255,255,0.12);
+      box-shadow:0 30px 120px rgba(0,0,0,.55);
+      display:flex;
+      flex-direction:column;
+      transform:translateX(110%);
+      animation:slideIn .22s ease-out forwards;
     }
-    
-    @keyframes slideIn{
-    	to{
-    		transform:translateX(0);
-    	} 
-    }
-    
+    @keyframes slideIn{ to{ transform:translateX(0); } }
+
     .drawer-head{
-     	display:flex; 
-     	align-items:center; 
-     	justify-content:space-between;
-      	gap:12px; 
-      	padding:16px;
-      	border-bottom:1px solid rgba(255,255,255,0.12);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:16px;
+      border-bottom:1px solid rgba(255,255,255,0.12);
     }
-    
-    .drawer-brand{ 
-    	display:flex; 
-    	align-items:center; 
-    	gap:10px; 
-    	color:#eaf3ff; 
-    	text-decoration:none; 
+    .drawer-brand{
+      display:flex; align-items:center; gap:10px;
+      color:#eaf3ff; text-decoration:none;
     }
-    
+    .brand-badge{
+      width:42px; height:42px;
+      border-radius:14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(234,243,255,0.12);
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900; color:#fff; font-size:14px;
+    }
     .drawer-close{
-    	width:44px;
-    	height:44px;
-      	border-radius:14px;
-      	border:1px solid rgba(255,255,255,.16);
-      	background:rgba(255,255,255,.06);
-      	color:#eaf3ff;
-      	cursor:pointer;
-      	font-size:18px; 
-      	font-weight:900;
-      	display:flex; 
-      	align-items:center; 
-      	justify-content:center;
+      width:44px; height:44px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+      color:#eaf3ff;
+      cursor:pointer;
+      font-size:18px; font-weight:900;
+      display:flex; align-items:center; justify-content:center;
     }
-    
-    .drawer-body{ 
-    	padding:14px 16px 16px; 
-    	overflow:auto; 
-    }
-    
-    .drawer-links{ 
-    	display:flex; 
-    	flex-direction:column; 
-    	gap:10px; 
-    	}
-    
+    .drawer-body{ padding:14px 16px 16px; overflow:auto; }
+
+    .drawer-links{ display:flex; flex-direction:column; gap:10px; }
     .drawer-link{
-      	display:flex; 
-      	align-items:center; 
-      	justify-content:space-between;
-      	gap:10px; 
-      	padding:12px 12px;
-      	border-radius:14px;
-      	border:1px solid rgba(255,255,255,0.12);
-      	background:rgba(255,255,255,0.06);
-      	color:#eaf3ff;
-      	text-decoration:none;
-      	font-weight:900; 
-      	font-size:14px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.06);
+      color:#eaf3ff;
+      text-decoration:none;
+      font-weight:900;
+      font-size:14px;
     }
-    
-    .drawer-link:hover{ 
-    	background:rgba(255,255,255,0.09); 
-    }
-    
-    .drawer-link .chev{ 
-    	opacity:.7; 
-    	font-weight:900; 
-    }
-    
+    .drawer-link:hover{ background:rgba(255,255,255,0.09); }
     .drawer-link.is-active{
-      	border-color:rgba(14,116,144,.8);
-      	background:rgba(14,116,144,.15);
+      border-color:rgba(14,116,144,.8);
+      background:rgba(14,116,144,.15);
     }
-    
+    .drawer-link .chev{ opacity:.7; font-weight:900; }
+
     .drawer-cta{
-      	margin-top:14px; 
-      	display:block; 
-      	text-align:center;
-      	padding:14px 14px; 
-      	border-radius:16px;
-      	background:var(--primary); 
-      	color:#fff;
-      	text-decoration:none; 
-      	font-weight:900;
-      	border:1px solid rgba(255,255,255,.12);
-      	box-shadow:0 10px 26px rgba(0,0,0,.25);
+      margin-top:14px;
+      display:block;
+      text-align:center;
+      padding:14px 14px;
+      border-radius:16px;
+      background:var(--primary);
+      color:#fff;
+      text-decoration:none;
+      font-weight:900;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 10px 26px rgba(0,0,0,.25);
     }
-    
     .drawer-note{
-      	margin-top:12px;
-      	font-size:12px;
-      	color:rgba(234,243,255,.72);
-      	line-height:1.6;
+      margin-top:12px;
+      font-size:12px;
+      color:rgba(234,243,255,.72);
+      line-height:1.6;
     }
 
-    
-    
-    /* HERO */
+    /* =========================================================
+       HERO
+    ========================================================= */
     .hero{
-      	position:relative;
-      	min-height:min(92vh, 860px);
-      	display:flex;
-      	align-items:center;
-      	justify-content:center;
-      	padding:78px 20px 64px;
-      	overflow:hidden;
-      	color:var(--heroText);
-      	text-align:center;
-		background:radial-gradient(1200px 600px at 50% 18%, rgba(14,116,144,.22), transparent 55%),
-        		   radial-gradient(900px 500px at 22% 82%, rgba(255,255,255,.06), transparent 60%),
-        		   linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
+      position:relative;
+      min-height:min(92vh, 860px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:78px 20px 64px;
+      overflow:hidden;
+      color:var(--heroText);
+      text-align:center;
+      background:
+        radial-gradient(1200px 600px at 50% 18%, rgba(14,116,144,.22), transparent 55%),
+        radial-gradient(900px 500px at 22% 82%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(180deg, var(--dark) 0%, var(--dark2) 100%);
       border-bottom:1px solid rgba(255,255,255,.08);
     }
-
     .hero-bg{
-      	position:absolute; 
-      	inset:0;
-      	background-image:url("images/hero/hero.jpg"); /* cambia immagine */
-      	background-size:cover;
-      	background-position:center;
-      	opacity:.18;
-      	transform:scale(1.04);
-     	filter:saturate(1.05) contrast(1.05);
+      position:absolute; inset:0;
+      background-image:url("images/hero/hero.jpg");
+      background-size:cover;
+      background-position:center;
+      opacity:.18;
+      transform:scale(1.04);
+      filter:saturate(1.05) contrast(1.05);
     }
-
     .hero-overlay{
-      	position:absolute; 
-      	inset:0;
-      	background:linear-gradient(180deg, rgba(6,22,42,.70), rgba(6,22,42,.88) 55%, rgba(6,22,42,.94));
+      position:absolute; inset:0;
+      background:linear-gradient(180deg, rgba(6,22,42,.70), rgba(6,22,42,.88) 55%, rgba(6,22,42,.94));
     }
-
     .hero-grid{
-      	position:absolute; 
-      	inset:-2px;
-      	background-image: linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
-        				  linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
-      	background-size:64px 64px;
-      	opacity:.08;
-      	mask-image: radial-gradient(circle at 50% 42%, #000 0 52%, transparent 82%);
+      position:absolute; inset:-2px;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size:64px 64px;
+      opacity:.08;
+      mask-image: radial-gradient(circle at 50% 42%, #000 0 52%, transparent 82%);
     }
-
     .hero-inner{
-      	position:relative;
-      	max-width:980px;
-      	margin:0 auto;
-      	display:flex;
-      	flex-direction:column;
-      	align-items:center;
-      	gap:14px;
+      position:relative;
+      max-width:980px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:14px;
     }
-
     .hero-logo{
-      	width:min(720px);
-      	height:auto;
-      	filter: drop-shadow(0 12px 26px rgba(0,0,0,.40));
-      	animation: heroPop .9s ease-out both;
+      width:min(720px, 92vw);
+      height:auto;
+      filter: drop-shadow(0 12px 26px rgba(0,0,0,.40));
+      animation: heroPop .9s ease-out both;
     }
-
     .hero-tagline{
-      	font-size:18px;
-      	color:#EAF3FF;
-      	opacity:.95;
-      	animation: heroFadeUp .9s ease-out .16s both;
+      font-size:18px;
+      color:#EAF3FF;
+      opacity:.95;
+      animation: heroFadeUp .9s ease-out .16s both;
     }
-
     .hero-actions{
-      	display:flex;
-      	gap:12px;
-      	flex-wrap:wrap;
-      	justify-content:center;
-      	margin-top:10px;
-      	animation: heroFadeUp .9s ease-out .22s both;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:10px;
+      animation: heroFadeUp .9s ease-out .22s both;
     }
-
     .hero-btn{
-      	display:inline-flex;
-      	align-items:center;
-      	justify-content:center;
-      	padding:12px 16px;
-      	border-radius:14px;
-      	border:1px solid rgba(255,255,255,.16);
-      	text-decoration:none;
-      	font-weight:900;
-      	font-size:14px;
-      	letter-spacing:.01em;
-      	transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
-      	will-change:transform;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      text-decoration:none;
+      font-weight:900;
+      font-size:14px;
+      letter-spacing:.01em;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      will-change:transform;
     }
-    
     .hero-btn.primary{
-    	background:linear-gradient(180deg, rgba(14,116,144,.95), rgba(10,78,100,.95));
-      	border-color:rgba(14,116,144,.55);
-      	color:#04131f;
-      	box-shadow:0 14px 28px rgba(0,0,0,.30);
+      background:linear-gradient(180deg, rgba(14,116,144,.95), rgba(10,78,100,.95));
+      border-color:rgba(14,116,144,.55);
+      color:#04131f;
+      box-shadow:0 14px 28px rgba(0,0,0,.30);
     }
-    
     .hero-btn.ghost{
-      	background:rgba(255,255,255,.06);
-      	color:var(--heroText);
-      	backdrop-filter: blur(10px);
+      background:rgba(255,255,255,.06);
+      color:var(--heroText);
+      backdrop-filter: blur(10px);
     }
-    
     .hero-btn:hover{
-      	transform: translateY(-2px);
-      	box-shadow:0 16px 34px rgba(0,0,0,.35);
-      	border-color:rgba(255,255,255,.24);
+      transform: translateY(-2px);
+      box-shadow:0 16px 34px rgba(0,0,0,.35);
+      border-color:rgba(255,255,255,.24);
     }
-    
-    .hero-btn:active{ 
-    	transform: translateY(0) scale(.99); 
-    }
-    
+    .hero-btn:active{ transform: translateY(0) scale(.99); }
+
     .hero-pills{
-      	display:flex;
-      	gap:10px;
-      	flex-wrap:wrap;
-      	justify-content:center;
-      	margin-top:10px;
-      	animation: heroFadeUp .9s ease-out .28s both;
+      display:flex; gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:10px;
+      animation: heroFadeUp .9s ease-out .28s both;
     }
-    
     .hero-pill{
-     	display:inline-flex;
-      	align-items:center;
-      	padding:8px 10px;
-      	border-radius:999px;
-      	border:1px solid rgba(255,255,255,.16);
-      	background:rgba(255,255,255,.06);
-      	color:rgba(245,247,250,.92);
-      	font-size:13px;
-      	letter-spacing:.02em;
-      	backdrop-filter: blur(10px);
-      	transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      display:inline-flex;
+      align-items:center;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+      color:rgba(245,247,250,.92);
+      font-size:13px;
+      letter-spacing:.02em;
+      backdrop-filter: blur(10px);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
     }
-    
     .hero-pill:hover{
-     	transform: translateY(-1px);
-      	background:rgba(255,255,255,.09);
-      	border-color:rgba(255,255,255,.22);
+      transform: translateY(-1px);
+      background:rgba(255,255,255,.09);
+      border-color:rgba(255,255,255,.22);
     }
 
     .hero-scroll{
-      	margin-top:18px;
-      	display:inline-flex;
-      	align-items:center;
-      	gap:10px;
-      	color:rgba(245,247,250,.80);
-      	text-decoration:none;
-      	font-size:12px;
-      	letter-spacing:.14em;
-      	text-transform:uppercase;
-      	animation: heroFadeUp .9s ease-out .34s both;
+      margin-top:18px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:rgba(245,247,250,.80);
+      text-decoration:none;
+      font-size:12px;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      animation: heroFadeUp .9s ease-out .34s both;
     }
-    
     .mouse{
-      	width:22px;
-      	height:34px;
-      	border:1.6px solid rgba(255,255,255,.42);
-      	border-radius:999px;
-      	position:relative;
-      	display:inline-block;
+      width:22px; height:34px;
+      border:1.6px solid rgba(255,255,255,.42);
+      border-radius:999px;
+      position:relative;
+      display:inline-block;
     }
-    
     .mouse::after{
-      	content:"";
-      	position:absolute;
-      	left:50%;
-      	top:7px;
-      	width:4px;
-      	height:4px;
-      	border-radius:999px;
-      	background:rgba(255,255,255,.7);
-      	transform:translateX(-50%);
-      	animation: scrollDot 1.2s ease-in-out infinite;
+      content:"";
+      position:absolute;
+      left:50%; top:7px;
+      width:4px; height:4px;
+      border-radius:999px;
+      background:rgba(255,255,255,.7);
+      transform:translateX(-50%);
+      animation: scrollDot 1.2s ease-in-out infinite;
     }
-    
+
     @keyframes scrollDot{
-      	0%{
-      	 	transform:translate(-50%, 0);
-      	 	opacity:.9; 
-      	 }
-      	70%{
-      		transform:translate(-50%, 12px); 
-      		opacity:.25; 
-      	}
-      	100%{ 
-      		transform:translate(-50%, 0); 
-      		opacity:.9; 
-      	}
+      0%{ transform:translate(-50%, 0); opacity:.9; }
+      70%{ transform:translate(-50%, 12px); opacity:.25; }
+      100%{ transform:translate(-50%, 0); opacity:.9; }
     }
-
     @keyframes heroFadeUp{
-      	from{ 
-      		opacity:0; 
-      		transform: translateY(10px);
-      	}
-      	to{ 
-      		opacity:1; 
-      		transform: translateY(0); 
-      	}
+      from{ opacity:0; transform: translateY(10px); }
+      to{ opacity:1; transform: translateY(0); }
     }
-    
     @keyframes heroPop{
-    	from{
-    		opacity:0; 
-    		transform: translateY(8px) scale(.985); 
-    	}
-      	to{
-      		opacity:1; 
-      		transform: translateY(0) scale(1); 
-      	}
+      from{ opacity:0; transform: translateY(8px) scale(.985); }
+      to{ opacity:1; transform: translateY(0) scale(1); }
     }
 
-    
-    /* Sections */
-    .section{ 
-    	padding:70px 0;
-    }
-    
+    /* =========================================================
+       SECTIONS / TITLES
+    ========================================================= */
+    .section{ padding:70px 0; }
     .kicker{
-     	font-size:14px; 
-     	letter-spacing:1.4px;
-      	color:#6b7280; 
-      	margin-bottom:10px;
-      	text-transform:uppercase;
+      font-size:14px;
+      letter-spacing:1.4px;
+      color:#6b7280;
+      margin-bottom:10px;
+      text-transform:uppercase;
     }
-    
     .h2{
-      	margin:0 0 22px;
-      	font-size:28px;
-      	font-weight:900;
-      	color:#0b0f19;
+      margin:0 0 22px;
+      font-size:28px;
+      font-weight:900;
+      color:#0b0f19;
     }
 
-    
-    /* ABOUT */
+    /* =========================================================
+       ABOUT
+    ========================================================= */
     .about{
-     	background:linear-gradient(to bottom,#f3f4f6 0%, #ffffff 120px);
-      	padding:80px 0;
+      background:linear-gradient(to bottom,#f3f4f6 0%, #ffffff 120px);
+      padding:80px 0;
     }
-    
     .about-grid{
-      	display:flex; gap:40px;
-      	align-items:flex-start;
-      	flex-wrap:wrap;
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+      flex-wrap:wrap;
     }
-    
-    .about-left{ 
-    	flex:1 1 520px; 
-    	max-width:680px; 
+    .about-left{ flex:1 1 520px; max-width:680px; }
+    .about-title{
+      font-size:34px;
+      font-weight:900;
+      margin:0 0 14px;
+      color:#0b0f19;
     }
-    
-    .about-title{ 
-    	font-size:34px; 
-    	font-weight:900; 
-    	margin:0 0 14px; 
-    	color:#0b0f19; 
-    }
-    
     .about-divider{
-      	width:56px;
-      	height:3px;
-      	background:#1f2937;
-      	border-radius:2px;
-      	margin:18px 0 22px;
+      width:56px;
+      height:3px;
+      background:#1f2937;
+      border-radius:2px;
+      margin:18px 0 22px;
     }
-    
     .about-p{
-     	margin:0 0 14px;
-      	font-size:15.5px; 
-      	line-height:1.75; 
-      	color:#111827;
+      margin:0 0 14px;
+      font-size:15.5px;
+      line-height:1.75;
+      color:#111827;
     }
-    
-    .about-p.small{ 
-    	font-size:14.5px; 
-    	line-height:1.7; 
-    	color:#374151; 
-    }
-    
+    .about-p.small{ font-size:14.5px; line-height:1.7; color:#374151; }
+
     .about-right{
-      	flex:1 1 360px;
-      	display:flex; 
-      	flex-direction:column; 
-      	gap:22px;
+      flex:1 1 360px;
+      display:flex;
+      flex-direction:column;
+      gap:22px;
     }
-    
     .info-card{
-     	background:#fff;
-      	border:1px solid var(--border);
-      	border-radius:var(--radius-md);
-      	padding:22px;
-      	box-shadow:0 10px 28px rgba(0,0,0,.08);
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius-md);
+      padding:22px;
+      box-shadow:0 10px 28px rgba(0,0,0,.08);
     }
-    
     .pill{
-    	display:inline-block;
-      	font-size:12px;
-      	padding:6px 12px;
-      	border-radius:999px;
-      	background:var(--primary);
-      	color:white;
-      	font-weight:900;
-      	margin-bottom:14px;
-    }	
-    
+      display:inline-block;
+      font-size:12px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:var(--primary);
+      color:white;
+      font-weight:900;
+      margin-bottom:14px;
+    }
     .info-card ul{
-    	margin:0; 
-    	padding-left:18px; 
-    	color:#111827; 
-    	font-size:14.5px; 
-    	line-height:1.7; 
+      margin:0;
+      padding-left:18px;
+      color:#111827;
+      font-size:14.5px;
+      line-height:1.7;
     }
-    
 
-    /* SERVICES  */
+    /* =========================================================
+       SERVICES
+    ========================================================= */
     .services-grid{
-    	display:flex; 
-    	flex-wrap:wrap; 
-    	gap:22px; 
-    	align-items:stretch; 
+      display:flex;
+      flex-wrap:wrap;
+      gap:22px;
+      align-items:stretch;
     }
-
     .service-card{
-     	position:relative;
-      	flex:1 1 260px;
-      	min-width:240px;
-      	display:flex;
-      	flex-direction:column;
-      	justify-content:space-between;
-      	gap:12px;
-      	padding:22px;
-      	border-radius:16px;
-      	background-size:cover;
-      	background-position:center;
-      	overflow:hidden;
-      	cursor:pointer;
-      	border:1px solid rgba(15,23,42,.10);
-      	transition:transform .25s ease, box-shadow .25s ease;
-      	text-decoration:none;
-      	color:inherit;
-    }	
-    
+      position:relative;
+      flex:1 1 260px;
+      min-width:240px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:12px;
+      padding:22px;
+      border-radius:16px;
+      background-size:cover;
+      background-position:center;
+      overflow:hidden;
+      cursor:pointer;
+      border:1px solid rgba(15,23,42,.10);
+      transition:transform .25s ease, box-shadow .25s ease;
+      text-decoration:none;
+      color:inherit;
+    }
     .service-card::before{
       content:"";
       position:absolute; inset:0;
@@ -760,1762 +565,1202 @@
       backdrop-filter:saturate(1.1);
       transition:background .25s ease;
     }
-    
-    .service-card > *{
-    	position:relative; 
-    	z-index:1; 
-    }
-
+    .service-card > *{ position:relative; z-index:1; }
     .service-card h3{
-    	margin:0 0 10px;
-     	font-size:18px;
-     	font-weight:900;
-     	color:#0b0f19;
-     	line-height:1.35;
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:900;
+      color:#0b0f19;
+      line-height:1.35;
     }
-    
-    .service-card p{ 
-    	margin:0; 
-    	color:#111827; 
-    	font-size:14.5px; 
-    	line-height:1.7; 
-    }
+    .service-card p{ margin:0; color:#111827; font-size:14.5px; line-height:1.7; }
 
     .service-card:hover{
-    	transform:translateY(-4px);
-    	box-shadow:0 12px 28px rgba(15,23,42,.15);
+      transform:translateY(-4px);
+      box-shadow:0 12px 28px rgba(15,23,42,.15);
     }
-    
-    .service-card:hover::before{ 
-    	background:rgba(255,255,255,0.82); 
-    }
+    .service-card:hover::before{ background:rgba(255,255,255,0.82); }
 
     .service-pill{
-    	font-size:12px;
-     	font-weight:700;
-     	padding:6px 10px;
-     	border-radius:999px;
-     	border:1px solid #e2e8f0;
-     	background:#f8fafc;
-     	white-space:nowrap;
+      font-size:12px;
+      font-weight:700;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid #e2e8f0;
+      background:#f8fafc;
+      white-space:nowrap;
     }
-
     .service-card .service-pill{
-    	transform:translateY(2px) scale(.98);
-     	opacity:.92;
-     	transition:transform .25s ease, opacity .25s ease, box-shadow .25s ease;
+      transform:translateY(2px) scale(.98);
+      opacity:.92;
+      transition:transform .25s ease, opacity .25s ease, box-shadow .25s ease;
     }
-    
     .service-card:hover .service-pill{
-    	transform:translateY(0) scale(1);
-    	opacity:1;
-     	box-shadow:0 6px 14px rgba(15,23,42,.10);
+      transform:translateY(0) scale(1);
+      opacity:1;
+      box-shadow:0 6px 14px rgba(15,23,42,.10);
     }
-
     .service-card::after{
-      	content:"";
-      	position:absolute;
-      	top:-40%;
-      	left:-60%;
-      	width:60%;
-      	height:180%;
-      	transform:rotate(18deg);
-      	background:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 45%, rgba(255,255,255,0) 100%);
-      	opacity:0;
-      	transition:opacity .25s ease;
-      	pointer-events:none;
+      content:"";
+      position:absolute;
+      top:-40%;
+      left:-60%;
+      width:60%;
+      height:180%;
+      transform:rotate(18deg);
+      background:linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.22) 45%, rgba(255,255,255,0) 100%);
+      opacity:0;
+      transition:opacity .25s ease;
+      pointer-events:none;
     }
-    
     .service-card:hover::after{
-    	opacity:1;
-      	animation:serviceSheen .7s ease forwards;
+      opacity:1;
+      animation:serviceSheen .7s ease forwards;
     }
-    
     @keyframes serviceSheen{
-    	from{ 
-    		left:-70%; 
-    	}
-      	to{
-      		left:120%; 
-      	}
+      from{ left:-70%; }
+      to{ left:120%; }
     }
 
-    
-    
-    /* SFONDI SERVIZI */
-    
-    .bg-edili{
-    	background-image:url("images/ispezioni_edili.jpg");
-    	  }
-    
-    .bg-navali{
-      	background-image:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60");
+    /* SFONDI SERVIZI (usa file locali quando puoi) */
+    .bg-edili{ background-image:url("images/ispezioni_edili.jpg"); }
+    .bg-navali{ background-image:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60"); }
+    .bg-fotogrammetria{ background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60"); }
+    .bg-rilievi{ background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60"); }
+    .bg-valorizzazione{ background-image:url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60"); }
+    .bg-eventi{ background-image:url("https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1200&q=60"); }
+
+    /* =========================================================
+       TEAM
+    ========================================================= */
+    #team{ padding:64px 18px; background:#f3f6fb; }
+    .team-head{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:22px;
     }
-    
-    .bg-fotogrammetria{
-      	background-image:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60");
+    .team-head__text{ max-width:760px; }
+    .team-head__text h2{
+      margin:0;
+      font-size:32px;
+      letter-spacing:-0.3px;
+      color:#0b2330;
+      font-weight:900;
     }
-    
-    .bg-rilievi{
-    	background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60");
+    .team-head__text p{
+      margin:10px 0 0;
+      color:#64748b;
+      font-size:14.5px;
+      line-height:1.65;
     }
-    
-    .bg-valorizzazione{
-      	background-image:url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=60");
+    .team-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:28px;
+      align-items:stretch;
     }
-    
-    .bg-eventi{
-    	background-image:url("https://images.unsplash.com/photo-1515168833906-d2a3b82b302a?auto=format&fit=crop&w=1200&q=60");
+    .team-card{
+      background:#fff;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(226,232,240,.9);
+      box-shadow:0 12px 30px rgba(2,8,23,.08);
+      transition:transform .25s ease, box-shadow .25s ease;
+      will-change:transform;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+    }
+    .team-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 45px rgba(2,8,23,.12);
+    }
+    .team-media{ overflow:hidden; background:#e8edf5; height: 300px; }
+    .team-media img{ width:100%; object-fit:cover; }
+    .team-body{ padding:20px 22px 22px; display:flex; flex-direction:column; flex:1; }
+    .team-top{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    .team-name{ margin:0; font-size:18px; color:#0b2330; font-weight:800; }
+    .team-badge{
+      font-size:12px;
+      padding:4px 10px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid rgba(2,8,23,.08);
+      white-space:nowrap;
+    }
+    .team-badge--founder{ background:#e0f2fe; color:#0369a1; border-color:rgba(3,105,161,.18); }
+    .team-badge--tech{ background:#e8f5e9; color:#1b5e20; border-color:rgba(27,94,32,.18); }
+    .team-badge--support{ background:#fff3e0; color:#b45309; border-color:rgba(180,83,9,.18); }
+    .team-badge--visual{ background:#eef2ff; color:#4338ca; border-color:rgba(67,56,202,.18); }
+    .team-role{ margin-top:8px; font-size:14px; font-weight:700; color:#0e7490; }
+    .team-desc{ margin:10px 0 0; font-size:14px; line-height:1.55; color:#64748b; }
+    .team-footer{
+      margin-top:auto;
+      padding-top:14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .team-read{ color:#0e7490; font-weight:800; font-size:14px; text-decoration:none; }
+    .team-read:hover{ text-decoration:underline; }
+    .team-ln{
+      width:36px;
+      height:36px;
+      border-radius:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:1px solid rgba(226,232,240,1);
+      background:#fff;
+      text-decoration:none;
+      box-shadow:0 8px 18px rgba(2,8,23,.06);
+      transition:transform .18s ease;
+    }
+    .team-ln:hover{ transform:translateY(-1px); }
+    .team-ln span{ font-weight:900; color:#0a66c2; font-size:18px; line-height:1; }
+
+    /* =========================================================
+       VISIONE STRATIA CARD
+    ========================================================= */
+    .vs-wrap{ padding:28px; justify-content:center; }
+    .vs-card{
+      border-radius:var(--vs-radius);
+      overflow:hidden;
+      position:relative;
+      box-shadow:var(--vs-shadow);
+      border:1px solid rgba(15, 23, 42, .10);
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
+    }
+    .vs-card.vs-has-drone{
+      background-image:
+        radial-gradient(1100px 520px at 18% 0%, rgba(43,120,145,.22) 0%, rgba(255,255,255,0) 58%),
+        linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.88) 46%, rgba(255,255,255,.70) 66%, rgba(255,255,255,.35) 100%),
+        url("images/drone.jpg");
+      background-size: cover;
+      background-position: right center;
+      background-repeat:no-repeat;
+    }
+    .vs-card::before{
+      content:"";
+      position:absolute;
+      inset:14px;
+      border-radius:calc(var(--vs-radius) - 10px);
+      background:
+        radial-gradient(900px 340px at 55% 10%, rgba(56, 148, 175, .10) 0%, rgba(255,255,255,0) 62%),
+        linear-gradient(180deg, rgba(255,255,255,.52), rgba(255,255,255,.36));
+      border:1px solid rgba(255,255,255,.55);
+      pointer-events:none;
+      z-index:0;
+    }
+    .vs-head, .vs-body{ position:relative; z-index:1; }
+    .vs-head{ padding:28px 32px 10px; }
+    .vs-brand{ display:flex; align-items:center; gap:14px; }
+
+    .vs-logo{
+      width:56px; height:56px; border-radius:14px;
+      background: linear-gradient(145deg, rgba(35,120,145,.32), rgba(255,255,255,.80));
+      border:1px solid rgba(15, 23, 42, .12);
+      box-shadow: 0 12px 24px rgba(2,8,23,.08);
+      display:grid; place-items:center;
+      position:relative; overflow:hidden;
+    }
+    .vs-logo::after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.75), rgba(255,255,255,0) 55%);
+      transform: rotate(14deg);
+    }
+    .vs-mark{
+      font-weight:900; font-size:26px; letter-spacing:-.04em;
+      color:#1e5f76; text-shadow:0 1px 0 rgba(255,255,255,.6);
+    }
+    .vs-title{ font-weight:800; font-size:30px; letter-spacing:-.02em; line-height:1.05; }
+    .vs-subtitle{ margin-top:3px; font-size:14px; color:var(--muted); }
+
+    .vs-body{ padding:6px 32px 28px; }
+    .vs-copy{ max-width: 60ch; }
+    .vs-h2{ margin:18px 0 10px; font-size:26px; letter-spacing:-.02em; }
+    .vs-p{ margin:0; color:#4b5563; line-height:1.55; }
+
+    .vs-pillars{ padding-top:24px; }
+    .vs-pillars-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .vs-pillar{
+      background: rgba(255,255,255,.90);
+      border:1px solid rgba(15, 23, 42, .08);
+      border-radius:var(--vs-radius2);
+      box-shadow:var(--vs-shadow2);
+      padding:18px 18px 16px;
+      backdrop-filter: blur(4px);
+    }
+    .vs-pillar-title{ margin:0 0 8px; font-size:22px; letter-spacing:-.01em; }
+    .vs-pillar-text{ margin:0; color:#5b6676; line-height:1.35; }
+
+    .vs-actions{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      padding-top:22px;
+      flex-wrap:wrap;
+    }
+    .vs-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:44px;
+      padding:0 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:14px;
+      letter-spacing:.01em;
+      transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .vs-btn:active{ transform:translateY(1px); }
+
+    .vs-btn-ghost{
+      color:var(--text);
+      background: rgba(255,255,255,.88);
+      border:1px solid rgba(15, 23, 42, .16);
+      box-shadow:0 10px 18px rgba(2,8,23,.08);
+    }
+    .vs-btn-ghost:hover{
+      transform:translateY(-1px);
+      box-shadow:0 14px 26px rgba(2,8,23,.12);
+      border-color: rgba(15, 23, 42, .22);
+    }
+    .vs-btn-primary{
+      color:#fff;
+      background: linear-gradient(180deg, rgba(43,120,145,1), rgba(27,107,131,1));
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow:0 14px 26px rgba(27,107,131,.24);
+    }
+    .vs-btn-primary:hover{
+      transform:translateY(-1px);
+      box-shadow:0 18px 34px rgba(27,107,131,.30);
     }
 
-    
-  /* ====== TEAM  ====== */
-	  #team{
-	    padding:64px 18px;
-	    background:#f3f6fb;
-	  }
-	
-	  /* header */
-	  .team-head{
-	    display:flex;
-	    align-items:flex-end;
-	    justify-content:space-between;
-	    gap:18px;
-	    margin-bottom:22px;
-	  }
-	  .team-head__text{
-	    max-width:760px;
-	  }
-	  .team-head__text h2{
-	    margin:0;
-	    font-size:32px;
-	    letter-spacing:-0.3px;
-	    color:#0b2330;
-	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-	    font-weight:900;
-	  }
-	  .team-head__text p{
-	    margin:10px 0 0;
-	    color:#64748b;
-	    font-size:14.5px;
-	    line-height:1.65;
-	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-	  }
-	
-	  /* grid */
-	  .team-grid{
-	    display:grid;
-	    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-	    gap:28px;
-	    align-items:stretch;
-	  }
-	
-	  /* card */
-	  .team-card{
-	    background:#fff;
-	    border-radius:18px;
-	    overflow:hidden;
-	    border:1px solid rgba(226,232,240,.9);
-	    box-shadow:0 12px 30px rgba(2,8,23,.08);
-	    transition:transform .25s ease, box-shadow .25s ease;
-	    will-change:transform;
-	    height:100%;
-	    display:flex;
-	    flex-direction:column;
-	  }
-	  .team-card:hover{
-	    transform:translateY(-4px);
-	    box-shadow:0 18px 45px rgba(2,8,23,.12);
-	  }
-	
-	  /* media */
-	  .team-media{
-	    overflow:hidden;
-	    background:#e8edf5;
-	    height: 300px;
-	  }
-	  .team-media img{
-	    width:100%;
-	    object-fit:cover;
-	    display:block;
-	    transform:translateZ(0);
-	    backface-visibility:hidden;
-	  }
-	
-	  /* body */
-	  .team-body{
-	    padding:20px 22px 22px;
-	    display:flex;
-	    flex-direction:column;
-	    flex:1;
-	  }
-	
-	  .team-top{
-	    display:flex;
-	    align-items:center;
-	    justify-content:space-between;
-	    gap:12px;
-	  }
-	  .team-name{
-	    margin:0;
-	    font-size:18px;
-	    color:#0b2330;
-	    font-weight:800;
-	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-	  }
-	  .team-badge{
-	    font-size:12px;
-	    padding:4px 10px;
-	    border-radius:999px;
-	    font-weight:700;
-	    border:1px solid rgba(2,8,23,.08);
-	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-	    white-space:nowrap;
-	  }
-	  .team-badge--founder{ background:#e0f2fe; color:#0369a1; border-color:rgba(3,105,161,.18); }
-	  .team-badge--tech{ background:#e8f5e9; color:#1b5e20; border-color:rgba(27,94,32,.18); }
-	  .team-badge--support{ background:#fff3e0; color:#b45309; border-color:rgba(180,83,9,.18); }
-	  .team-badge--visual{ background:#eef2ff; color:#4338ca; border-color:rgba(67,56,202,.18); }
-	
-	  .team-role{
-	    margin-top:8px;
-	    font-size:14px;
-	    font-weight:700;
-	    color:#0e7490;
-	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-	  }
-	  .team-desc{
-	    margin:10px 0 0;
-	    font-size:14px;
-	    line-height:1.55;
-	    color:#64748b;
-	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-	  }
-	
-	  /* footer links */
-	  .team-footer{
-	    margin-top:auto;                 /*  CTA sempre in fondo */
-	    padding-top:14px;
-	    display:flex;
-	    align-items:center;
-	    justify-content:space-between;
-	    gap:14px;
-	  }
-	  .team-read{
-	    color:#0e7490;
-	    font-weight:800;
-	    font-size:14px;
-	    text-decoration:none;
-	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-	  }
-	  .team-read:hover{ text-decoration:underline; }
-	
-	  .team-ln{
-	    width:36px;
-	    height:36px;
-	    border-radius:10px;
-	    display:inline-flex;
-	    align-items:center;
-	    justify-content:center;
-	    border:1px solid rgba(226,232,240,1);
-	    background:#fff;
-	    text-decoration:none;
-	    box-shadow:0 8px 18px rgba(2,8,23,.06);
-	    transition:transform .18s ease;
-	  }
-	  .team-ln:hover{ transform:translateY(-1px); }
-	  .team-ln span{
-	    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-	    font-weight:900;
-	    color:#0a66c2;
-	    font-size:18px;
-	    line-height:1;
-	  }
-	
-	  /* responsive */
-	  @media (max-width:720px){
-	    .team-head{ flex-direction:column; align-items:flex-start; }
-	    .team-head__text h2{ font-size:28px; }
-	  }
-	    
-
-  /* =========================
-   CARD "Visione STRATIA"
-
-   ========================= */
-
-	:root{
-	  --bg:#f4f7fb;
-	  --text:#0b2330;
-	  --muted:#64748b;
-	
-	  --primary:#2b7891;
-	  --primary2:#1b6b83;
-	
-	  --shadow:0 22px 55px rgba(2,8,23,.12);
-	  --shadow2:0 10px 22px rgba(2,8,23,.10);
-	
-	  --radius:22px;
-	  --radius2:18px;
-	}
-	
-	*{box-sizing:border-box}
-	body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-	
-	/* wrapper */
-	.vs-wrap{
-	  padding:28px;
-	  justify-content:center;
-	}
-	
-	/* card base */
-	.vs-card{
-	  border-radius:var(--radius);
-	  overflow:hidden;
-	  position:relative;
-	  box-shadow:var(--shadow);
-	  border:1px solid rgba(15, 23, 42, .10);
-	  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.82));
-	}
-	
-	.vs-card.vs-has-drone{
-	  background-image:
-	    /* overlay per leggibilità testo */
-	    radial-gradient(1100px 520px at 18% 0%,
-	      rgba(43,120,145,.22) 0%,
-	      rgba(255,255,255,0) 58%),
-	    linear-gradient(90deg,
-	      rgba(255,255,255,.92) 0%,
-	      rgba(255,255,255,.88) 46%,
-	      rgba(255,255,255,.70) 66%,
-	      rgba(255,255,255,.35) 100%),
-	    url("images/drone.jpg");
-	  background-size: cover;
-	  background-position: right center;
-	  background-repeat:no-repeat;
-	}
-	
-	/* soft inner frame */
-	.vs-card::before{
-	  content:"";
-	  position:absolute;
-	  inset:14px;
-	  border-radius:calc(var(--radius) - 10px);
-	  background:
-	    radial-gradient(900px 340px at 55% 10%,
-	      rgba(56, 148, 175, .10) 0%,
-	      rgba(255,255,255,0) 62%),
-	    linear-gradient(180deg, rgba(255,255,255,.52), rgba(255,255,255,.36));
-	  border:1px solid rgba(255,255,255,.55);
-	  pointer-events:none;
-	  z-index:0;
-	}
-	
-	/* content layer */
-	.vs-head, .vs-body{position:relative; z-index:1;}
-	
-	.vs-head{padding:28px 32px 10px;}
-	
-	.vs-brand{display:flex; align-items:center; gap:14px;}
-	.vs-logo{
-	  width:56px; height:56px; border-radius:14px;
-	  background: linear-gradient(145deg, rgba(35,120,145,.32), rgba(255,255,255,.80));
-	  border:1px solid rgba(15, 23, 42, .12);
-	  box-shadow: 0 12px 24px rgba(2,8,23,.08);
-	  display:grid; place-items:center;
-	  position:relative; overflow:hidden;
-	}
-	.vs-logo::after{
-	  content:"";
-	  position:absolute; inset:-30%;
-	  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.75), rgba(255,255,255,0) 55%);
-	  transform: rotate(14deg);
-	}
-	.vs-mark{
-	  font-weight:900; font-size:26px; letter-spacing:-.04em;
-	  color:#1e5f76; text-shadow:0 1px 0 rgba(255,255,255,.6);
-	}
-	.vs-title{font-weight:800;font-size:30px;letter-spacing:-.02em;line-height:1.05;}
-	.vs-subtitle{margin-top:3px;font-size:14px;color:var(--muted);}
-	
-	/* body */
-	.vs-body{padding:6px 32px 28px;}
-	.vs-copy{max-width: 60ch;}
-	.vs-h2{margin:18px 0 10px;font-size:26px;letter-spacing:-.02em;}
-	.vs-p{margin:0;color:#4b5563;line-height:1.55;}
-	
-	/* pillars */
-	.vs-pillars{padding-top:24px;}
-	.vs-pillars-grid{
-	  display:grid;
-	  grid-template-columns:repeat(3,1fr);
-	  gap:18px;
-	}
-	.vs-pillar{
-	  background: rgba(255,255,255,.90);
-	  border:1px solid rgba(15, 23, 42, .08);
-	  border-radius:var(--radius2);
-	  box-shadow:var(--shadow2);
-	  padding:18px 18px 16px;
-	  backdrop-filter: blur(4px);
-	}
-	.vs-pillar-title{margin:0 0 8px;font-size:22px;letter-spacing:-.01em;}
-	.vs-pillar-text{margin:0;color:#5b6676;line-height:1.35;}
-	
-	/* actions */
-	.vs-actions{
-	  display:flex;
-	  justify-content:center;
-	  gap:14px;
-	  padding-top:22px;
-	}
-	.vs-btn{
-	  display:inline-flex; align-items:center; justify-content:center;
-	  height:44px; padding:0 18px;
-	  border-radius:999px;
-	  text-decoration:none;
-	  font-weight:700; font-size:14px; letter-spacing:.01em;
-	  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
-	  user-select:none;
-	}
-	.vs-btn:active{transform:translateY(1px);}
-	
-	.vs-btn-ghost{
-	  color:var(--text);
-	  background: rgba(255,255,255,.88);
-	  border:1px solid rgba(15, 23, 42, .16);
-	  box-shadow:0 10px 18px rgba(2,8,23,.08);
-	}
-	.vs-btn-ghost:hover{
-	  transform:translateY(-1px);
-	  box-shadow:0 14px 26px rgba(2,8,23,.12);
-	  border-color: rgba(15, 23, 42, .22);
-	}
-	
-	.vs-btn-primary{
-	  color:#fff;
-	  background: linear-gradient(180deg, rgba(43,120,145,1), rgba(27,107,131,1));
-	  border:1px solid rgba(0,0,0,.06);
-	  box-shadow:0 14px 26px rgba(27,107,131,.24);
-	}
-	.vs-btn-primary:hover{
-	  transform:translateY(-1px);
-	  box-shadow:0 18px 34px rgba(27,107,131,.30);
-	}
-	
-	/* responsive */
-	@media (max-width: 860px){
-	  .vs-head, .vs-body{padding-left:18px; padding-right:18px;}
-	  .vs-pillars-grid{grid-template-columns:1fr;}
-	  .vs-actions{flex-wrap:wrap;}
-	  .vs-card.vs-has-drone{
-	    background-position: center;
-	    background-image:
-	      radial-gradient(1100px 520px at 18% 0%,
-	        rgba(43,120,145,.22) 0%,
-	        rgba(255,255,255,0) 58%),
-	      linear-gradient(180deg,
-	        rgba(255,255,255,.92) 0%,
-	        rgba(255,255,255,.78) 55%,
-	        rgba(255,255,255,.46) 100%),
-	      url("images/drone.jpg");
-	  }
-	}
-
-    /* GALLERY */
-    .gallery{ 
-    	padding:80px 0; 
-    }
-    
-    .gallery-title{ 
-    	margin:0 0 26px; 
-    	font-size:34px; 
-    	font-weight:900; 
-    	color:#0b0f19; 
-    }
-    
+    /* =========================================================
+       GALLERY + LIGHTBOX
+    ========================================================= */
+    .gallery{ padding:80px 0; }
+    .gallery-title{ margin:0 0 26px; font-size:34px; font-weight:900; color:#0b0f19; }
     .gallery-grid{
-      	display:grid;
-      	grid-template-columns:repeat(4, minmax(0, 1fr));
-      	gap:18px;
-      	align-items:stretch;
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0, 1fr));
+      gap:18px;
+      align-items:stretch;
     }
-    
     .gallery-item{
-      	margin:0; 
-      	border-radius:var(--radius);
-      	overflow:hidden;
-      	background:#f3f4f6;
-      	box-shadow:var(--shadow2);
-      	cursor:pointer;
+      margin:0;
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:#f3f4f6;
+      box-shadow:var(--shadow2);
+      cursor:pointer;
     }
-    
-    .gallery-item img{ 
-    	width:100%; 
-    	height:210px; 
-    	object-fit:cover; 
-    }
-    
+    .gallery-item img{ width:100%; height:210px; object-fit:cover; }
     .gallery-caption{
-     	padding:10px 12px; 
-     	background:#fff;
-      	border-top:1px solid rgba(15,23,42,0.08);
-      	font-size:12.5px; 
-      	line-height:1.5; 
-      	color:#475569;
+      padding:10px 12px;
+      background:#fff;
+      border-top:1px solid rgba(15,23,42,0.08);
+      font-size:12.5px;
+      line-height:1.5;
+      color:#475569;
     }
 
-    
-    /* LIGHTBOX */
     .lightbox{
-      	position:fixed; inset:0;
-      	display:none;
-      	align-items:center; justify-content:center;
-      	padding:18px;
-      	z-index:9997;
-      	background:rgba(2,8,23,.78);
+      position:fixed; inset:0;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:9997;
+      background:rgba(2,8,23,.78);
     }
-    
-    .lightbox.is-open{ 
-    	display:flex; 
-    }
-    
+    .lightbox.is-open{ display:flex; }
     .lightbox-panel{
-      	width:min(980px, 100%);
-      	background:#0b1220;
-      	border-radius:var(--radius);
-      	overflow:hidden;
-      	box-shadow:0 24px 90px rgba(0,0,0,.55);
-      	border:1px solid rgba(255,255,255,.10);
+      width:min(980px, 100%);
+      background:#0b1220;
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:0 24px 90px rgba(0,0,0,.55);
+      border:1px solid rgba(255,255,255,.10);
     }
-    
     .lightbox-top{
-      	display:flex; 
-      	align-items:center; 
-      	justify-content:space-between;
-      	gap:12px;
-      	padding:12px 14px;
-      	border-bottom:1px solid rgba(255,255,255,.10);
-      	color:#eaf3ff;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:12px 14px;
+      border-bottom:1px solid rgba(255,255,255,.10);
+      color:#eaf3ff;
     }
-    
-    .lightbox-title{ 
-    	font-weight:900; 
-    	font-size:13px; 
-    	opacity:.95; 
-    }
-    
+    .lightbox-title{ font-weight:900; font-size:13px; opacity:.95; }
     .lightbox-close{
-      	width:42px;
-      	height:42px; 
-      	border-radius:14px;
-      	border:1px solid rgba(255,255,255,.16);
-      	background:rgba(255,255,255,.06);
-      	color:#eaf3ff; 
-      	cursor:pointer;
-      	font-size:18px; 
-      	font-weight:900;
-      	display:flex; 
-      	align-items:center; 
-      	justify-content:center;
+      width:42px; height:42px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+      color:#eaf3ff;
+      cursor:pointer;
+      font-size:18px;
+      font-weight:900;
+      display:flex; align-items:center; justify-content:center;
     }
-    
-    .lightbox-body{ 
-    	position:relative; 
-    	background:#0b1220; 
-    }
-    
+    .lightbox-body{ position:relative; background:#0b1220; }
     .lightbox-img{
-      	width:100%;
-      	height:min(70vh, 620px);
-      	object-fit:contain;
-      	background:#0b1220;
-    }	
-    
+      width:100%;
+      height:min(70vh, 620px);
+      object-fit:contain;
+      background:#0b1220;
+    }
     .lightbox-caption{
-      	padding:12px 14px;
-      	color:rgba(234,243,255,.86);
-      	font-size:13px; line-height:1.6;
-      	border-top:1px solid rgba(255,255,255,.10);
+      padding:12px 14px;
+      color:rgba(234,243,255,.86);
+      font-size:13px;
+      line-height:1.6;
+      border-top:1px solid rgba(255,255,255,.10);
     }
-    
     .lb-nav{
-      	position:absolute;
-      	top:50%; 
-      	transform:translateY(-50%);
-      	width:46px;
-      	height:46px;
-      	border-radius:16px;
-      	border:1px solid rgba(255,255,255,.16);
-      	background:rgba(255,255,255,.06);
-      	color:#eaf3ff;
-      	cursor:pointer;
-      	display:flex; 
-      	align-items:center; 
-      	justify-content:center;
-      	font-size:20px; 
-      	font-weight:900;
-      	user-select:none;
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:46px; height:46px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+      color:#eaf3ff;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:20px;
+      font-weight:900;
+      user-select:none;
     }
-    
-    .lb-prev{ 
-    	left:12px; 
-    }
-    
-    .lb-next{ 
-    	right:12px; 
-    }
-    
-    .lb-nav:hover{ 
-    	background:rgba(255,255,255,.10); 
-    }
+    .lb-prev{ left:12px; }
+    .lb-next{ right:12px; }
+    .lb-nav:hover{ background:rgba(255,255,255,.10); }
 
-
-
-    /* CONTACT */
+    /* =========================================================
+       CONTACT
+    ========================================================= */
     .contact{
-      	min-height:100vh;
-      	width:100%;
-      	display:flex; 
-      	align-items:center; 
-      	justify-content:center;
-      	padding:40px 0;
+      min-height:100vh;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 0;
     }
-    
     .contact-wrap{
-      	width:100%;
-      	max-width:900px;
-      	margin:0 auto;
-      	padding:0 20px;
-      	display:flex; 
-      	flex-direction:column;
+      width:100%;
+      max-width:900px;
+      margin:0 auto;
+      padding:0 20px;
+      display:flex;
+      flex-direction:column;
     }
-    
     .contact-title{
-     	font-size:36px;
-      	font-weight:700;
-      	margin:0 0 30px 0;
-      	color:#0f172a;
+      font-size:36px;
+      font-weight:700;
+      margin:0 0 30px 0;
+      color:#0f172a;
     }
-    
-    .contact-form{ 
-    	width:100%; 
-    	display:flex; 
-    	flex-direction:column; 
-    	gap:20px; 
+    .contact-form{
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
     }
-    
-    .field{ 
-    	display:flex; 
-    	flex-direction:column; 
-    	gap:6px; 
-    }
-    
-    .field label{ 
-    	font-size:14px; 
-    	font-weight:700; 
-    	color:#0f172a; 
-    }
-    
+    .field{ display:flex; flex-direction:column; gap:6px; }
+    .field label{ font-size:14px; font-weight:700; color:#0f172a; }
     .field input, .field textarea{
-    	width:100%;
-      	padding:14px 16px;
-      	border-radius:12px;
-      	border:1px solid #cbd5e1;
-      	font-size:14px;
-      	outline:none;
+      width:100%;
+      padding:14px 16px;
+      border-radius:12px;
+      border:1px solid #cbd5e1;
+      font-size:14px;
+      outline:none;
     }
-    
-    .field textarea{ 
-    	resize:none; 
-    }
-    
+    .field textarea{ resize:none; }
     .btn{
-      	margin-top:10px;
-      	padding:16px;
-      	border-radius:14px;
-      	border:none;
-      	background:var(--primary);
-      	color:#fff;
-      	font-size:15px;
-      	font-weight:800;
-      	cursor:pointer;
-    }	
-    
-    .privacy{ 
-    	font-size:12px; 
-    	color:#64748b; 
-    	margin-top:10px; 
+      margin-top:10px;
+      padding:16px;
+      border-radius:14px;
+      border:none;
+      background:var(--primary);
+      color:#fff;
+      font-size:15px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .privacy{ font-size:12px; color:#64748b; margin-top:10px; }
+    .form-status{ min-height: 18px; }
+
+    /* =========================================================
+       CONTATTI DIRETTI
+    ========================================================= */
+    .direct-wrap{ max-width:900px; margin:0 auto; padding:0 18px; }
+    .direct-divider{
+      margin:64px auto 48px;
+      display:flex; align-items:center; gap:18px;
+    }
+    .direct-divider__line{
+      flex:1; height:1px;
+      background:linear-gradient(to right, transparent, #cbd5e1);
+    }
+    .direct-divider__line--right{
+      background:linear-gradient(to left, transparent, #cbd5e1);
+    }
+    .direct-divider__label{
+      font-size:13px;
+      font-weight:800;
+      color:#64748b;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
+    .direct-title{
+      text-align:center;
+      font-size:22px;
+      font-weight:800;
+      color:#0b2330;
+      margin:0 0 26px;
+      letter-spacing:-0.2px;
+    }
+    .direct-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:22px;
+      align-items:stretch;
+    }
+    .direct-card{
+      background:#fff;
+      border-radius:18px;
+      border:1px solid #e2e8f0;
+      box-shadow:0 12px 30px rgba(2,8,23,.08);
+      padding:22px;
+      min-height:150px;
+      height:100%;
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      text-decoration:none;
+      color:#0b2330;
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .direct-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 45px rgba(2,8,23,.12);
+    }
+    .direct-ico{
+      width:44px; height:44px;
+      border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      margin-top:2px;
+      border:1px solid rgba(2,8,23,.08);
+    }
+    .direct-ico--phone{ background:#eaf3ff; border-color:rgba(14,116,144,.18); }
+    .direct-ico--wa{ background:#eafff0; border-color:rgba(27,94,32,.18); }
+    .direct-ico--mail{ background:#eef2ff; border-color:rgba(67,56,202,.18); }
+    .direct-ico--ig{ background:#fff2e6; border-color:rgba(180,83,9,.18); }
+
+    .direct-body{ min-width:0; flex:1; display:flex; flex-direction:column; height:100%; }
+    .direct-h{ font-weight:800; font-size:16px; line-height:1.2; }
+    .direct-row{ margin-top:6px; font-size:14px; color:#64748b; line-height:1.4; }
+    .direct-row--truncate{
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      max-width:100%;
+    }
+    .direct-sub{ margin-top:4px; font-size:12.5px; color:#94a3b8; }
+
+    .direct-headline{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .direct-badge{
+      padding:3px 8px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:800;
+      background:#ecfdf3;
+      color:#15803d;
+      border:1px solid rgba(21,128,61,.18);
+      white-space:nowrap;
+    }
+    .direct-cta-wrap{ margin-top:auto; padding-top:12px; }
+    .direct-cta{ font-size:13px; color:#0e7490; font-weight:800; }
+    .direct-cta-btn{ border:none; background:none; padding:0; cursor:pointer; }
+    .direct-note{
+      margin:18px auto 0;
+      text-align:center;
+      font-size:12.5px;
+      color:#64748b;
     }
 
-    
-    /* Responsive */
-    @media (max-width: 980px){
-    	.gallery-grid{ 
-    		grid-template-columns:repeat(2, minmax(0, 1fr)); 
-    	}
+    /* =========================================================
+       REVEAL (animazione soft) — se vuoi puoi aggiungere stile
+    ========================================================= */
+    .reveal, .reveal-item{
+      opacity:0;
+      transform:translateY(10px);
+      filter:blur(1px);
+      transition: opacity .5s ease, transform .5s ease, filter .5s ease;
     }
-    
-    @media (max-width: 720px){
-     	.nav{ 
-     		display:none; 
-     	}
-      	.menu-btn{ 
-      		display:inline-flex; 
-      	}
-      	.brand{ 
-      		min-width:auto; 
-      	}
-      	.header-cta{ 
-      		display:none; 
-      	}
-      	.hero-btn{ 
-      		width:100%; 
-      	}
+
+    /* =========================================================
+       MEDIA QUERIES (commentate)
+    ========================================================= */
+
+    /* 1) Telefoni piccoli (≤ 360px): riduci padding e font, CTA full-width */
+    @media (max-width: 360px){
+      .container{ padding:0 14px; }
+      .brand-name{ font-size:16px; }
+      .brand-logo{ width:40px; height:40px; }
+
+      .hero{ padding:72px 14px 54px; }
+      .hero-tagline{ font-size:15px; }
+      .hero-btn{ width:100%; }
+      .hero-pill{ font-size:12px; padding:7px 9px; }
+
+      .h2{ font-size:24px; }
+      .about-title{ font-size:28px; }
+      .gallery-title{ font-size:28px; }
+      .contact-title{ font-size:28px; }
+
+      .vs-title{ font-size:24px; }
+      .vs-h2{ font-size:22px; }
+
+      .team-media{ height:240px; }
     }
-    
+
+    /* 2) Telefoni standard (≤ 520px): layout in 1 colonna, menu mobile */
     @media (max-width: 520px){
-      	.gallery-grid{ 
-      		grid-template-columns:1fr; 
-      	}
-      	.hero-tagline{ 
-      		font-size:16px; 
-      	}
+      .nav{ display:none; }
+      .menu-btn{ display:inline-flex; }
+      .header-cta{ display:none; }
+
+      .section{ padding:56px 0; }
+      .about{ padding:64px 0; }
+      #team{ padding:56px 14px; }
+      .gallery{ padding:64px 0; }
+
+      .hero{ min-height:auto; padding:78px 16px 58px; }
+      .hero-actions{ width:100%; }
+      .hero-btn{ width:100%; }
+
+      .about-grid{ gap:26px; }
+      .about-left, .about-right{ flex:1 1 100%; max-width:100%; }
+      .info-card{ padding:18px; }
+
+      .services-grid{ gap:16px; }
+      .service-card{ min-width:0; flex:1 1 100%; padding:18px; }
+
+      .team-grid{ grid-template-columns:1fr; gap:18px; }
+      .team-media{ height:260px; }
+
+      .vs-wrap{ padding:18px; }
+      .vs-head{ padding:20px 18px 8px; }
+      .vs-body{ padding:6px 18px 20px; }
+      .vs-pillars-grid{ grid-template-columns:1fr; }
+
+      .gallery-grid{ grid-template-columns:1fr; }
+      .gallery-item img{ height:220px; }
+
+      .lb-nav{ width:42px; height:42px; border-radius:14px; }
+      .lb-prev{ left:8px; }
+      .lb-next{ right:8px; }
+
+      .contact{ padding:34px 0; }
+      .contact-wrap{ padding:0 16px; }
+      .field input, .field textarea{ padding:13px 14px; }
+      .btn{ width:100%; }
+
+      .direct-wrap{ padding:0 16px; }
+      .direct-grid{ grid-template-columns:1fr; gap:16px; }
     }
-    
-    /*contatti diretti */
-    
-    /* ====== CONTATTI DIRETTI WRAP ====== */
-  .direct-wrap{ max-width:900px; margin:0 auto; padding:0 18px; }
-  .direct-divider{
-    margin:64px auto 48px;
-    display:flex; align-items:center; gap:18px;
-  }
-  .direct-divider__line{
-    flex:1; height:1px;
-    background:linear-gradient(to right, transparent, #cbd5e1);
-  }
-  .direct-divider__line--right{
-    background:linear-gradient(to left, transparent, #cbd5e1);
-  }
-  .direct-divider__label{
-    font-size:13px;
-    font-weight:800;
-    color:#64748b;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-    white-space:nowrap;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
 
-  .direct-title{
-    text-align:center;
-    font-size:22px;
-    font-weight:800;
-    color:#0b2330;
-    margin:0 0 26px;
-    letter-spacing:-0.2px;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
+    /* 3) Telefoni grandi / phablet (≤ 720px): gallery 2 colonne, spaziature */
+    @media (max-width: 720px){
+      .header-inner{ gap:12px; }
 
-  /* ====== GRID ====== */
-  .direct-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
-    gap:22px;
-    align-items:stretch;
-  }
+      .team-head{ flex-direction:column; align-items:flex-start; }
+      .team-head__text h2{ font-size:28px; }
 
-  /* ====== CARD BASE ====== */
-  .direct-card{
-    background:#fff;
-    border-radius:18px;
-    border:1px solid #e2e8f0;
-    box-shadow:0 12px 30px rgba(2,8,23,.08);
-    padding:22px;
+      .gallery-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+      .gallery-item img{ height:200px; }
 
-    min-height:150px;
-    height:100%;
+      .vs-actions{ justify-content:flex-start; }
+    }
 
-    display:flex;
-    gap:14px;
-    align-items:flex-start;
+    /* 4) Tablet piccoli / landscape (≤ 980px): about in stack, servizi 2 colonne */
+    @media (max-width: 980px){
+      .about-grid{ gap:30px; }
+      .about-left, .about-right{ flex:1 1 100%; max-width:100%; }
 
-    text-decoration:none;
-    color:#0b2330;
+      .service-card{ flex:1 1 calc(50% - 18px); min-width:260px; }
 
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .direct-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 45px rgba(2,8,23,.12);
-  }
+      .vs-pillars-grid{ grid-template-columns:1fr; }
 
-  /* icona */
-  .direct-ico{
-    width:44px; height:44px;
-    border-radius:14px;
-    display:flex; align-items:center; justify-content:center;
-    flex:0 0 auto;
-    margin-top:2px;
-    border:1px solid rgba(2,8,23,.08);
-  }
-  .direct-ico--phone{ background:#eaf3ff; border-color:rgba(14,116,144,.18); }
-  .direct-ico--wa{ background:#eafff0; border-color:rgba(27,94,32,.18); }
-  .direct-ico--mail{ background:#eef2ff; border-color:rgba(67,56,202,.18); }
-  .direct-ico--ig{ background:#fff2e6; border-color:rgba(180,83,9,.18); }
+      .gallery-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); }
+    }
 
-  /* contenuto card */
-  .direct-body{
-    min-width:0;
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    height:100%;
-  }
-  
-  .direct-h{
-    font-weight:800;
-    font-size:16px;
-    line-height:1.2;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
-
-	  .direct-row{
-	  margin-top:6px;
-	  font-size:14px;
-	  color:#64748b;
-	  line-height:1.4;
-	}
-	
-	/* fix email lunga */
-	.direct-row--truncate{
-	  white-space:nowrap;
-	  overflow:hidden;
-	  text-overflow:ellipsis;
-	  max-width:100%;
-	}
-
-  .direct-sub{
-    margin-top:4px;
-    font-size:12.5px;
-    color:#94a3b8;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
-
-  .direct-phones{ margin-top:6px; }
-  .direct-phones div{ margin-top:4px; }
-  .direct-phones div:first-child{ margin-top:0; }
-
-  /* titolo + badge */
-  .direct-headline{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    flex-wrap:wrap;
-  }
-  .direct-badge{
-    padding:3px 8px;
-    border-radius:999px;
-    font-size:11px;
-    font-weight:800;
-    background:#ecfdf3;
-    color:#15803d;
-    border:1px solid rgba(21,128,61,.18);
-    white-space:nowrap;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
-
-  /* CTA sempre in fondo */
-  .direct-cta-wrap{ margin-top:auto; padding-top:12px; }
-  .direct-cta{
-    font-size:13px;
-    color:#0e7490;
-    font-weight:800;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
-  .direct-cta-btn{
-    border:none;
-    background:none;
-    padding:0;
-    cursor:pointer;
-  }
-
-  .direct-note{
-    margin:18px auto 0;
-    text-align:center;
-    font-size:12.5px;
-    color:#64748b;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
-
-  /* ====== PHONE SHEET ====== */
-  .sheet{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-    display:none;
-  }
-  .sheet__overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(2,8,23,.55);
-    backdrop-filter: blur(8px);
-    opacity:0;
-    transition:opacity .25s ease;
-  }
-  .sheet__panel{
-    position:absolute;
-    left:0; right:0; bottom:0;
-    display:flex;
-    justify-content:center;
-    padding:14px 12px calc(16px + env(safe-area-inset-bottom));
-    transform:translateY(18px);
-    opacity:0;
-    transition:transform .28s cubic-bezier(.22,1,.36,1), opacity .28s ease;
-  }
-  .sheet__box{
-    width:min(520px, 100%);
-    background:#fff;
-    border-radius:22px;
-    border:1px solid rgba(226,232,240,1);
-    box-shadow:0 30px 80px rgba(2,8,23,.35);
-    overflow:hidden;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
-  .sheet__handle{ display:flex; justify-content:center; padding:10px 0 4px; }
-  .sheet__handle span{ width:54px; height:5px; border-radius:999px; background:#e2e8f0; display:block; }
-  .sheet__head{ padding:10px 18px 12px; }
-  .sheet__title{ font-weight:900; color:#0b2330; font-size:16px; letter-spacing:-0.2px; }
-  .sheet__sub{ margin-top:4px; color:#64748b; font-size:13px; }
-
-  .sheet__opts{ padding:0 12px 14px; }
-  .sheet__opt{
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-    padding:14px 12px;
-    border-radius:16px;
-    text-decoration:none;
-    color:#0b2330;
-    border:1px solid #e8eef6;
-    background:#f8fafc;
-    font-weight:800;
-  }
-  .sheet__opt + .sheet__opt{ margin-top:10px; }
-  .sheet__opt span:last-child{ font-size:13px; color:#0e7490; font-weight:900; }
-
-  .sheet__actions{ padding:0 12px 14px; }
-  .sheet__cancel{
-    width:100%;
-    padding:14px 12px;
-    border-radius:16px;
-    border:1px solid #e8eef6;
-    background:#fff;
-    cursor:pointer;
-    font-weight:900;
-    color:#0b2330;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  }
-
-
-    
-    /* Accessibilità */
+    /* 5) Utenti che preferiscono poche animazioni */
     @media (prefers-reduced-motion: reduce){
-      	.hero-logo, .hero-tagline, .hero-actions, .hero-pills, .hero-scroll{
-         	animation:none !important;
-      	}
-        .mouse::after{ 
-        	animation:none !important; 
-        }
-        .hero-btn, .hero-pill{ 
-        	transition:none !important; 
-        }
+      .service-card, .team-card, .hero-btn, .hero-pill{ transition:none !important; }
+      .service-card:hover, .team-card:hover, .hero-btn:hover, .hero-pill:hover{ transform:none !important; }
+      .hero-logo, .hero-tagline, .hero-actions, .hero-pills, .hero-scroll{ animation:none !important; }
+      .mouse::after{ animation:none !important; }
+    }
+
+    /* 6) iPhone notch / safe-area: padding extra in basso se supportato */
+    @supports (padding: max(0px)){
+      .contact{ padding-bottom: max(34px, env(safe-area-inset-bottom)); }
+      .drawer-panel{ padding-bottom: env(safe-area-inset-bottom); }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="#home" aria-label="Vai a Home">
+          <img class="brand-logo" src="images/logo/logo_droni_trasparente_sx.png" alt="STRATIA">
+          <span class="brand-name">STRATIA</span>
+        </a>
 
- <!-- HEADER -->
-	<header class="site-header" id="top">
-	  <div class="container">
-	    <div class="header-inner">
-	
-	      <a class="brand" href="#home" aria-label="Vai a Home">
-  				<img class="brand-logo" src="images/logo/logo_droni_trasparente_sx.png" alt="">
-	        <span class="brand-name">STRATIA</span>
-	      </a>
-	
-	      <nav class="nav" aria-label="Menu principale">
-	        <div class="nav-links" id="navLinks">
-	          <a href="#home" data-section="home">Home</a>
-	          <a href="#chi-siamo" data-section="chi-siamo">Chi siamo</a>
-	          <a href="#servizi" data-section="servizi">Servizi</a>
-	          <a href="#team" data-section="team">Team</a>
-	          <a href="#galleria" data-section="galleria">Galleria</a>
-	          <a href="#contatti" data-section="contatti">Contatti</a>
-	        </div>
-	      </nav>
-	
-	      <div class="header-right">
-	        <a class="header-cta" href="#contatti">Contatti</a>
-	
-	        <button id="menuBtn" class="menu-btn" type="button"
-	          aria-label="Apri menu" aria-controls="mobileDrawer" aria-expanded="false">
-	          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-	            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-	            <line x1="3" y1="6" x2="21" y2="6"></line>
-	            <line x1="3" y1="12" x2="21" y2="12"></line>
-	            <line x1="3" y1="18" x2="21" y2="18"></line>
-	          </svg>
-	        </button>
-	      </div>
-	
-	    </div>
-	  </div>
-	</header>
+        <nav class="nav" aria-label="Menu principale">
+          <div class="nav-links" id="navLinks">
+            <a href="#home" data-section="home">Home</a>
+            <a href="#chi-siamo" data-section="chi-siamo">Chi siamo</a>
+            <a href="#servizi" data-section="servizi">Servizi</a>
+            <a href="#disponibilita" data-section="disponibilita">Disponibilità</a>
+            <a href="#team" data-section="team">Team</a>
+            <a href="#galleria" data-section="galleria">Galleria</a>
+          </div>
+        </nav>
 
+        <div class="header-right">
+          <a class="header-cta" href="#contatti">Contatti</a>
 
-  
+          <button id="menuBtn" class="menu-btn" type="button"
+            aria-label="Apri menu" aria-controls="mobileDrawer" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
   <!-- MOBILE DRAWER -->
-  	<div id="mobileDrawer" class="drawer" aria-hidden="true">
-    	<div class="drawer-backdrop" data-close="true"></div>
-    	<aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu mobile">
-      		<div class="drawer-head">
-        		<a class="drawer-brand" href="#home" data-link="true" aria-label="Vai a Home">
-          			<span class="brand-badge">S</span>
-          			<span class="brand-name">STRATIA</span>
-       	 		</a>
-        		<button id="drawerClose" class="drawer-close" type="button" aria-label="Chiudi menu">×</button>
-      		</div>
-      		<div class="drawer-body">
-	        	<nav class="drawer-links" id="drawerLinks" aria-label="Menu mobile link">
-	          		<a class="drawer-link" href="#home" data-section="home" data-link="true">
-	          			<span>
-	          				Home
-	          			</span>
-	          			<span class="chev">
-	          				›
-	          			</span>
-	          		</a>
-	          		<a class="drawer-link" href="#chi-siamo" data-section="chi-siamo" data-link="true">
-	          			<span>
-	          				Chi siamo
-	          			</span>
-	          			<span class="chev">
-	          				›
-	          			</span>
-	          		</a>
-	          		<a class="drawer-link" href="#servizi" data-section="servizi" data-link="true">
-	          			<span>
-	          				Servizi
-	          			</span>
-	          			<span class="chev">
-	          				›
-	          			</span>
-	          		</a>
-	          		<a class="drawer-link" href="#team" data-section="team" data-link="true">
-	          			<span>
-	          				Team
-	          			</span>
-	          			<span class="chev">
-	          				›
-	          			</span>
-	          		</a>
-	          		<a class="drawer-link" href="#galleria" data-section="galleria" data-link="true">
-	          			<span>
-	          				Galleria
-	          			</span>
-	          			<span class="chev">
-	          				›
-	          			</span>
-	          		</a>
-	          		<a class="drawer-link" href="#contatti" data-section="contatti" data-link="true">
-	          			<span>
-	          				Contatti
-	          			</span>
-	          			<span class="chev">
-	          				›
-	          			</span>
-	          		</a>
-	        	</nav>
-        		<a class="drawer-cta" href="#contatti" data-link="true">
-        			Contattaci
-        		</a>
-        		<div class="drawer-note">
-          			Premi <b>ESC</b> o clicca fuori per chiudere.
-        		</div>
-      		</div>
-    	</aside>
-  	</div>
-  
+  <div id="mobileDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close="true"></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <div class="drawer-head">
+        <a class="drawer-brand" href="#home" data-link="true" aria-label="Vai a Home">
+          <span class="brand-badge">S</span>
+          <span class="brand-name">STRATIA</span>
+        </a>
+        <button id="drawerClose" class="drawer-close" type="button" aria-label="Chiudi menu">×</button>
+      </div>
+      <div class="drawer-body">
+        <nav class="drawer-links" id="drawerLinks" aria-label="Menu mobile link">
+          <a class="drawer-link" href="#home" data-section="home" data-link="true"><span>Home</span><span class="chev">›</span></a>
+          <a class="drawer-link" href="#chi-siamo" data-section="chi-siamo" data-link="true"><span>Chi siamo</span><span class="chev">›</span></a>
+          <a class="drawer-link" href="#servizi" data-section="servizi" data-link="true"><span>Servizi</span><span class="chev">›</span></a>
+            <a class="drawer-link" href="#disponibilita" data-section="disponibilita" data-link="true"><span>Disponibilità</span><span class="chev">›</span></a>
+          <a class="drawer-link" href="#team" data-section="team" data-link="true"><span>Team</span><span class="chev">›</span></a>
+          <a class="drawer-link" href="#galleria" data-section="galleria" data-link="true"><span>Galleria</span><span class="chev">›</span></a>
+        </nav>
+        <a class="drawer-cta" href="#contatti" data-link="true">Contattaci</a>
+        <div class="drawer-note">Premi <b>ESC</b> o clicca fuori per chiudere.</div>
+      </div>
+    </aside>
+  </div>
+
   <main id="home">
 
     <!-- HERO -->
-  	<section class="hero" aria-label="Hero Stratia">
-    	<div class="hero-bg" aria-hidden="true"></div>
-      	<div class="hero-overlay" aria-hidden="true"></div>
-      	<div class="hero-grid" aria-hidden="true"></div>
-      	<div class="hero-inner">
-        	<img class="hero-logo" src="images/logo/logo-transparent.png" alt="Logo STRATIA">    	
-        	<div class="hero-tagline">Ingegneria per comprendere il territorio</div>
-        	<div class="hero-actions">
-          		<a class="hero-btn primary" href="#contatti">
-          			Contattaci
-          		</a>
-          		<a class="hero-btn ghost" href="#servizi">
-          			Scopri i servizi
-          		</a>
-       		 </div>
-        	 <div class="hero-pills" role="list" aria-label="Punti di forza">
-          	 	<span class="hero-pill" role="listitem">
-          	 		Ispezioni
-          	 	</span>
-          		<span class="hero-pill" role="listitem">
-          			Fotogrammetria
-          		</span>
-          		<span class="hero-pill" role="listitem">
-          			Rilievi
-          		</span>
-          		<span class="hero-pill" role="listitem">
-          			Report tecnici
-          		</span>
-        	 </div>
-        	<a class="hero-scroll" href="#servizi" aria-label="Scorri ai servizi">
-          		<span class="mouse" aria-hidden="true"></span>
-          		<span>Scorri</span>
-        	</a>
-      	</div>
+    <section class="hero" aria-label="Hero Stratia">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <img class="hero-logo" src="images/logo/logo-transparent.png" alt="Logo STRATIA">
+        <div class="hero-tagline">Ingegneria per comprendere il territorio</div>
+
+        <div class="hero-actions">
+          <a class="hero-btn primary" href="#contatti">Contattaci</a>
+          <a class="hero-btn ghost" href="#servizi">Scopri i servizi</a>
+        </div>
+
+        <div class="hero-pills" role="list" aria-label="Punti di forza">
+          <span class="hero-pill" role="listitem">Ispezioni</span>
+          <span class="hero-pill" role="listitem">Fotogrammetria</span>
+          <span class="hero-pill" role="listitem">Rilievi</span>
+          <span class="hero-pill" role="listitem">Report tecnici</span>
+        </div>
+
+        <a class="hero-scroll" href="#servizi" aria-label="Scorri ai servizi">
+          <span class="mouse" aria-hidden="true"></span>
+          <span>Scorri</span>
+        </a>
+      </div>
     </section>
 
-    
     <!-- CHI SIAMO -->
     <section id="chi-siamo" class="about">
-    	<div class="container">
-        	<div class="about-grid">
-          		<div class="about-left">
-            		<div class="kicker">
-            			CHI SIAMO
-            		</div>
-            		<h2 class="about-title">
-            			Ingegneria per comprendere il territorio
-            		</h2>
-            		<div class="about-divider"></div>
-            		<p class="about-p">
-              			<strong>STRATIA</strong> è un laboratorio di <strong>analisi aerea e territoriale</strong>.
-              			Leggiamo lo spazio come <strong>sistema dinamico</strong>: relazioni, traiettorie e trasformazioni nel tempo.
-            		</p>
-            		<p class="about-p">
-              			Applichiamo un approccio ingegneristico alla raccolta e alla lettura del dato,
-              			trasformando l’osservazione dall’alto in <strong>comprensione operativa</strong>.
-              			Per noi il valore non è nell’immagine in sé, ma nella capacità di interpretare ciò che accade dall’alto
-              			per supportare decisioni informate.
-            		</p>
-            		<p class="about-p small">
-              			Metodo, rigore e qualità del dato guidano ogni attività:
-              			dall’ispezione tecnica alla fotogrammetria, fino alla restituzione e valorizzazione del contesto.
-            		</p>
-          		</div>
-          		<div class="about-right">
-            		<div class="info-card">
-              			<span class="pill">
-              				APPROCCIO
-              			</span>
-              			<ul>
-	                		<li>
-	                			<strong>Lettura sistemica</strong> delle dinamiche territoriali
-	                		</li>
-	                		<li>
-	                			<strong>Acquisizione mirata</strong> e interpretazione del dato
-	                		</li>
-	                		<li>
-	                			<strong>Sicurezza operativa</strong> e procedure
-	                		</li>
-              			</ul>
-            		</div>
-            		<div class="info-card">
-              			<span class="pill">
-              				TEAM
-              			</span>
-              			<ul>
-                			<li>
-                				Ingegneri
-                			</li>
-                			<li>
-                				Piloti certificati
-                			</li>
-                			<li>
-                				Fotografi professionisti
-                			</li>
-              			</ul>
-            		</div>
-          		</div>
-        	</div>
-      	</div>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left">
+            <div class="kicker">CHI SIAMO</div>
+            <h2 class="about-title">Ingegneria per comprendere il territorio</h2>
+            <div class="about-divider"></div>
+
+            <p class="about-p">
+              <strong>STRATIA</strong> è un laboratorio di <strong>analisi aerea e territoriale</strong>.
+              Leggiamo lo spazio come <strong>sistema dinamico</strong>: relazioni, traiettorie e trasformazioni nel tempo.
+            </p>
+            <p class="about-p">
+              Applichiamo un approccio ingegneristico alla raccolta e alla lettura del dato,
+              trasformando l’osservazione dall’alto in <strong>comprensione operativa</strong>.
+            </p>
+            <p class="about-p small">
+              Metodo, rigore e qualità del dato guidano ogni attività:
+              dall’ispezione tecnica alla fotogrammetria, fino alla restituzione del contesto.
+            </p>
+          </div>
+
+          <div class="about-right">
+            <div class="info-card">
+              <span class="pill">APPROCCIO</span>
+              <ul>
+                <li><strong>Lettura sistemica</strong> delle dinamiche territoriali</li>
+                <li><strong>Acquisizione mirata</strong> e interpretazione del dato</li>
+                <li><strong>Sicurezza operativa</strong> e procedure</li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <span class="pill">TEAM</span>
+              <ul>
+                <li>Ingegneri</li>
+                <li>Piloti certificati</li>
+                <li>Fotografi professionisti</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    
     <!-- SERVIZI -->
     <section id="servizi" class="section">
-    	<div class="container">
-        	<h2 class="h2">
-        		Servizi
-        	</h2>
-        	<div class="services-grid">
-        		<a class="service-card bg-edili" href="servizi/ispezioni_edili.html">
-        			<div>
-        				<h3>
-        					Ispezioni edili e infrastrutturali
-        				</h3>
-        				<p>
-        					Ispezioni aeree non invasive per la valutazione tecnica di edifici e infrastrutture.
-        				</p>
-        			</div>
-        			<div style="display:flex; gap:8px; flex-wrap:wrap;">
-        				<span class="service-pill">
-        					Non invasivo
-        				</span>
-            			<span class="service-pill">
-            				Report &amp; video
-            			</span>
-        			</div>
-        		</a>
-          		<a class="service-card bg-navali" href="servizi/ispezioni_navali.html">
-            		<div>
-              			<h3>
-              				Ispezioni navali e su draghe
-              			</h3>
-              			<p>
-              				Documentazione tecnica e monitoraggio operativo in ambito portuale e costiero.
-              			</p>
-            		</div>
-            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
-              			<span class="service-pill">
-              				Portuale
-              			</span>
-              			<span class="service-pill">
-              				Aree critiche
-              			</span>
-            		</div>
-          		</a>
-          		<a class="service-card bg-fotogrammetria" href="servizi/fotogrammetria.html">
-            		<div>
-              			<h3>
-              				Fotogrammetria
-              			</h3>
-              			<p>
-              				Ortofoto e modelli 3D a supporto di analisi tecniche e progettuali.
-              			</p>
-            		</div>
-            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
-              			<span class="service-pill">
-              				Ortofoto
-              			</span>
-              			<span class="service-pill">
-              				Modelli 3D
-              			</span>
-            		</div>
-          		</a>
-          		<a class="service-card bg-rilievi" href="servizi/rilievi_territorio.html">
-            		<div>
-              			<h3>
-              				Rilievi del territorio
-              			</h3>
-              			<p>
-              				Acquisizione dati e lettura preliminare del contesto territoriale.
-              			</p>
-            		</div>
-            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
-              			<span class="service-pill">
-              				Contesto
-              			</span>
-              			<span class="service-pill">
-              				Decisionale
-              			</span>
-            		</div>
-          		</a>
-          		<a class="service-card bg-valorizzazione" href="servizi/valorizzazione_territorio.html">
-            		<div>
-              			<h3>
-              				Valorizzazione del territorio
-              			</h3>
-              			<p>
-              				Restituzione visiva consapevole del contesto e delle sue relazioni.
-              			</p>
-            		</div>
-            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
-              			<span class="service-pill">
-              				Istituzionale
-              			</span>
-              			<span class="service-pill">
-              				Comunicazione
-              			</span>
-            		</div>
-          		</a>
-          		<a class="service-card bg-eventi" href="servizi/eventi.html">
-            		<div>
-              			<h3>
-              				Eventi e storytelling tecnico
-              			</h3>
-              			<p>
-              				Documentazione professionale con linguaggio sobrio e coerente.
-              			</p>
-            		</div>
-            		<div style="display:flex; gap:8px; flex-wrap:wrap;">
-              			<span class="service-pill">
-              				Eventi
-              			</span>
-              			<span class="service-pill">
-              				Aziendale
-              			</span>
-            		</div>
-          		</a>
-        	</div>
-      	</div>
+      <div class="container">
+        <h2 class="h2">Servizi</h2>
+
+        <div class="services-grid">
+          <a class="service-card bg-edili" href="servizi/ispezioni_edili.html">
+            <div>
+              <h3>Ispezioni edili e infrastrutturali</h3>
+              <p>Ispezioni aeree non invasive per la valutazione tecnica di edifici e infrastrutture.</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="service-pill">Non invasivo</span>
+              <span class="service-pill">Report &amp; video</span>
+            </div>
+          </a>
+
+          <a class="service-card bg-navali" href="servizi/ispezioni_navali.html">
+            <div>
+              <h3>Ispezioni navali e su draghe</h3>
+              <p>Documentazione tecnica e monitoraggio operativo in ambito portuale e costiero.</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="service-pill">Portuale</span>
+              <span class="service-pill">Aree critiche</span>
+            </div>
+          </a>
+
+          <a class="service-card bg-fotogrammetria" href="servizi/fotogrammetria.html">
+            <div>
+              <h3>Fotogrammetria</h3>
+              <p>Ortofoto e modelli 3D a supporto di analisi tecniche e progettuali.</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="service-pill">Ortofoto</span>
+              <span class="service-pill">Modelli 3D</span>
+            </div>
+          </a>
+
+          <a class="service-card bg-rilievi" href="servizi/rilievi_territorio.html">
+            <div>
+              <h3>Rilievi del territorio</h3>
+              <p>Acquisizione dati e lettura preliminare del contesto territoriale.</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="service-pill">Contesto</span>
+              <span class="service-pill">Decisionale</span>
+            </div>
+          </a>
+
+          <a class="service-card bg-valorizzazione" href="servizi/valorizzazione_territorio.html">
+            <div>
+              <h3>Valorizzazione del territorio</h3>
+              <p>Restituzione visiva consapevole del contesto e delle sue relazioni.</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="service-pill">Istituzionale</span>
+              <span class="service-pill">Comunicazione</span>
+            </div>
+          </a>
+
+          <a class="service-card bg-eventi" href="servizi/eventi.html">
+            <div>
+              <h3>Eventi e storytelling tecnico</h3>
+              <p>Documentazione professionale con linguaggio sobrio e coerente.</p>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <span class="service-pill">Eventi</span>
+              <span class="service-pill">Aziendale</span>
+            </div>
+          </a>
+        </div>
+      </div>
     </section>
 
-<!-- TEAM -->
+    <!-- TEAM -->
+    <section id="team">
+      <div class="container">
+        <div class="team-head">
+          <div class="team-head__text">
+            <h2>Team</h2>
+            <p>STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio di lettura del reale dall’alto.</p>
+          </div>
+        </div>
 
+        <div class="team-grid">
 
-	
-	<section id="team">
-	<div class="container">
-	
-	    <div class="team-head">
-	      <div class="team-head__text">
-	        <h2>Team</h2>
-	        <p>
-	          STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio di lettura del reale dall’alto, con metodo, responsabilità e profondità.
-	        </p>
-	      </div>
-	    </div>
-	
-	    <div class="team-grid">
-	
-	      <!-- Fernando -->
-	      <article class="team-card">
-	        <div class="team-media">
-	          <img src="images/team/fernando.jpg" alt="Fernando Junior Cocina">
-	        </div>
-	
-	        <div class="team-body">
-	          <div class="team-top">
-	            <h3 class="team-name">Fernando Junior Cocina</h3>
-	            <span class="team-badge team-badge--founder">Founder</span>
-	          </div>
-	
-	          <div class="team-role">Ingegnere Aerospaziale | Flight Control Systems</div>
-	
-	          <p class="team-desc">
-	            Ingegnere aerospaziale con esperienza internazionale su sistemi di controllo del volo e programmi di nuova generazione:
-	            dai droni agli eVTOL, fino a piattaforme aeronautiche critiche.
-	          </p>
-	
-	          <div class="team-footer">
-	            <a class="team-read" href="team/fernando.html">Leggi tutto</a>
-	
-	            <a class="team-ln" href="https://www.linkedin.com/in/fernandojuniorcocina/" target="_blank" rel="noopener" aria-label="LinkedIn Fernando">
-	              <span>in</span>
-	            </a>
-	          </div>
-	        </div>
-	      </article>
-	
-	      <!-- Giulio -->
-	      <article class="team-card">
-	        <div class="team-media">
-	          <img src="images/team/giulio.jpg" alt="Giulio Cocina">
-	        </div>
-	
-	        <div class="team-body">
-	          <div class="team-top">
-	            <h3 class="team-name">Giulio Cocina</h3>
-	            <span class="team-badge team-badge--tech">Tech</span>
-	          </div>
-	
-	          <div class="team-role">Informatico | Sviluppo Software</div>
-	
-	          <p class="team-desc">
-	            Sviluppo e programmazione orientati ad affidabilità e continuità operativa. In STRATIA connette dato, sistema e infrastruttura digitale.
-	          </p>
-	
-	          <div class="team-footer">
-	            <a class="team-read" href="team/giulio.html">Leggi tutto</a>
-	
-	            <a class="team-ln" href="https://www.linkedin.com/in/giulio-cocina-80729b2b5/" target="_blank" rel="noopener" aria-label="LinkedIn Giulio">
-	              <span>in</span>
-	            </a>
-	          </div>
-	        </div>
-	      </article>
-	
-	      <!-- Carlo -->
-	      <article class="team-card">
-	        <div class="team-media">
-	          <img src="images/team/carlo.jpeg" alt="Carlo Alberti">
-	        </div>
-	
-	        <div class="team-body">
-	          <div class="team-top">
-	            <h3 class="team-name">Carlo Alberti</h3>
-	            <span class="team-badge team-badge--support">Support</span>
-	          </div>
-	
-	          <div class="team-role">Informatico | Supporto tecnico</div>
-	
-	          <p class="team-desc">
-	            Supporto e soluzioni digitali per i servizi operativi: organizzazione dati, efficienza dei processi e strumenti pratici.
-	          </p>
-	
-	          <div class="team-footer">
-	            <a class="team-read" href="team/carlo.html">Leggi tutto</a>
-	
-	            <a class="team-ln" href="https://www.linkedin.com/in/carlo-alberti-293b1a15a/" target="_blank" rel="noopener" aria-label="LinkedIn Carlo">
-	              <span>in</span>
-	            </a>
-	          </div>
-	        </div>
-	      </article>
-	
-	      <!-- Davide -->
-	      <article class="team-card">
-	        <div class="team-media">
-	          <img src="images/team/davide.jpg" alt="Davide">
-	        </div>
-	
-	        <div class="team-body">
-	          <div class="team-top">
-	            <h3 class="team-name">Davide</h3>
-	            <span class="team-badge team-badge--visual">Visual</span>
-	          </div>
-	
-	          <div class="team-role">Fotografo | Contenuti visivi</div>
-	
-	          <p class="team-desc">
-	            Produzione fotografica e riprese aeree: dall’acquisizione tecnica alla narrazione visiva, con attenzione alla qualità e al contesto.
-	          </p>
-	
-	          <div class="team-footer">
-	            <a class="team-read" href="team/davide.html">Leggi tutto</a>
-	
-	            <a class="team-ln" href="#" aria-label="LinkedIn Davide">
-	              <span>in</span>
-	            </a>
-	          </div>
-	        </div>
-	      </article>
-	
-	      <!-- Renato -->
-	      <article class="team-card">
-	        <div class="team-media">
-	          <img src="images/team/renato.jpeg" alt="Renato Ceccarelli">
-	        </div>
-	
-	        <div class="team-body">
-	          <div class="team-top">
-	            <h3 class="team-name">Renato Ceccarelli</h3>
-	            <span class="team-badge team-badge--support">Support</span>
-	          </div>
-	
-	          <div class="team-role">Ingegnere navale | Ispezioni subacquee</div>
-	
-	          <p class="team-desc">
-	            Supporto alle attività operative con competenze di ingegneria navale: ispezioni con droni subacquei, documentazione tecnica e monitoraggio in contesti portuali e marittimi.
-	          </p>
-	
-	          <div class="team-footer">
-	            <a class="team-read" href="team/renato.html">Leggi tutto</a>
-	
-	            <a class="team-ln" href="#" aria-label="LinkedIn Renato">
-	              <span>in</span>
-	            </a>
-	          </div>
-	        </div>
-	      </article>
-	
-	    </div>
-	  </div>
-	</section>
+          <!-- Fernando -->
+          <article class="team-card">
+            <div class="team-media"><img src="images/team/fernando.jpg" alt="Fernando Junior Cocina"></div>
+            <div class="team-body">
+              <div class="team-top">
+                <h3 class="team-name">Fernando Junior Cocina</h3>
+                <span class="team-badge team-badge--founder">Founder</span>
+              </div>
+              <div class="team-role">Ingegnere Aerospaziale | Flight Control Systems</div>
+              <p class="team-desc">Ingegnere aerospaziale con esperienza internazionale su sistemi di controllo del volo e programmi di nuova generazione.</p>
+              <div class="team-footer">
+                <a class="team-read" href="team/fernando.html">Leggi tutto</a>
+                <a class="team-ln" href="https://www.linkedin.com/in/fernandojuniorcocina/" target="_blank" rel="noopener" aria-label="LinkedIn Fernando"><span>in</span></a>
+              </div>
+            </div>
+          </article>
 
+          <!-- Giulio -->
+          <article class="team-card">
+            <div class="team-media"><img src="images/team/giulio.jpg" alt="Giulio Cocina"></div>
+            <div class="team-body">
+              <div class="team-top">
+                <h3 class="team-name">Giulio Cocina</h3>
+                <span class="team-badge team-badge--tech">Tech</span>
+              </div>
+              <div class="team-role">Informatico | Sviluppo Software</div>
+              <p class="team-desc">Sviluppo e programmazione orientati ad affidabilità e continuità operativa.</p>
+              <div class="team-footer">
+                <a class="team-read" href="team/giulio.html">Leggi tutto</a>
+                <a class="team-ln" href="https://www.linkedin.com/in/giulio-cocina-80729b2b5/" target="_blank" rel="noopener" aria-label="LinkedIn Giulio"><span>in</span></a>
+              </div>
+            </div>
+          </article>
 
+          <!-- Carlo -->
+          <article class="team-card">
+            <div class="team-media"><img src="images/team/carlo.jpeg" alt="Carlo Alberti"></div>
+            <div class="team-body">
+              <div class="team-top">
+                <h3 class="team-name">Carlo Alberti</h3>
+                <span class="team-badge team-badge--support">Support</span>
+              </div>
+              <div class="team-role">Informatico | Supporto tecnico</div>
+              <p class="team-desc">Supporto e soluzioni digitali per i servizi operativi: organizzazione dati, efficienza dei processi.</p>
+              <div class="team-footer">
+                <a class="team-read" href="team/carlo.html">Leggi tutto</a>
+                <a class="team-ln" href="https://www.linkedin.com/in/carlo-alberti-293b1a15a/" target="_blank" rel="noopener" aria-label="LinkedIn Carlo"><span>in</span></a>
+              </div>
+            </div>
+          </article>
 
- 
-          		
+          <!-- Davide -->
+          <article class="team-card">
+            <div class="team-media"><img src="images/team/davide.jpg" alt="Davide"></div>
+            <div class="team-body">
+              <div class="team-top">
+                <h3 class="team-name">Davide</h3>
+                <span class="team-badge team-badge--visual">Visual</span>
+              </div>
+              <div class="team-role">Fotografo | Contenuti visivi</div>
+              <p class="team-desc">Produzione fotografica e riprese aeree: dall’acquisizione tecnica alla narrazione visiva.</p>
+              <div class="team-footer">
+                <a class="team-read" href="team/davide.html">Leggi tutto</a>
+                <a class="team-ln" href="#" aria-label="LinkedIn Davide"><span>in</span></a>
+              </div>
+            </div>
+          </article>
 
-	<!-- CARD "Visione STRATIA-->
-	<section class="vs-wrap">
-	<div class="container">
-	  <article class="vs-card vs-has-drone" aria-label="Visione STRATIA">
-	    <!-- header -->
-	    <header class="vs-head">
-	      <div class="vs-brand">
-	        <div class="vs-logo" aria-hidden="true">
-	          <span class="vs-mark">S</span>
-	        </div>
-	        <div class="vs-brand-text">
-	          <div class="vs-title">Visione STRATIA</div>
-	          <div class="vs-subtitle">Ingegneria · Dato · Metodo</div>
-	        </div>
-	      </div>
-	    </header>
-	
-	    <!-- content -->
-	    <div class="vs-body">
-	      <div class="vs-copy">
-	        <h2 class="vs-h2">Ingegneria · Dato · Metodo</h2>
-	        <p class="vs-p">
-	          STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio
-	          di lettura del reale dall’alto: non solo immagini, ma informazione strutturata, metodo e responsabilità.
-	        </p>
-	      </div>
-	
-	      <div class="vs-pillars">
-	        <div class="vs-pillars-grid">
-	          <div class="vs-pillar">
-	            <h3 class="vs-pillar-title">Metodo</h3>
-	            <p class="vs-pillar-text">Procedure, tracciabilità, coerenza</p>
-	          </div>
-	
-	          <div class="vs-pillar">
-	            <h3 class="vs-pillar-title">Sicurezza</h3>
-	            <p class="vs-pillar-text">Attenzione a vincoli e contesto operativo</p>
-	          </div>
-	
-	          <div class="vs-pillar">
-	            <h3 class="vs-pillar-title">Qualità</h3>
-	            <p class="vs-pillar-text">Output chiari, utili e verificabili</p>
-	          </div>
-	        </div>
-	      </div>
-	
-	      <div class="vs-actions">
-	        <a class="vs-btn vs-btn-ghost" href="#team">Scopri il Team</a>
-	        <a class="vs-btn vs-btn-primary" href="#contatti">Contattaci</a>
-	      </div>
-	    </div>
-	  </article>
-	  </div>
-	</section>
+          <!-- Renato -->
+          <article class="team-card">
+            <div class="team-media"><img src="images/team/renato.jpeg" alt="Renato Ceccarelli"></div>
+            <div class="team-body">
+              <div class="team-top">
+                <h3 class="team-name">Renato Ceccarelli</h3>
+                <span class="team-badge team-badge--support">Support</span>
+              </div>
+              <div class="team-role">Ingegnere navale | Ispezioni subacquee</div>
+              <p class="team-desc">Supporto alle attività operative con competenze di ingegneria navale: ispezioni con droni subacquei e monitoraggio.</p>
+              <div class="team-footer">
+                <a class="team-read" href="team/renato.html">Leggi tutto</a>
+                <a class="team-ln" href="#" aria-label="LinkedIn Renato"><span>in</span></a>
+              </div>
+            </div>
+          </article>
 
-        	
-    
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIONE STRATIA -->
+    <section class="vs-wrap" aria-label="Visione STRATIA">
+      <div class="container">
+        <article class="vs-card vs-has-drone">
+          <header class="vs-head">
+            <div class="vs-brand">
+              <div class="vs-logo" aria-hidden="true"><span class="vs-mark">S</span></div>
+              <div class="vs-brand-text">
+                <div class="vs-title">Visione STRATIA</div>
+                <div class="vs-subtitle">Ingegneria · Dato · Metodo</div>
+              </div>
+            </div>
+          </header>
+
+          <div class="vs-body">
+            <div class="vs-copy">
+              <h2 class="vs-h2">Ingegneria · Dato · Metodo</h2>
+              <p class="vs-p">
+                STRATIA nasce dall’incontro tra ingegneria, dato e visione. Ogni progetto è un esercizio
+                di lettura del reale dall’alto: non solo immagini, ma informazione strutturata, metodo e responsabilità.
+              </p>
+            </div>
+
+            <div class="vs-pillars">
+              <div class="vs-pillars-grid">
+                <div class="vs-pillar"><h3 class="vs-pillar-title">Metodo</h3><p class="vs-pillar-text">Procedure, tracciabilità, coerenza</p></div>
+                <div class="vs-pillar"><h3 class="vs-pillar-title">Sicurezza</h3><p class="vs-pillar-text">Attenzione a vincoli e contesto operativo</p></div>
+                <div class="vs-pillar"><h3 class="vs-pillar-title">Qualità</h3><p class="vs-pillar-text">Output chiari, utili e verificabili</p></div>
+              </div>
+            </div>
+
+            <div class="vs-actions">
+              <a class="vs-btn vs-btn-ghost" href="#team">Scopri il Team</a>
+              <a class="vs-btn vs-btn-primary" href="#contatti">Contattaci</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- GALLERIA -->
     <section id="galleria" class="section gallery">
-    	<div class="container">
-        	<div class="kicker">
-        		GALLERIA
-        	</div>
-        	<h2 class="gallery-title">
-        		Osservare dall’alto
-        	</h2>
-        	<div id="galleryGrid" class="gallery-grid"></div>
-      	</div>
+      <div class="container">
+        <div class="kicker">GALLERIA</div>
+        <h2 class="gallery-title">Osservare dall’alto</h2>
+        <div id="galleryGrid" class="gallery-grid"></div>
+      </div>
     </section>
 
-    
     <!-- LIGHTBOX -->
-    	<div id="galleryLightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox(event)">
-      		<div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Anteprima immagine">
-        		<div class="lightbox-top">
-          			<div id="lbTitle" class="lightbox-title">
-          				Anteprima
-          			</div>
-          			<button class="lightbox-close" type="button" onclick="forceCloseLightbox()" aria-label="Chiudi">×</button>
-        		</div>
-        		<div class="lightbox-body">
-          			<button class="lb-nav lb-prev" type="button" onclick="lbPrev()" aria-label="Precedente">‹</button>
-          			<button class="lb-nav lb-next" type="button" onclick="lbNext()" aria-label="Successiva">›</button>
-          			<img id="lbImg" class="lightbox-img" src="" alt="">
-        		</div>
-        		<div id="lbCaption" class="lightbox-caption"></div>
-      		</div>
-    	</div>
-    	
-    		    
+    <div id="galleryLightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Anteprima immagine">
+        <div class="lightbox-top">
+          <div id="lbTitle" class="lightbox-title">Anteprima</div>
+          <button class="lightbox-close" type="button" id="lbCloseBtn" aria-label="Chiudi">×</button>
+        </div>
+        <div class="lightbox-body">
+          <button class="lb-nav lb-prev" type="button" id="lbPrevBtn" aria-label="Precedente">‹</button>
+          <button class="lb-nav lb-next" type="button" id="lbNextBtn" aria-label="Successiva">›</button>
+          <img id="lbImg" class="lightbox-img" src="" alt="">
+        </div>
+        <div id="lbCaption" class="lightbox-caption"></div>
+      </div>
+    </div>
+
     <!-- CONTATTI -->
-   		<section id="contatti" class="contact">
-    		<div class="contact-wrap">
-        		<div class="kicker">
-        			Contatti
-        		</div>
-        		<h2 class="contact-title">
-        			Per contattarci
-        		</h2>
-        		<form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeaqbwy" method="POST" novalidate>
-			  		<div class="field">
-			    		<label for="name">
-			    			Nome
-			    		</label>
-			    		<input id="name" name="name" type="text" placeholder="Il tuo nome" autocomplete="name" required minlength="2">
-			  		</div>
-			  		<div class="field">
-			    		<label for="email">
-			    			Email
-			    		</label>
-			    		<input id="email" name="email" type="email" placeholder="La tua email" autocomplete="email" required>
-			  		</div>
-			  		<div class="field">
-			    		<label for="message">
-			    			Messaggio
-			    		</label>
-			    		<textarea id="message" name="message" rows="6" placeholder="Scrivi il tuo messaggio..." required minlength="10"></textarea>
-			  		</div>
-			
-			  		<!-- Honeypot anti-bot (Formspree lo supporta) -->
-			  		<input type="text" name="_gotcha" style="display:none">
-			
-			  		<input type="hidden" name="_subject" value="📩 Nuova richiesta di contatto – STRATIA">
-			
-			  		<button class="btn" type="submit" id="submitBtn">
-			  			Invia richiesta
-			  		</button>
-			
-			  		<p class="privacy">
-			    		Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato.
-			  		</p>
-			  		<p class="form-status" id="formStatus" aria-live="polite"></p>
-				</form>
-      		</div>
-    	</section>
+    <section id="contatti" class="contact">
+      <div class="contact-wrap">
+        <div class="kicker">Contatti</div>
+        <h2 class="contact-title">Per contattarci</h2>
 
-		<div class="direct-wrap">
-		  <div class="reveal direct-divider">
-		    <span class="direct-divider__line"></span>
-		    <span class="direct-divider__label">contatti diretti</span>
-		    <span class="direct-divider__line direct-divider__line--right"></span>
-		  </div>
-		
-		  <section class="reveal">
-		    <h3 class="direct-title">Oppure contattaci direttamente</h3>
-		
-		    <div class="direct-grid">
-		
-		      <!-- TELEFONO -->
-		      <div class="reveal-item direct-card">
-		        <div class="direct-ico direct-ico--phone" aria-hidden="true">
-		          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-		            <path d="M6.6 10.8c1.5 2.9 3.8 5.2 6.7 6.7l2.2-2.2c.4-.4 1-.5 1.5-.3 1.2.4 2.6.7 4 .7.8 0 1.5.7 1.5 1.5V21c0 .8-.7 1.5-1.5 1.5C10.7 22.5 1.5 13.3 1.5 2.5 1.5 1.7 2.2 1 3 1h3.6c.8 0 1.5.7 1.5 1.5 0 1.4.2 2.7.7 4 .2.5.1 1.1-.3 1.5L6.6 10.8Z"
-		                  stroke="#0e7490" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-		          </svg>
-		        </div>
-		
-		        <div class="direct-body">
-		          <div class="direct-top">
-		            <div class="direct-h">Telefono</div>
-		            <div class="direct-row direct-phones">
-		              <div>+39 331 825 3883</div>
-		            </div>
-		          </div>
-		
-		          <div class="direct-cta-wrap">
-		            <button type="button" id="openPhoneSheet" aria-haspopup="dialog" aria-controls="phoneSheet"
-		                    class="direct-cta direct-cta-btn">
-		              Chiama ora
-		            </button>
-		          </div>
-		        </div>
-		      </div>
-		
-		      <!-- WHATSAPP -->
-		      <a class="reveal-item direct-card" href="https://wa.me/393331112222" target="_blank" rel="noopener">
-		        <div class="direct-ico direct-ico--wa" aria-hidden="true">
-		          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-		            <path d="M20 11.5c0 4.1-3.6 7.5-8 7.5-1.1 0-2.2-.2-3.2-.6L4 20l1.7-4.1c-.9-1.1-1.5-2.6-1.5-4.4C4.2 7.4 7.7 4 12 4s8 3.4 8 7.5Z"
-		                  stroke="#1b5e20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-		            <path d="M8.2 11.2h.01M12 11.2h.01M15.8 11.2h.01"
-		                  stroke="#1b5e20" stroke-width="2.2" stroke-linecap="round"/>
-		          </svg>
-		        </div>
-		
-		        <div class="direct-body">
-		        	<div class="direct-top">
-		            	<div class="direct-headline">
-		              		<div class="direct-h">WhatsApp</div>
-		              		<span class="direct-badge">Risposta rapida</span>
-		            	</div>
-		            	<div class="direct-row">+39 331 825 3883</div>
-		            	<div class="direct-sub">Numero principale</div>
-		          </div>
-		          
-		
-		          <div class="direct-cta-wrap">
-		            <div class="direct-cta">Scrivici su WhatsApp</div>
-		          </div>
-		        </div>
-		      </a>
-		
-		      <!-- EMAIL -->
-		      <a class="reveal-item direct-card" href="mailto:info@stratia.it">
-		        <div class="direct-ico direct-ico--mail" aria-hidden="true">
-		          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-		            <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"
-		                  stroke="#4338ca" stroke-width="1.8" stroke-linejoin="round"/>
-		            <path d="M22 8 12 13 2 8"
-		                  stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-		          </svg>
-		        </div>
-		
-		        <div class="direct-body">
-		          <div class="direct-top">
-		            <div class="direct-h">Email</div>
-		          		<div class="direct-row direct-row--truncate" title="stratia.aerialintelligence@gmail.com">
-  							stratia.aerialintelligence@gmail.com
-						</div>
-		          </div>
-		
-		          <div class="direct-cta-wrap">
-		            <div class="direct-cta">Invia una mail</div>
-		          </div>
-		        </div>
-		      </a>
-		
-		      <!-- INSTAGRAM -->
-		      <a class="reveal-item direct-card" href="https://www.instagram.com/stratia.it/" target="_blank" rel="noopener">
-		        <div class="direct-ico direct-ico--ig" aria-hidden="true">
-		          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-		            <path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Z"
-		                  stroke="#b45309" stroke-width="1.8"/>
-		            <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"
-		                  stroke="#b45309" stroke-width="1.8"/>
-		            <path d="M17.4 6.6h.01"
-		                  stroke="#b45309" stroke-width="2.6" stroke-linecap="round"/>
-		          </svg>
-		        </div>
-		
-		        <div class="direct-body">
-		          <div class="direct-top">
-		            <div class="direct-h">Instagram</div>
-		            <div class="direct-row">stratia.lab</div>
-		          </div>
-		
-		          <div class="direct-cta-wrap">
-		            <div class="direct-cta">Direct</div>
-		          </div>
-		        </div>
-		      </a>
-		
-		    </div>
-		
-		    <p class="direct-note">
-		      WhatsApp è attivo su questo. Per urgenze, utilizza la chiamata diretta.
-		    </p>
-		  </section>
-		</div>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/xqeaqbwy" method="POST" novalidate>
+          <div class="field">
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" placeholder="Il tuo nome" autocomplete="name" required minlength="2">
+          </div>
 
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="La tua email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="message">Messaggio</label>
+            <textarea id="message" name="message" rows="6" placeholder="Scrivi il tuo messaggio..." required minlength="10"></textarea>
+          </div>
+
+          <input type="text" name="_gotcha" style="display:none">
+          <input type="hidden" name="_subject" value="📩 Nuova richiesta di contatto – STRATIA">
+
+          <button class="btn" type="submit" id="submitBtn">Invia richiesta</button>
+
+          <p class="privacy">Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato.</p>
+          <p class="form-status" id="formStatus" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTATTI DIRETTI -->
+    <div class="direct-wrap">
+      <div class="reveal direct-divider">
+        <span class="direct-divider__line"></span>
+        <span class="direct-divider__label">contatti diretti</span>
+        <span class="direct-divider__line direct-divider__line--right"></span>
+      </div>
+
+      <section class="reveal">
+        <h3 class="direct-title">Oppure contattaci direttamente</h3>
+
+        <div class="direct-grid">
+
+          <!-- TELEFONO -->
+          <div class="reveal-item direct-card">
+            <div class="direct-ico direct-ico--phone" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M6.6 10.8c1.5 2.9 3.8 5.2 6.7 6.7l2.2-2.2c.4-.4 1-.5 1.5-.3 1.2.4 2.6.7 4 .7.8 0 1.5.7 1.5 1.5V21c0 .8-.7 1.5-1.5 1.5C10.7 22.5 1.5 13.3 1.5 2.5 1.5 1.7 2.2 1 3 1h3.6c.8 0 1.5.7 1.5 1.5 0 1.4.2 2.7.7 4 .2.5.1 1.1-.3 1.5L6.6 10.8Z"
+                  stroke="#0e7490" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <div class="direct-body">
+              <div class="direct-h">Telefono</div>
+              <div class="direct-row">+39 331 825 3883</div>
+
+              <div class="direct-cta-wrap">
+                <button type="button" id="openPhoneCall" class="direct-cta direct-cta-btn">Chiama ora</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- WHATSAPP -->
+          <a class="reveal-item direct-card" href="https://wa.me/393318253883" target="_blank" rel="noopener">
+            <div class="direct-ico direct-ico--wa" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M20 11.5c0 4.1-3.6 7.5-8 7.5-1.1 0-2.2-.2-3.2-.6L4 20l1.7-4.1c-.9-1.1-1.5-2.6-1.5-4.4C4.2 7.4 7.7 4 12 4s8 3.4 8 7.5Z"
+                  stroke="#1b5e20" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.2 11.2h.01M12 11.2h.01M15.8 11.2h.01"
+                  stroke="#1b5e20" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <div class="direct-body">
+              <div class="direct-headline">
+                <div class="direct-h">WhatsApp</div>
+                <span class="direct-badge">Risposta rapida</span>
+              </div>
+              <div class="direct-row">+39 331 825 3883</div>
+              <div class="direct-sub">Numero principale</div>
+
+              <div class="direct-cta-wrap">
+                <div class="direct-cta">Scrivici su WhatsApp</div>
+              </div>
+            </div>
+          </a>
+
+          <!-- EMAIL -->
+          <a class="reveal-item direct-card" href="mailto:stratia.aerialintelligence@gmail.com">
+            <div class="direct-ico direct-ico--mail" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"
+                  stroke="#4338ca" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M22 8 12 13 2 8"
+                  stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <div class="direct-body">
+              <div class="direct-h">Email</div>
+              <div class="direct-row direct-row--truncate" title="stratia.aerialintelligence@gmail.com">stratia.aerialintelligence@gmail.com</div>
+              <div class="direct-cta-wrap"><div class="direct-cta">Invia una mail</div></div>
+            </div>
+          </a>
+
+          <!-- INSTAGRAM -->
+          <a class="reveal-item direct-card" href="https://www.instagram.com/stratia.it/" target="_blank" rel="noopener">
+            <div class="direct-ico direct-ico--ig" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Z"
+                  stroke="#b45309" stroke-width="1.8"/>
+                <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"
+                  stroke="#b45309" stroke-width="1.8"/>
+                <path d="M17.4 6.6h.01"
+                  stroke="#b45309" stroke-width="2.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <div class="direct-body">
+              <div class="direct-h">Instagram</div>
+              <div class="direct-row">stratia.lab</div>
+              <div class="direct-cta-wrap"><div class="direct-cta">Direct</div></div>
+            </div>
+          </a>
+
+        </div>
+
+        <p class="direct-note">WhatsApp è attivo su questo numero. Per urgenze, utilizza la chiamata diretta.</p>
+      </section>
+    </div>
+  </main>
 
   <script>
+    /* =========================================================
+       SERVICE WORKER (cache immagini / offline)
+       - usa path relativo: funziona sia in root che in sottocartella
+    ========================================================= */
+    (function(){
+      if (!('serviceWorker' in navigator)) return;
+      window.addEventListener('load', function(){
+        // Se il sito è in una sottocartella (es. GitHub Pages /repo/),
+        // questa forma è più robusta:
+        navigator.serviceWorker.register('./sw.js')
+          .catch(function(err){ console.warn('SW register failed', err); });
+      });
+    })();
 
-  // per cache img
-  (function(){
-    if (!('serviceWorker' in navigator)) return;
-    window.addEventListener('load', function(){
-      navigator.serviceWorker.register('/sw.js', { scope: '/' })
-        .catch(function(err){ console.warn('SW register failed', err); });
-    });
-  })();
-  
-  
-  
     function escapeHtml(str) {
       return String(str || '')
         .replaceAll('&', '&amp;')
@@ -2524,45 +1769,100 @@
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#39;');
     }
-    
-    function lockScroll() { document.body.style.overflow = 'hidden'; }
-    function unlockScroll() { document.body.style.overflow = ''; }
+    function lockScroll(){ document.body.style.overflow = 'hidden'; }
+    function unlockScroll(){ document.body.style.overflow = ''; }
 
-    
-    // Drawer
+    /* =========================================================
+       DRAWER
+    ========================================================= */
     var drawer = document.getElementById('mobileDrawer');
     var menuBtn = document.getElementById('menuBtn');
     var drawerClose = document.getElementById('drawerClose');
 
-    function openDrawer() {
+    function openDrawer(){
       drawer.classList.add('is-open');
-      drawer.setAttribute('aria-hidden', 'false');
-      menuBtn.setAttribute('aria-expanded', 'true');
+      drawer.setAttribute('aria-hidden','false');
+      menuBtn.setAttribute('aria-expanded','true');
       lockScroll();
     }
-    
-    function closeDrawer() {
+    function closeDrawer(){
       drawer.classList.remove('is-open');
-      drawer.setAttribute('aria-hidden', 'true');
-      menuBtn.setAttribute('aria-expanded', 'false');
+      drawer.setAttribute('aria-hidden','true');
+      menuBtn.setAttribute('aria-expanded','false');
       unlockScroll();
     }
-    
-    if (menuBtn) {
-      menuBtn.addEventListener('click', function() {
+
+    if (menuBtn){
+      menuBtn.addEventListener('click', function(){
         drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
       });
     }
-    
     if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
-    drawer.addEventListener('click', function(e) {
+
+    drawer.addEventListener('click', function(e){
       if (e.target && e.target.getAttribute('data-close') === 'true') closeDrawer();
       var a = e.target && e.target.closest ? e.target.closest('[data-link="true"]') : null;
       if (a) closeDrawer();
     });
 
-    
-    // Galleria
+    /* =========================================================
+       NAV ACTIVE (IntersectionObserver)
+       - evidenzia voce menu mentre scrolli
+    ========================================================= */
+    var navLinks = document.getElementById('navLinks');
+    var drawerLinks = document.getElementById('drawerLinks');
+
+    function setActiveSection(id){
+      function apply(container){
+        if (!container) return;
+        var links = container.querySelectorAll('a[data-section]');
+        for (var i=0;i<links.length;i++){
+          var a = links[i];
+          var sec = a.getAttribute('data-section');
+          a.classList.toggle('is-active', sec === id);
+        }
+      }
+      apply(navLinks);
+      apply(drawerLinks);
+    }
+
+    function setupActiveObserver(){
+      var sections = [
+        { id:'home', el: document.getElementById('home') },
+        { id:'chi-siamo', el: document.getElementById('chi-siamo') },
+        { id:'servizi', el: document.getElementById('servizi') },
+        { id:'disponibilita', el: document.getElementById('disponibilita') },
+        { id:'team', el: document.getElementById('team') },
+        { id:'galleria', el: document.getElementById('galleria') },
+      ];
+
+      if (!('IntersectionObserver' in window)) return;
+
+      var obs = new IntersectionObserver(function(entries){
+        var best = null;
+        for (var i=0;i<entries.length;i++){
+          var en = entries[i];
+          if (!en.isIntersecting) continue;
+          if (!best || en.intersectionRatio > best.intersectionRatio) best = en;
+        }
+        if (best && best.target){
+          var id = best.target.id || 'home';
+          setActiveSection(id);
+        }
+      },{
+        root:null,
+        threshold:[0.2,0.35,0.5,0.65,0.8],
+        rootMargin:"-30% 0px -55% 0px"
+      });
+
+      for (var j=0;j<sections.length;j++){
+        if (sections[j].el) obs.observe(sections[j].el);
+      }
+    }
+
+    /* =========================================================
+       GALLERIA
+    ========================================================= */
     var GALLERY_ITEMS = [
       { src: "images/gallery/baragiano_1.JPG", alt: "Baragiano(PZ) — ripresa aerea", caption: "Baragiano(PZ) — ripresa aerea" },
       { src: "images/gallery/baragiano_2.JPG", alt: "Baragiano(PZ) — ripresa aerea", caption: "Baragiano(PZ) — ripresa aerea" },
@@ -2576,12 +1876,12 @@
       { src: "images/gallery/porto_2.JPG",     alt: "Porto di Salerno — vista dall’alto", caption: "Porto di Salerno — vista dall’alto" }
     ];
 
-    function renderGallery() {
+    function renderGallery(){
       var grid = document.getElementById('galleryGrid');
       if (!grid) return;
 
       var html = "";
-      for (var i = 0; i < GALLERY_ITEMS.length; i++) {
+      for (var i=0;i<GALLERY_ITEMS.length;i++){
         var item = GALLERY_ITEMS[i];
         html += ''
           + '<figure class="gallery-item" data-index="'+ i +'" tabindex="0" aria-label="Apri immagine: '+ escapeHtml(item.caption) +'">'
@@ -2594,21 +1894,19 @@
       grid.addEventListener('click', function(e){
         var fig = e.target && e.target.closest ? e.target.closest('.gallery-item') : null;
         if (!fig) return;
-        var idx = parseInt(fig.getAttribute('data-index'), 10);
-        openLightbox(idx);
+        openLightbox(parseInt(fig.getAttribute('data-index'),10));
       });
 
       grid.addEventListener('keydown', function(e){
         if (e.key !== 'Enter') return;
-        var fig = e.target && e.target.classList && e.target.classList.contains('gallery-item') ? e.target : null;
-        if (!fig) return;
-        var idx = parseInt(fig.getAttribute('data-index'), 10);
-        openLightbox(idx);
+        if (!e.target || !e.target.classList || !e.target.classList.contains('gallery-item')) return;
+        openLightbox(parseInt(e.target.getAttribute('data-index'),10));
       });
     }
 
-    
-    // Lightbox
+    /* =========================================================
+       LIGHTBOX
+    ========================================================= */
     var lb = document.getElementById('galleryLightbox');
     var lbImg = document.getElementById('lbImg');
     var lbTitle = document.getElementById('lbTitle');
@@ -2622,7 +1920,6 @@
       lb.setAttribute('aria-hidden','false');
       lockScroll();
     }
-    
     function updateLightbox(){
       var item = GALLERY_ITEMS[lbIndex];
       if (!item) return;
@@ -2631,293 +1928,239 @@
       lbTitle.textContent = (lbIndex + 1) + ' / ' + GALLERY_ITEMS.length;
       lbCaption.textContent = item.caption || '';
     }
-    
-    function closeLightbox(e){
-      if (e && e.target && e.target.id === 'galleryLightbox') forceCloseLightbox();
-    }
-    
-    function forceCloseLightbox(){
+    function closeLightbox(){
       lb.classList.remove('is-open');
       lb.setAttribute('aria-hidden','true');
       unlockScroll();
     }
-    
     function lbPrev(){
       lbIndex = (lbIndex - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length;
       updateLightbox();
     }
-    
     function lbNext(){
       lbIndex = (lbIndex + 1) % GALLERY_ITEMS.length;
       updateLightbox();
     }
-    
-    // contatti 
-(function(){
-  const form = document.getElementById("contactForm");
-  if (!form) return;
 
-  const nameEl = document.getElementById("name");
-  const emailEl = document.getElementById("email");
-  const msgEl = document.getElementById("message");
-  const btn = document.getElementById("submitBtn");
-  const statusEl = document.getElementById("formStatus");
+    lb.addEventListener('click', function(e){
+      if (e.target && e.target.id === 'galleryLightbox') closeLightbox();
+    });
+    document.getElementById('lbCloseBtn').addEventListener('click', closeLightbox);
+    document.getElementById('lbPrevBtn').addEventListener('click', lbPrev);
+    document.getElementById('lbNextBtn').addEventListener('click', lbNext);
 
-  // ====== regole ======
-  const RULES = {
-    nameMin: 2,
-    nameMax: 80,
-    msgMin: 10,
-    msgMax: 2000,
-    maxLinks: 2,
-    cooldownSeconds: 20
-  };
+    /* =========================================================
+       CONTATTO FORM (Formspree) — validazione + anti-spam
+    ========================================================= */
+    (function(){
+      const form = document.getElementById("contactForm");
+      if (!form) return;
 
-  // ====== anti spam  ======
-  const LS_KEY = "stratia_last_submit";
-  function canSubmitNow(){
-    try{
-      const last = Number(localStorage.getItem(LS_KEY) || 0);
-      return ((Date.now() - last)/1000) >= RULES.cooldownSeconds;
-    } catch { return true; }
-  }
-  function markSubmit(){
-    try{ localStorage.setItem(LS_KEY, String(Date.now())); } catch {}
-  }
+      const nameEl = document.getElementById("name");
+      const emailEl = document.getElementById("email");
+      const msgEl = document.getElementById("message");
+      const btn = document.getElementById("submitBtn");
+      const statusEl = document.getElementById("formStatus");
 
-  // ====== UI errori ======
-  function ensureErr(field){
-    const wrap = field.closest(".field") || field.parentElement;
-    let err = wrap.querySelector(".err");
-    if (!err){
-      err = document.createElement("small");
-      err.className = "err";
-      err.style.display = "block";
-      err.style.marginTop = "6px";
-      err.style.fontSize = "12px";
-      err.style.color = "#b91c1c";
-      err.style.minHeight = "16px";
-      err.setAttribute("aria-live","polite");
-      wrap.appendChild(err);
-    }
-    return err;
-  }
-  function setError(field, msg){
-    field.setAttribute("aria-invalid","true");
-    ensureErr(field).textContent = msg;
-  }
-  function clearError(field){
-    field.removeAttribute("aria-invalid");
-    ensureErr(field).textContent = "";
-  }
-  function setStatus(msg, ok){
-    statusEl.textContent = msg || "";
-    statusEl.style.marginTop = "12px";
-    statusEl.style.fontSize = "14px";
-    statusEl.style.color = ok ? "#0f766e" : "#b91c1c";
-  }
+      const RULES = { nameMin:2, nameMax:80, msgMin:10, msgMax:2000, maxLinks:2, cooldownSeconds:20 };
+      const LS_KEY = "stratia_last_submit";
 
-
-  function norm(s){ return (s||"").replace(/\s+/g," ").trim(); }
-  function isEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s); }
-  function countLinks(s){
-    const m = (s||"").toLowerCase().match(/https?:\/\/|www\./g);
-    return m ? m.length : 0;
-  }
-  function looksSpammy(s){
-    return /(?:casino|bet|viagra|crypto|bitcoin|investment|forex|loan|payday|porn|sex|telegram|whatsapp me|click here)/i.test(s||"");
-  }
-
-
-  function validate(){
-    let ok = true;
-
-    const name = norm(nameEl.value);
-    const email = norm(emailEl.value);
-    const msg = norm(msgEl.value);
-
-
-    if (name.length < RULES.nameMin){
-      ok = false; setError(nameEl, `Inserisci un nome valido (min ${RULES.nameMin} caratteri).`);
-    } else if (name.length > RULES.nameMax){
-      ok = false; setError(nameEl, `Nome troppo lungo (max ${RULES.nameMax} caratteri).`);
-    } else if (!/^[\p{L}\p{M}' -]+$/u.test(name)){
-      ok = false; setError(nameEl, "Il nome contiene caratteri non validi.");
-    } else clearError(nameEl);
-
-  
-    if (!isEmail(email)){
-      ok = false; setError(emailEl, "Inserisci un'email valida.");
-    } else if (email.length > 120){
-      ok = false; setError(emailEl, "Email troppo lunga.");
-    } else clearError(emailEl);
-
-  
-    if (msg.length < RULES.msgMin){
-      ok = false; setError(msgEl, `Scrivi un messaggio più dettagliato (min ${RULES.msgMin} caratteri).`);
-    } else if (msg.length > RULES.msgMax){
-      ok = false; setError(msgEl, `Messaggio troppo lungo (max ${RULES.msgMax} caratteri).`);
-    } else if (countLinks(msg) > RULES.maxLinks){
-      ok = false; setError(msgEl, "Troppi link nel messaggio.");
-    } else if (looksSpammy(msg)){
-      ok = false; setError(msgEl, "Messaggio non valido.");
-    } else clearError(msgEl);
-
-    return ok;
-  }
-
-  form.addEventListener("submit", async function(e){
-    e.preventDefault();
-    setStatus("", true);
-
-   
-    if (!validate()){
-      setStatus("Controlla i campi evidenziati.", false);
-      return;
-    }
-
-    if (!canSubmitNow()){
-      setStatus("Hai inviato da poco. Attendi qualche secondo e riprova.", false);
-      return;
-    }
-
-    btn.disabled = true;
-    const oldText = btn.textContent;
-    btn.textContent = "Invio in corso...";
-
-    try{
-      const formData = new FormData(form);
-
-      const res = await fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "application/json" }
-      });
-
-      if (res.ok){
-        markSubmit();
-        form.reset();
-        setStatus("Messaggio inviato! Ti ricontatteremo al più presto.", true);
-
-        
-        clearError(nameEl);
-        clearError(emailEl);
-        clearError(msgEl);
-
-      } else {
-        let data = null;
-        try { data = await res.json(); } catch {}
-        const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
-          ? data.errors[0].message
-          : "Errore nell'invio. Riprova tra poco.";
-        setStatus(msg, false);
+      function canSubmitNow(){
+        try{
+          const last = Number(localStorage.getItem(LS_KEY) || 0);
+          return ((Date.now() - last)/1000) >= RULES.cooldownSeconds;
+        } catch { return true; }
       }
-    } catch(err){
-      console.error(err);
-      setStatus("Errore di rete. Controlla la connessione e riprova.", false);
-    } finally{
-      btn.disabled = false;
-      btn.textContent = oldText;
-    }
-  });
+      function markSubmit(){ try{ localStorage.setItem(LS_KEY, String(Date.now())); } catch {} }
 
-})();
-    
-     
-    //ulteriori contatti
- 
-    (function () {
-
-
-  function show(el) {
-    if (!el) return;
-    el.style.opacity = '1';
-    el.style.transform = 'translateY(0)';
-    el.style.filter = 'blur(0)';
-  }
-
-  function initReveal() {
-    var blocks = document.querySelectorAll('.reveal');
-    var items  = document.querySelectorAll('.reveal-item');
-
-    // fallback
-    if (!('IntersectionObserver' in window)) {
-      for (var i = 0; i < blocks.length; i++) show(blocks[i]);
-      for (var j = 0; j < items.length; j++) show(items[j]);
-      return;
-    }
-
-    // reveal blocchi
-    var obsBlocks = new IntersectionObserver(function (entries) {
-      for (var i = 0; i < entries.length; i++) {
-        var e = entries[i];
-        if (!e.isIntersecting) continue;
-        show(e.target);
-        obsBlocks.unobserve(e.target);
+      function ensureErr(field){
+        const wrap = field.closest(".field") || field.parentElement;
+        let err = wrap.querySelector(".err");
+        if (!err){
+          err = document.createElement("small");
+          err.className = "err";
+          err.style.display = "block";
+          err.style.marginTop = "6px";
+          err.style.fontSize = "12px";
+          err.style.color = "#b91c1c";
+          err.style.minHeight = "16px";
+          err.setAttribute("aria-live","polite");
+          wrap.appendChild(err);
+        }
+        return err;
       }
-    }, { threshold: 0.16, rootMargin: "0px 0px -10% 0px" });
+      function setError(field, msg){ field.setAttribute("aria-invalid","true"); ensureErr(field).textContent = msg; }
+      function clearError(field){ field.removeAttribute("aria-invalid"); ensureErr(field).textContent = ""; }
+      function setStatus(msg, ok){
+        statusEl.textContent = msg || "";
+        statusEl.style.marginTop = "12px";
+        statusEl.style.fontSize = "14px";
+        statusEl.style.color = ok ? "#0f766e" : "#b91c1c";
+      }
 
-    for (var b = 0; b < blocks.length; b++) obsBlocks.observe(blocks[b]);
+      function norm(s){ return (s||"").replace(/\s+/g," ").trim(); }
+      function isEmail(s){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s); }
+      function countLinks(s){ const m=(s||"").toLowerCase().match(/https?:\/\/|www\./g); return m?m.length:0; }
+      function looksSpammy(s){ return /(?:casino|bet|viagra|crypto|bitcoin|investment|forex|loan|payday|porn|sex|telegram|whatsapp me|click here)/i.test(s||""); }
 
-    // stagger items (quando entra il primo)
-    var obsItems = new IntersectionObserver(function (entries) {
-      for (var i = 0; i < entries.length; i++) {
-        var e = entries[i];
-        if (!e.isIntersecting) continue;
+      function validate(){
+        let ok = true;
+        const name = norm(nameEl.value);
+        const email = norm(emailEl.value);
+        const msg = norm(msgEl.value);
 
-        for (var k = 0; k < items.length; k++) {
-          (function (el, idx) {
-            setTimeout(function () { show(el); }, 110 * idx);
-          })(items[k], k);
+        if (name.length < RULES.nameMin){
+          ok=false; setError(nameEl, `Inserisci un nome valido (min ${RULES.nameMin} caratteri).`);
+        } else if (name.length > RULES.nameMax){
+          ok=false; setError(nameEl, `Nome troppo lungo (max ${RULES.nameMax} caratteri).`);
+        } else if (!/^[\p{L}\p{M}' -]+$/u.test(name)){
+          ok=false; setError(nameEl, "Il nome contiene caratteri non validi.");
+        } else clearError(nameEl);
+
+        if (!isEmail(email)){
+          ok=false; setError(emailEl, "Inserisci un'email valida.");
+        } else if (email.length > 120){
+          ok=false; setError(emailEl, "Email troppo lunga.");
+        } else clearError(emailEl);
+
+        if (msg.length < RULES.msgMin){
+          ok=false; setError(msgEl, `Scrivi un messaggio più dettagliato (min ${RULES.msgMin} caratteri).`);
+        } else if (msg.length > RULES.msgMax){
+          ok=false; setError(msgEl, `Messaggio troppo lungo (max ${RULES.msgMax} caratteri).`);
+        } else if (countLinks(msg) > RULES.maxLinks){
+          ok=false; setError(msgEl, "Troppi link nel messaggio.");
+        } else if (looksSpammy(msg)){
+          ok=false; setError(msgEl, "Messaggio non valido.");
+        } else clearError(msgEl);
+
+        return ok;
+      }
+
+      form.addEventListener("submit", async function(e){
+        e.preventDefault();
+        setStatus("", true);
+
+        if (!validate()){
+          setStatus("Controlla i campi evidenziati.", false);
+          return;
+        }
+        if (!canSubmitNow()){
+          setStatus("Hai inviato da poco. Attendi qualche secondo e riprova.", false);
+          return;
         }
 
-        obsItems.disconnect();
-        break;
+        btn.disabled = true;
+        const oldText = btn.textContent;
+        btn.textContent = "Invio in corso...";
+
+        try{
+          const formData = new FormData(form);
+          const res = await fetch(form.action, { method:"POST", body:formData, headers:{ "Accept":"application/json" } });
+
+          if (res.ok){
+            markSubmit();
+            form.reset();
+            setStatus("Messaggio inviato! Ti ricontatteremo al più presto.", true);
+            clearError(nameEl); clearError(emailEl); clearError(msgEl);
+          } else {
+            let data=null;
+            try{ data=await res.json(); } catch {}
+            const msg = (data && data.errors && data.errors[0] && data.errors[0].message) ? data.errors[0].message : "Errore nell'invio. Riprova tra poco.";
+            setStatus(msg, false);
+          }
+        } catch(err){
+          console.error(err);
+          setStatus("Errore di rete. Controlla la connessione e riprova.", false);
+        } finally{
+          btn.disabled = false;
+          btn.textContent = oldText;
+        }
+      });
+    })();
+
+    /* =========================================================
+       REVEAL + TELEFONO
+    ========================================================= */
+    (function(){
+      function show(el){
+        if (!el) return;
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        el.style.filter = 'blur(0)';
       }
-    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
 
-    if (items.length) obsItems.observe(items[0]);
-  }
+      function initReveal(){
+        var blocks = document.querySelectorAll('.reveal');
+        var items  = document.querySelectorAll('.reveal-item');
 
+        if (!('IntersectionObserver' in window)){
+          for (var i=0;i<blocks.length;i++) show(blocks[i]);
+          for (var j=0;j<items.length;j++) show(items[j]);
+          return;
+        }
 
-  function initPhoneCall() {
-    var btn = document.getElementById('openPhoneSheet');
-    if (!btn) return;
+        var obsBlocks = new IntersectionObserver(function(entries){
+          for (var i=0;i<entries.length;i++){
+            var e = entries[i];
+            if (!e.isIntersecting) continue;
+            show(e.target);
+            obsBlocks.unobserve(e.target);
+          }
+        },{ threshold:0.16, rootMargin:"0px 0px -10% 0px" });
 
-    var MAIN_PHONE = '+39 331 825 3883';
+        for (var b=0;b<blocks.length;b++) obsBlocks.observe(blocks[b]);
 
-    btn.addEventListener('click', function () {
-      // chiama direttamente
-      window.location.href = 'tel:' + MAIN_PHONE;
-    });
-  }
+        var obsItems = new IntersectionObserver(function(entries){
+          for (var i=0;i<entries.length;i++){
+            var e=entries[i];
+            if (!e.isIntersecting) continue;
 
-  // Init
-  initReveal();
-  initPhoneCall();
+            for (var k=0;k<items.length;k++){
+              (function(el, idx){
+                setTimeout(function(){ show(el); }, 110*idx);
+              })(items[k], k);
+            }
+            obsItems.disconnect();
+            break;
+          }
+        },{ threshold:0.12, rootMargin:"0px 0px -8% 0px" });
 
-})();
+        if (items.length) obsItems.observe(items[0]);
+      }
 
+      function initPhoneCall(){
+        var btn = document.getElementById('openPhoneCall');
+        if (!btn) return;
+        var MAIN_PHONE = '+39 331 825 3883';
+        btn.addEventListener('click', function(){
+          window.location.href = 'tel:' + MAIN_PHONE;
+        });
+      }
 
-    // ESC
-    document.addEventListener('keydown', function(e) {
+      initReveal();
+      initPhoneCall();
+    })();
+
+    /* =========================================================
+       TASTI: ESC + FRECCE LIGHTBOX
+    ========================================================= */
+    document.addEventListener('keydown', function(e){
       if (e.key !== 'Escape') return;
-      if (lb && lb.classList.contains('is-open')) { forceCloseLightbox(); return; }
+      if (lb && lb.classList.contains('is-open')) { closeLightbox(); return; }
       if (drawer && drawer.classList.contains('is-open')) { closeDrawer(); return; }
     });
-
     document.addEventListener('keydown', function(e){
       if (!lb || !lb.classList.contains('is-open')) return;
       if (e.key === 'ArrowLeft') lbPrev();
       if (e.key === 'ArrowRight') lbNext();
     });
 
-    
-    // INIT
+    /* =========================================================
+       INIT
+    ========================================================= */
     renderGallery();
     setupActiveObserver();
     setActiveSection('home');
   </script>
-
 </body>
-</html>x
+</html>
