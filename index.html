@@ -4,8 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>SRATIA</title>
-   <link rel="icon" type="image/x-icon" href="/images/logo/favicon_stratia.ico">
-  <meta name="description" content="STRATIA - Aerial & Territorial Intelligence">
+  
+ <!-- FAVICON -->
+<link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+
+<!-- PWA -->
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+<meta name="theme-color" content="#0e7490">
+
+<!-- iOS / Apple -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="STRATIA Aerial">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Windows tiles -->
+<meta name="msapplication-TileColor" content="#0e7490">
+<meta name="msapplication-TileImage" content="/images/favicon/android-chrome-192x192.png">
+
+<!-- UX mobile -->
+<meta name="mobile-web-app-capable" content="yes">
+
+  
+  
+ <meta name="description" content="STRATIA - Aerial & Territorial Intelligence">
 
   <style>
     :root{
@@ -2480,7 +2504,18 @@
 
 
   <script>
-       
+
+  // per cache img
+  (function(){
+    if (!('serviceWorker' in navigator)) return;
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('/sw.js', { scope: '/' })
+        .catch(function(err){ console.warn('SW register failed', err); });
+    });
+  })();
+  
+  
+  
     function escapeHtml(str) {
       return String(str || '')
         .replaceAll('&', '&amp;')
