@@ -1,4 +1,7 @@
-/* sw.js — cache SOLO immagini (safe) */
+/* =========================================================
+   Service Worker — Cache immagini 
+   ========================================================= */
+
 const CACHE_NAME = "stratia-img-v1";
 const IMG_EXT = [".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".ico"];
 
@@ -52,3 +55,4 @@ self.addEventListener("fetch", (event) => {
     return cached || fetchPromise;
   })());
 });
+
