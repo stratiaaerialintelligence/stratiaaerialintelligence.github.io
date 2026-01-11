@@ -1,0 +1,16 @@
+{
+  "name": "STRATIA",
+  "short_name": "STRATIA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1730",
+  "theme_color": "#0a1730",
+  "icons": [
+    {
+      "src": "/images/favicon/favicon-dark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "monochrome"
+    }
+  ]
+}
