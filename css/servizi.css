@@ -90,6 +90,7 @@
       font-size:13px;
       color:var(--muted);
       margin-bottom:14px;
+      margin-top:14px;
     }
     .breadcrumb a{
       color:var(--muted);
@@ -172,7 +173,7 @@
       display:flex;
       flex-wrap:wrap;
       gap:8px;
-      margin-bottom:14px;
+      margin-bottom:16px;
     }
     .pill{
       padding:8px 10px;
@@ -213,7 +214,7 @@
 
     /* ===== Applications ===== */
     .applications{
-      margin-top:12px;
+      margin-top:14px;
       padding:12px 14px;
       border:1px solid var(--border2);
       border-radius:var(--radius-md);
@@ -253,7 +254,7 @@
 
     /* ===== Prices section ===== */
     .section{
-      margin-top:16px;
+      margin-top:14px;
       border:1px solid var(--border);
       border-radius:var(--radius);
       padding:18px;
@@ -305,7 +306,7 @@
     .td-muted{ color:#334155; font-size:14px; }
     .td-right{ text-align:right; }
     .note{
-      margin-top:12px;
+      margin-top:14px;
       color:var(--muted);
       font-size:12.5px;
       line-height:1.6;
@@ -424,7 +425,7 @@
       box-shadow:0 10px 26px rgba(0,0,0,.25);
     }
     .drawer-note{
-      margin-top:12px;
+      margin-top:14px;
       font-size:12px;
       color:rgba(234,243,255,.72);
       line-height:1.6;
@@ -433,11 +434,12 @@
 
     /* ===== Bottom nav ===== */
     .bottom-nav{
-      margin-top:16px;
+      margin-top:14px;
       display:flex;
       justify-content:space-between;
       gap:10px;
       flex-wrap:wrap;
+      margin-bottom:14px;
     }
 
     /* ===== Footer ===== */
