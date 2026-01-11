@@ -1,0 +1,440 @@
+    /* =========================
+       DISPONIBILITÀ — UI
+    ========================= */
+    
+    /* OGGI */
+	.disp-day--today{
+  	  border: 7px solid rgba(14,116,144,.85) !important;
+	}
+    
+    .disp-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .disp-card{
+      background:#fff;
+      border:1px solid rgba(2,6,23,.08);
+      border-radius:18px;
+      box-shadow: 0 18px 40px rgba(2,8,23,.08);
+      overflow:hidden;
+    }
+
+    .disp-card__head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 14px;
+      border-bottom:1px solid rgba(2,6,23,.06);
+      background: linear-gradient(180deg, rgba(14,116,144,.06), rgba(255,255,255,0));
+    }
+
+    .disp-card__title{
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+
+    .disp-card__body{ padding:14px; }
+
+    .disp-tools{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .disp-month{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(2,6,23,.10);
+      background:rgba(255,255,255,.75);
+      font-weight:800;
+      min-width:140px;
+      text-align:center;
+    }
+
+    .disp-btn{
+      appearance:none;
+      border:1px solid rgba(2,6,23,.12);
+      background:#fff;
+      padding:8px 12px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:800;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    }
+
+    .disp-btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px rgba(2,8,23,.10);
+    }
+
+    .disp-btn--primary{
+      border-color: rgba(14,116,144,.30);
+      background: rgba(14,116,144,.12);
+    }
+
+    .disp-dow{
+      display:grid;
+      grid-template-columns: repeat(7,1fr);
+      gap:8px;
+      font-size:12px;
+      color: rgba(15,23,42,.55);
+      padding: 0 4px 10px;
+    }
+
+    .disp-cal{
+      display:grid;
+      grid-template-columns: repeat(7,1fr);
+      gap:10px;
+      padding: 4px;
+    }
+
+    /* Celle giorno */
+    .disp-day{
+      position:relative;
+      height:52px;
+      border-radius:14px;
+      border:1px solid rgba(2,6,23,.08);
+      background: rgba(2,6,23,.02);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      cursor:pointer;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+      user-select:none;
+    }
+
+    .disp-day:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 12px 22px rgba(2,8,23,.10);
+    }
+
+    .disp-day--muted{
+      opacity:.38;
+      cursor:default;
+      box-shadow:none !important;
+      transform:none !important;
+    }
+
+    /* Pill sotto */
+    .disp-pill{
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:8px;
+      height:4px;
+      border-radius:999px;
+      background: rgba(16,185,129,.25);
+    }
+
+    /* Stati */
+    .disp-day.disp-avail .disp-pill{ background: rgba(16,185,129,.85); }
+    .disp-day.disp-pending{ background: rgba(255,237,213,.85); border-color: rgba(251,146,60,.35); }
+    .disp-day.disp-pending .disp-pill{ background: rgba(251,146,60,.95); }
+    .disp-day.disp-booked{ background: rgba(254,226,226,.9); border-color: rgba(239,68,68,.35); }
+    .disp-day.disp-booked .disp-pill{ background: rgba(239,68,68,.95); }
+
+    /* selezione range */
+    .disp-inRange{ outline: 2px solid rgba(14,116,144,.25); }
+    .disp-selectedStart,
+    .disp-selectedEnd{ outline: 2px solid rgba(14,116,144,.55); }
+
+   /* Legenda */
+    .disp-legend{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      padding: 0 14px 14px;
+    }
+
+    .disp-key{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color: rgba(15,23,42,.68);
+    }
+
+    .disp-dot{
+      width:10px;height:10px;border-radius:999px;
+      background:#cbd5e1;
+    }
+    .disp-dot--avail{ background: rgba(16,185,129,.95); }
+    .disp-dot--pending{ background: rgba(251,146,60,.95); }
+    .disp-dot--booked{ background: rgba(239,68,68,.95); }
+
+    /* Form */
+    .disp-box{
+      border:1px solid rgba(2,6,23,.06);
+      border-radius:16px;
+      padding:14px;
+      background: rgba(2,6,23,.015);
+    }
+
+    .disp-selected{
+      font-weight:900;
+      font-size:18px;
+      margin-top:6px;
+    }
+
+    .disp-fields{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .disp-label{
+      display:block;
+      font-size:13px;
+      font-weight:800;
+      color: rgba(15,23,42,.78);
+      margin:12px 0 6px;
+    }
+
+    .disp-input,
+    .disp-textarea{
+      width:100%;
+      border-radius:14px;
+      border:1px solid rgba(2,6,23,.10);
+      background:#fff;
+      padding:12px 12px;
+      outline:none;
+      transition: box-shadow .12s ease, border-color .12s ease;
+    }
+
+    .disp-textarea{ min-height:92px; resize:vertical; }
+
+    .disp-input:focus,
+    .disp-textarea:focus{
+      border-color: rgba(14,116,144,.35);
+      box-shadow: 0 0 0 6px rgba(14,116,144,.12);
+    }
+
+    /* STEP servizi */
+    .disp-step{
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px dashed rgba(2,6,23,.12);
+    }
+
+    .disp-step__title{
+      font-weight:900;
+      margin-bottom:10px;
+    }
+
+    .disp-group{ margin-top:10px; }
+
+    .disp-options{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .disp-opt{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(2,6,23,.10);
+      background: rgba(2,6,23,.02);
+      cursor:pointer;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    }
+
+    .disp-opt:hover{
+      transform: translateY(-1px);
+      background: rgba(2,6,23,.04);
+      box-shadow: 0 10px 18px rgba(2,6,23,.08);
+    }
+
+    .disp-opt__box{
+      width:18px;height:18px;
+      border-radius:6px;
+      border:2px solid rgba(14,116,144,.35);
+      margin-top:2px;
+      flex:0 0 auto;
+      position:relative;
+      background:#fff;
+    }
+
+    .disp-opt.is-checked .disp-opt__box{
+      border-color: rgba(14,116,144,.65);
+      background: rgba(14,116,144,.12);
+    }
+
+    .disp-opt.is-checked .disp-opt__box::after{
+      content:"";
+      position:absolute;
+      left:4px; top:1px;
+      width:6px; height:10px;
+      border-right:2px solid rgba(14,116,144,.95);
+      border-bottom:2px solid rgba(14,116,144,.95);
+      transform: rotate(40deg);
+    }
+
+    .disp-opt__title{ font-weight:900; line-height:1.2; }
+    .disp-opt__desc{
+      margin-top:4px;
+      color: rgba(15,23,42,.62);
+      font-size:13px;
+      line-height:1.35;
+    }
+    .disp-opt__price{
+      margin-top:6px;
+      font-weight:900;
+      color: rgba(14,116,144,.95);
+    }
+
+    .disp-total{
+      margin-top:12px;
+      padding:12px;
+      border-radius:14px;
+      border:1px solid rgba(2,6,23,.10);
+      background: rgba(14,116,144,.06);
+    }
+
+    .disp-total__row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      font-weight:800;
+    }
+
+    .disp-total__sub{
+      margin-top:6px;
+      font-size:12.5px;
+      color: rgba(15,23,42,.62);
+      line-height:1.35;
+    }
+
+    .disp-status{
+      margin-top:14px;
+      padding:10px 12px;
+      border-radius:18px;
+      border:1px solid rgba(2,6,23,.10);
+      background:#fff;
+      font-weight:800;
+      min-height: 40px;
+    }
+
+    .disp-status--good{ border-color: rgba(16,185,129,.35); background: rgba(16,185,129,.10); }
+    .disp-status--bad{ border-color: rgba(239,68,68,.35); background: rgba(239,68,68,.10); }
+
+    /* VALIDAZIONE campi */
+    .disp-fieldmsg{
+      margin-top:6px;
+      font-size:12.5px;
+      color: rgba(15,23,42,.62);
+      display:none;
+    }
+    
+    .disp-fieldmsg.is-bad{ color:#b42318; display:block; }
+    .disp-fieldmsg.is-good{ color:#067647; display:block; }
+    .disp-input.is-bad{
+      border-color: rgba(180,35,24,.55);
+      box-shadow: 0 0 0 4px rgba(180,35,24,.10);
+    }
+    
+    .disp-input.is-good{
+      border-color: rgba(6,118,71,.45);
+      box-shadow: 0 0 0 4px rgba(6,118,71,.10);
+    }
+    
+    /* ===== Loading state (niente flash verde) ===== */
+	.disp-day.is-loading{
+	  background: rgba(2,6,23,.035);
+	  border-color: rgba(2,6,23,.06);
+	  color: rgba(15,23,42,.25);
+	}
+	
+	.disp-day.is-loading .disp-pill{
+	  background: rgba(148,163,184,.45);
+	}
+	    
+
+    /* Responsive */
+    
+   /* Tablet / schermi medi */
+@media (max-width: 1024px){
+  .disp-card__body{ padding:12px; }
+  .disp-cal{ gap:8px; }
+  .disp-day{ height:48px; border-radius:12px; font-size:14px; }
+  .disp-pill{ left:9px; right:9px; bottom:7px; height:4px; }
+  .disp-dow{ gap:6px; font-size:12px; }
+}
+
+/* Mobile: tool bar più compatta + griglia più stretta */
+@media (max-width: 720px){
+  /* header calendario*/
+  .disp-card__head{ padding:12px; }
+  .disp-tools{ gap:8px; }
+  .disp-month{ min-width: 120px; padding:7px 10px; font-size:13px; }
+  .disp-btn{ padding:7px 10px; font-size:13px; }
+
+  /* griglia */
+  .disp-card__body{ padding:12px; }
+  .disp-cal{ gap:7px; padding: 2px; }
+  .disp-dow{ gap:6px; font-size:11px; padding:0 2px 8px; }
+
+  /* celle più basse e testo leggermente più piccolo */
+  .disp-day{
+    height:44px;
+    border-radius:12px;
+    font-size:13px;
+  }
+
+  /* “oggi” meno invasivo su mobile */
+  .disp-day--today{
+    border-width:3px !important;
+  }
+
+  /* pill */
+  .disp-pill{
+    left:8px;
+    right:8px;
+    bottom:6px;
+    height:4px;
+  }
+}
+
+/* Mobile piccolo (iPhone SE / 360px) */
+@media (max-width: 420px){
+  /* bottoni ancora più compatti */
+  .disp-tools{ gap:6px; }
+  .disp-btn{ padding:6px 9px; font-size:12.5px; }
+  .disp-month{ min-width: 108px; padding:6px 9px; font-size:12.5px; }
+
+  /* giorni settimana: più stretti */
+  .disp-dow{ gap:5px; font-size:10.5px; }
+
+  /* celle: compatte */
+  .disp-cal{ gap:6px; }
+  .disp-day{
+    height:40px;
+    border-radius:11px;
+    font-size:12.5px;
+  }
+  .disp-pill{
+    left:7px;
+    right:7px;
+    bottom:5px;
+    height:3px;
+  }
+}
+
+/* Micro-mobile (<= 340px) — evita overflow */
+@media (max-width: 340px){
+  .disp-card__head{ padding:10px; }
+  .disp-btn{ padding:6px 8px; font-size:12px; }
+  .disp-month{ min-width: 98px; font-size:12px; }
+  .disp-day{ height:38px; font-size:12px; }
+}
