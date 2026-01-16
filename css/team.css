@@ -430,6 +430,35 @@
       color:rgba(234,243,255,.72);
       line-height:1.6;
     }
+    
+     /* ===== Footer ===== */
+    .footer{
+      border-top:1px solid #e5e7eb;
+      background:#fff;
+    }
+    .footer-inner{
+      max-width:var(--container);
+      margin:0 auto;
+      padding:16px 18px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      justify-content:flex-end;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .footer-links{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .footer a{
+      color:var(--muted);
+      text-decoration:none;
+    }
+    .footer a:hover{ text-decoration:underline; }
+
+    
 
     /* =========================================================
        MEDIA QUERIES 
