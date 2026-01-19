@@ -579,7 +579,7 @@
             <div class="rent-card">
               <div class="rent-top">
                 <div class="rent-title">1 ora</div>
-                <div class="rent-price">€ 100</div>
+                <div class="rent-price">€ 70</div>
               </div>
               <ul class="rent-list">
                 <li>Briefing + pianificazione</li>
@@ -592,7 +592,7 @@
             <div class="rent-card">
               <div class="rent-top">
                 <div class="rent-title">2 ore</div>
-                <div class="rent-price">€ 200</div>
+                <div class="rent-price">€ 120</div>
               </div>
               <ul class="rent-list">
                 <li>Piano esteso</li>
@@ -653,7 +653,7 @@
             <div class="rent-card">
               <div class="rent-top">
                 <div class="rent-title">1 ora</div>
-                <div class="rent-price">€ 100</div>
+                <div class="rent-price">€ 150</div>
               </div>
               <ul class="rent-list">
                 <li>Briefing safety FPV</li>
@@ -666,7 +666,7 @@
             <div class="rent-card">
               <div class="rent-top">
                 <div class="rent-title">2 ore</div>
-                <div class="rent-price">€ 200</div>
+                <div class="rent-price">€ 230</div>
               </div>
               <ul class="rent-list">
                 <li>Tracciato ottimizzato</li>
@@ -740,7 +740,7 @@
             <div class="rent-card">
               <div class="rent-top">
                 <div class="rent-title">2 ore</div>
-                <div class="rent-price">€ 200</div>
+                <div class="rent-price">€ 150</div>
               </div>
               <ul class="rent-list">
                 <li>Piano completo</li>
@@ -757,7 +757,7 @@
         </div>
       </article>
 
-      <!-- 4) DJI Mavic (placeholder realistico: Mavic 3 Pro) -->
+      <!-- 4) DJI Mavic  -->
       <article class="drone-card" data-drone="DJI Mavic 4 Pro">
         <div class="drone-top">
           <div class="drone-badges">
@@ -801,7 +801,7 @@
             <div class="rent-card">
               <div class="rent-top">
                 <div class="rent-title">1 ora</div>
-                <div class="rent-price">€ 100</div>
+                <div class="rent-price">€ 230</div>
               </div>
               <ul class="rent-list">
                 <li>Pianificazione missione</li>
@@ -814,7 +814,7 @@
             <div class="rent-card">
               <div class="rent-top">
                 <div class="rent-title">2 ore</div>
-                <div class="rent-price">€ 200</div>
+                <div class="rent-price">€ 350</div>
               </div>
               <ul class="rent-list">
                 <li>Workflow esteso</li>
@@ -915,11 +915,14 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
-    <div>Copyright © 2026 STRATIA. Tutti i diritti riservati</div>
+    <div> © <span id="y"></span> STRATIA - Aerial & Territorial Intelligence</div>
   </div>
 </footer>
 
 <script>
+
+document.getElementById("y").textContent = new Date().getFullYear();
+
 (function(){
   // ===== 1) Drawer: apri/chiudi (mutualmente esclusivo) =====
   const cards = Array.from(document.querySelectorAll('.drone-card'));
