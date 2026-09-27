@@ -41,6 +41,93 @@
   <script defer src="https://cloud.umami.is/script.js"
         data-website-id="64263d84-d116-4204-a2bf-46499c6fb636"></script>
 
+	<!-- Stile del form Demo Pilota: css/servizi.css non definisce .contact-form/.field,
+       quindi lo stile per questa pagina è qui, scoped e senza toccare altre pagine. -->
+  <style>
+    .pilot-section{
+      margin-top:14px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      background:#fff;
+    }
+    .pilot-head{ max-width:720px; margin-bottom:22px; }
+    .pilot-head h2{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .pilot-head p{
+      margin:0;
+      color:#334155;
+      line-height:1.7;
+      font-size:14.5px;
+    }
+
+    .demo-form{ max-width:680px; }
+    .demo-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:14px;
+    }
+    .demo-field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .demo-field.full{ grid-column:1 / -1; }
+    .demo-field label{
+      font-size:13px;
+      font-weight:800;
+      color:var(--dark);
+    }
+    .demo-field input,
+    .demo-field textarea{
+      width:100%;
+      padding:11px 12px;
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      background:var(--soft);
+      font-size:14px;
+      font-family:inherit;
+      color:var(--text);
+    }
+    .demo-field input:focus,
+    .demo-field textarea:focus{
+      outline:none;
+      border-color:#0e7490;
+      background:#fff;
+      box-shadow:0 0 0 3px rgba(14,116,144,.15);
+    }
+    .demo-field textarea{ resize:vertical; min-height:110px; }
+
+    .demo-submit{
+      margin-top:4px;
+      border:none;
+      cursor:pointer;
+      font-size:15px;
+    }
+    .demo-privacy{
+      margin:14px 0 0;
+      font-size:12.5px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+    .demo-status{
+      margin:10px 0 0;
+      font-size:14px;
+      min-height:18px;
+    }
+
+    @media (max-width:720px){
+      .pilot-section{ padding:18px; }
+      .demo-grid{ grid-template-columns:1fr; }
+    }
+  </style>
+
+
 </head>
 
 <body>
@@ -176,62 +263,64 @@
     </section>
 
     <!-- PROGETTO PILOTA + FORM -->
-    <section id="demo-pilota" class="prices">
-      <div class="prices-head">
-        <div>
-          <h2>Progetto Pilota — Demo gratuita di 6 mesi</h2>
-          <p class="prices-desc">
-            Stiamo selezionando un numero limitato di amministratori, studi tecnici e gestori immobiliari
-            per il lancio di STRATIA Condomini: <strong>6 mesi di accesso gratuito</strong>, con il supporto
-            diretto del nostro team per configurare la piattaforma sui tuoi edifici e pianificare le prime
-            ispezioni. Nessun impegno, nessun costo iniziale.
-          </p>
-        </div>
+   <section id="demo-pilota" class="pilot-section">
+      <div class="pilot-head">
+			 
+        <h2>Progetto Pilota — Demo gratuita di 6 mesi</h2>
+        <p>
+          Stiamo selezionando un numero limitato di amministratori, studi tecnici e gestori immobiliari
+          per il lancio di STRATIA Condomini: <strong>6 mesi di accesso gratuito</strong>, con il supporto
+          diretto del nostro team per configurare la piattaforma sui tuoi edifici e pianificare le prime
+          ispezioni. Nessun impegno, nessun costo iniziale.
+        </p>
+			  
       </div>
 
-      <form class="contact-form" id="demoForm" action="https://formspree.io/f/xqeaqbwy" method="POST" style="margin-top:18px;">
-        <div class="field">
-          <label for="d-name">Nome e cognome</label>
-          <input id="d-name" name="name" type="text" placeholder="Il tuo nome" autocomplete="name" required minlength="2">
-        </div>
+      <form class="demo-form" id="demoForm" action="https://formspree.io/f/xqeaqbwy" method="POST">
+        <div class="demo-grid">
+          <div class="demo-field">
+            <label for="d-name">Nome e cognome</label>
+            <input id="d-name" name="name" type="text" placeholder="Il tuo nome" autocomplete="name" required minlength="2">
+          </div>
 
-        <div class="field">
-          <label for="d-azienda">Azienda / Studio</label>
-          <input id="d-azienda" name="azienda" type="text" placeholder="Nome dello studio o dell'azienda" autocomplete="organization">
-        </div>
+          <div class="demo-field">
+            <label for="d-azienda">Azienda / Studio</label>
+            <input id="d-azienda" name="azienda" type="text" placeholder="Nome dello studio o dell'azienda" autocomplete="organization">
+          </div>
 
-        <div class="field">
-          <label for="d-ruolo">Ruolo</label>
-          <input id="d-ruolo" name="ruolo" type="text" placeholder="Es. Amministratore di condominio, Tecnico, Property manager">
-        </div>
+          <div class="demo-field">
+            <label for="d-ruolo">Ruolo</label>
+            <input id="d-ruolo" name="ruolo" type="text" placeholder="Es. Amministratore di condominio">
+          </div>
 
-        <div class="field">
-          <label for="d-email">Email</label>
-          <input id="d-email" name="email" type="email" placeholder="La tua email" autocomplete="email" required>
-        </div>
+          <div class="demo-field">
+            <label for="d-edifici">Numero di edifici in gestione</label>
+            <input id="d-edifici" name="numero_edifici" type="text" placeholder="Es. 15">
+          </div>
 
-        <div class="field">
-          <label for="d-telefono">Telefono</label>
-          <input id="d-telefono" name="telefono" type="tel" placeholder="Il tuo numero di telefono" autocomplete="tel">
-        </div>
+          <div class="demo-field">
+            <label for="d-email">Email</label>
+            <input id="d-email" name="email" type="email" placeholder="La tua email" autocomplete="email" required>
+          </div>
 
-        <div class="field">
-          <label for="d-edifici">Numero di edifici in gestione</label>
-          <input id="d-edifici" name="numero_edifici" type="text" placeholder="Es. 15">
-        </div>
+          <div class="demo-field">
+            <label for="d-telefono">Telefono</label>
+            <input id="d-telefono" name="telefono" type="tel" placeholder="Il tuo numero di telefono" autocomplete="tel">
+          </div>
 
-        <div class="field">
-          <label for="d-message">Messaggio (opzionale)</label>
-          <textarea id="d-message" name="message" rows="5" placeholder="Raccontaci qualcosa in più sulle tue esigenze..."></textarea>
+          <div class="demo-field full">
+            <label for="d-message">Messaggio (opzionale)</label>
+            <textarea id="d-message" name="message" rows="5" placeholder="Raccontaci qualcosa in più sulle tue esigenze..."></textarea>
+          </div>
         </div>
 
         <input type="text" name="_gotcha" style="display:none">
         <input type="hidden" name="_subject" value="🏢 Richiesta Demo gratuita 6 mesi – STRATIA Condomini">
 
-        <button class="btn" type="submit" id="demoSubmitBtn">Richiedi la Demo Gratuita</button>
+        <button class="btn btn-dark demo-submit" type="submit" id="demoSubmitBtn">Richiedi la Demo Gratuita</button>
 
-        <p class="privacy">Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato in merito al progetto pilota.</p>
-        <p class="form-status" id="demoFormStatus" aria-live="polite"></p>
+        <p class="demo-privacy">Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato in merito al progetto pilota.</p>
+        <p class="demo-status" id="demoFormStatus" aria-live="polite"></p>
       </form>
     </section>
 
