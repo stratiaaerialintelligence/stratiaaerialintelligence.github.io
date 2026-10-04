@@ -41,9 +41,161 @@
   <script defer src="https://cloud.umami.is/script.js"
         data-website-id="64263d84-d116-4204-a2bf-46499c6fb636"></script>
 
-	<!-- Stile del form Demo Pilota: css/servizi.css non definisce .contact-form/.field,
-       quindi lo stile per questa pagina è qui, scoped e senza toccare altre pagine. -->
+  <!-- Stile della landing STRATIA Condomini: estende css/servizi.css con le sezioni
+       specifiche di questa pagina (problemi, come funziona, confronto, portfolio, FAQ,
+       form pilota), scoped qui e senza toccare le altre pagine servizi. -->
   <style>
+
+    /* ===== Trust bar sotto l'hero ===== */
+    .trustbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 22px;
+      padding:14px 20px;
+      border-bottom:1px solid var(--border2);
+      background:var(--soft);
+      font-size:13px;
+      font-weight:800;
+      color:var(--dark);
+    }
+    .trustbar span{ display:flex; align-items:center; gap:7px; }
+    .trustbar .dot{
+      width:6px; height:6px; border-radius:999px;
+      background:#0e7490; flex:0 0 auto;
+    }
+    .credential-note{
+      padding:10px 20px 14px;
+      background:var(--soft);
+      border-bottom:1px solid var(--border2);
+      font-size:12.5px;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    /* ===== Urgenza pilota (badge rinforzato) ===== */
+    .hero-badge.urgent{
+      background:rgba(239,68,68,.16);
+      border-color:rgba(239,68,68,.35);
+    }
+    .hero-badge.urgent .hero-dot{ background:#ef4444; }
+
+    /* ===== Kicker generico per intestazioni di sezione ===== */
+    .kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#0e7490;
+      margin-bottom:8px;
+    }
+    .section-title{
+      margin:0 0 6px;
+      font-size:22px;
+      font-weight:900;
+      color:var(--dark);
+      letter-spacing:-.2px;
+    }
+    .section-sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.65;
+      max-width:70ch;
+    }
+
+    /* ===== Problemi (agitazione) ===== */
+    .problem-section{ margin-top:14px; }
+    .problem-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+    }
+    .problem-card{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-md);
+      padding:18px;
+      background:#fff;
+    }
+    .problem-card .ic{
+      width:38px; height:38px;
+      border-radius:12px;
+      background:rgba(239,68,68,.10);
+      color:#ef4444;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:12px;
+      font-size:18px;
+      font-weight:900;
+    }
+    .problem-card h3{
+      margin:0 0 6px;
+      font-size:15.5px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .problem-card p{
+      margin:0;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.65;
+    }
+
+    /* ===== Come funziona (steps) ===== */
+    .steps-section{ margin-top:14px; }
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      position:relative;
+    }
+    .step{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-md);
+      padding:18px;
+      background:#fff;
+      position:relative;
+    }
+    .step .num{
+      width:32px; height:32px;
+      border-radius:999px;
+      background:var(--dark);
+      color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      font-size:14px;
+      margin-bottom:12px;
+    }
+    .step h3{
+      margin:0 0 6px;
+      font-size:15px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .step p{
+      margin:0;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.65;
+    }
+    .step-time{
+      display:inline-block;
+      margin-top:10px;
+      font-size:11.5px;
+      font-weight:800;
+      color:#0e7490;
+      background:rgba(14,116,144,.08);
+      border-radius:999px;
+      padding:4px 9px;
+    }
+
+    /* ===== Confronto ===== */
+    .compare-section{ margin-top:14px; }
+    .compare-table th:nth-child(2){ color:#94a3b8; }
+    .compare-table th:nth-child(3){ color:#0e7490; }
+    .compare-table .no{ color:#94a3b8; }
+    .compare-table .yes{ color:#0e7490; font-weight:900; }
+
+    /* ===== Pilota / form (già presente, copy rinforzato) ===== */
     .pilot-section{
       margin-top:14px;
       border:1px solid var(--border);
@@ -63,6 +215,25 @@
       color:#334155;
       line-height:1.7;
       font-size:14.5px;
+    }
+    .pilot-reasons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 18px;
+      margin-top:14px;
+    }
+    .pilot-reasons span{
+      font-size:13px;
+      font-weight:800;
+      color:var(--dark);
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .pilot-reasons span::before{
+      content:"✓";
+      color:#16a34a;
+      font-weight:900;
     }
 
     .demo-form{ max-width:680px; }
@@ -121,12 +292,83 @@
       min-height:18px;
     }
 
+    /* ===== FAQ ===== */
+    .faq-section{ margin-top:14px; }
+    .faq-list{ display:flex; flex-direction:column; gap:10px; }
+    details.faq-item{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-sm);
+      background:#fff;
+      padding:0;
+    }
+    details.faq-item summary{
+      list-style:none;
+      cursor:pointer;
+      padding:14px 16px;
+      font-weight:800;
+      font-size:14.5px;
+      color:var(--dark);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    details.faq-item summary::-webkit-details-marker{ display:none; }
+    details.faq-item summary .car{
+      color:var(--muted);
+      transition:transform .15s;
+      flex:none;
+    }
+    details.faq-item[open] summary .car{ transform:rotate(180deg); }
+    details.faq-item .faq-a{
+      padding:0 16px 16px;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.7;
+    }
+
+    /* ===== CTA finale a tutta larghezza ===== */
+    .final-cta{
+      margin-top:14px;
+      border-radius:var(--radius);
+      padding:30px 24px;
+      background:linear-gradient(135deg, var(--dark), #132544);
+      color:#fff;
+      text-align:center;
+    }
+    .final-cta h2{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:900;
+    }
+    .final-cta p{
+      margin:0 auto 18px;
+      max-width:56ch;
+      color:rgba(255,255,255,.82);
+      font-size:14.5px;
+      line-height:1.65;
+    }
+    .final-cta .btn-light{
+      background:#fff;
+      color:var(--dark);
+    }
+    .final-cta .btn-light:hover{ filter:brightness(.96); }
+    .final-cta .slots{
+      margin-top:14px;
+      font-size:12.5px;
+      color:rgba(255,255,255,.65);
+    }
+
+    @media (max-width:980px){
+      .problem-grid, .steps{ grid-template-columns:1fr 1fr; }
+    }
     @media (max-width:720px){
       .pilot-section{ padding:18px; }
       .demo-grid{ grid-template-columns:1fr; }
+      .problem-grid, .steps{ grid-template-columns:1fr; }
+      .final-cta{ padding:24px 18px; }
     }
   </style>
-
 
 </head>
 
@@ -191,32 +433,40 @@
 
     <!-- HERO -->
     <section class="card">
-      <div class="hero-media" style="background-image:url('../images/condominio.jpg')" role="img" aria-label="STRATIA Condomini">
+      <div class="hero-media" style="background-image:url('../images/condomini.jpg')" role="img" aria-label="STRATIA Condomini">
         <div class="hero-overlay" aria-hidden="true"></div>
 
         <div class="hero-inner">
           <div class="hero-content">
-            <div class="hero-badge">
+            <div class="hero-badge urgent">
               <span class="hero-dot" aria-hidden="true"></span>
-              Nuovo prodotto STRATIA
+              Progetto Pilota — posti limitati
             </div>
 
-            <h1 class="hero-title">STRATIA Condomini</h1>
+            <h1 class="hero-title">Il tuo condominio, ispezionato dall'alto.<br>Senza ponteggi. Senza sorprese in assemblea.</h1>
 
             <p class="hero-sub">
-              L'ispezione del tuo edificio, vista dall'alto. Ogni criticità, sotto controllo.
+              Droni professionali e un dossier digitale che trasformano ogni facciata e ogni tetto in dati
+              che puoi mostrare, tracciare e difendere davanti ai condomini — invece di scoprire i problemi
+              quando sono già diventati costosi.
             </p>
           </div>
         </div>
       </div>
 
-      <div class="card-pad">
+      <div class="trustbar">
+        <span><span class="dot"></span>Ispezioni aeree di precisione</span>
+        <span><span class="dot"></span>Storico criticità nel tempo</span>
+        <span><span class="dot"></span>Report pronti per l'assemblea</span>
+        <span><span class="dot"></span>Nessun ponteggio, nessun accesso rischioso</span>
+      </div>
+      <div class="credential-note">
+        <strong>Il team</strong> arriva dal settore aeronautico professionale, con piloti certificati e
+        rapporti diretti con le autorità di settore: le ispezioni seguono gli stessi standard, non quelli
+        di un drone amatoriale.
+      </div>
 
-        <div class="pills">
-          <span class="pill">Ispezioni aeree di precisione</span>
-          <span class="pill">Storico criticità</span>
-          <span class="pill">Report pronti per l'assemblea</span>
-        </div>
+      <div class="card-pad">
 
         <div class="grid-2">
           <div class="box">
@@ -244,36 +494,135 @@
           </div>
         </div>
 
-        <div class="box" style="margin-top:12px;">
-          <div class="box-title">Perché scegliere STRATIA</div>
-          <ul class="box-list">
-            <li><strong>Precisione aerea professionale</strong> — ogni punto della facciata, anche il più difficile da raggiungere, con un dettaglio che il sopralluogo tradizionale non offre</li>
-            <li><strong>Tempo e sicurezza</strong> — niente ponteggi, niente accessi rischiosi, tempi ridotti drasticamente</li>
-            <li><strong>Storico e tracciabilità</strong> — ogni criticità monitorata nel tempo, nessuna informazione persa</li>
-            <li><strong>Decisioni più rapide</strong> — report chiari, pronti da presentare in assemblea</li>
-            <li><strong>Un unico spazio digitale</strong> — documenti, storico e comunicazioni in un solo posto</li>
-          </ul>
-        </div>
-
         <div class="cta-row">
           <a class="btn btn-dark" href="#demo-pilota">Richiedi la Demo gratuita di 6 mesi</a>
+          <a class="btn btn-outline" href="#come-funziona">Guarda come funziona ↓</a>
         </div>
 
       </div>
     </section>
 
+    <!-- PROBLEMI -->
+    <section class="section problem-section">
+      <span class="kicker">Il problema, prima della soluzione</span>
+      <h2 class="section-title">Tre cose che ogni amministratore conosce bene</h2>
+      <p class="section-sub">
+        Non è mancanza di impegno: è che il sopralluogo tradizionale, da terra o a vista, semplicemente
+        non può mostrarti tutto quello che serve.
+      </p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="ic">!</div>
+          <h3>Sopralluoghi parziali</h3>
+          <p>Tetti, grondaie e facciate alte restano fuori portata senza ponteggi — e sono quasi sempre
+             il punto dove parte l'infiltrazione.</p>
+        </div>
+        <div class="problem-card">
+          <div class="ic">~</div>
+          <h3>Documentazione dispersa</h3>
+          <p>Foto nelle email, relazioni su chiavette, preventivi in cartelle diverse: quando serve
+             mostrare qualcosa in assemblea, si ricostruisce tutto da capo.</p>
+        </div>
+        <div class="problem-card">
+          <div class="ic">⏱</div>
+          <h3>Criticità scoperte troppo tardi</h3>
+          <p>Una crepa o un'infiltrazione vista in tempo è una manutenzione. Vista tardi, è un intervento
+             d'urgenza — e una discussione in assemblea.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COME FUNZIONA -->
+    <section id="come-funziona" class="section steps-section">
+      <span class="kicker">Come funziona</span>
+      <h2 class="section-title">Dal sopralluogo al report, in tre passaggi</h2>
+      <p class="section-sub">
+        Nessuna curva di apprendimento per te: il drone e l'analisi li gestiamo noi, tu ricevi il risultato.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Sopralluogo aereo</h3>
+          <p>Il drone rileva facciate, tetti e coperture da ogni angolazione, inclusi i punti che da terra
+             non si vedono.</p>
+          <span class="step-time">Nessun ponteggio</span>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Analisi e dossier digitale</h3>
+          <p>Ogni criticità viene catalogata con foto, posizione e stato — in uno spazio digitale sempre
+             consultabile.</p>
+          <span class="step-time">Tutto in un posto</span>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Report per l'assemblea</h3>
+          <p>Un documento chiaro, pronto da presentare ai condomini — niente ricostruzioni dell'ultimo
+             minuto.</p>
+          <span class="step-time">Pronto da mostrare</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFRONTO -->
+    <section class="section compare-section">
+      <span class="kicker">Il confronto</span>
+      <h2 class="section-title">Sopralluogo tradizionale vs STRATIA Condomini</h2>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Sopralluogo tradizionale</th>
+              <th>STRATIA Condomini</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-strong">Accesso a tetti e facciate alte</td>
+              <td class="td-muted no">Limitato, serve ponteggio</td>
+              <td class="td-muted yes">Completo, dall'alto</td>
+            </tr>
+            <tr>
+              <td class="td-strong">Rischio per chi ispeziona</td>
+              <td class="td-muted no">Presente (quote, accessi)</td>
+              <td class="td-muted yes">Nessuno</td>
+            </tr>
+            <tr>
+              <td class="td-strong">Documentazione</td>
+              <td class="td-muted no">Dispersa, da ricostruire</td>
+              <td class="td-muted yes">Centralizzata e tracciata</td>
+            </tr>
+            <tr>
+              <td class="td-strong">Storico nel tempo</td>
+              <td class="td-muted no">Raro, manuale</td>
+              <td class="td-muted yes">Automatico, sempre consultabile</td>
+            </tr>
+            <tr>
+              <td class="td-strong">Pronto per l'assemblea</td>
+              <td class="td-muted no">Da preparare ogni volta</td>
+              <td class="td-muted yes">Report già pronto</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <!-- PROGETTO PILOTA + FORM -->
-   <section id="demo-pilota" class="pilot-section">
+    <section id="demo-pilota" class="pilot-section">
       <div class="pilot-head">
-			 
         <h2>Progetto Pilota — Demo gratuita di 6 mesi</h2>
         <p>
           Stiamo selezionando un numero limitato di amministratori, studi tecnici e gestori immobiliari
           per il lancio di STRATIA Condomini: <strong>6 mesi di accesso gratuito</strong>, con il supporto
           diretto del nostro team per configurare la piattaforma sui tuoi edifici e pianificare le prime
-          ispezioni. Nessun impegno, nessun costo iniziale.
+          ispezioni.
         </p>
-			  
+        <div class="pilot-reasons">
+          <span>Nessun costo iniziale</span>
+          <span>Nessun impegno</span>
+          <span>Supporto diretto del team</span>
+        </div>
       </div>
 
       <form class="demo-form" id="demoForm" action="https://formspree.io/f/xqeaqbwy" method="POST">
@@ -322,6 +671,45 @@
         <p class="demo-privacy">Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato in merito al progetto pilota.</p>
         <p class="demo-status" id="demoFormStatus" aria-live="polite"></p>
       </form>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+      <span class="kicker">Domande frequenti</span>
+      <h2 class="section-title">Prima di chiedere la demo</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Cosa cambia davvero rispetto a un sopralluogo tradizionale?<span class="car">⌄</span></summary>
+          <div class="faq-a">Il drone arriva dove un sopralluogo da terra non arriva — tetti, grondaie,
+            facciate alte — e ogni criticità trovata resta documentata con foto e posizione, non solo
+            in una relazione scritta a mano.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Cosa succede dopo i 6 mesi gratuiti?<span class="car">⌄</span></summary>
+          <div class="faq-a">Durante il progetto pilota definiamo insieme il piano più adatto al numero di
+            edifici che gestisci, senza impegno a proseguire. Nessun costo nascosto, nessun rinnovo automatico.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Quanto tempo richiede un'ispezione?<span class="car">⌄</span></summary>
+          <div class="faq-a">Dipende dalle dimensioni dell'edificio, ma è nell'ordine di ore, non di giorni —
+            senza le soste necessarie a montare e smontare un ponteggio.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Serve un'autorizzazione particolare per far volare il drone sul condominio?<span class="car">⌄</span></summary>
+          <div class="faq-a">Ogni sopralluogo viene pianificato nel rispetto della normativa sul volo dei
+            droni e, dove serve, con il coinvolgimento dell'amministratore per le autorizzazioni necessarie.
+            Ne parliamo nel dettaglio durante l'attivazione della demo, caso per caso.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA FINALE -->
+    <section class="final-cta">
+      <h2>Vuoi vedere il tuo edificio così?</h2>
+      <p>Il progetto pilota è a posti limitati: 6 mesi di accesso gratuito, supporto diretto del team,
+         nessun costo iniziale.</p>
+      <a class="btn btn-light" href="#demo-pilota">Richiedi la Demo Gratuita di 6 mesi</a>
+      <div class="slots">Posti limitati per il lancio del progetto pilota.</div>
     </section>
 
     <!-- NAV BOTTOM -->
