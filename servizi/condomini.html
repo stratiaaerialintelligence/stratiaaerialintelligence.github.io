@@ -46,6 +46,72 @@
        form pilota), scoped qui e senza toccare le altre pagine servizi. -->
   <style>
 
+    /* ===== Hero a due colonne: testo + video ===== */
+    .hero-split{
+      display:grid;
+      grid-template-columns:1.05fr 1fr;
+      gap:28px;
+      align-items:center;
+      padding:28px 24px;
+      background:linear-gradient(135deg, var(--dark), #132544);
+      color:#fff;
+    }
+    .hero-text{ color:#fff; }
+    .hero-title-split{
+      margin:14px 0 10px;
+      font-size:30px;
+      line-height:1.18;
+      letter-spacing:-.3px;
+      font-weight:900;
+      color:#fff;
+    }
+    .hero-sub-split{
+      margin:0 0 20px;
+      max-width:48ch;
+      line-height:1.65;
+      font-size:15px;
+      color:rgba(255,255,255,.82);
+    }
+    .hero-split .cta-row{ margin-top:0; }
+    .hero-split .btn-outline{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.35);
+    }
+    .hero-split .btn-outline:hover{ background:rgba(255,255,255,.08); }
+    .hero-video{ width:100%; }
+    .video-frame{
+      position:relative;
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:var(--radius-md);
+      overflow:hidden;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.14);
+      background:#000;
+    }
+    .video-frame iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      border:0;
+    }
+    .video-caption{
+      margin-top:10px;
+      font-size:12.5px;
+      font-weight:700;
+      color:rgba(255,255,255,.72);
+      text-align:center;
+    }
+
+    @media (max-width:860px){
+      .hero-split{
+        grid-template-columns:1fr;
+        padding:22px 18px;
+      }
+      .hero-title-split{ font-size:25px; }
+      .hero-split .cta-row .btn{ flex:1; }
+    }
+
     /* ===== Trust bar sotto l'hero ===== */
     .trustbar{
       display:flex;
@@ -170,6 +236,42 @@
       font-size:16px;
       font-weight:900;
       color:var(--dark);
+    }
+
+    /* ===== La piattaforma in azione (screenshot) ===== */
+    .showcase-section{ margin-top:14px; }
+    .showcase-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .showcase-item{ margin:0; }
+    .showcase-frame{
+      border-radius:var(--radius-md);
+      overflow:hidden;
+      border:1px solid var(--border2);
+      background:var(--soft);
+      box-shadow:0 10px 26px rgba(15,23,42,.08);
+    }
+    .showcase-frame img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .showcase-item figcaption{
+      margin-top:10px;
+      font-size:13px;
+      color:#334155;
+      line-height:1.55;
+    }
+    .showcase-role{
+      display:block;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:#0e7490;
+      margin-bottom:3px;
     }
 
     /* ===== Come funziona (steps) ===== */
@@ -393,11 +495,13 @@
 
     @media (max-width:980px){
       .problem-grid, .steps{ grid-template-columns:1fr 1fr; }
+      .showcase-grid{ grid-template-columns:1fr 1fr; }
     }
     @media (max-width:720px){
       .pilot-section{ padding:18px; }
       .demo-grid{ grid-template-columns:1fr; }
       .problem-grid, .steps, .role-grid{ grid-template-columns:1fr; }
+      .showcase-grid{ grid-template-columns:1fr; gap:22px; }
       .final-cta{ padding:24px 18px; }
     }
   </style>
@@ -465,24 +569,38 @@
 
     <!-- HERO -->
     <section class="card">
-      <div class="hero-media" style="background-image:url('../images/condominio.jpg')" role="img" aria-label="STRATIA Condomini">
-        <div class="hero-overlay" aria-hidden="true"></div>
-
-        <div class="hero-inner">
-          <div class="hero-content">
-            <div class="hero-badge urgent">
-              <span class="hero-dot" aria-hidden="true"></span>
-              Progetto Pilota — posti limitati
-            </div>
-
-            <h1 class="hero-title">La piattaforma digitale che tiene sotto controllo lo stato del tuo condominio.</h1>
-
-            <p class="hero-sub">
-              Un gestionale tecnico per amministratori e studi tecnici: criticità, storico, documenti e
-              assemblee in un unico spazio — alimentato da ispezioni aeree reali, non da sopralluoghi a
-              vista, e con i condomini coinvolti in prima persona, non lasciati fuori dal processo.
-            </p>
+      <div class="hero-split">
+        <div class="hero-text">
+          <div class="hero-badge urgent">
+            <span class="hero-dot" aria-hidden="true"></span>
+            Progetto Pilota — posti limitati
           </div>
+
+          <h1 class="hero-title-split">Ticket, report e ispezioni con drone.<br>Tutto il tuo condominio, in una piattaforma.</h1>
+
+          <p class="hero-sub-split">
+            Il gestionale tecnico che amministratori e condomini usano insieme: criticità rilevate dal
+            drone, segnalazioni dirette, report già pronti per l'assemblea.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-dark" href="#demo-pilota">Richiedi la Demo gratuita di 6 mesi</a>
+            <a class="btn btn-outline" href="#come-funziona">Come funziona ↓</a>
+          </div>
+        </div>
+
+        <div class="hero-video">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/DThDyMKSae8"
+              title="STRATIA Condominio – Ticket, report e ispezioni con drone per il tuo condominio"
+              loading="lazy"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-caption">▶ Guarda STRATIA Condominio in azione — 2 minuti</div>
         </div>
       </div>
 
@@ -594,6 +712,51 @@
             <li>Partecipa alle decisioni su base oggettiva, non solo per sentito dire</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <!-- LA PIATTAFORMA IN AZIONE (screenshot reali) -->
+    <section class="section showcase-section">
+      <span class="kicker">Non solo parole</span>
+      <h2 class="section-title">La piattaforma in azione</h2>
+      <p class="section-sub">
+        Tre schermate reali, una per ogni persona coinvolta: chi amministra, chi ispeziona, chi vive il
+        condominio ogni giorno.
+      </p>
+      <div class="showcase-grid">
+        <figure class="showcase-item">
+          <div class="showcase-frame">
+            <img src="../images/dashboard-amministratore.webp"
+                 alt="Dashboard amministratore STRATIA Condomini con un edificio in gestione"
+                 loading="lazy" width="1400" height="734">
+          </div>
+          <figcaption>
+            <span class="showcase-role">Amministratore</span>
+            Ogni edificio, ogni criticità, in un unico pannello di controllo.
+          </figcaption>
+        </figure>
+        <figure class="showcase-item">
+          <div class="showcase-frame">
+            <img src="../images/dashboard-operatore.webp"
+                 alt="Operatore che registra una criticità con foto sulla schermata del palazzo"
+                 loading="lazy" width="1393" height="910">
+          </div>
+          <figcaption>
+            <span class="showcase-role">Operatore</span>
+            Il drone rileva, l'operatore registra la criticità con foto in tempo reale.
+          </figcaption>
+        </figure>
+        <figure class="showcase-item">
+          <div class="showcase-frame">
+            <img src="../images/dashboard-condomino.webp"
+                 alt="Pagina del condomino per inviare ticket e segnalazioni all'amministratore"
+                 loading="lazy" width="1400" height="638">
+          </div>
+          <figcaption>
+            <span class="showcase-role">Condomino</span>
+            Un ticket o una segnalazione, inviati direttamente all'amministratore.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -812,6 +975,5 @@ if(window.umami){
 
 </body>
 </html>
-
 </body>
 </html>
