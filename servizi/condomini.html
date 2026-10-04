@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>STRATIA Condomini • Ispezioni aeree per amministratori e studi tecnici • STRATIA</title>
+  <title>STRATIA Condomini • Il gestionale tecnico del condominio • STRATIA</title>
 
    <!-- =========================
 	     FAVICON – STRATIA
@@ -34,7 +34,7 @@
 
     <meta name="mobile-web-app-capable" content="yes">
 
-    <meta name="description" content="STRATIA Condomini: ispezioni aeree di facciate e coperture con gestione digitale per amministratori di condominio, studi tecnici e property manager.">
+    <meta name="description" content="STRATIA Condomini: il gestionale tecnico che tiene sotto controllo lo stato del tuo edificio, con ispezioni aeree, storico criticità e condomini coinvolti attivamente.">
 
   <link rel="stylesheet" href="../css/servizi.css">
   <script src="../js/servizi.js" defer></script>
@@ -138,6 +138,38 @@
       color:#334155;
       font-size:13.5px;
       line-height:1.65;
+    }
+
+    /* ===== Due ruoli, una piattaforma ===== */
+    .roles-section{ margin-top:14px; }
+    .role-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .role-card{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-md);
+      padding:20px;
+      background:#fff;
+    }
+    .role-tag{
+      display:inline-block;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+      padding:4px 9px;
+      border-radius:999px;
+      margin-bottom:10px;
+    }
+    .role-tag-admin{ background:rgba(15,23,42,.08); color:var(--dark); }
+    .role-tag-condo{ background:rgba(14,116,144,.10); color:#0e7490; }
+    .role-card h3{
+      margin:0 0 10px;
+      font-size:16px;
+      font-weight:900;
+      color:var(--dark);
     }
 
     /* ===== Come funziona (steps) ===== */
@@ -365,7 +397,7 @@
     @media (max-width:720px){
       .pilot-section{ padding:18px; }
       .demo-grid{ grid-template-columns:1fr; }
-      .problem-grid, .steps{ grid-template-columns:1fr; }
+      .problem-grid, .steps, .role-grid{ grid-template-columns:1fr; }
       .final-cta{ padding:24px 18px; }
     }
   </style>
@@ -433,7 +465,7 @@
 
     <!-- HERO -->
     <section class="card">
-      <div class="hero-media" style="background-image:url('../images/condominio.jpg')" role="img" aria-label="STRATIA Condomini">
+      <div class="hero-media" style="background-image:url('../images/condomini.jpg')" role="img" aria-label="STRATIA Condomini">
         <div class="hero-overlay" aria-hidden="true"></div>
 
         <div class="hero-inner">
@@ -443,22 +475,22 @@
               Progetto Pilota — posti limitati
             </div>
 
-            <h1 class="hero-title">Il tuo condominio, ispezionato dall'alto.<br>Senza ponteggi. Senza sorprese in assemblea.</h1>
+            <h1 class="hero-title">La piattaforma digitale che tiene sotto controllo lo stato del tuo condominio.</h1>
 
             <p class="hero-sub">
-              Droni professionali e un dossier digitale che trasformano ogni facciata e ogni tetto in dati
-              che puoi mostrare, tracciare e difendere davanti ai condomini — invece di scoprire i problemi
-              quando sono già diventati costosi.
+              Un gestionale tecnico per amministratori e studi tecnici: criticità, storico, documenti e
+              assemblee in un unico spazio — alimentato da ispezioni aeree reali, non da sopralluoghi a
+              vista, e con i condomini coinvolti in prima persona, non lasciati fuori dal processo.
             </p>
           </div>
         </div>
       </div>
 
       <div class="trustbar">
-        <span><span class="dot"></span>Ispezioni aeree di precisione</span>
+        <span><span class="dot"></span>Gestione tecnica centralizzata</span>
         <span><span class="dot"></span>Storico criticità nel tempo</span>
+        <span><span class="dot"></span>Condomini coinvolti in prima persona</span>
         <span><span class="dot"></span>Report pronti per l'assemblea</span>
-        <span><span class="dot"></span>Nessun ponteggio, nessun accesso rischioso</span>
       </div>
       <div class="credential-note">
         <strong>Il team</strong> arriva dal settore aeronautico professionale, con piloti certificati e
@@ -473,13 +505,14 @@
             <div class="box-title">Cos'è</div>
             <div class="box-text">
               Gestire un condominio significa prendere decisioni importanti — spesso senza avere il quadro
-              completo dello stato reale dell'edificio. Sopralluoghi parziali, documentazione dispersa,
-              criticità scoperte troppo tardi: sono i problemi che ogni amministratore conosce bene.
+              completo dello stato reale dell'edificio, e spesso senza che i condomini si sentano davvero
+              coinvolti in quelle decisioni.
               <br><br>
-              <strong>STRATIA Condomini</strong> unisce ispezioni aeree professionali e gestione digitale
-              intelligente per darti una visione chiara, aggiornata e documentata dello stato del tuo
-              edificio. Ogni facciata, ogni tetto, ogni criticità: rilevata, tracciata nel tempo e sempre
-              consultabile in pochi click.
+              <strong>STRATIA Condomini</strong> è il gestionale tecnico dell'edificio: criticità, storico,
+              documenti e report di assemblea in un unico spazio digitale, alimentato da ispezioni aeree
+              reali — non da un sopralluogo a vista. E per la prima volta il condomino non resta fuori:
+              vede lo stato del suo edificio e può segnalare un problema direttamente, senza passare per
+              il passaparola.
             </div>
           </div>
 
@@ -507,15 +540,15 @@
       <span class="kicker">Il problema, prima della soluzione</span>
       <h2 class="section-title">Tre cose che ogni amministratore conosce bene</h2>
       <p class="section-sub">
-        Non è mancanza di impegno: è che il sopralluogo tradizionale, da terra o a vista, semplicemente
-        non può mostrarti tutto quello che serve.
+        Non è mancanza di impegno: è che le informazioni sullo stato dell'edificio restano sparse, e i
+        condomini restano fuori dal quadro finché non arriva la convocazione di assemblea.
       </p>
       <div class="problem-grid">
         <div class="problem-card">
           <div class="ic">!</div>
-          <h3>Sopralluoghi parziali</h3>
+          <h3>Stato dell'edificio incompleto</h3>
           <p>Tetti, grondaie e facciate alte restano fuori portata senza ponteggi — e sono quasi sempre
-             il punto dove parte l'infiltrazione.</p>
+             il punto dove parte l'infiltrazione che si scopre tardi.</p>
         </div>
         <div class="problem-card">
           <div class="ic">~</div>
@@ -524,10 +557,42 @@
              mostrare qualcosa in assemblea, si ricostruisce tutto da capo.</p>
         </div>
         <div class="problem-card">
-          <div class="ic">⏱</div>
-          <h3>Criticità scoperte troppo tardi</h3>
-          <p>Una crepa o un'infiltrazione vista in tempo è una manutenzione. Vista tardi, è un intervento
-             d'urgenza — e una discussione in assemblea.</p>
+          <div class="ic">◌</div>
+          <h3>Condomini scollegati dal processo</h3>
+          <p>Il condomino scopre un problema solo quando è già una voce di spesa, perché non ha un modo
+             diretto per vedere lo stato dell'edificio o segnalare qualcosa prima.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DUE RUOLI, UNA PIATTAFORMA -->
+    <section class="section roles-section">
+      <span class="kicker">Il cuore di STRATIA Condomini</span>
+      <h2 class="section-title">Due ruoli, una sola piattaforma</h2>
+      <p class="section-sub">
+        Non è solo uno strumento per chi amministra: è lo spazio dove amministratore e condomini vedono
+        gli stessi dati, ciascuno con il proprio ruolo.
+      </p>
+      <div class="role-grid">
+        <div class="role-card">
+          <div class="role-tag role-tag-admin">Amministratore / studio tecnico</div>
+          <h3>Gestione tecnica sotto controllo</h3>
+          <ul class="box-list">
+            <li>Criticità mappate per edificio, con foto e posizione</li>
+            <li>Storico nel tempo: cosa è stato segnalato, quando, e com'è stato risolto</li>
+            <li>Documenti e report sempre nello stesso spazio, pronti per l'assemblea</li>
+            <li>Nessuna ricostruzione dell'ultimo minuto prima di una riunione</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <div class="role-tag role-tag-condo">Condomino</div>
+          <h3>Finalmente parte attiva, non spettatore</h3>
+          <ul class="box-list">
+            <li>Vede lo stato reale del proprio edificio, non solo quello che gli viene raccontato</li>
+            <li>Può segnalare un problema direttamente in piattaforma, senza passaparola</li>
+            <li>Arriva in assemblea con le stesse informazioni dell'amministratore</li>
+            <li>Partecipa alle decisioni su base oggettiva, non solo per sentito dire</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -535,30 +600,31 @@
     <!-- COME FUNZIONA -->
     <section id="come-funziona" class="section steps-section">
       <span class="kicker">Come funziona</span>
-      <h2 class="section-title">Dal sopralluogo al report, in tre passaggi</h2>
+      <h2 class="section-title">Dal rilievo aereo alla piattaforma condivisa, in tre passaggi</h2>
       <p class="section-sub">
-        Nessuna curva di apprendimento per te: il drone e l'analisi li gestiamo noi, tu ricevi il risultato.
+        Nessuna curva di apprendimento per te: il drone e l'analisi li gestiamo noi, tu e i condomini
+        ricevete la piattaforma già pronta all'uso.
       </p>
       <div class="steps">
         <div class="step">
           <div class="num">1</div>
-          <h3>Sopralluogo aereo</h3>
+          <h3>Rilievo aereo</h3>
           <p>Il drone rileva facciate, tetti e coperture da ogni angolazione, inclusi i punti che da terra
-             non si vedono.</p>
+             non si vedono — è il motore dati di tutta la piattaforma.</p>
           <span class="step-time">Nessun ponteggio</span>
         </div>
         <div class="step">
           <div class="num">2</div>
-          <h3>Analisi e dossier digitale</h3>
-          <p>Ogni criticità viene catalogata con foto, posizione e stato — in uno spazio digitale sempre
-             consultabile.</p>
+          <h3>Piattaforma condivisa</h3>
+          <p>Ogni criticità entra nel gestionale con foto, posizione e stato: amministratore e condomini
+             vedono gli stessi dati, ciascuno con il proprio accesso.</p>
           <span class="step-time">Tutto in un posto</span>
         </div>
         <div class="step">
           <div class="num">3</div>
-          <h3>Report per l'assemblea</h3>
-          <p>Un documento chiaro, pronto da presentare ai condomini — niente ricostruzioni dell'ultimo
-             minuto.</p>
+          <h3>Assemblea e segnalazioni</h3>
+          <p>Il report è già pronto da presentare, e i condomini possono segnalare un problema in
+             qualsiasi momento — non solo quando arriva la convocazione.</p>
           <span class="step-time">Pronto da mostrare</span>
         </div>
       </div>
@@ -567,13 +633,13 @@
     <!-- CONFRONTO -->
     <section class="section compare-section">
       <span class="kicker">Il confronto</span>
-      <h2 class="section-title">Sopralluogo tradizionale vs STRATIA Condomini</h2>
+      <h2 class="section-title">Gestione tradizionale vs STRATIA Condomini</h2>
       <div class="table-wrap">
         <table class="compare-table">
           <thead>
             <tr>
               <th></th>
-              <th>Sopralluogo tradizionale</th>
+              <th>Gestione tradizionale</th>
               <th>STRATIA Condomini</th>
             </tr>
           </thead>
@@ -584,9 +650,14 @@
               <td class="td-muted yes">Completo, dall'alto</td>
             </tr>
             <tr>
-              <td class="td-strong">Rischio per chi ispeziona</td>
-              <td class="td-muted no">Presente (quote, accessi)</td>
-              <td class="td-muted yes">Nessuno</td>
+              <td class="td-strong">Coinvolgimento dei condomini</td>
+              <td class="td-muted no">Solo in assemblea, per sentito dire</td>
+              <td class="td-muted yes">Accesso diretto allo stato dell'edificio</td>
+            </tr>
+            <tr>
+              <td class="td-strong">Segnalazione di un problema</td>
+              <td class="td-muted no">Passaparola o telefonata all'amministratore</td>
+              <td class="td-muted yes">Direttamente in piattaforma, tracciata</td>
             </tr>
             <tr>
               <td class="td-strong">Documentazione</td>
@@ -679,6 +750,12 @@
       <h2 class="section-title">Prima di chiedere la demo</h2>
       <div class="faq-list">
         <details class="faq-item">
+          <summary>Sostituisce il gestionale contabile che uso già?<span class="car">⌄</span></summary>
+          <div class="faq-a">No, si affianca. STRATIA Condomini si occupa della parte tecnica — stato
+            dell'edificio, criticità, documenti, assemblee, segnalazioni dei condomini — non della
+            contabilità o dei bilanci, che restano sul tuo gestionale attuale.</div>
+        </details>
+        <details class="faq-item">
           <summary>Cosa cambia davvero rispetto a un sopralluogo tradizionale?<span class="car">⌄</span></summary>
           <div class="faq-a">Il drone arriva dove un sopralluogo da terra non arriva — tetti, grondaie,
             facciate alte — e ogni criticità trovata resta documentata con foto e posizione, non solo
@@ -732,6 +809,9 @@ if(window.umami){
   umami.track("interesse_stratia_condomini");
 }
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
