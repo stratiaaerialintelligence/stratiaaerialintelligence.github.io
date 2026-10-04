@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Informativa Privacy • STRATIA</title>
+
+   <!-- =========================
+	     FAVICON – STRATIA
+	========================= -->
+
+	<link rel="icon" type="image/png" href="images/favicon/favicon-light.png" media="(prefers-color-scheme: light)">
+	<link rel="icon" type="image/svg+xml" href="images/favicon/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" sizes="any">
+	<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+	<meta name="apple-mobile-web-app-title" content="STRATIA">
+
+	<link rel="manifest" href="images/favicon/site.webmanifest">
+    <meta name="theme-color" content="#0a1730">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="STRATIA Aerial">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="msapplication-TileColor" content="#0e7490">
+    <meta name="msapplication-TileImage" content="images/favicon/android-chrome-192x192.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Informativa sul trattamento dei dati personali raccolti tramite il modulo di richiesta demo STRATIA Condomini, ai sensi degli artt. 13-14 del Regolamento (UE) 2016/679 (GDPR).">
+
+  <link rel="stylesheet" href="css/servizi.css">
+  <script src="js/servizi.js" defer></script>
+
+  <style>
+    .legal-main{
+      max-width:760px;
+      padding:40px 20px 80px;
+    }
+    .legal-main h1{
+      font-size:28px;
+      font-weight:900;
+      letter-spacing:-.3px;
+      color:var(--dark);
+      margin:10px 0 4px;
+    }
+    .legal-updated{
+      color:var(--muted);
+      font-size:13.5px;
+      margin:0 0 32px;
+    }
+    .legal-main h2{
+      font-size:17px;
+      font-weight:800;
+      color:var(--dark);
+      margin:34px 0 10px;
+    }
+    .legal-main p, .legal-main li{
+      font-size:15px;
+      line-height:1.7;
+      color:var(--text);
+    }
+    .legal-main ul{ padding-left:20px; margin:8px 0; }
+    .legal-main a{ color:#0e7490; text-decoration:underline; }
+    .legal-note{
+      margin-top:40px;
+      padding:16px 18px;
+      background:var(--soft);
+      border:1px solid var(--border2);
+      border-radius:var(--radius-sm);
+      font-size:13.5px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="top">
+	<div class="container">
+    	<div class="header-inner">
+        	<a class="brand" href="index.html#home" aria-label="Vai a Home">
+          		<img class="brand-logo" src="images/logo/logo_droni_trasparente_sx.png" alt="STRATIA">
+          		<span class="brand-name">STRATIA</span>
+        	</a>
+        	<div class="header-right">
+          		<a class="header-cta" href="index.html#contatti">Contatti</a>
+          		<a class="header-cta" href="index.html#servizi">Servizi</a>
+
+          		 <button id="menuBtn" class="menu-btn" type="button"
+            aria-label="Apri menu" aria-controls="mobileDrawer" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+		    </div>
+       	</div>
+    </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+  <div id="mobileDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close="true"></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <div class="drawer-head">
+        <a class="drawer-brand" href="index.html#home" data-link="true" aria-label="Vai a Home">
+          <img class="brand-logo" src="images/logo/logo_droni_trasparente_sx.png" alt="STRATIA">
+          <span class="brand-name">STRATIA</span>
+        </a>
+        <button id="drawerClose" class="drawer-close" type="button" aria-label="Chiudi menu">×</button>
+      </div>
+      <div class="drawer-body">
+        <nav class="drawer-links" id="drawerLinks" aria-label="Menu mobile link">
+          <a class="drawer-link" href="index.html#home" data-section="home" data-link="true"><span>Home</span><span class="chev">›</span></a>
+          <a class="drawer-link" href="index.html#servizi" data-section="servizi" data-link="true"><span>Servizi</span><span class="chev">›</span></a>
+        </nav>
+        <a class="drawer-cta" href="index.html#contatti" data-link="true">Contattaci</a>
+        <div class="drawer-note">Premi <b>ESC</b> o clicca fuori per chiudere.</div>
+      </div>
+    </aside>
+  </div>
+
+  <main class="container">
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+      <a href="index.html#home">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <span class="breadcrumb-current">Informativa Privacy</span>
+    </div>
+
+    <div class="legal-main">
+      <h1>Informativa sul trattamento dei dati personali</h1>
+      <p class="legal-updated">Ultimo aggiornamento: 4 ottobre 2026</p>
+
+      <h2>1. Titolare del trattamento</h2>
+      <p>
+        Il titolare del trattamento è <strong>Fernando Junior Cocina</strong>, Founder del progetto
+        <strong>STRATIA</strong>. Il progetto STRATIA è attualmente condotto in attesa dell'apertura
+        della relativa partita IVA; fino a quel momento, il titolare del trattamento è la persona
+        fisica sopra indicata. Per qualsiasi richiesta relativa ai tuoi dati personali puoi scrivere a:
+        <a href="mailto:stratia.aerialintelligence@gmail.com">stratia.aerialintelligence@gmail.com</a>.
+      </p>
+
+      <h2>2. Dati raccolti</h2>
+      <p>
+        Attraverso il modulo "Richiedi la Demo Gratuita" presente sulla pagina STRATIA Condomini
+        raccogliamo: nome e cognome, email, telefono, azienda/studio, ruolo, numero di edifici in
+        gestione ed eventuali informazioni che inserisci liberamente nel campo messaggio.
+      </p>
+
+      <h2>3. Finalità del trattamento</h2>
+      <p>
+        I dati sono trattati esclusivamente per ricontattarti in merito al progetto pilota STRATIA
+        Condomini (presentazione della demo, attivazione del periodo di prova, assistenza durante lo
+        stesso). I dati non vengono utilizzati per finalità di marketing diverse da questa, né cessi a
+        terzi per scopi commerciali propri di terze parti.
+      </p>
+
+      <h2>4. Base giuridica</h2>
+      <p>
+        Il trattamento si basa sul consenso che fornisci inviando il modulo (art. 6, par. 1, lett. a,
+        del Regolamento UE 2016/679 - GDPR).
+      </p>
+
+      <h2>5. Destinatari e trasferimento dei dati</h2>
+      <p>
+        Il modulo è gestito tecnicamente tramite il servizio <strong>Formspree</strong> (Formspree,
+        Inc.), che riceve e trasmette i dati inseriti in qualità di fornitore del servizio tecnico di
+        invio del modulo. Formspree può trattare ed eventualmente trasferire i dati al di fuori
+        dell'Unione Europea nel rispetto delle garanzie previste dal GDPR; per maggiori informazioni
+        puoi consultare l'informativa privacy di Formspree.
+      </p>
+
+      <h2>6. Periodo di conservazione</h2>
+      <p>
+        I dati raccolti tramite il modulo vengono conservati per la durata del progetto pilota e per i
+        12 mesi successivi alla sua conclusione, salvo revoca anticipata del consenso da parte tua.
+      </p>
+
+      <h2>7. I tuoi diritti</h2>
+      <p>
+        In qualsiasi momento puoi richiedere l'accesso ai tuoi dati personali, la rettifica, la
+        cancellazione, la limitazione del trattamento, oppure revocare il consenso dato, scrivendo a
+        <a href="mailto:stratia.aerialintelligence@gmail.com">stratia.aerialintelligence@gmail.com</a>.
+        Hai inoltre diritto di proporre reclamo all'Autorità Garante per la protezione dei dati
+        personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>)
+        qualora ritenga che il trattamento dei tuoi dati violi la normativa vigente.
+      </p>
+
+      <h2>8. Natura del conferimento dei dati</h2>
+      <p>
+        Il conferimento dei dati è facoltativo, ma necessario per poter essere ricontattato in merito
+        alla demo e al progetto pilota: in mancanza non sarà possibile dare seguito alla richiesta.
+      </p>
+
+      <div class="legal-note">
+        Questa informativa riguarda esclusivamente i dati raccolti tramite il modulo di richiesta demo
+        su questo sito. Non costituisce consulenza legale: in vista dell'apertura della partita IVA e
+        dell'ingresso di dati relativi ai condomini nel prodotto STRATIA, l'informativa dovrà essere
+        aggiornata di conseguenza.
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div> © <span id="y"></span> STRATIA - Aerial & Territorial Intelligence</div>
+    </div>
+  </footer>
+
+</body>
+</html>
