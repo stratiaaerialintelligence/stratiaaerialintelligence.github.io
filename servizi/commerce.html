@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>STRATIA eCommerce • E-commerce collegato al gestionale • STRATIA</title>
+
+   <!-- =========================
+	     FAVICON – STRATIA
+	========================= -->
+
+	<link rel="icon" type="image/png" href="../images/favicon/favicon-light.png" media="(prefers-color-scheme: light)">
+	<link rel="icon" type="image/svg+xml" href="../images/favicon/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" sizes="any">
+	<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96" />
+
+	<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+
+	<meta name="apple-mobile-web-app-title" content="STRATIA">
+
+	<link rel="manifest" href="../images/favicon/site.webmanifest">
+	<meta name="theme-color" content="#0a1730">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="STRATIA Aerial">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="msapplication-TileColor" content="#0e7490">
+    <meta name="msapplication-TileImage" content="../images/favicon/android-chrome-192x192.png">
+
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="description" content="STRATIA eCommerce: negozi online per botteghe, artigiani e attività locali. Integrazione API con il gestionale, strategia di visibilità locale e progetti gestiti con metodo ingegneristico, a perimetro e budget definiti.">
+
+  <link rel="stylesheet" href="../css/servizi.css">
+  <script src="../js/servizi.js" defer></script>
+  <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="64263d84-d116-4204-a2bf-46499c6fb636"></script>
+
+  <!-- Stile della landing STRATIA eCommerce (base condivisa con STRATIA Condomini): estende css/servizi.css con le sezioni
+       specifiche di questa pagina (problemi, come funziona, confronto, portfolio, FAQ,
+       form pilota), scoped qui e senza toccare le altre pagine servizi. -->
+  <style>
+
+    /* ===== Hero a due colonne: testo + video ===== */
+    .hero-split{
+      display:grid;
+      grid-template-columns:1.05fr 1fr;
+      gap:28px;
+      align-items:center;
+      padding:28px 24px;
+      background:linear-gradient(135deg, var(--dark), #132544);
+      color:#fff;
+    }
+    .hero-text{ color:#fff; }
+    .hero-title-split{
+      margin:14px 0 10px;
+      font-size:30px;
+      line-height:1.18;
+      letter-spacing:-.3px;
+      font-weight:900;
+      color:#fff;
+    }
+    .hero-sub-split{
+      margin:0 0 20px;
+      max-width:48ch;
+      line-height:1.65;
+      font-size:15px;
+      color:rgba(255,255,255,.82);
+    }
+    .hero-split .cta-row{ margin-top:0; }
+    .hero-split .btn-outline{
+      background:transparent;
+      color:#fff;
+      border-color:rgba(255,255,255,.35);
+    }
+    .hero-split .btn-outline:hover{ background:rgba(255,255,255,.08); }
+    .hero-video{ width:100%; }
+    .video-frame{
+      position:relative;
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:var(--radius-md);
+      overflow:hidden;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.14);
+      background:#000;
+    }
+    .video-frame iframe{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      border:0;
+    }
+    .video-caption{
+      margin-top:10px;
+      font-size:12.5px;
+      font-weight:700;
+      color:rgba(255,255,255,.72);
+      text-align:center;
+    }
+
+    @media (max-width:860px){
+      .hero-split{
+        grid-template-columns:1fr;
+        padding:22px 18px;
+      }
+      .hero-title-split{ font-size:25px; }
+      .hero-split .cta-row .btn{ flex:1; }
+    }
+
+    /* ===== Trust bar sotto l'hero ===== */
+    .trustbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 22px;
+      padding:14px 20px;
+      border-bottom:1px solid var(--border2);
+      background:var(--soft);
+      font-size:13px;
+      font-weight:800;
+      color:var(--dark);
+    }
+    .trustbar span{ display:flex; align-items:center; gap:7px; }
+    .trustbar .dot{
+      width:6px; height:6px; border-radius:999px;
+      background:#0e7490; flex:0 0 auto;
+    }
+    .credential-note{
+      padding:10px 20px 14px;
+      background:var(--soft);
+      border-bottom:1px solid var(--border2);
+      font-size:12.5px;
+      color:var(--muted);
+      line-height:1.65;
+    }
+
+    /* ===== Urgenza pilota (badge rinforzato) ===== */
+    .hero-badge.urgent{
+      background:rgba(239,68,68,.16);
+      border-color:rgba(239,68,68,.35);
+    }
+    .hero-badge.urgent .hero-dot{ background:#ef4444; }
+
+    /* ===== Kicker generico per intestazioni di sezione ===== */
+    .kicker{
+      display:inline-block;
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#0e7490;
+      margin-bottom:8px;
+    }
+    .section-title{
+      margin:0 0 6px;
+      font-size:22px;
+      font-weight:900;
+      color:var(--dark);
+      letter-spacing:-.2px;
+    }
+    .section-sub{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:14.5px;
+      line-height:1.65;
+      max-width:70ch;
+    }
+
+    /* ===== Problemi (agitazione) ===== */
+    .problem-section{ margin-top:14px; }
+    .problem-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+    }
+    .problem-card{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-md);
+      padding:18px;
+      background:#fff;
+    }
+    .problem-card .ic{
+      width:38px; height:38px;
+      border-radius:12px;
+      background:rgba(239,68,68,.10);
+      color:#ef4444;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:12px;
+      font-size:18px;
+      font-weight:900;
+    }
+    .problem-card h3{
+      margin:0 0 6px;
+      font-size:15.5px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .problem-card p{
+      margin:0;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.65;
+    }
+
+    /* ===== Due ruoli, una piattaforma ===== */
+    .roles-section{ margin-top:14px; }
+    .role-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .role-card{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-md);
+      padding:20px;
+      background:#fff;
+    }
+    .role-tag{
+      display:inline-block;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.03em;
+      padding:4px 9px;
+      border-radius:999px;
+      margin-bottom:10px;
+    }
+    .role-tag-admin{ background:rgba(15,23,42,.08); color:var(--dark); }
+    .role-tag-condo{ background:rgba(14,116,144,.10); color:#0e7490; }
+    .role-card h3{
+      margin:0 0 10px;
+      font-size:16px;
+      font-weight:900;
+      color:var(--dark);
+    }
+
+    /* ===== La piattaforma in azione (screenshot) ===== */
+    .showcase-section{ margin-top:14px; }
+    .showcase-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .showcase-item{ margin:0; }
+    .showcase-frame{
+      border-radius:var(--radius-md);
+      overflow:hidden;
+      border:1px solid var(--border2);
+      background:var(--soft);
+      box-shadow:0 10px 26px rgba(15,23,42,.08);
+    }
+    .showcase-frame img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
+    .showcase-item figcaption{
+      margin-top:10px;
+      font-size:13px;
+      color:#334155;
+      line-height:1.55;
+    }
+    .showcase-role{
+      display:block;
+      font-size:11px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:#0e7490;
+      margin-bottom:3px;
+    }
+
+    /* ===== Come funziona (steps) ===== */
+    .steps-section{ margin-top:14px; }
+    .steps{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      position:relative;
+    }
+    .step{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-md);
+      padding:18px;
+      background:#fff;
+      position:relative;
+    }
+    .step .num{
+      width:32px; height:32px;
+      border-radius:999px;
+      background:var(--dark);
+      color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      font-size:14px;
+      margin-bottom:12px;
+    }
+    .step h3{
+      margin:0 0 6px;
+      font-size:15px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .step p{
+      margin:0;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.65;
+    }
+    .step-time{
+      display:inline-block;
+      margin-top:10px;
+      font-size:11.5px;
+      font-weight:800;
+      color:#0e7490;
+      background:rgba(14,116,144,.08);
+      border-radius:999px;
+      padding:4px 9px;
+    }
+
+    /* ===== Confronto ===== */
+    .compare-section{ margin-top:14px; }
+    .compare-table th:nth-child(2){ color:#94a3b8; }
+    .compare-table th:nth-child(3){ color:#0e7490; }
+    .compare-table .no{ color:#94a3b8; }
+    .compare-table .yes{ color:#0e7490; font-weight:900; }
+
+    /* ===== Pilota / form (già presente, copy rinforzato) ===== */
+    .pilot-section{
+      margin-top:14px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      background:#fff;
+    }
+    .pilot-head{ max-width:720px; margin-bottom:22px; }
+    .pilot-head h2{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .pilot-head p{
+      margin:0;
+      color:#334155;
+      line-height:1.7;
+      font-size:14.5px;
+    }
+    .pilot-reasons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 18px;
+      margin-top:14px;
+    }
+    .pilot-reasons span{
+      font-size:13px;
+      font-weight:800;
+      color:var(--dark);
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .pilot-reasons span::before{
+      content:"✓";
+      color:#16a34a;
+      font-weight:900;
+    }
+
+    .demo-form{ max-width:680px; }
+    .demo-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:14px;
+    }
+    .demo-field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .demo-field.full{ grid-column:1 / -1; }
+    .demo-field label{
+      font-size:13px;
+      font-weight:800;
+      color:var(--dark);
+    }
+    .demo-field input,
+    .demo-field textarea{
+      width:100%;
+      padding:11px 12px;
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      background:var(--soft);
+      font-size:14px;
+      font-family:inherit;
+      color:var(--text);
+    }
+    .demo-field input:focus,
+    .demo-field textarea:focus{
+      outline:none;
+      border-color:#0e7490;
+      background:#fff;
+      box-shadow:0 0 0 3px rgba(14,116,144,.15);
+    }
+    .demo-field textarea{ resize:vertical; min-height:110px; }
+
+    .demo-submit{
+      margin-top:4px;
+      border:none;
+      cursor:pointer;
+      font-size:15px;
+    }
+    .demo-privacy{
+      margin:14px 0 0;
+      font-size:12.5px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+    .demo-status{
+      margin:10px 0 0;
+      font-size:14px;
+      min-height:18px;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section{ margin-top:14px; }
+    .faq-list{ display:flex; flex-direction:column; gap:10px; }
+    details.faq-item{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-sm);
+      background:#fff;
+      padding:0;
+    }
+    details.faq-item summary{
+      list-style:none;
+      cursor:pointer;
+      padding:14px 16px;
+      font-weight:800;
+      font-size:14.5px;
+      color:var(--dark);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    details.faq-item summary::-webkit-details-marker{ display:none; }
+    details.faq-item summary .car{
+      color:var(--muted);
+      transition:transform .15s;
+      flex:none;
+    }
+    details.faq-item[open] summary .car{ transform:rotate(180deg); }
+    details.faq-item .faq-a{
+      padding:0 16px 16px;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.7;
+    }
+
+    /* ===== CTA finale a tutta larghezza ===== */
+    .final-cta{
+      margin-top:14px;
+      border-radius:var(--radius);
+      padding:30px 24px;
+      background:linear-gradient(135deg, var(--dark), #132544);
+      color:#fff;
+      text-align:center;
+    }
+    .final-cta h2{
+      margin:0 0 8px;
+      font-size:22px;
+      font-weight:900;
+    }
+    .final-cta p{
+      margin:0 auto 18px;
+      max-width:56ch;
+      color:rgba(255,255,255,.82);
+      font-size:14.5px;
+      line-height:1.65;
+    }
+    .final-cta .btn-light{
+      background:#fff;
+      color:var(--dark);
+    }
+    .final-cta .btn-light:hover{ filter:brightness(.96); }
+    .final-cta .slots{
+      margin-top:14px;
+      font-size:12.5px;
+      color:rgba(255,255,255,.65);
+    }
+
+    @media (max-width:980px){
+      .problem-grid, .steps{ grid-template-columns:1fr 1fr; }
+      .showcase-grid{ grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:720px){
+      .pilot-section{ padding:18px; }
+      .demo-grid{ grid-template-columns:1fr; }
+      .problem-grid, .steps, .role-grid{ grid-template-columns:1fr; }
+      .showcase-grid{ grid-template-columns:1fr; gap:22px; }
+      .final-cta{ padding:24px 18px; }
+    }
+  
+    /* =========================================================
+       STRATIA eCommerce — sezioni specifiche di questa pagina
+    ========================================================= */
+
+    /* Pannello numeri nell'hero (al posto del video) */
+    .hero-stats{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .hero-stat{
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.06);
+      border-radius:var(--radius-md);
+      padding:16px;
+    }
+    .hero-stat .n{
+      display:block;
+      font-size:26px;
+      font-weight:900;
+      letter-spacing:-.4px;
+      color:#fff;
+      line-height:1.1;
+      font-variant-numeric:tabular-nums;
+    }
+    .hero-stat .l{
+      display:block;
+      margin-top:6px;
+      font-size:12.5px;
+      line-height:1.5;
+      color:rgba(255,255,255,.76);
+    }
+    .hero-stats-caption{
+      margin-top:12px;
+      font-size:12.5px;
+      font-weight:700;
+      color:rgba(255,255,255,.72);
+    }
+    .hero-stats-caption a{ color:#fff; }
+
+    .credential-note a{ color:#0e7490; font-weight:800; }
+
+    /* Cosa consegniamo: 4 schede su 2 colonne (riusa .role-card) */
+    .deliver-section{ margin-top:14px; }
+    .role-tag-tech{ background:rgba(14,116,144,.10); color:#0e7490; }
+
+    /* Metodo in 4 fasi */
+    .steps.steps-4{ grid-template-columns:repeat(4, 1fr); }
+    .method-note{
+      margin:16px 0 0;
+      padding:14px 16px;
+      border-left:3px solid #0e7490;
+      background:var(--soft);
+      border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.7;
+    }
+
+    /* Caso studio */
+    .case-section{ margin-top:14px; }
+    .case-grid{
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .case-box{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-md);
+      padding:20px;
+      background:#fff;
+    }
+    .case-box h3{
+      margin:0 0 10px;
+      font-size:16px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .case-box p{
+      margin:0 0 12px;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.7;
+    }
+    .case-link{
+      display:inline-block;
+      margin-top:4px;
+      font-size:13.5px;
+      font-weight:800;
+      color:#0e7490;
+      text-decoration:none;
+    }
+    .case-link:hover{ text-decoration:underline; }
+
+    .timeline{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .timeline li{
+      position:relative;
+      padding-left:18px;
+      border-left:2px solid var(--border2);
+    }
+    .timeline li::before{
+      content:"";
+      position:absolute;
+      left:-6px; top:4px;
+      width:10px; height:10px;
+      border-radius:999px;
+      background:#0e7490;
+    }
+    .timeline .when{
+      display:block;
+      font-size:11.5px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      color:#0e7490;
+      margin-bottom:2px;
+    }
+    .timeline .what{
+      display:block;
+      font-size:13.5px;
+      line-height:1.6;
+      color:#334155;
+    }
+
+    .case-stats{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+    .case-stat{
+      border:1px solid var(--border2);
+      border-radius:var(--radius-md);
+      padding:16px;
+      background:var(--soft);
+    }
+    .case-stat .n{
+      display:block;
+      font-size:24px;
+      font-weight:900;
+      letter-spacing:-.3px;
+      color:var(--dark);
+      line-height:1.1;
+      font-variant-numeric:tabular-nums;
+    }
+    .case-stat .l{
+      display:block;
+      margin-top:6px;
+      font-size:12.5px;
+      line-height:1.5;
+      color:var(--muted);
+    }
+    .case-source{
+      margin:12px 0 0;
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .demo-field select{
+      width:100%;
+      padding:11px 12px;
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      background:var(--soft);
+      font-size:14px;
+      font-family:inherit;
+      color:var(--text);
+    }
+
+    .local-section{ margin-top:14px; }
+    .local-card{
+      border:1px solid var(--border2);
+      border-top:3px solid #0e7490;
+      border-radius:var(--radius-md);
+      padding:18px;
+      background:#fff;
+    }
+    .local-card h3{
+      margin:0 0 6px;
+      font-size:15.5px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .local-card p{
+      margin:0;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.65;
+    }
+    .case-h3{
+      margin:22px 0 12px;
+      font-size:16px;
+      font-weight:900;
+      color:var(--dark);
+    }
+
+    .page-privacy{
+      margin:14px 0 24px;
+      font-size:12.5px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    @media (max-width:980px){
+      .steps.steps-4{ grid-template-columns:1fr 1fr; }
+      .case-stats{ grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:860px){
+      .case-grid{ grid-template-columns:1fr; }
+    }
+    @media (max-width:720px){
+      .steps.steps-4{ grid-template-columns:1fr; }
+    }
+    @media (max-width:420px){
+      .hero-stat .n{ font-size:22px; }
+    }
+  </style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="top">
+  <div class="container">
+    <div class="header-inner">
+      <a class="brand" href="../index.html#home" aria-label="Vai a Home">
+        <img class="brand-logo" src="../images/logo/logo_droni_trasparente_sx.png" alt="STRATIA">
+        <span class="brand-name">STRATIA</span>
+      </a>
+      <div class="header-right">
+        <a class="header-cta" href="../index.html#contatti">Contatti</a>
+        <a class="header-cta" href="../index.html#servizi">Servizi</a>
+
+        <button id="menuBtn" class="menu-btn" type="button"
+          aria-label="Apri menu" aria-controls="mobileDrawer" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE DRAWER -->
+<div id="mobileDrawer" class="drawer" aria-hidden="true">
+  <div class="drawer-backdrop" data-close="true"></div>
+  <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu mobile">
+    <div class="drawer-head">
+      <a class="drawer-brand" href="../index.html#home" data-link="true" aria-label="Vai a Home">
+        <img class="brand-logo" src="../images/logo/logo_droni_trasparente_sx.png" alt="STRATIA">
+        <span class="brand-name">STRATIA</span>
+      </a>
+      <button id="drawerClose" class="drawer-close" type="button" aria-label="Chiudi menu">×</button>
+    </div>
+    <div class="drawer-body">
+      <nav class="drawer-links" id="drawerLinks" aria-label="Menu mobile link">
+        <a class="drawer-link" href="../index.html#home" data-section="home" data-link="true"><span>Home</span><span class="chev">›</span></a>
+        <a class="drawer-link" href="../index.html#servizi" data-section="servizi" data-link="true"><span>Servizi</span><span class="chev">›</span></a>
+      </nav>
+      <a class="drawer-cta" href="../index.html#contatti" data-link="true">Contattaci</a>
+      <div class="drawer-note">Premi <b>ESC</b> o clicca fuori per chiudere.</div>
+    </div>
+  </aside>
+</div>
+
+<main class="container">
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="../index.html#home">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../index.html#servizi">Servizi</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">STRATIA eCommerce</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="card">
+    <div class="hero-split">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="hero-dot" aria-hidden="true"></span>
+          Nuovo servizio STRATIA
+        </div>
+
+        <h1 class="hero-title-split">Il tuo negozio online, collegato al gestionale.<br>Costruito con metodo ingegneristico.</h1>
+
+        <p class="hero-sub-split">
+          Portiamo online botteghe, artigiani e negozi del territorio: catalogo importato via API
+          dal gestionale che usi già, frontend sviluppato sulle tue richieste, strategia di
+          visibilità locale. Con perimetro, tempi e budget definiti prima di iniziare.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-dark" href="#valutazione" data-umami-event="cta_commerce_hero">Richiedi una valutazione</a>
+          <a class="btn btn-outline" href="#caso-studio">Guarda il caso studio ↓</a>
+        </div>
+      </div>
+
+      <div class="hero-numbers">
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="n">600+</span>
+            <span class="l">prodotti portati online dal gestionale</span>
+          </div>
+          <div class="hero-stat">
+            <span class="n">13 settimane</span>
+            <span class="l">di sviluppo, dall'analisi all'apertura</span>
+          </div>
+          <div class="hero-stat">
+            <span class="n">Top 3</span>
+            <span class="l">su Google nelle ricerche locali, in meno di 6 mesi</span>
+          </div>
+          <div class="hero-stat">
+            <span class="n">1.000+</span>
+            <span class="l">follower sui social, partendo da zero</span>
+          </div>
+        </div>
+        <div class="hero-stats-caption">Numeri del caso studio: Il Capitano Pesca Nautica, Salerno.</div>
+      </div>
+    </div>
+
+    <div class="trustbar">
+      <span><span class="dot"></span>Integrazione API con il gestionale</span>
+      <span><span class="dot"></span>Strategia di visibilità locale</span>
+      <span><span class="dot"></span>Project management certificato CAPM®</span>
+      <span><span class="dot"></span>Perimetro e budget scritti</span>
+    </div>
+    <div class="credential-note">
+      <strong>Il metodo</strong> è quello di <a href="../team/fernando.html">Fernando Junior Cocina</a>,
+      ingegnere aerospaziale e project manager certificato CAPM® (PMI), con esperienza su programmi
+      aeronautici internazionali. Requisiti, tempi e verifiche vengono gestiti con lo stesso rigore,
+      qualunque sia la dimensione del progetto.
+    </div>
+
+    <div class="card-pad">
+
+      <div class="grid-2">
+        <div class="box">
+          <div class="box-title">Cos'è</div>
+          <div class="box-text">
+            Molti negozi hanno già tutto il catalogo in un gestionale: articoli, prezzi, giacenze.
+            Quello che manca è il modo di portarlo online senza ricopiarlo a mano e senza un progetto
+            che si allunga oltre il previsto.
+            <br><br>
+            <strong>STRATIA eCommerce</strong> è il servizio con cui progettiamo, sviluppiamo e avviamo
+            il negozio online partendo dai dati che hai già. È pensato per le attività locali che non
+            hanno il budget di una grande catena ma vogliono un lavoro da professionisti. STRATIA nasce
+            dall'ingegneria aerospaziale, e qui applichiamo gli stessi principi: requisiti chiari, dato
+            verificato, consegne a tappe.
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-title">A chi si rivolge</div>
+          <ul class="box-list">
+            <li>Botteghe e artigiani che vogliono farsi trovare online</li>
+            <li>Negozi storici con un gestionale e centinaia di articoli</li>
+            <li>Attività locali con un budget contenuto e obiettivi chiari</li>
+            <li>Chi ha già un sito, ma scollegato dal magazzino</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-dark" href="#valutazione">Richiedi una valutazione</a>
+        <a class="btn btn-outline" href="#metodo">Come lavoriamo ↓</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TERRITORIO -->
+  <section class="section local-section">
+    <span class="kicker">Perché lo facciamo</span>
+    <h2 class="section-title">Una spinta alle botteghe del nostro territorio</h2>
+    <p class="section-sub">
+      Le attività locali hanno storia, competenza e clienti affezionati. Online spesso non si
+      vedono, e chi cerca finisce dai grandi rivenditori nazionali. Vogliamo che la comunità
+      locale cresca e si faccia conoscere per quello che vale.
+    </p>
+    <div class="problem-grid">
+      <div class="local-card">
+        <h3>Strategia da bottega, non da catena</h3>
+        <p>Si parte dalle ricerche della propria zona e dai prodotti in cui il negozio è più
+           forte, dove una piccola attività può competere davvero.</p>
+      </div>
+      <div class="local-card">
+        <h3>Lavoro da professionisti, budget su misura</h3>
+        <p>Il progetto viene dimensionato sulle possibilità di una piccola attività, con le
+           priorità decise insieme e nessun costo a sorpresa.</p>
+      </div>
+      <div class="local-card">
+        <h3>Il territorio come contenuto</h3>
+        <p>La conoscenza del luogo è ciò che i grandi non hanno. La trasformiamo in guide e
+           pagine che portano le persone al negozio, online e di persona.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMI -->
+  <section class="section problem-section">
+    <span class="kicker">Il problema, prima della soluzione</span>
+    <h2 class="section-title">Tre ostacoli che fermano un negozio prima di andare online</h2>
+    <p class="section-sub">
+      Raramente manca la volontà. Mancano il tempo per caricare il catalogo e un progetto con
+      confini chiari.
+    </p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="ic">!</div>
+        <h3>Il catalogo vive solo nel gestionale</h3>
+        <p>Centinaia di articoli con codici, prezzi e disponibilità esistono già, ma chi cerca
+           online non li può vedere.</p>
+      </div>
+      <div class="problem-card">
+        <div class="ic">~</div>
+        <h3>Doppio inserimento</h3>
+        <p>Ricopiare ogni prodotto sul sito richiede settimane, e da quel momento ogni modifica va
+           fatta due volte.</p>
+      </div>
+      <div class="problem-card">
+        <div class="ic">◌</div>
+        <h3>Progetti senza perimetro</h3>
+        <p>Senza requisiti, tempi e budget messi per iscritto, le richieste si accumulano, i costi
+           crescono e la data di apertura slitta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COSA CONSEGNIAMO -->
+  <section class="section deliver-section">
+    <span class="kicker">Il servizio</span>
+    <h2 class="section-title">Cosa consegniamo</h2>
+    <p class="section-sub">
+      Quattro blocchi di lavoro, attivabili insieme o separatamente in base alle priorità e al
+      budget concordato.
+    </p>
+    <div class="role-grid">
+      <div class="role-card">
+        <div class="role-tag role-tag-admin">Negozio online</div>
+        <h3>Shopify con frontend su misura</h3>
+        <ul class="box-list">
+          <li>Tema sviluppato da noi sulle richieste del cliente, non un modello standard</li>
+          <li>Categorie, schede prodotto e ricerca organizzate sul catalogo reale</li>
+          <li>Pagamenti, spedizioni e ritiro in negozio configurati</li>
+          <li>Dominio ed email aziendali collegati</li>
+        </ul>
+      </div>
+      <div class="role-card">
+        <div class="role-tag role-tag-tech">Integrazione</div>
+        <h3>API sviluppata da noi per il tuo gestionale</h3>
+        <ul class="box-list">
+          <li>Importazione del catalogo dal gestionale, senza reinserire i prodotti a mano</li>
+          <li>Mappatura di codici, categorie, prezzi e varianti</li>
+          <li>Regole di aggiornamento definite insieme: cosa, quando, in quale direzione</li>
+          <li>Controlli sui dati prima della pubblicazione</li>
+        </ul>
+      </div>
+      <div class="role-card">
+        <div class="role-tag role-tag-tech">Visibilità</div>
+        <h3>Visibilità locale, SEO e campagne</h3>
+        <ul class="box-list">
+          <li>Titoli e descrizioni ottimizzati per prodotti e categorie</li>
+          <li>Catalogo collegato a Google Merchant Center</li>
+          <li>Campagne Google Ads sui prodotti indicati dal cliente</li>
+          <li>Strategia di ricerca locale e articoli guida sul territorio</li>
+        </ul>
+      </div>
+      <div class="role-card">
+        <div class="role-tag role-tag-admin">Dopo il lancio</div>
+        <h3>Social, misurazione e manutenzione</h3>
+        <ul class="box-list">
+          <li>Apertura e gestione dei canali social</li>
+          <li>Tracciamento di visite, ricerche e ordini</li>
+          <li>Report periodici leggibili, con le decisioni da prendere</li>
+          <li>Inserimento di nuovi prodotti e aggiornamenti del sito</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section id="metodo" class="section steps-section">
+    <span class="kicker">Come lavoriamo</span>
+    <h2 class="section-title">Dal requisito al negozio aperto, in quattro fasi</h2>
+    <p class="section-sub">
+      Il progetto è gestito da un project manager certificato. Ogni fase ha una consegna, una
+      verifica e un'approvazione del cliente prima di passare alla successiva.
+    </p>
+    <div class="steps steps-4">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Analisi e perimetro</h3>
+        <p>Raccogliamo requisiti, priorità e budget. Ne esce un documento di perimetro con cosa
+           è incluso, cosa no e in quali tempi.</p>
+        <span class="step-time">Perimetro approvato</span>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Catalogo e integrazione</h3>
+        <p>Studiamo i dati del gestionale, sviluppiamo l'API e importiamo il catalogo, con
+           controlli su codici, prezzi e categorie.</p>
+        <span class="step-time">Dato verificato</span>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Frontend e contenuti</h3>
+        <p>Sviluppiamo il tema su misura, le schede prodotto e la parte SEO, con revisioni
+           programmate insieme al cliente.</p>
+        <span class="step-time">Revisioni a tappe</span>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>Lancio e misurazione</h3>
+        <p>Apriamo il negozio, attiviamo tracciamento e campagne e consegniamo i primi report
+           con i numeri che contano.</p>
+        <span class="step-time">Numeri leggibili</span>
+      </div>
+    </div>
+    <p class="method-note">
+      <strong>Sul budget.</strong> Se il budget è fisso, è il perimetro ad adattarsi: si parte
+      dalle priorità più alte e il resto entra in una fase successiva. Nessuna attività fuori
+      perimetro viene avviata senza averla prima concordata.
+    </p>
+  </section>
+
+  <!-- CASO STUDIO -->
+  <section id="caso-studio" class="section case-section">
+    <span class="kicker">Caso studio</span>
+    <h2 class="section-title">Il Capitano Pesca Nautica, Salerno</h2>
+    <p class="section-sub">
+      Un negozio storico di pesca, nautica e subacquea, attivo dal 1938: un settore di nicchia,
+      il catalogo gestito interamente da un gestionale di magazzino e nessuna presenza e-commerce.
+      In meno di sei mesi è diventato uno dei primi risultati della sua zona.
+    </p>
+
+    <div class="case-grid">
+      <div class="case-box">
+        <h3>Cosa abbiamo realizzato</h3>
+        <ul class="box-list">
+          <li>Negozio Shopify con frontend sviluppato secondo le richieste del cliente</li>
+          <li>Integrazione API con il gestionale, interamente sviluppata da noi</li>
+          <li>Oltre 600 prodotti online, organizzati per tecnica e categoria</li>
+          <li>Strategia di visibilità pensata per una bottega locale</li>
+          <li>SEO su schede prodotto e categorie, e articoli guida sul territorio</li>
+          <li>Campagne Google Ads sui prodotti scelti dal cliente</li>
+          <li>Canali social aperti e portati da zero a oltre 1.000 follower</li>
+        </ul>
+        <a class="case-link" href="https://www.ilcapitanopescanautica.it" target="_blank" rel="noopener"
+           data-umami-event="commerce_caso_studio_sito">Visita il negozio online →</a>
+      </div>
+
+      <div class="case-box">
+        <h3>Tempistica</h3>
+        <ol class="timeline">
+          <li>
+            <span class="when">Gennaio – marzo 2026</span>
+            <span class="what">Analisi, porting del catalogo, sviluppo dell'API e del tema su misura.</span>
+          </li>
+          <li>
+            <span class="when">Aprile 2026</span>
+            <span class="what">Apertura del negozio online, con dominio ed email aziendali.</span>
+          </li>
+          <li>
+            <span class="when">Maggio – settembre 2026</span>
+            <span class="what">SEO, contenuti, campagne Google Ads, social e analisi dei dati.</span>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="case-stats">
+      <div class="case-stat">
+        <span class="n">Top 3</span>
+        <span class="l">su Google per "negozio pesca Salerno"</span>
+      </div>
+      <div class="case-stat">
+        <span class="n">&lt; 6 mesi</span>
+        <span class="l">dall'apertura ai primi risultati locali</span>
+      </div>
+      <div class="case-stat">
+        <span class="n">600+</span>
+        <span class="l">prodotti online dal gestionale</span>
+      </div>
+      <div class="case-stat">
+        <span class="n">1.000+</span>
+        <span class="l">follower sui social, da zero</span>
+      </div>
+    </div>
+
+    <h3 class="case-h3">Cosa è cambiato per il negozio</h3>
+    <div class="problem-grid">
+      <div class="local-card">
+        <h3>Autorevolezza</h3>
+        <p>Chi cerca un negozio di pesca in zona lo trova tra i primi risultati, e le sue schede
+           compaiono nelle ricerche di prodotto dove prima c'erano solo i grandi rivenditori
+           nazionali.</p>
+      </div>
+      <div class="local-card">
+        <h3>Clienti più reattivi</h3>
+        <p>Il sito è diventato un canale di contatto: i clienti scrivono per chiedere consiglio,
+           verificano la disponibilità e poi passano in negozio a ritirare o comprare.</p>
+      </div>
+      <div class="local-card">
+        <h3>Radicamento nel territorio</h3>
+        <p>La guida ai luoghi di pesca del golfo è la pagina più letta dopo la home: porta al
+           negozio persone della zona che non lo conoscevano.</p>
+      </div>
+    </div>
+    <p class="case-source">Posizione nella ricerca: media Google Search Console, aprile – settembre 2026.</p>
+  </section>
+
+  <!-- CONFRONTO -->
+  <section class="section compare-section">
+    <span class="kicker">Il confronto</span>
+    <h2 class="section-title">Sito a modello standard vs STRATIA eCommerce</h2>
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Sito a modello standard</th>
+            <th>STRATIA eCommerce</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-strong">Catalogo</td>
+            <td class="td-muted no">Inserito a mano, prodotto per prodotto</td>
+            <td class="td-muted yes">Importato dal gestionale via API</td>
+          </tr>
+          <tr>
+            <td class="td-strong">Aggiornamenti</td>
+            <td class="td-muted no">Doppio lavoro su sito e gestionale</td>
+            <td class="td-muted yes">Regole di aggiornamento definite</td>
+          </tr>
+          <tr>
+            <td class="td-strong">Frontend</td>
+            <td class="td-muted no">Tema uguale a molti altri</td>
+            <td class="td-muted yes">Sviluppato sulle richieste del cliente</td>
+          </tr>
+          <tr>
+            <td class="td-strong">Visibilità</td>
+            <td class="td-muted no">Sito online, poi nessuno lo trova</td>
+            <td class="td-muted yes">Strategia locale costruita sull'attività</td>
+          </tr>
+          <tr>
+            <td class="td-strong">Tempi e costi</td>
+            <td class="td-muted no">Stimati a voce</td>
+            <td class="td-muted yes">Perimetro e budget scritti prima di iniziare</td>
+          </tr>
+          <tr>
+            <td class="td-strong">Avanzamento</td>
+            <td class="td-muted no">Da chiedere ogni volta</td>
+            <td class="td-muted yes">Fasi con consegne e approvazioni</td>
+          </tr>
+          <tr>
+            <td class="td-strong">Dopo il lancio</td>
+            <td class="td-muted no">Sito consegnato, poi nessun dato</td>
+            <td class="td-muted yes">Misurazione, campagne e report</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- VALUTAZIONE + FORM -->
+  <section id="valutazione" class="pilot-section">
+    <div class="pilot-head">
+      <h2>Richiedi una valutazione del progetto</h2>
+      <p>
+        Raccontaci il tuo negozio, il gestionale che usi e quanti articoli hai. Ti rispondiamo con
+        una prima valutazione di <strong>fattibilità, tempi e fascia di budget</strong>.
+      </p>
+      <div class="pilot-reasons">
+        <span>Perimetro scritto</span>
+        <span>Budget definito</span>
+        <span>Un referente unico</span>
+      </div>
+    </div>
+
+    <form class="demo-form" id="demoForm" action="https://formspree.io/f/xqeaqbwy" method="POST">
+      <div class="demo-grid">
+        <div class="demo-field">
+          <label for="d-name">Nome e cognome</label>
+          <input id="d-name" name="name" type="text" placeholder="Il tuo nome" autocomplete="name" required minlength="2">
+        </div>
+
+        <div class="demo-field">
+          <label for="d-azienda">Negozio / Azienda</label>
+          <input id="d-azienda" name="azienda" type="text" placeholder="Nome dell'attività" autocomplete="organization">
+        </div>
+
+        <div class="demo-field">
+          <label for="d-gestionale">Gestionale in uso</label>
+          <input id="d-gestionale" name="gestionale" type="text" placeholder="Es. nome del programma di magazzino">
+        </div>
+
+        <div class="demo-field">
+          <label for="d-articoli">Numero di articoli a catalogo</label>
+          <input id="d-articoli" name="numero_articoli" type="text" placeholder="Es. 600">
+        </div>
+
+        <div class="demo-field">
+          <label for="d-email">Email</label>
+          <input id="d-email" name="email" type="email" placeholder="La tua email" autocomplete="email" required>
+        </div>
+
+        <div class="demo-field">
+          <label for="d-telefono">Telefono</label>
+          <input id="d-telefono" name="telefono" type="tel" placeholder="Il tuo numero di telefono" autocomplete="tel">
+        </div>
+
+        <div class="demo-field full">
+          <label for="d-message">Cosa vorresti realizzare (opzionale)</label>
+          <textarea id="d-message" name="message" rows="5" placeholder="Obiettivi, tempi, budget indicativo, sito attuale..."></textarea>
+        </div>
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="🛒 Richiesta valutazione – STRATIA eCommerce">
+
+      <button class="btn btn-dark demo-submit" type="submit" id="demoSubmitBtn" data-umami-event="commerce_form_invio">Richiedi la valutazione</button>
+
+      <p class="demo-privacy">Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato, secondo la
+        <a href="../privacy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
+      <p class="demo-status" id="demoFormStatus" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section">
+    <span class="kicker">Domande frequenti</span>
+    <h2 class="section-title">Prima di chiedere la valutazione</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Con quali gestionali funziona?<span class="car">⌄</span></summary>
+        <div class="faq-a">L'integrazione è sviluppata su misura, quindi non è legata a un programma
+          specifico. Serve che il gestionale permetta di esportare o leggere i dati: lo verifichiamo
+          nella fase di analisi, prima di prendere impegni.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Devo cambiare il gestionale che uso già?<span class="car">⌄</span></summary>
+        <div class="faq-a">No. Il gestionale resta lo strumento di lavoro del negozio: è il sito ad
+          adattarsi ai tuoi dati, non il contrario.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto tempo serve per andare online?<span class="car">⌄</span></summary>
+        <div class="faq-a">Dipende dalla dimensione del catalogo e dalla complessità dell'integrazione.
+          Nel caso studio sono servite 13 settimane di sviluppo per un catalogo di oltre 600 prodotti
+          con tema su misura. I tempi del tuo progetto vengono fissati nel documento di perimetro.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Come viene definito il costo?<span class="car">⌄</span></summary>
+        <div class="faq-a">Sulla base del perimetro concordato nella prima fase. Lavoriamo con
+          piccole attività, quindi partiamo dal budget che hai: prima le priorità più alte, il
+          resto in una fase successiva.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Cosa succede dopo il lancio?<span class="car">⌄</span></summary>
+        <div class="faq-a">Puoi gestire il negozio in autonomia oppure affidarci manutenzione,
+          nuovi prodotti, contenuti, campagne e report, con un accordo di gestione separato.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Fate solo e-commerce?<span class="car">⌄</span></summary>
+        <div class="faq-a">No. Lo stesso metodo vale per integrazioni tra sistemi, piattaforme
+          gestionali e strumenti interni: <a href="condomini.html">STRATIA Condomini</a> è nato così.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="final-cta">
+    <h2>Hai una bottega che online non si vede?</h2>
+    <p>Portiamola tra i primi risultati della tua zona, con un progetto che ha confini, tempi e
+       budget chiari dall'inizio.</p>
+    <a class="btn btn-light" href="#valutazione" data-umami-event="cta_commerce_finale">Richiedi una valutazione</a>
+  </section>
+
+  <!-- NAV BOTTOM -->
+  <div class="bottom-nav">
+    <a class="btn btn-outline" href="../index.html#servizi">← Torna ai servizi</a>
+    <a class="btn btn-dark" href="#valutazione">Richiedi una valutazione</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div> © <span id="y"></span> STRATIA - Aerial &amp; Territorial Intelligence</div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+if(window.umami){
+  umami.track("interesse_stratia_commerce");
+}
+</script>
+
+</body>
+</html>
