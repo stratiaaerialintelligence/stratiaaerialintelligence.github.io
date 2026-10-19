@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>STRATIA Condomini • Il gestionale tecnico del condominio • STRATIA</title>
+  <title>STRATIA Condomini · Gestionale tecnico del condominio con ispezioni da drone</title>
 
    <!-- =========================
 	     FAVICON – STRATIA
@@ -26,7 +26,6 @@
 	<meta name="theme-color" content="#0a1730">
 
 	<meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="STRATIA Aerial">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <meta name="msapplication-TileColor" content="#0e7490">
@@ -34,7 +33,13 @@
 
     <meta name="mobile-web-app-capable" content="yes">
 
-    <meta name="description" content="STRATIA Condomini: il gestionale tecnico che tiene sotto controllo lo stato del tuo edificio, con ispezioni aeree, storico criticità e condomini coinvolti attivamente.">
+    <meta name="description" content="STRATIA Condomini: dal rilievo con drone alla relazione tecnica firmata da un ingegnere, archiviata nel fascicolo dell'edificio. Criticità, storico e condomini coinvolti in un'unica piattaforma. Progetto pilota tra Salerno e Avellino.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="STRATIA">
+    <meta property="og:title" content="STRATIA Condomini · Il gestionale tecnico del condominio">
+    <meta property="og:description" content="Dal rilievo con drone alla relazione tecnica archiviata nel fascicolo dell'edificio. Progetto pilota con cinque studi tra Salerno e Avellino.">
 
   <link rel="stylesheet" href="../css/servizi.css">
   <script src="../js/servizi.js" defer></script>
@@ -184,14 +189,21 @@
       background:#fff;
     }
     .problem-card .ic{
-      width:38px; height:38px;
-      border-radius:12px;
-      background:rgba(239,68,68,.10);
-      color:#ef4444;
+      width:64px; height:64px;
+      border-radius:18px;
+      background:linear-gradient(145deg, rgba(14,116,144,.10), rgba(14,116,144,.03));
       display:flex; align-items:center; justify-content:center;
-      margin-bottom:12px;
-      font-size:18px;
-      font-weight:900;
+      margin-bottom:14px;
+    }
+    .problem-card .ic svg{ width:48px; height:48px; display:block; }
+    .problem-card .with{
+      margin-top:12px; padding-top:10px;
+      border-top:1px dashed var(--border2);
+      color:var(--dark); font-size:13.5px; font-weight:700; line-height:1.55;
+    }
+    .problem-card .with::before{
+      content:"Con STRATIA"; display:block; margin-bottom:2px;
+      font-size:11px; font-weight:900; letter-spacing:.04em; text-transform:uppercase; color:#0e7490;
     }
     .problem-card h3{
       margin:0 0 6px;
@@ -278,7 +290,7 @@
     .steps-section{ margin-top:14px; }
     .steps{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(4, 1fr);
       gap:14px;
       position:relative;
     }
@@ -320,6 +332,100 @@
       background:rgba(14,116,144,.08);
       border-radius:999px;
       padding:4px 9px;
+    }
+
+    /* ===== Fascicolo dell'edificio ===== */
+    .fascicolo-section{
+      margin-top:14px;
+      border:1px solid var(--border2);
+      border-radius:var(--radius);
+      padding:26px 24px;
+      background:linear-gradient(180deg, #fff, var(--soft));
+    }
+    .fascicolo-grid{
+      display:grid;
+      grid-template-columns:1fr 1.05fr;
+      gap:28px;
+      align-items:center;
+    }
+    .fascicolo-list{ list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:12px; }
+    .fascicolo-list li{ display:flex; gap:12px; align-items:flex-start; }
+    .fascicolo-list .fi{
+      flex:none; width:34px; height:34px; border-radius:10px;
+      background:rgba(14,116,144,.10); color:#0e7490;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .fascicolo-list .fi svg{ width:18px; height:18px; }
+    .fascicolo-list b{ display:block; font-size:14.5px; color:var(--dark); }
+    .fascicolo-list span.t{ display:block; font-size:13.5px; line-height:1.55; color:#334155; }
+    .fascicolo-note{ margin:16px 0 0; font-size:12.5px; color:var(--muted); line-height:1.6; }
+
+    .fmock{
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:#fff;
+      box-shadow:0 18px 44px rgba(15,23,42,.12);
+      overflow:hidden;
+      font-size:13px;
+    }
+    .fmock-bar{
+      display:flex; align-items:center; gap:6px;
+      padding:10px 14px; background:var(--dark); color:#fff;
+    }
+    .fmock-bar i{ width:9px; height:9px; border-radius:999px; background:rgba(255,255,255,.35); display:block; }
+    .fmock-bar strong{ margin-left:8px; font-size:12.5px; font-weight:800; }
+    .fmock-body{ padding:14px 16px 16px; }
+    .ftree{ list-style:none; margin:0; padding:0; }
+    .ftree > li{ margin:0 0 12px; }
+    .ftree .fhead{
+      display:flex; align-items:center; gap:8px;
+      font-weight:900; color:var(--dark); margin-bottom:6px;
+    }
+    .ftree .fhead svg{ width:18px; height:18px; color:#0e7490; flex:none; }
+    .ftree ul{
+      list-style:none; margin:0 0 0 9px; padding:0 0 0 16px;
+      border-left:2px solid var(--border2);
+    }
+    .ftree ul li{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:7px 0; color:#334155; border-bottom:1px solid var(--border2);
+    }
+    .ftree ul li:last-child{ border-bottom:0; }
+    .ftree .fname{ display:flex; align-items:center; gap:8px; min-width:0; }
+    .ftree .fname svg{ width:15px; height:15px; color:#94a3b8; flex:none; }
+    .badge{
+      flex:none; font-size:11px; font-weight:800; padding:3px 8px; border-radius:999px;
+      background:rgba(14,116,144,.10); color:#0e7490; white-space:nowrap;
+    }
+    .badge.warn{ background:rgba(245,158,11,.16); color:#b45309; }
+    .badge.sig{ background:rgba(15,23,42,.08); color:var(--dark); }
+    .fmock-foot{ padding:8px 16px 12px; font-size:11.5px; color:var(--muted); }
+
+    /* ===== Chiarezza sui limiti ===== */
+    .limits-section{ margin-top:14px; }
+    .limits-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+    }
+    .limit-card{
+      border:1px solid var(--border2);
+      border-left:4px solid #0e7490;
+      border-radius:var(--radius-md);
+      padding:16px 18px;
+      background:var(--soft);
+    }
+    .limit-card h3{
+      margin:0 0 6px;
+      font-size:15px;
+      font-weight:900;
+      color:var(--dark);
+    }
+    .limit-card p{
+      margin:0;
+      color:#334155;
+      font-size:13.5px;
+      line-height:1.65;
     }
 
     /* ===== Confronto ===== */
@@ -407,6 +513,46 @@
       box-shadow:0 0 0 3px rgba(14,116,144,.15);
     }
     .demo-field textarea{ resize:vertical; min-height:110px; }
+    .demo-field select{
+      width:100%;
+      padding:11px 12px;
+      border:1px solid var(--border);
+      border-radius:var(--radius-sm);
+      background:var(--soft);
+      font-size:14px;
+      font-family:inherit;
+      color:var(--text);
+    }
+    .demo-field select:focus{
+      outline:none;
+      border-color:#0e7490;
+      background:#fff;
+      box-shadow:0 0 0 3px rgba(14,116,144,.15);
+    }
+    .demo-consent{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      margin:0 0 14px;
+      font-size:13px;
+      line-height:1.55;
+      color:#334155;
+    }
+    .demo-consent input{ margin-top:3px; flex:none; width:16px; height:16px; }
+    .demo-consent a{ color:#0e7490; font-weight:700; }
+    .pilot-timeline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 28px;
+      margin:18px 0 0;
+      padding:14px 16px;
+      border-radius:var(--radius-sm);
+      background:var(--soft);
+      border:1px solid var(--border2);
+      font-size:13px;
+      color:var(--dark);
+    }
+    .pilot-timeline b{ display:block; font-size:11px; letter-spacing:.04em; text-transform:uppercase; color:#0e7490; }
 
     .demo-submit{
       margin-top:4px;
@@ -493,14 +639,39 @@
       color:rgba(255,255,255,.65);
     }
 
+    /* ancore: evita che il titolo finisca sotto l'header */
+    [id]{ scroll-margin-top:84px; }
+    a:focus-visible, button:focus-visible, summary:focus-visible,
+    input:focus-visible, select:focus-visible, textarea:focus-visible{
+      outline:3px solid rgba(14,116,144,.55);
+      outline-offset:2px;
+    }
+
+    /* CTA fissa su mobile */
+    .sticky-cta{ display:none; }
+    @media (max-width:720px){
+      .sticky-cta{
+        display:block;
+        position:fixed; left:12px; right:12px; bottom:12px; z-index:50;
+        text-align:center;
+        box-shadow:0 10px 28px rgba(0,0,0,.28);
+        transition:opacity .2s, transform .2s;
+      }
+      .sticky-cta.is-hidden{ opacity:0; pointer-events:none; transform:translateY(12px); }
+      body{ padding-bottom:72px; }
+    }
+
     @media (max-width:980px){
       .problem-grid, .steps{ grid-template-columns:1fr 1fr; }
+      .limits-grid{ grid-template-columns:1fr; }
+      .fascicolo-grid{ grid-template-columns:1fr; }
       .showcase-grid{ grid-template-columns:1fr 1fr; }
     }
     @media (max-width:720px){
+      .fascicolo-section{ padding:18px; }
       .pilot-section{ padding:18px; }
       .demo-grid{ grid-template-columns:1fr; }
-      .problem-grid, .steps, .role-grid{ grid-template-columns:1fr; }
+      .problem-grid, .steps, .role-grid, .limits-grid{ grid-template-columns:1fr; }
       .showcase-grid{ grid-template-columns:1fr; gap:22px; }
       .final-cta{ padding:24px 18px; }
     }
@@ -573,14 +744,15 @@
         <div class="hero-text">
           <div class="hero-badge urgent">
             <span class="hero-dot" aria-hidden="true"></span>
-            Progetto Pilota — posti limitati
+            Progetto Pilota — cinque studi, uno per zona
           </div>
 
           <h1 class="hero-title-split">Ticket, report e ispezioni con drone.<br>Tutto il tuo condominio, in una piattaforma.</h1>
 
           <p class="hero-sub-split">
             Il gestionale tecnico che amministratori e condomini usano insieme: criticità rilevate dal
-            drone, segnalazioni dirette, report già pronti per l'assemblea.
+            drone, segnalazioni dirette, report per l'assemblea e la relazione tecnica di un ingegnere,
+            archiviata nel fascicolo dell'edificio.
           </p>
 
           <div class="cta-row">
@@ -609,11 +781,13 @@
         <span><span class="dot"></span>Storico criticità nel tempo</span>
         <span><span class="dot"></span>Condomini coinvolti in prima persona</span>
         <span><span class="dot"></span>Report pronti per l'assemblea</span>
+        <span><span class="dot"></span>Fascicolo digitale dell'edificio</span>
+        <span><span class="dot"></span>Relazione tecnica di un ingegnere</span>
       </div>
       <div class="credential-note">
-        <strong>Il team</strong> arriva dal settore aeronautico professionale, con piloti certificati e
-        rapporti diretti con le autorità di settore: le ispezioni seguono gli stessi standard, non quelli
-        di un drone amatoriale.
+        <strong>Il team</strong> arriva dal settore aeronautico professionale. Le riprese sono fatte da
+        piloti a distanza abilitati secondo la normativa europea sui droni, con operazioni pianificate
+        e assicurate: non è un drone amatoriale.
       </div>
 
       <div class="card-pad">
@@ -628,7 +802,8 @@
               <br><br>
               <strong>STRATIA Condomini</strong> è il gestionale tecnico dell'edificio: criticità, storico,
               documenti e report di assemblea in un unico spazio digitale, alimentato da ispezioni aeree
-              reali — non da un sopralluogo a vista. E per la prima volta il condomino non resta fuori:
+              reali — non da un sopralluogo a vista — e arriva fino alla relazione tecnica firmata da un
+              ingegnere. E per la prima volta il condomino non resta fuori:
               vede lo stato del suo edificio e può segnalare un problema direttamente, senza passare per
               il passaparola.
             </div>
@@ -655,30 +830,59 @@
 
     <!-- PROBLEMI -->
     <section class="section problem-section">
-      <span class="kicker">Il problema, prima della soluzione</span>
-      <h2 class="section-title">Tre cose che ogni amministratore conosce bene</h2>
+      <span class="kicker">Un test di dieci secondi</span>
+      <h2 class="section-title">Riesci a rispondere a queste tre domande?</h2>
       <p class="section-sub">
-        Non è mancanza di impegno: è che le informazioni sullo stato dell'edificio restano sparse, e i
-        condomini restano fuori dal quadro finché non arriva la convocazione di assemblea.
+        Se la risposta è «dipende» o «devo cercare», non è mancanza di impegno: è che le informazioni
+        sull'edificio restano sparse. Succede in quasi tutti i condomini.
       </p>
       <div class="problem-grid">
         <div class="problem-card">
-          <div class="ic">!</div>
-          <h3>Stato dell'edificio incompleto</h3>
-          <p>Tetti, grondaie e facciate alte restano fuori portata senza ponteggi — e sono quasi sempre
-             il punto dove parte l'infiltrazione che si scopre tardi.</p>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M6 24 24 9l18 15" stroke="#0e7490" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="11" y="24" width="22" height="16" rx="2" fill="#bfe3ee"/>
+              <rect x="16" y="29" width="5" height="11" rx="1" fill="#0e7490"/>
+              <rect x="25" y="29" width="5" height="5" rx="1" fill="#fff"/>
+              <circle cx="34" cy="16" r="7" fill="#fff" stroke="#0f172a" stroke-width="2.5"/>
+              <path d="m39 21 5 5" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+              <path d="M34 13v3.5M34 19h.01" stroke="#f59e0b" stroke-width="2.4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Com'è messo davvero il tetto?</h3>
+          <p>Tetti, grondaie e facciate alte restano fuori portata senza ponteggi, e sono quasi sempre il
+             punto da cui parte l'infiltrazione che si scopre tardi.</p>
+          <div class="with">Lo vedi dall'alto, con foto e posizione di ogni criticità.</div>
         </div>
         <div class="problem-card">
-          <div class="ic">~</div>
-          <h3>Documentazione dispersa</h3>
-          <p>Foto nelle email, relazioni su chiavette, preventivi in cartelle diverse: quando serve
-             mostrare qualcosa in assemblea, si ricostruisce tutto da capo.</p>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="5" y="9" width="21" height="27" rx="3" fill="#bfe3ee" transform="rotate(-9 15 22)"/>
+              <rect x="16" y="8" width="21" height="27" rx="3" fill="#fff" stroke="#0e7490" stroke-width="2.5" transform="rotate(7 26 21)"/>
+              <path d="M21 17h11M21 22h11M21 27h7" stroke="#0e7490" stroke-width="2.4" stroke-linecap="round" transform="rotate(7 26 21)"/>
+              <circle cx="38" cy="36" r="8" fill="#f59e0b"/>
+              <path d="M38 32v4.5M38 40h.01" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Dov'è l'ultima relazione, e quando scade il controllo antincendio?</h3>
+          <p>Foto nelle email, relazioni su chiavette, preventivi in cartelle diverse: quando serve in
+             assemblea si ricostruisce tutto da capo.</p>
+          <div class="with">Tutto nel fascicolo dell'edificio, con le scadenze in evidenza.</div>
         </div>
         <div class="problem-card">
-          <div class="ic">◌</div>
-          <h3>Condomini scollegati dal processo</h3>
-          <p>Il condomino scopre un problema solo quando è già una voce di spesa, perché non ha un modo
-             diretto per vedere lo stato dell'edificio o segnalare qualcosa prima.</p>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="15" cy="17" r="6" fill="#bfe3ee"/>
+              <path d="M5 38c0-6 4.5-10 10-10s10 4 10 10" fill="#bfe3ee"/>
+              <circle cx="34" cy="19" r="5" fill="#fff" stroke="#0e7490" stroke-width="2.4"/>
+              <path d="M26 38c0-5 3.6-8.5 8-8.5s8 3.500 8 8.500" stroke="#0e7490" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M23 9h17a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-6l-5 4v-4h-6a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3Z" fill="#f59e0b" transform="translate(-4 -6) scale(.75)"/>
+            </svg>
+          </div>
+          <h3>Un condomino ha visto una macchia sul soffitto: a chi lo dice?</h3>
+          <p>Senza un canale diretto, il problema arriva tra passaparola e telefonate, e spesso quando è già
+             una voce di spesa.</p>
+          <div class="with">Lo segnala in piattaforma: resta tracciato e l'amministratore lo vede subito.</div>
         </div>
       </div>
     </section>
@@ -698,7 +902,7 @@
           <ul class="box-list">
             <li>Criticità mappate per edificio, con foto e posizione</li>
             <li>Storico nel tempo: cosa è stato segnalato, quando, e com'è stato risolto</li>
-            <li>Documenti e report sempre nello stesso spazio, pronti per l'assemblea</li>
+            <li>Fascicolo dell'edificio con documenti, relazioni e scadenze di sicurezza sempre nello stesso spazio</li>
             <li>Nessuna ricostruzione dell'ultimo minuto prima di una riunione</li>
           </ul>
         </div>
@@ -708,9 +912,84 @@
           <ul class="box-list">
             <li>Vede lo stato reale del proprio edificio, non solo quello che gli viene raccontato</li>
             <li>Può segnalare un problema direttamente in piattaforma, senza passaparola</li>
-            <li>Arriva in assemblea con le stesse informazioni dell'amministratore</li>
+            <li>Arriva in assemblea sapendo come sta davvero il suo edificio</li>
             <li>Partecipa alle decisioni su base oggettiva, non solo per sentito dire</li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASCICOLO DELL'EDIFICIO -->
+    <section id="fascicolo" class="fascicolo-section">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+          <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" fill="currentColor" opacity=".18"/><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+          <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h7M9 17h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+          <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+          <symbol id="i-drone" viewBox="0 0 24 24"><rect x="9" y="10" width="6" height="4" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 10 5 6M15 10l4-4M9 14l-4 4M15 14l4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="5" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="5" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="19" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+          <symbol id="i-sign" viewBox="0 0 24 24"><path d="M4 18c3-1 4-7 6-7s1 5 3 5 2-4 3-4 1 2 4 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 21h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15.500 3.500 20 8l-6 6-4.500-4.500Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+        </defs>
+      </svg>
+      <div class="fascicolo-grid">
+        <div>
+          <span class="kicker">La novità</span>
+          <h2 class="section-title">Il fascicolo del condominio, finalmente in ordine</h2>
+          <p class="section-sub" style="margin-bottom:0">
+            Ogni edificio ha il suo fascicolo digitale: tutto quello che serve sapere e dimostrare, in un posto
+            solo, sempre aggiornato dall'ultima ispezione.
+          </p>
+          <ul class="fascicolo-list">
+            <li>
+              <span class="fi"><svg><use href="#i-folder"/></svg></span>
+              <div><b>Documenti ad albero</b><span class="t">Verbali, relazioni, certificati, preventivi: ognuno al suo posto, ritrovabile in un clic.</span></div>
+            </li>
+            <li>
+              <span class="fi"><svg><use href="#i-clock"/></svg></span>
+              <div><b>Scadenze di sicurezza in evidenza</b><span class="t">Antincendio, ascensore e altri controlli: sai subito cosa richiede attenzione.</span></div>
+            </li>
+            <li>
+              <span class="fi"><svg><use href="#i-sign"/></svg></span>
+              <div><b>Relazione tecnica dell'ingegnere</b><span class="t">Archiviata nel fascicolo, con le versioni: quella nuova non cancella la precedente.</span></div>
+            </li>
+            <li>
+              <span class="fi"><svg><use href="#i-drone"/></svg></span>
+              <div><b>Storico delle ispezioni</b><span class="t">Ogni volo con drone resta nel tempo, e puoi confrontarlo con il precedente.</span></div>
+            </li>
+          </ul>
+          <p class="fascicolo-note">STRATIA archivia e ricorda. Non certifica la conformità dei documenti né il rispetto delle scadenze.</p>
+          <div class="cta-row">
+            <a class="btn btn-dark" href="#demo-pilota">Voglio il fascicolo del mio edificio</a>
+          </div>
+        </div>
+
+        <div class="fmock" role="img" aria-label="Esempio illustrativo di fascicolo di un edificio, con documenti, scadenze di sicurezza e ispezioni">
+          <div class="fmock-bar"><i></i><i></i><i></i><strong>Fascicolo · Condominio Via Roma 12</strong></div>
+          <div class="fmock-body">
+            <ul class="ftree">
+              <li>
+                <div class="fhead"><svg><use href="#i-folder"/></svg>Documenti</div>
+                <ul>
+                  <li><span class="fname"><svg><use href="#i-file"/></svg>Verbale assemblea 2026</span><span class="badge">PDF</span></li>
+                  <li><span class="fname"><svg><use href="#i-file"/></svg>Relazione tecnica · facciate</span><span class="badge sig">Firmata</span></li>
+                  <li><span class="fname"><svg><use href="#i-file"/></svg>Preventivo rifacimento grondaie</span><span class="badge">PDF</span></li>
+                </ul>
+              </li>
+              <li>
+                <div class="fhead"><svg><use href="#i-clock"/></svg>Scadenze di sicurezza</div>
+                <ul>
+                  <li><span class="fname"><svg><use href="#i-clock"/></svg>Antincendio</span><span class="badge warn">Scade tra 45 giorni</span></li>
+                  <li><span class="fname"><svg><use href="#i-clock"/></svg>Ascensore</span><span class="badge">Eseguita il 12/03/2026</span></li>
+                </ul>
+              </li>
+              <li>
+                <div class="fhead"><svg><use href="#i-drone"/></svg>Ispezioni</div>
+                <ul>
+                  <li><span class="fname"><svg><use href="#i-drone"/></svg>Ispezione di ottobre</span><span class="badge">12 punti rilevati</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="fmock-foot">Esempio illustrativo con dati di fantasia.</div>
         </div>
       </div>
     </section>
@@ -763,17 +1042,17 @@
     <!-- COME FUNZIONA -->
     <section id="come-funziona" class="section steps-section">
       <span class="kicker">Come funziona</span>
-      <h2 class="section-title">Dal rilievo aereo alla piattaforma condivisa, in tre passaggi</h2>
+      <h2 class="section-title">Dal rilievo aereo alla relazione tecnica, in quattro passaggi</h2>
       <p class="section-sub">
-        Nessuna curva di apprendimento per te: il drone e l'analisi li gestiamo noi, tu e i condomini
-        ricevete la piattaforma già pronta all'uso.
+        Nessuna curva di apprendimento per te: il drone, il controllo del rilievo e l'invio all'ingegnere li
+        gestiamo noi. Tu e i condomini ricevete la piattaforma già pronta all'uso.
       </p>
       <div class="steps">
         <div class="step">
           <div class="num">1</div>
           <h3>Rilievo aereo</h3>
-          <p>Il drone rileva facciate, tetti e coperture da ogni angolazione, inclusi i punti che da terra
-             non si vedono — è il motore dati di tutta la piattaforma.</p>
+          <p>Il drone riprende facciate, tetti e coperture da ogni angolazione, inclusi i punti che da terra
+             non si vedono. È il motore dati di tutta la piattaforma.</p>
           <span class="step-time">Nessun ponteggio</span>
         </div>
         <div class="step">
@@ -785,10 +1064,44 @@
         </div>
         <div class="step">
           <div class="num">3</div>
+          <h3>Relazione tecnica</h3>
+          <p>Un ingegnere indipendente esamina il rilievo e firma la relazione tecnica, che resta archiviata
+             nel fascicolo dell'edificio insieme al rilievo.</p>
+          <span class="step-time">Firmata da un ingegnere</span>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
           <h3>Assemblea e segnalazioni</h3>
-          <p>Il report è già pronto da presentare, e i condomini possono segnalare un problema in
-             qualsiasi momento — non solo quando arriva la convocazione.</p>
+          <p>Report e relazione sono già pronti da presentare, e i condomini possono segnalare un problema in
+             qualsiasi momento, non solo quando arriva la convocazione.</p>
           <span class="step-time">Pronto da mostrare</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHIAREZZA SUI LIMITI -->
+    <section class="section limits-section">
+      <span class="kicker">Chi fa cosa</span>
+      <h2 class="section-title">Ruoli chiari, senza promesse che non possiamo mantenere</h2>
+      <p class="section-sub">
+        Tre cose da sapere prima di iniziare, perché una piattaforma seria dice anche cosa non fa.
+      </p>
+      <div class="limits-grid">
+        <div class="limit-card">
+          <h3>Il drone documenta ciò che si vede</h3>
+          <p>Le riprese mostrano lo stato apparente delle parti esterne. Non sostituiscono prove, misure
+             o verifiche strutturali.</p>
+        </div>
+        <div class="limit-card">
+          <h3>L'ingegnere è indipendente</h3>
+          <p>L'operatore del drone e l'ingegnere sono figure distinte. L'ingegnere decide in autonomia se
+             il rilievo basta e risponde della sua relazione. Prima della partenza l'amministratore firma
+             l'accettazione dell'ingegnere incaricato.</p>
+        </div>
+        <div class="limit-card">
+          <h3>STRATIA archivia, non certifica</h3>
+          <p>La piattaforma conserva, ordina e ricorda. Non certifica la sicurezza dell'edificio e non
+             verifica il contenuto né la firma delle relazioni.</p>
         </div>
       </div>
     </section>
@@ -833,6 +1146,11 @@
               <td class="td-muted yes">Automatico, sempre consultabile</td>
             </tr>
             <tr>
+              <td class="td-strong">Relazione tecnica di un ingegnere</td>
+              <td class="td-muted no">Da commissionare a parte, con tempi variabili</td>
+              <td class="td-muted yes">Richiesta dalla piattaforma e archiviata nel fascicolo</td>
+            </tr>
+            <tr>
               <td class="td-strong">Pronto per l'assemblea</td>
               <td class="td-muted no">Da preparare ogni volta</td>
               <td class="td-muted yes">Report già pronto</td>
@@ -850,12 +1168,19 @@
           Stiamo selezionando un numero limitato di amministratori, studi tecnici e gestori immobiliari
           per il lancio di STRATIA Condomini: <strong>6 mesi di accesso gratuito</strong>, con il supporto
           diretto del nostro team per configurare la piattaforma sui tuoi edifici e pianificare le prime
-          ispezioni.
+          ispezioni. Il pilota è riservato a <strong>cinque studi tra le province di Salerno e Avellino,
+          uno per zona, con esclusiva di zona</strong>.
         </p>
         <div class="pilot-reasons">
           <span>Nessun costo iniziale</span>
           <span>Nessun impegno</span>
           <span>Supporto diretto del team</span>
+          <span>Esclusiva di zona</span>
+        </div>
+        <div class="pilot-timeline">
+          <div><b>Adesioni entro</b>31 ottobre 2026</div>
+          <div><b>Avvio della piattaforma</b>1 gennaio 2027</div>
+          <div><b>Posti</b>5 studi, uno per zona</div>
         </div>
       </div>
 
@@ -867,18 +1192,25 @@
           </div>
 
           <div class="demo-field">
-            <label for="d-azienda">Azienda / Studio</label>
-            <input id="d-azienda" name="azienda" type="text" placeholder="Nome dello studio o dell'azienda" autocomplete="organization">
+            <label for="d-azienda">Studio e comune</label>
+            <input id="d-azienda" name="azienda" type="text" placeholder="Nome dello studio, città (es. Salerno, Avellino)" autocomplete="organization">
           </div>
 
           <div class="demo-field">
             <label for="d-ruolo">Ruolo</label>
-            <input id="d-ruolo" name="ruolo" type="text" placeholder="Es. Amministratore di condominio">
+            <select id="d-ruolo" name="ruolo">
+              <option value="">Seleziona…</option>
+              <option>Amministratore di condominio</option>
+              <option>Studio di amministrazione</option>
+              <option>Studio tecnico</option>
+              <option>Gestore immobiliare / property manager</option>
+              <option>Altro</option>
+            </select>
           </div>
 
           <div class="demo-field">
             <label for="d-edifici">Numero di edifici in gestione</label>
-            <input id="d-edifici" name="numero_edifici" type="text" placeholder="Es. 15">
+            <input id="d-edifici" name="numero_edifici" type="text" inputmode="numeric" placeholder="Es. 15">
           </div>
 
           <div class="demo-field">
@@ -900,9 +1232,15 @@
         <input type="text" name="_gotcha" style="display:none">
         <input type="hidden" name="_subject" value="🏢 Richiesta Demo gratuita 6 mesi – STRATIA Condomini">
 
+        <label class="demo-consent" for="d-privacy">
+          <input id="d-privacy" name="consenso_privacy" type="checkbox" value="si" required>
+          <span>Ho letto l'<a href="../privacy.html" target="_blank" rel="noopener">informativa privacy</a> e
+            acconsento al trattamento dei miei dati per essere ricontattato in merito al progetto pilota.</span>
+        </label>
+
         <button class="btn btn-dark demo-submit" type="submit" id="demoSubmitBtn">Richiedi la Demo Gratuita</button>
 
-        <p class="demo-privacy">Inviando il modulo acconsenti al trattamento dei dati per essere ricontattato in merito al progetto pilota.</p>
+        <p class="demo-privacy">Ti rispondiamo di persona, di solito entro uno o due giorni lavorativi.</p>
         <p class="demo-status" id="demoFormStatus" aria-live="polite"></p>
       </form>
     </section>
@@ -940,16 +1278,37 @@
             droni e, dove serve, con il coinvolgimento dell'amministratore per le autorizzazioni necessarie.
             Ne parliamo nel dettaglio durante l'attivazione della demo, caso per caso.</div>
         </details>
+        <details class="faq-item">
+          <summary>Chi firma la relazione tecnica?<span class="car">⌄</span></summary>
+          <div class="faq-a">La firma un ingegnere iscritto all'albo, che esamina il rilievo e risponde della
+            propria relazione. L'ingegnere è indipendente dall'operatore del drone e lo mettiamo a
+            disposizione noi. Prima della partenza l'amministratore, o lo studio che ne fa le veci, firma
+            l'accettazione dell'ingegnere incaricato. La relazione non è una verifica strutturale né una
+            certificazione di sicurezza.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Cosa trovo nel fascicolo dell'edificio?<span class="car">⌄</span></summary>
+          <div class="faq-a">I documenti dell'edificio ordinati ad albero (verbali, relazioni, certificati,
+            preventivi), le scadenze di sicurezza come antincendio e ascensore, le relazioni tecniche degli
+            ingegneri e lo storico delle ispezioni. STRATIA archivia e ricorda: non certifica la conformità
+            dei documenti né il rispetto delle scadenze.</div>
+        </details>
+        <details class="faq-item">
+          <summary>E la privacy dei condomini?<span class="car">⌄</span></summary>
+          <div class="faq-a">Le riprese riguardano le parti esterne dell'edificio e sono usate soltanto per le
+            finalità dell'incarico. Ruoli e tutele sono definiti nel contratto e nelle nomine, secondo il GDPR.
+            Prima del rilievo concordiamo con te anche l'informativa da dare ai condomini.</div>
+        </details>
       </div>
     </section>
 
     <!-- CTA FINALE -->
     <section class="final-cta">
       <h2>Vuoi vedere il tuo edificio così?</h2>
-      <p>Il progetto pilota è a posti limitati: 6 mesi di accesso gratuito, supporto diretto del team,
-         nessun costo iniziale.</p>
+      <p>Il progetto pilota è riservato a cinque studi tra Salerno e Avellino: 6 mesi di accesso gratuito,
+         supporto diretto del team, nessun costo iniziale.</p>
       <a class="btn btn-light" href="#demo-pilota">Richiedi la Demo Gratuita di 6 mesi</a>
-      <div class="slots">Posti limitati per il lancio del progetto pilota.</div>
+      <div class="slots">Cinque studi, uno per zona. Adesioni entro il 31 ottobre 2026.</div>
     </section>
 
     <!-- NAV BOTTOM -->
@@ -964,9 +1323,9 @@
       <div> © <span id="y"></span> STRATIA - Aerial & Territorial Intelligence</div>
     </div>
   </footer>
-<p class="demo-privacy">Inviando il modulo acconsenti al trattamento dei dati secondo la <a href="../privacy.html" target="_blank" rel="noopener">informativa privacy</a>.</p>
-	  
 </main>
+
+<a class="btn btn-dark sticky-cta" id="stickyCta" href="#demo-pilota">Richiedi la Demo gratuita</a>
 
 <script>
 if(window.umami){
@@ -974,10 +1333,22 @@ if(window.umami){
 }
 </script>
 
-</body>
-</html>
-</body>
-</html>
-</html>
+<script>
+// Anno nel footer (se servizi.js non lo ha già impostato)
+(function(){
+  var y=document.getElementById('y');
+  if(y && !y.textContent) y.textContent=new Date().getFullYear();
+})();
+
+// La CTA fissa su mobile si nasconde quando il modulo è visibile
+(function(){
+  var cta=document.getElementById('stickyCta'), form=document.getElementById('demo-pilota');
+  if(!cta || !form || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(e){
+    cta.classList.toggle('is-hidden', e[0].isIntersecting);
+  },{threshold:0.15}).observe(form);
+})();
+</script>
+
 </body>
 </html>
