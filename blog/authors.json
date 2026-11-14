@@ -1,0 +1,16 @@
+{
+  "fernando": {
+    "name": "Fernando Junior Cocina",
+    "role": "Fondatore di STRATIA, ingegnere aerospaziale",
+    "bio": "Nato a Salerno, ingegnere aerospaziale, oggi vive a Monaco di Baviera. Con STRATIA costruisce a Salerno strumenti di ingegneria e dati, e racconta qui cosa funziona e cosa no.",
+    "photo": "images/team/fernando.jpeg",
+    "linkedin": "https://www.linkedin.com/in/fernandojuniorcocina/"
+  },
+  "redazione": {
+    "name": "Redazione STRATIA",
+    "role": "Il team di STRATIA",
+    "bio": "Ingegneri e tecnici che lavorano a Salerno e dintorni con droni, dati e metodo.",
+    "photo": "images/logo/logo-transparent.png",
+    "linkedin": ""
+  }
+}
