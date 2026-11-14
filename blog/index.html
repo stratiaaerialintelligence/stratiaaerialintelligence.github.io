@@ -86,10 +86,30 @@
     <h1>Qui si costruisce</h1>
     <p class="blog-hero-sub">Storie, dati e metodo per fare impresa deeptech al Sud. Una rubrica ogni due settimane, scritta da chi è rimasto e da chi è partito.</p>
   </section>
-  <section class="empty-state">
-    <h2>Il primo articolo è in arrivo</h2>
-    <p>Iscriviti qui sotto: ti scriviamo il giorno in cui esce.</p>
-  </section>
+  <div class="filter" role="group" aria-label="Filtra gli articoli">
+    <button class="chip is-on" type="button" data-filter="">Tutti</button>
+    <button class="chip" type="button" data-filter="Qui si costruisce">Qui si costruisce</button>
+    <button class="chip" type="button" data-filter="Salerno">Salerno</button>
+    <button class="chip" type="button" data-filter="Deeptech">Deeptech</button>
+  </div>
+  <div class="post-list" id="postList">
+<article class="post-card post-card-featured" data-tags="|Qui si costruisce|Salerno|Deeptech|">
+  <a class="post-card-media" href="../blog/smettiamo-di-salutarci-agli-aeroporti/" tabindex="-1" aria-hidden="true">
+    <img src="../images/blog/salerno-lungomare.jpg" alt="" loading="eager" width="1600" height="900">
+  </a>
+  <div class="post-card-body">
+    <div class="badge-row"><span class="badge">Qui si costruisce · Episodio 0</span></div>
+    <h2 class="post-card-title"><a href="../blog/smettiamo-di-salutarci-agli-aeroporti/">Smettiamo di salutarci agli aeroporti</a></h2>
+    <p class="post-card-excerpt">Tra il 2022 e il 2024 175.333 giovani tra 25 e 34 anni hanno lasciato il Sud. Il talento c&#x27;è, manca la destinazione. Costruiamola, un&#x27;impresa alla volta.</p>
+    <div class="byline">
+      <img class="avatar" src="../images/team/fernando.jpeg" alt="" width="40" height="40" loading="lazy">
+      <div class="byline-text"><span class="byline-name">Fernando Junior Cocina</span>
+      <span class="byline-meta"><time datetime="2026-11-14">14 novembre 2026</time> · 2 min di lettura</span></div>
+    </div>
+  </div>
+</article>
+  </div>
+  <p class="no-results" id="noResults" hidden>Nessun articolo con questo tema.</p>
 <section class="subscribe" aria-labelledby="follow-title">
   <div class="subscribe-text">
     <h2 id="follow-title">Segui il blog</h2>
